@@ -343,6 +343,7 @@ class CyberPumpApp {
     return this.editingWorkout.exercises.map((ex, index) => {
       const isEmom = ex.type === 'emom';
       const weightVal = (ex.weight === null || ex.weight === undefined) ? '' : ex.weight;
+      const restVal = isEmom ? (ex.restSeconds || 0) : (ex.restSeconds || 60);
 
       return `
         <tr data-index="${index}">
@@ -357,16 +358,21 @@ class CyberPumpApp {
             </select>
           </td>
           <td>
-            <input type="number" class="table-input row-sets" min="1" max="99" value="${ex.sets || (isEmom ? ex.emomTotalRounds || 5 : 3)}">
+            <input type="number" class="table-input row-sets" min="1" max="99" value="${ex.sets || (isEmom ? ex.emomTotalRounds || 5 : 3)}" title="${isEmom ? 'Total Rounds' : 'Sets'}">
           </td>
           <td>
-            <input type="number" class="table-input row-reps" min="1" max="999" value="${ex.reps || 10}">
+            <input type="number" class="table-input row-reps" min="1" max="999" value="${ex.reps || 10}" title="Reps per round">
           </td>
           <td>
             <input type="number" step="0.5" class="table-input row-weight" value="${weightVal}" placeholder="BW">
           </td>
           <td>
-            <input type="number" class="table-input row-time" min="0" max="999" value="${isEmom ? (ex.emomIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${isEmom ? 'Interval in sec' : 'Rest in sec'}">
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <input type="number" class="table-input row-time" min="1" max="999" value="${isEmom ? (ex.emomIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${isEmom ? 'Interval in sec' : 'Rest in sec'}">
+              ${isEmom ? `
+                <input type="number" class="table-input row-rest" min="0" max="999" value="${restVal}" placeholder="Rest (opt)" title="Optional Rest between rounds (sec)">
+              ` : ''}
+            </div>
           </td>
           <td>
             <div class="action-btn-group">
@@ -405,7 +411,8 @@ class CyberPumpApp {
         if (ex.type === 'emom') {
           ex.emomIntervalSeconds = timeVal;
           ex.emomTotalRounds = ex.sets;
-          ex.restSeconds = 0;
+          const restInput = tr.querySelector('.row-rest');
+          ex.restSeconds = restInput ? (parseInt(restInput.value) || 0) : 0;
         } else {
           ex.restSeconds = timeVal;
         }
@@ -507,7 +514,7 @@ class CyberPumpApp {
           setIndex: s,
           totalSets: setsCount,
           reps: ex.reps,
-          restSeconds: ex.restSeconds || 60,
+          restSeconds: ex.type === 'emom' ? (ex.restSeconds || 0) : (ex.restSeconds || 60),
           weight: ex.weight,
           type: ex.type || 'standard',
           emomIntervalSeconds: ex.emomIntervalSeconds || 60,
@@ -524,7 +531,9 @@ class CyberPumpApp {
       queue: queue,
       activeTaskIndex: 0,
       completedLogs: [],
-      inRest: false
+      inRest: false,
+      inEmomTimer: false,
+      inEmomRestPause: false
     };
 
     window.storageManager.saveActiveSession(this.activeSession);
@@ -573,14 +582,94 @@ class CyberPumpApp {
       </div>
     `;
 
-    // REST OVERLAY SCREEN (Req 5, 7, 13)
-    if (session.inRest) {
+    if (session.inEmomRestPause) {
+      // EMOM OPTIONAL REST PAUSE SCREEN (Req 15)
+      const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
+
+      html += `
+        <div class="rest-overlay" style="border-color: var(--fluo-orange); box-shadow: 0 0 20px rgba(255, 153, 0, 0.3);">
+          <span style="font-size: 13px; font-weight: 800; color: var(--fluo-orange); letter-spacing: 1px;">
+            ⏸️ EMOM REST PAUSE
+          </span>
+          <div id="emom-rest-timer-num" class="rest-timer-display" style="color: var(--fluo-orange); text-shadow: 0 0 20px var(--fluo-orange); font-size: 72px;">
+            ${this.timerSecondsLeft}s
+          </div>
+
+          <div class="next-up-banner" style="border-left-color: var(--fluo-magenta);">
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Next Round:</span>
+            <div style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-top: 2px;">
+              ${this.escapeHtml(currentTask.exerciseName)} - Round ${currentExDoneSetsCount + 1}/${currentTask.totalSets}
+            </div>
+            <div style="font-size: 12px; color: var(--fluo-magenta);">
+              Target: ${currentTask.reps} reps • ${currentTask.emomIntervalSeconds}s interval
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
+            <button id="btn-pause-emom" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
+            <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest ⏩</button>
+          </div>
+        </div>
+      `;
+    } else if (isEmom) {
+      // DEDICATED HANDS-FREE AUTOMATIC EMOM TIMER CARD (Req 15)
+      const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
+      const currentRoundNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
+
+      const weightDisplay = currentTask.weight !== null && currentTask.weight !== undefined 
+        ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg</span>` 
+        : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
+
+      // Auto-start EMOM timer if not already running
+      if (!session.inEmomTimer) {
+        setTimeout(() => this.startEmomTimer(currentTask.emomIntervalSeconds), 50);
+      }
+
+      html += `
+        <div class="card active-player-card" style="border-color: var(--fluo-magenta); box-shadow: 0 0 25px rgba(255, 0, 127, 0.25);">
+          <span class="exercise-badge" style="background: rgba(255, 0, 127, 0.2); color: var(--fluo-magenta);">
+            ⚡ EMOM AUTO-TIMER • ROUND ${currentRoundNumber} OF ${currentTask.totalSets}
+          </span>
+          <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
+
+          <div id="emom-timer-num" class="rest-timer-display" style="color: var(--fluo-magenta); text-shadow: 0 0 20px var(--fluo-magenta); font-size: 72px;">
+            ${this.timerSecondsLeft > 0 ? this.timerSecondsLeft : currentTask.emomIntervalSeconds}s
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-value" style="color: #fff;">${currentTask.reps}</div>
+              <div class="metric-label">Reps per Round</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">${weightDisplay}</div>
+              <div class="metric-label">Weight</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value" style="color: var(--fluo-magenta);">${currentTask.emomIntervalSeconds}s</div>
+              <div class="metric-label">${currentTask.restSeconds > 0 ? `Interval (+${currentTask.restSeconds}s Rest)` : 'Interval'}</div>
+            </div>
+          </div>
+
+          <p style="font-size: 11px; color: var(--text-muted); margin: 8px 0;">
+            🤖 Hands-Free Mode: Timer auto-advances rounds when time reaches 0s.
+          </p>
+
+          <div style="display: flex; gap: 8px; margin-top: 12px;">
+            <button id="btn-pause-emom" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
+            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">⚖️ Adjust Weight</button>
+            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">⏭️ Skip EMOM</button>
+          </div>
+        </div>
+      `;
+    } else if (session.inRest) {
+      // REST OVERLAY SCREEN FOR STANDARD EXERCISES (Req 5, 7, 13)
       const nextTask = session.queue.find((t, i) => i > session.activeTaskIndex && !t.completed) || remainingTasks[0];
 
       html += `
         <div class="rest-overlay">
           <span style="font-size: 13px; font-weight: 800; color: var(--fluo-lime); letter-spacing: 1px;">
-            ${isEmom ? '⚡ EMOM INTERVAL RUNNING' : '⏸️ REST & RECOVER'}
+            ⏸️ REST & RECOVER
           </span>
           <div id="rest-timer-num" class="rest-timer-display">${this.timerSecondsLeft}s</div>
 
@@ -604,14 +693,17 @@ class CyberPumpApp {
         </div>
       `;
     } else {
-      // ACTIVE SET EXECUTOR CARD (Req 2, 3, 4, 12)
+      // STANDARD EXERCISE SET CARD
+      const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
+      const currentSetNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
+
       const weightDisplay = currentTask.weight !== null && currentTask.weight !== undefined 
         ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg</span>` 
         : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
 
       html += `
         <div class="card active-player-card">
-          <span class="exercise-badge">${isEmom ? '⚡ EMOM MODE' : 'STANDARD SET'} • SET ${currentTask.setIndex} OF ${currentTask.totalSets}</span>
+          <span class="exercise-badge">STANDARD SET • SET ${currentSetNumber} OF ${currentTask.totalSets}</span>
           <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
 
           <div class="metrics-grid">
@@ -624,44 +716,85 @@ class CyberPumpApp {
               <div class="metric-label">Weight</div>
             </div>
             <div class="metric-box">
-              <div class="metric-value">${isEmom ? currentTask.emomIntervalSeconds + 's' : currentTask.restSeconds + 's'}</div>
-              <div class="metric-label">${isEmom ? 'Interval' : 'Rest'}</div>
+              <div class="metric-value">${currentTask.restSeconds}s</div>
+              <div class="metric-label">Rest</div>
             </div>
           </div>
 
           <div style="display: flex; gap: 8px; margin-top: 16px;">
-            <button id="btn-quick-weight" class="btn btn-secondary btn-block">⚖️ Adjust Weight</button>
+            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">⚖️ Adjust Weight</button>
+            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">⏭️ Skip Set</button>
           </div>
 
           <button id="btn-complete-set" class="btn btn-success btn-block" style="margin-top: 12px; padding: 18px; font-size: 16px;">
-            ✅ Complete Set (${currentTask.setIndex}/${currentTask.totalSets})
+            ✅ Complete Set (${currentSetNumber}/${currentTask.totalSets})
           </button>
         </div>
       `;
     }
 
     // EXERCISE QUEUE & SELECTOR DRAWER (Req 2, 4, 6)
+    // Group queue tasks by exercise for a clean exercise-level list
+    const exercisesMap = new Map();
+    session.queue.forEach(task => {
+      if (!exercisesMap.has(task.exerciseId)) {
+        exercisesMap.set(task.exerciseId, {
+          exerciseId: task.exerciseId,
+          exerciseName: task.exerciseName,
+          totalSets: task.totalSets,
+          completedSets: 0,
+          remainingTasks: [],
+          firstTaskIndex: -1,
+          weight: task.weight,
+          reps: task.reps,
+          type: task.type
+        });
+      }
+      const group = exercisesMap.get(task.exerciseId);
+      if (task.completed) {
+        group.completedSets++;
+      } else {
+        group.remainingTasks.push(task);
+        if (group.firstTaskIndex === -1) {
+          group.firstTaskIndex = session.queue.indexOf(task);
+        }
+      }
+    });
+
+    const exercisesList = Array.from(exercisesMap.values());
+    const totalCompletedSets = session.queue.filter(t => t.completed).length;
+
     html += `
       <div class="queue-container card" style="margin-top: 16px;">
         <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
-          Workout Queue (${session.queue.filter(t => t.completed).length}/${session.queue.length} Done)
+          Exercises List (${totalCompletedSets}/${session.queue.length} Sets Done)
         </h3>
         <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
-          Tap any set below to execute it next out-of-order.
+          Tap an exercise to switch to it after completing or skipping the current set.
         </p>
 
-        ${session.queue.map((task, idx) => {
-          const isActive = idx === session.activeTaskIndex;
-          const isDone = task.completed;
+        ${exercisesList.map(group => {
+          const isCurrentActiveEx = currentTask && currentTask.exerciseId === group.exerciseId;
+          const isFullyDone = group.completedSets === group.totalSets;
+
+          const weightText = group.weight !== null && group.weight !== undefined 
+            ? `@ ${group.weight}kg` 
+            : '(Bodyweight)';
 
           return `
-            <div class="queue-item ${isActive ? 'active' : ''} ${isDone ? 'completed' : ''}" data-index="${idx}">
+            <div class="queue-item ${isCurrentActiveEx ? 'active' : ''} ${isFullyDone ? 'completed' : ''}" data-exercise-id="${group.exerciseId}" data-target-index="${group.firstTaskIndex}">
               <div>
-                <strong style="color: #fff;">${this.escapeHtml(task.exerciseName)}</strong>
-                <div style="font-size: 11px; color: var(--text-muted);">Set ${task.setIndex}/${task.totalSets} • ${task.reps} reps ${task.weight ? `@ ${task.weight}kg` : ''}</div>
+                <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(group.exerciseName)}</strong>
+                <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                  ${group.completedSets}/${group.totalSets} Sets Done • ${group.reps} reps ${weightText}
+                </div>
               </div>
               <div>
-                ${isDone ? '<span style="color: var(--fluo-lime); font-size: 16px;">✓</span>' : (isActive ? '<span style="color: var(--fluo-cyan); font-weight: 700;">ACTIVE</span>' : '<span style="color: var(--text-dim);">Pick</span>')}
+                ${isFullyDone 
+                  ? '<span style="color: var(--fluo-lime); font-weight: 700; font-size: 12px;">✓ DONE</span>' 
+                  : (isCurrentActiveEx 
+                    ? '<span style="color: var(--fluo-cyan); font-weight: 700; font-size: 12px;">▶ ACTIVE</span>' 
+                    : '<span style="color: var(--text-muted); font-size: 12px;">Select</span>')}
               </div>
             </div>
           `;
@@ -677,17 +810,49 @@ class CyberPumpApp {
     const session = this.activeSession;
     if (!session) return;
 
-    // Queue item picking (Req 4)
+    // Queue item picking (Req 2, 4) - Exercise level selector
     document.querySelectorAll('.queue-item').forEach(item => {
       item.addEventListener('click', (e) => {
-        const idx = parseInt(e.currentTarget.getAttribute('data-index'));
-        if (!session.queue[idx].completed) {
-          session.activeTaskIndex = idx;
-          if (session.inRest) this.stopRestTimer();
-          window.storageManager.saveActiveSession(session);
-          this.renderActiveWorkoutView();
+        const targetIndex = parseInt(e.currentTarget.getAttribute('data-target-index'));
+        const targetExId = e.currentTarget.getAttribute('data-exercise-id');
+        const currentTask = session.queue[session.activeTaskIndex];
+
+        if (targetIndex === -1 || isNaN(targetIndex)) return; // Fully completed exercise
+
+        if (currentTask && currentTask.exerciseId !== targetExId) {
+          // Check how many sets of the current exercise have been executed so far in this session
+          const currentExCompletedCount = (session.completedLogs || []).filter(log => log.exerciseId === currentTask.exerciseId).length;
+
+          // STRICT LOCK: If current exercise is in progress (1+ sets done) OR if currently in rest, block switching!
+          if (currentExCompletedCount > 0 || session.inRest) {
+            this.showToast(`Finish all sets of "${currentTask.exerciseName}" or tap "Skip Set" to switch exercise`, 'warning');
+            return;
+          }
         }
+
+        session.activeTaskIndex = targetIndex;
+        if (session.inRest) this.stopRestTimer();
+        window.storageManager.saveActiveSession(session);
+        this.renderActiveWorkoutView();
       });
+    });
+
+    // Skip Current Set Button (Defer set to end of queue)
+    document.getElementById('btn-skip-current-set')?.addEventListener('click', () => {
+      const activeTask = session.queue[session.activeTaskIndex];
+      
+      // Remove current task and append to end of queue so it is offered later (Req 6)
+      session.queue.splice(session.activeTaskIndex, 1);
+      session.queue.push(activeTask);
+
+      // Reset active index to current position (which now points to the next uncompleted task)
+      if (session.activeTaskIndex >= session.queue.length) {
+        session.activeTaskIndex = 0;
+      }
+
+      window.storageManager.saveActiveSession(session);
+      this.showToast(`Skipped set ${activeTask.setIndex} of "${activeTask.exerciseName}" — moved to end of queue`, 'info');
+      this.renderActiveWorkoutView();
     });
 
     // Stop workout session
@@ -772,8 +937,13 @@ class CyberPumpApp {
       });
     });
 
-    // Rest overlay button controls (Req 7)
+    // Rest overlay & EMOM pause button controls (Req 7, 15)
     document.getElementById('btn-pause-timer')?.addEventListener('click', () => {
+      this.isTimerPaused = !this.isTimerPaused;
+      this.renderActiveWorkoutView();
+    });
+
+    document.getElementById('btn-pause-emom')?.addEventListener('click', () => {
       this.isTimerPaused = !this.isTimerPaused;
       this.renderActiveWorkoutView();
     });
@@ -788,6 +958,118 @@ class CyberPumpApp {
       this.stopRestTimer();
       this.moveToNextUncompletedSet();
     });
+  }
+
+  /**
+   * Automatic Hands-Free EMOM Timer Runner (Req 15)
+   * Auto-advances rounds when timer reaches 0s without manual button taps.
+   */
+  startEmomTimer(seconds) {
+    this.stopRestTimer();
+
+    const session = this.activeSession;
+    if (!session) return;
+
+    session.inEmomTimer = true;
+    this.timerSecondsLeft = seconds;
+    this.timerTotalSeconds = seconds;
+    this.isTimerPaused = false;
+
+    window.storageManager.saveActiveSession(session);
+    this.renderActiveWorkoutView();
+
+    this.timerInterval = setInterval(() => {
+      if (this.isTimerPaused) return;
+
+      this.timerSecondsLeft--;
+
+      const timerElem = document.getElementById('emom-timer-num');
+      if (timerElem) {
+        timerElem.textContent = `${this.timerSecondsLeft}s`;
+      }
+
+      const settings = window.storageManager.getSettings();
+
+      // Voice countdown starting from 5 seconds (5, 4, 3, 2, 1)
+      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0) {
+        window.audioEngine.speakNumber(this.timerSecondsLeft, settings.silentMode);
+      }
+
+      // Interval finished at 0s -> Auto advance round or start optional rest pause!
+      if (this.timerSecondsLeft <= 0) {
+        window.audioEngine.playStartBeep(settings.silentMode);
+        this.stopRestTimer();
+
+        // Automatically log current EMOM round task
+        const currentTask = session.queue[session.activeTaskIndex];
+        if (currentTask && !currentTask.completed) {
+          currentTask.completed = true;
+          currentTask.completedAt = new Date().toISOString();
+
+          session.completedLogs.push({
+            exerciseId: currentTask.exerciseId,
+            exerciseName: currentTask.exerciseName,
+            setIndex: currentTask.setIndex,
+            reps: currentTask.reps,
+            weight: currentTask.weight,
+            timestamp: new Date().toISOString()
+          });
+        }
+
+        session.inEmomTimer = false;
+
+        // Check if optional rest pause is configured between EMOM rounds AND more rounds of same exercise remain
+        const nextSameExIndex = session.queue.findIndex(t => !t.completed && t.exerciseId === currentTask?.exerciseId);
+        if (currentTask && currentTask.restSeconds > 0 && nextSameExIndex >= 0) {
+          this.startEmomRestPauseTimer(currentTask.restSeconds);
+        } else {
+          this.moveToNextUncompletedSet();
+        }
+      }
+    }, 1000);
+  }
+
+  /**
+   * Automatic EMOM Optional Rest Pause Timer
+   */
+  startEmomRestPauseTimer(seconds) {
+    this.stopRestTimer();
+
+    const session = this.activeSession;
+    if (!session) return;
+
+    session.inEmomRestPause = true;
+    this.timerSecondsLeft = seconds;
+    this.timerTotalSeconds = seconds;
+    this.isTimerPaused = false;
+
+    window.storageManager.saveActiveSession(session);
+    this.renderActiveWorkoutView();
+
+    this.timerInterval = setInterval(() => {
+      if (this.isTimerPaused) return;
+
+      this.timerSecondsLeft--;
+
+      const timerElem = document.getElementById('emom-rest-timer-num');
+      if (timerElem) {
+        timerElem.textContent = `${this.timerSecondsLeft}s`;
+      }
+
+      const settings = window.storageManager.getSettings();
+
+      // Voice countdown starting from 5 seconds
+      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0) {
+        window.audioEngine.speakNumber(this.timerSecondsLeft, settings.silentMode);
+      }
+
+      if (this.timerSecondsLeft <= 0) {
+        window.audioEngine.playStartBeep(settings.silentMode);
+        this.stopRestTimer();
+        session.inEmomRestPause = false;
+        this.moveToNextUncompletedSet();
+      }
+    }, 1000);
   }
 
   startRestTimer(seconds) {
@@ -813,8 +1095,8 @@ class CyberPumpApp {
 
       const settings = window.storageManager.getSettings();
 
-      // Audio Voice Countdown at 3, 2, 1 seconds (Req 13, 15, 20)
-      if (this.timerSecondsLeft <= 3 && this.timerSecondsLeft > 0) {
+      // Voice countdown starting from 5 seconds (5, 4, 3, 2, 1)
+      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0) {
         window.audioEngine.speakNumber(this.timerSecondsLeft, settings.silentMode);
       }
 
@@ -834,6 +1116,7 @@ class CyberPumpApp {
     }
     if (this.activeSession) {
       this.activeSession.inRest = false;
+      this.activeSession.inEmomTimer = false;
       window.storageManager.saveActiveSession(this.activeSession);
     }
   }
@@ -841,21 +1124,37 @@ class CyberPumpApp {
   moveToNextUncompletedSet() {
     if (!this.activeSession) return;
 
-    const remainingTasks = this.activeSession.queue.filter(t => !t.completed);
+    const session = this.activeSession;
+    const remainingTasks = session.queue.filter(t => !t.completed);
+    
     if (remainingTasks.length === 0) {
       this.finishWorkoutSession();
-    } else {
-      // Find next uncompleted set index
-      const nextIdx = this.activeSession.queue.findIndex((t, i) => i > this.activeSession.activeTaskIndex && !t.completed);
-      if (nextIdx >= 0) {
-        this.activeSession.activeTaskIndex = nextIdx;
-      } else {
-        // Wrap around to first uncompleted task
-        this.activeSession.activeTaskIndex = this.activeSession.queue.findIndex(t => !t.completed);
-      }
-      window.storageManager.saveActiveSession(this.activeSession);
-      this.renderActiveWorkoutView();
+      return;
     }
+
+    // Identify the exercise that was just performed from the last completed log entry
+    const lastLog = session.completedLogs && session.completedLogs.length > 0
+      ? session.completedLogs[session.completedLogs.length - 1]
+      : null;
+
+    const lastExerciseId = lastLog ? lastLog.exerciseId : session.queue[session.activeTaskIndex]?.exerciseId;
+
+    // 1. Check if there are any remaining uncompleted sets for the LAST EXECUTED exercise
+    const nextSameExIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExerciseId);
+
+    if (nextSameExIdx >= 0) {
+      // Continue with the next set of the SAME exercise!
+      session.activeTaskIndex = nextSameExIdx;
+    } else {
+      // 2. All sets of the last exercise are finished! Switch to the next uncompleted exercise in queue
+      const nextUncompletedIdx = session.queue.findIndex(t => !t.completed);
+      if (nextUncompletedIdx >= 0) {
+        session.activeTaskIndex = nextUncompletedIdx;
+      }
+    }
+
+    window.storageManager.saveActiveSession(session);
+    this.renderActiveWorkoutView();
   }
 
   finishWorkoutSession() {
