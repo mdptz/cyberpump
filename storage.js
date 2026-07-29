@@ -26,8 +26,8 @@ const DEFAULT_WORKOUTS = [
         reps: 8,
         restSeconds: 90,
         weight: 80,
-        emomIntervalSeconds: 60,
-        emomTotalRounds: 5
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 5
       },
       {
         id: 'ex_2',
@@ -37,8 +37,8 @@ const DEFAULT_WORKOUTS = [
         reps: 10,
         restSeconds: 60,
         weight: 26,
-        emomIntervalSeconds: 60,
-        emomTotalRounds: 5
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 5
       },
       {
         id: 'ex_3',
@@ -48,8 +48,8 @@ const DEFAULT_WORKOUTS = [
         reps: 15,
         restSeconds: 45,
         weight: null, // Bodyweight - optional weight test
-        emomIntervalSeconds: 60,
-        emomTotalRounds: 5
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 5
       },
       {
         id: 'ex_4',
@@ -59,39 +59,84 @@ const DEFAULT_WORKOUTS = [
         reps: 12,
         restSeconds: 45,
         weight: 35,
-        emomIntervalSeconds: 60,
-        emomTotalRounds: 5
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 5
       }
     ]
   },
   {
-    id: 'workout_emom_burn',
-    name: 'EMOM High Intensity',
+    id: 'workout_timebased_burn',
+    name: 'timebased High Intensity',
     description: 'Every Minute On the Minute interval training for maximum conditioning.',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     exercises: [
       {
-        id: 'ex_emom_1',
+        id: 'ex_timebased_1',
         name: 'Kettlebell Swings',
-        type: 'emom',
+        type: 'timebased',
         sets: 10,
         reps: 15,
         restSeconds: 0,
         weight: 20,
-        emomIntervalSeconds: 60, // 1 minute per round
-        emomTotalRounds: 10
+        timebasedIntervalSeconds: 60, // 1 minute per round
+        timebasedTotalRounds: 10
       },
       {
-        id: 'ex_emom_2',
+        id: 'ex_timebased_2',
         name: 'Burpees Blitz',
-        type: 'emom',
+        type: 'timebased',
         sets: 5,
         reps: 10,
         restSeconds: 0,
         weight: null,
-        emomIntervalSeconds: 45, // 45 sec interval
-        emomTotalRounds: 5
+        timebasedIntervalSeconds: 45, // 45 sec interval
+        timebasedTotalRounds: 5
+      }
+    ]
+  },
+  {
+    id: 'workout_circuit_mode',
+    name: 'Full Body Circuit',
+    description: 'Cyclic circuit workout executing exercises sequentially across 3 rounds.',
+    mode: 'circuit',
+    circuitCycles: 3,
+    circuitRestSeconds: 90,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    exercises: [
+      {
+        id: 'ex_circ_1',
+        name: 'Goblet Squat',
+        type: 'standard',
+        sets: 1,
+        reps: 12,
+        restSeconds: 15,
+        weight: 16,
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 1
+      },
+      {
+        id: 'ex_circ_2',
+        name: 'Plank timebased',
+        type: 'timebased',
+        sets: 1,
+        reps: 1,
+        restSeconds: 15,
+        weight: null,
+        timebasedIntervalSeconds: 45,
+        timebasedTotalRounds: 1
+      },
+      {
+        id: 'ex_circ_3',
+        name: 'Push-ups',
+        type: 'standard',
+        sets: 1,
+        reps: 15,
+        restSeconds: 15,
+        weight: null,
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 1
       }
     ]
   }

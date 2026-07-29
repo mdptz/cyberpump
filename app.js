@@ -178,21 +178,25 @@ class CyberPumpApp {
     } else {
       workouts.forEach(w => {
         const totalSets = w.exercises.reduce((sum, ex) => sum + (parseInt(ex.sets) || 1), 0);
-        const emomCount = w.exercises.filter(ex => ex.type === 'emom').length;
+        const timebasedCount = w.exercises.filter(ex => ex.type === 'timebased').length;
+        const isCircuit = w.mode === 'circuit';
 
         html += `
-          <div class="card" style="margin-bottom: 12px;">
+          <div class="card" style="margin-bottom: 12px; ${isCircuit ? 'border-color: var(--fluo-cyan); box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);' : ''}">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
               <div>
                 <h3 style="font-family: var(--font-header); font-size: 18px; color: #fff;">${this.escapeHtml(w.name)}</h3>
                 <p style="font-size: 12px; color: var(--text-muted);">${this.escapeHtml(w.description || 'Custom routine')}</p>
               </div>
-              <span class="exercise-badge">${w.exercises.length} Exercises (${totalSets} Sets)</span>
+              <span class="exercise-badge" style="${isCircuit ? 'background: rgba(0, 240, 255, 0.2); color: var(--fluo-cyan); border: 1px solid var(--fluo-cyan);' : ''}">
+                ${isCircuit ? `🔄 CIRCUIT (${w.circuitCycles || 3} Cycles)` : `${w.exercises.length} Exercises (${totalSets} Sets)`}
+              </span>
             </div>
 
             <div style="display: flex; gap: 8px; font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
-              ${emomCount > 0 ? `<span style="color: var(--fluo-magenta);">⚡ ${emomCount} EMOM</span>` : ''}
-              <span>🕒 Rest configured per exercise</span>
+              ${isCircuit ? `<span style="color: var(--fluo-cyan);">🔄 ${w.exercises.length} Exercises per Cycle • Rest: ${w.circuitRestSeconds || 90}s</span>` : ''}
+              ${timebasedCount > 0 ? `<span style="color: var(--fluo-magenta);">⚡ ${timebasedCount} timebased</span>` : ''}
+              ${!isCircuit ? `<span>🕒 Rest configured per exercise</span>` : ''}
             </div>
 
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -273,6 +277,9 @@ class CyberPumpApp {
         id: 'workout_' + Date.now(),
         name: 'New Custom Workout',
         description: '',
+        mode: 'standard',
+        circuitCycles: 3,
+        circuitRestSeconds: 90,
         createdAt: new Date().toISOString(),
         exercises: [
           {
@@ -283,8 +290,8 @@ class CyberPumpApp {
             reps: 10,
             restSeconds: 60,
             weight: 50,
-            emomIntervalSeconds: 60,
-            emomTotalRounds: 5
+            timebasedIntervalSeconds: 60,
+            timebasedTotalRounds: 5
           }
         ]
       };
@@ -307,6 +314,28 @@ class CyberPumpApp {
         <div class="form-group" style="margin-bottom: 0;">
           <label class="form-label">Description (Optional)</label>
           <input type="text" id="edit-workout-desc" class="form-input" value="${this.escapeHtml(this.editingWorkout.description || '')}" placeholder="Short notes or focus area">
+        </div>
+      </div>
+
+      <!-- WORKOUT MODE CONTROL (Standard vs Circuit Mode) -->
+      <div class="card" style="margin-bottom: 12px; border-color: var(--fluo-cyan);">
+        <div class="form-group" style="margin-bottom: 8px;">
+          <label class="form-label" style="color: var(--fluo-cyan); font-weight: 700;">Workout Execution Mode</label>
+          <select id="edit-workout-mode" class="form-input" style="background: rgba(0, 240, 255, 0.05); color: #fff; border-color: var(--fluo-cyan);">
+            <option value="standard" ${this.editingWorkout.mode !== 'circuit' ? 'selected' : ''}>📋 Standard Mode (All Sets per Exercise sequentially)</option>
+            <option value="circuit" ${this.editingWorkout.mode === 'circuit' ? 'selected' : ''}>🔄 Cyclic / Circuit Mode (1 Set per Exercise sequentially across N Cycles)</option>
+          </select>
+        </div>
+
+        <div id="circuit-config-box" style="display: ${this.editingWorkout.mode === 'circuit' ? 'flex' : 'none'}; gap: 12px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed rgba(0, 240, 255, 0.2);">
+          <div class="form-group" style="flex: 1; margin-bottom: 0;">
+            <label class="form-label">Circuit Cycles (N Repetitions)</label>
+            <input type="number" id="edit-circuit-cycles" class="form-input" min="1" max="99" value="${this.editingWorkout.circuitCycles || 3}">
+          </div>
+          <div class="form-group" style="flex: 1; margin-bottom: 0;">
+            <label class="form-label">Rest Between Cycles (Sec)</label>
+            <input type="number" id="edit-circuit-rest" class="form-input" min="0" max="999" value="${this.editingWorkout.circuitRestSeconds || 90}">
+          </div>
         </div>
       </div>
 
@@ -347,9 +376,9 @@ class CyberPumpApp {
 
   renderTabularRows() {
     return this.editingWorkout.exercises.map((ex, index) => {
-      const isEmom = ex.type === 'emom';
+      const istimebased = ex.type === 'timebased';
       const weightVal = (ex.weight === null || ex.weight === undefined) ? '' : ex.weight;
-      const restVal = isEmom ? (ex.restSeconds || 0) : (ex.restSeconds || 60);
+      const restVal = istimebased ? (ex.restSeconds || 0) : (ex.restSeconds || 60);
 
       return `
         <tr data-index="${index}">
@@ -359,12 +388,12 @@ class CyberPumpApp {
           </td>
           <td>
             <select class="table-input row-type">
-              <option value="standard" ${!isEmom ? 'selected' : ''}>Standard</option>
-              <option value="emom" ${isEmom ? 'selected' : ''}>EMOM</option>
+              <option value="standard" ${!istimebased ? 'selected' : ''}>Standard</option>
+              <option value="timebased" ${istimebased ? 'selected' : ''}>timebased</option>
             </select>
           </td>
           <td>
-            <input type="number" class="table-input row-sets" min="1" max="99" value="${ex.sets || (isEmom ? ex.emomTotalRounds || 5 : 3)}" title="${isEmom ? 'Total Rounds' : 'Sets'}">
+            <input type="number" class="table-input row-sets" min="1" max="99" value="${ex.sets || (istimebased ? ex.timebasedTotalRounds || 5 : 3)}" title="${istimebased ? 'Total Rounds' : 'Sets'}">
           </td>
           <td>
             <input type="number" class="table-input row-reps" min="1" max="999" value="${ex.reps || 10}" title="Reps per round">
@@ -374,8 +403,8 @@ class CyberPumpApp {
           </td>
           <td>
             <div style="display: flex; flex-direction: column; gap: 2px;">
-              <input type="number" class="table-input row-time" min="1" max="999" value="${isEmom ? (ex.emomIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${isEmom ? 'Interval in sec' : 'Rest in sec'}">
-              ${isEmom ? `
+              <input type="number" class="table-input row-time" min="1" max="999" value="${istimebased ? (ex.timebasedIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${istimebased ? 'Interval in sec' : 'Rest in sec'}">
+              ${istimebased ? `
                 <input type="number" class="table-input row-rest" min="0" max="999" value="${restVal}" placeholder="Rest (opt)" title="Optional Rest between rounds (sec)">
               ` : ''}
             </div>
@@ -395,10 +424,20 @@ class CyberPumpApp {
   bindTabularEvents() {
     const tbody = document.getElementById('tabular-tbody');
 
+    // Toggle Circuit Mode configuration panel visibility
+    document.getElementById('edit-workout-mode')?.addEventListener('change', (e) => {
+      const isCircuit = e.target.value === 'circuit';
+      const box = document.getElementById('circuit-config-box');
+      if (box) box.style.display = isCircuit ? 'flex' : 'none';
+    });
+
     // Update internal editing array when input values change
     const updateExerciseState = () => {
       this.editingWorkout.name = document.getElementById('edit-workout-name').value.trim() || 'Custom Workout';
       this.editingWorkout.description = document.getElementById('edit-workout-desc').value.trim();
+      this.editingWorkout.mode = document.getElementById('edit-workout-mode').value;
+      this.editingWorkout.circuitCycles = parseInt(document.getElementById('edit-circuit-cycles').value) || 3;
+      this.editingWorkout.circuitRestSeconds = parseInt(document.getElementById('edit-circuit-rest').value) || 90;
 
       const rows = tbody.querySelectorAll('tr');
       rows.forEach((tr, idx) => {
@@ -414,9 +453,9 @@ class CyberPumpApp {
         ex.weight = rawWeight === '' ? null : parseFloat(rawWeight);
 
         const timeVal = parseInt(tr.querySelector('.row-time').value) || 60;
-        if (ex.type === 'emom') {
-          ex.emomIntervalSeconds = timeVal;
-          ex.emomTotalRounds = ex.sets;
+        if (ex.type === 'timebased') {
+          ex.timebasedIntervalSeconds = timeVal;
+          ex.timebasedTotalRounds = ex.sets;
           const restInput = tr.querySelector('.row-rest');
           ex.restSeconds = restInput ? (parseInt(restInput.value) || 0) : 0;
         } else {
@@ -457,7 +496,7 @@ class CyberPumpApp {
       }
     });
 
-    // Change exercise type (toggle rest vs emom interval)
+    // Change exercise type (toggle rest vs timebased interval)
     tbody.addEventListener('change', (e) => {
       if (e.target.classList.contains('row-type')) {
         updateExerciseState();
@@ -476,8 +515,8 @@ class CyberPumpApp {
         reps: 10,
         restSeconds: 60,
         weight: null,
-        emomIntervalSeconds: 60,
-        emomTotalRounds: 5
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 5
       });
       tbody.innerHTML = this.renderTabularRows();
     });
@@ -508,27 +547,64 @@ class CyberPumpApp {
       return;
     }
 
-    // Build execution set tasks queue
+    // Build execution set tasks queue (Standard vs Circuit Mode)
+    const isCircuit = workout.mode === 'circuit';
     const queue = [];
-    workout.exercises.forEach(ex => {
-      const setsCount = parseInt(ex.sets) || 1;
-      for (let s = 1; s <= setsCount; s++) {
-        queue.push({
-          taskId: `task_${ex.id}_set_${s}`,
-          exerciseId: ex.id,
-          exerciseName: ex.name,
-          setIndex: s,
-          totalSets: setsCount,
-          reps: ex.reps,
-          restSeconds: ex.type === 'emom' ? (ex.restSeconds || 0) : (ex.restSeconds || 60),
-          weight: ex.weight,
-          type: ex.type || 'standard',
-          emomIntervalSeconds: ex.emomIntervalSeconds || 60,
-          emomTotalRounds: ex.emomTotalRounds || setsCount,
-          completed: false
+
+    if (isCircuit) {
+      const totalCycles = parseInt(workout.circuitCycles) || 3;
+      const circuitRest = parseInt(workout.circuitRestSeconds) || 90;
+
+      for (let c = 1; c <= totalCycles; c++) {
+        workout.exercises.forEach((ex, exIdx) => {
+          const isLastExInCycle = exIdx === workout.exercises.length - 1;
+          const restTime = isLastExInCycle ? circuitRest : (ex.type === 'timebased' ? (ex.restSeconds || 0) : (ex.restSeconds || 60));
+
+          queue.push({
+            taskId: `task_cycle_${c}_ex_${ex.id}`,
+            exerciseId: ex.id,
+            exerciseName: ex.name,
+            setIndex: 1,
+            totalSets: 1,
+            cycleIndex: c,
+            totalCycles: totalCycles,
+            isCircuitMode: true,
+            isLastExerciseInCycle: isLastExInCycle,
+            circuitRestSeconds: circuitRest,
+            reps: ex.reps,
+            restSeconds: restTime,
+            weight: ex.weight,
+            type: ex.type || 'standard',
+            timebasedIntervalSeconds: ex.timebasedIntervalSeconds || 60,
+            timebasedTotalRounds: 1,
+            completed: false
+          });
         });
       }
-    });
+    } else {
+      workout.exercises.forEach(ex => {
+        const setsCount = parseInt(ex.sets) || 1;
+        for (let s = 1; s <= setsCount; s++) {
+          queue.push({
+            taskId: `task_${ex.id}_set_${s}`,
+            exerciseId: ex.id,
+            exerciseName: ex.name,
+            setIndex: s,
+            totalSets: setsCount,
+            cycleIndex: 1,
+            totalCycles: 1,
+            isCircuitMode: false,
+            reps: ex.reps,
+            restSeconds: ex.type === 'timebased' ? (ex.restSeconds || 0) : (ex.restSeconds || 60),
+            weight: ex.weight,
+            type: ex.type || 'standard',
+            timebasedIntervalSeconds: ex.timebasedIntervalSeconds || 60,
+            timebasedTotalRounds: ex.timebasedTotalRounds || setsCount,
+            completed: false
+          });
+        }
+      });
+    }
 
     this.activeSession = {
       workoutId: workout.id,
@@ -538,8 +614,8 @@ class CyberPumpApp {
       activeTaskIndex: 0,
       completedLogs: [],
       inRest: false,
-      inEmomTimer: false,
-      inEmomRestPause: false
+      intimebasedTimer: false,
+      intimebasedRestPause: false
     };
 
     window.storageManager.saveActiveSession(this.activeSession);
@@ -587,28 +663,34 @@ class CyberPumpApp {
       return;
     }
 
-    // Ensure activeTaskIndex points to an uncompleted set, prioritizing the last executed exercise
+    // Ensure activeTaskIndex points to an uncompleted set
     if (session.queue[session.activeTaskIndex]?.completed) {
-      const lastLog = session.completedLogs && session.completedLogs.length > 0
-        ? session.completedLogs[session.completedLogs.length - 1]
-        : null;
-      const lastExId = lastLog ? lastLog.exerciseId : null;
+      const isCircuitMode = session.queue[0]?.isCircuitMode;
 
-      // 1. Prioritize next uncompleted set of the SAME exercise
-      let nextIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExId);
-      
-      // 2. If all sets of that exercise are finished, pick next uncompleted exercise
-      if (nextIdx === -1) {
-        nextIdx = session.queue.findIndex(t => !t.completed);
-      }
+      if (isCircuitMode) {
+        // In Circuit Mode: strictly advance to the next uncompleted task in queue order!
+        const nextIdx = session.queue.findIndex(t => !t.completed);
+        if (nextIdx >= 0) session.activeTaskIndex = nextIdx;
+      } else {
+        // In Standard Mode: prioritize next set of the same exercise
+        const lastLog = session.completedLogs && session.completedLogs.length > 0
+          ? session.completedLogs[session.completedLogs.length - 1]
+          : null;
+        const lastExId = lastLog ? lastLog.exerciseId : null;
 
-      if (nextIdx >= 0) {
-        session.activeTaskIndex = nextIdx;
+        let nextIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExId);
+        if (nextIdx === -1) {
+          nextIdx = session.queue.findIndex(t => !t.completed);
+        }
+
+        if (nextIdx >= 0) {
+          session.activeTaskIndex = nextIdx;
+        }
       }
     }
 
     const currentTask = session.queue[session.activeTaskIndex];
-    const isEmom = currentTask.type === 'emom';
+    const istimebased = currentTask.type === 'timebased';
 
     let html = `
       <div class="view-header">
@@ -620,17 +702,17 @@ class CyberPumpApp {
       </div>
     `;
 
-    if (session.inEmomRestPause) {
-      // EMOM OPTIONAL REST PAUSE SCREEN (Req 15)
+    if (session.intimebasedRestPause) {
+      // timebased OPTIONAL REST PAUSE SCREEN (Req 15)
       const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
       const nextTask = this.getNextPreviewTask(session);
 
       html += `
         <div class="rest-overlay" style="border-color: var(--fluo-orange); box-shadow: 0 0 20px rgba(255, 153, 0, 0.3);">
           <span style="font-size: 13px; font-weight: 800; color: var(--fluo-orange); letter-spacing: 1px;">
-            ⏸️ EMOM REST PAUSE
+            ⏸️ timebased REST PAUSE
           </span>
-          <div id="emom-rest-timer-num" class="rest-timer-display" style="color: var(--fluo-orange); text-shadow: 0 0 20px var(--fluo-orange); font-size: 72px;">
+          <div id="timebased-rest-timer-num" class="rest-timer-display" style="color: var(--fluo-orange); text-shadow: 0 0 20px var(--fluo-orange); font-size: 72px;">
             ${this.timerSecondsLeft}s
           </div>
 
@@ -641,19 +723,19 @@ class CyberPumpApp {
                 ${this.escapeHtml(nextTask.exerciseName)} - Round ${currentExDoneSetsCount + 1}/${nextTask.totalSets}
               </div>
               <div style="font-size: 12px; color: var(--fluo-magenta);">
-                Target: ${nextTask.reps} reps • ${nextTask.emomIntervalSeconds}s interval
+                Target: ${nextTask.reps} reps • ${nextTask.timebasedIntervalSeconds}s interval
               </div>
             </div>
           ` : ''}
 
           <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
-            <button id="btn-pause-emom" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
+            <button id="btn-pause-timebased" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
             <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest ⏩</button>
           </div>
         </div>
       `;
-    } else if (isEmom) {
-      // DEDICATED EMOM TIMER CARD WITH MANUAL START BUTTON FOR ROUND 1
+    } else if (istimebased) {
+      // DEDICATED timebased TIMER CARD WITH MANUAL START BUTTON FOR ROUND 1
       const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
       const currentRoundNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
 
@@ -661,17 +743,17 @@ class CyberPumpApp {
         ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg</span>` 
         : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
 
-      const isEmomRunning = session.inEmomTimer || session.emomStarted;
+      const istimebasedRunning = session.intimebasedTimer || session.timebasedStarted;
 
       html += `
         <div class="card active-player-card" style="border-color: var(--fluo-magenta); box-shadow: 0 0 25px rgba(255, 0, 127, 0.25);">
           <span class="exercise-badge" style="background: rgba(255, 0, 127, 0.2); color: var(--fluo-magenta);">
-            ⚡ EMOM MODE • ROUND ${currentRoundNumber} OF ${currentTask.totalSets}
+            ${currentTask.isCircuitMode ? `⚡ CIRCUIT • CYCLE ${currentTask.cycleIndex}/${currentTask.totalCycles} • timebased ROUND ${currentRoundNumber}/${currentTask.totalSets}` : `⚡ timebased MODE • ROUND ${currentRoundNumber} OF ${currentTask.totalSets}`}
           </span>
           <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
 
-          <div id="emom-timer-num" class="rest-timer-display" style="color: var(--fluo-magenta); text-shadow: 0 0 20px var(--fluo-magenta); font-size: 72px;">
-            ${this.timerSecondsLeft > 0 ? this.timerSecondsLeft : currentTask.emomIntervalSeconds}s
+          <div id="timebased-timer-num" class="rest-timer-display" style="color: var(--fluo-magenta); text-shadow: 0 0 20px var(--fluo-magenta); font-size: 72px;">
+            ${this.timerSecondsLeft > 0 ? this.timerSecondsLeft : currentTask.timebasedIntervalSeconds}s
           </div>
 
           <div class="metrics-grid">
@@ -684,14 +766,14 @@ class CyberPumpApp {
               <div class="metric-label">Weight</div>
             </div>
             <div class="metric-box">
-              <div class="metric-value" style="color: var(--fluo-magenta);">${currentTask.emomIntervalSeconds}s</div>
+              <div class="metric-value" style="color: var(--fluo-magenta);">${currentTask.timebasedIntervalSeconds}s</div>
               <div class="metric-label">${currentTask.restSeconds > 0 ? `Interval (+${currentTask.restSeconds}s Rest)` : 'Interval'}</div>
             </div>
           </div>
 
-          ${!isEmomRunning ? `
-            <button id="btn-start-emom-manual" class="btn btn-success btn-block" style="margin-top: 16px; padding: 18px; font-size: 18px; box-shadow: var(--shadow-neon-lime);">
-              ▶️ START EMOM (ROUND 1/${currentTask.totalSets})
+          ${!istimebasedRunning ? `
+            <button id="btn-start-timebased-manual" class="btn btn-success btn-block" style="margin-top: 16px; padding: 18px; font-size: 18px; box-shadow: var(--shadow-neon-lime);">
+              ▶️ START timebased (ROUND 1/${currentTask.totalSets})
             </button>
           ` : `
             <p style="font-size: 11px; color: var(--text-muted); margin: 8px 0;">
@@ -700,30 +782,31 @@ class CyberPumpApp {
           `}
 
           <div style="display: flex; gap: 8px; margin-top: 12px;">
-            ${isEmomRunning ? `<button id="btn-pause-emom" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>` : ''}
+            ${istimebasedRunning ? `<button id="btn-pause-timebased" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>` : ''}
             <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">⚖️ Adjust Weight</button>
-            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">⏭️ Skip EMOM</button>
+            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">⏭️ Skip timebased</button>
           </div>
         </div>
       `;
     } else if (session.inRest) {
       // REST OVERLAY SCREEN FOR STANDARD EXERCISES (Req 5, 7, 13)
       const nextTask = this.getNextPreviewTask(session);
+      const isCycleRest = currentTask.isCircuitMode && currentTask.isLastExerciseInCycle;
 
       html += `
-        <div class="rest-overlay">
-          <span style="font-size: 13px; font-weight: 800; color: var(--fluo-lime); letter-spacing: 1px;">
-            ⏸️ REST & RECOVER
+        <div class="rest-overlay" style="${isCycleRest ? 'border-color: var(--fluo-cyan); box-shadow: 0 0 25px rgba(0,240,255,0.3);' : ''}">
+          <span style="font-size: 13px; font-weight: 800; color: ${isCycleRest ? 'var(--fluo-cyan)' : 'var(--fluo-lime)'}; letter-spacing: 1px;">
+            ${isCycleRest ? `🔄 CIRCUIT CYCLE ${currentTask.cycleIndex} COMPLETED!` : '⏸️ REST & RECOVER'}
           </span>
-          <div id="rest-timer-num" class="rest-timer-display">${this.timerSecondsLeft}s</div>
+          <div id="rest-timer-num" class="rest-timer-display" style="${isCycleRest ? 'color: var(--fluo-cyan); text-shadow: 0 0 20px var(--fluo-cyan);' : ''}">${this.timerSecondsLeft}s</div>
 
           ${nextTask ? `
-            <div class="next-up-banner">
-              <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Next Exercise Preview:</span>
+            <div class="next-up-banner" style="${isCycleRest ? 'border-left-color: var(--fluo-cyan);' : ''}">
+              <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">${isCycleRest ? `Next Up (Cycle ${nextTask.cycleIndex}/${nextTask.totalCycles}):` : 'Next Exercise Preview:'}</span>
               <div style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-top: 2px;">
-                ${this.escapeHtml(nextTask.exerciseName)} - Set ${nextTask.setIndex}/${nextTask.totalSets}
+                ${this.escapeHtml(nextTask.exerciseName)} ${nextTask.isCircuitMode ? `(Cycle ${nextTask.cycleIndex})` : `- Set ${nextTask.setIndex}/${nextTask.totalSets}`}
               </div>
-              <div style="font-size: 12px; color: var(--fluo-lime);">
+              <div style="font-size: 12px; color: ${isCycleRest ? 'var(--fluo-cyan)' : 'var(--fluo-lime)'};">
                 Target: ${nextTask.reps} reps ${nextTask.weight ? `@ ${nextTask.weight} kg` : '(Bodyweight)'}
               </div>
             </div>
@@ -747,7 +830,9 @@ class CyberPumpApp {
 
       html += `
         <div class="card active-player-card">
-          <span class="exercise-badge">STANDARD SET • SET ${currentSetNumber} OF ${currentTask.totalSets}</span>
+          <span class="exercise-badge" style="${currentTask.isCircuitMode ? 'background: rgba(0, 240, 255, 0.15); color: var(--fluo-cyan); border: 1px solid var(--fluo-cyan);' : ''}">
+            ${currentTask.isCircuitMode ? `🔄 CIRCUIT • CYCLE ${currentTask.cycleIndex} OF ${currentTask.totalCycles}` : `STANDARD SET • SET ${currentSetNumber} OF ${currentTask.totalSets}`}
+          </span>
           <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
 
           <div class="metrics-grid">
@@ -778,73 +863,118 @@ class CyberPumpApp {
     }
 
     // EXERCISE QUEUE & SELECTOR DRAWER (Req 2, 4, 6)
-    // Group queue tasks by exercise for a clean exercise-level list
-    const exercisesMap = new Map();
-    session.queue.forEach(task => {
-      if (!exercisesMap.has(task.exerciseId)) {
-        exercisesMap.set(task.exerciseId, {
-          exerciseId: task.exerciseId,
-          exerciseName: task.exerciseName,
-          totalSets: task.totalSets,
-          completedSets: 0,
-          remainingTasks: [],
-          firstTaskIndex: -1,
-          weight: task.weight,
-          reps: task.reps,
-          type: task.type
-        });
-      }
-      const group = exercisesMap.get(task.exerciseId);
-      if (task.completed) {
-        group.completedSets++;
-      } else {
-        group.remainingTasks.push(task);
-        if (group.firstTaskIndex === -1) {
-          group.firstTaskIndex = session.queue.indexOf(task);
-        }
-      }
-    });
-
-    const exercisesList = Array.from(exercisesMap.values());
+    const isCircuitMode = session.queue[0]?.isCircuitMode;
     const totalCompletedSets = session.queue.filter(t => t.completed).length;
 
-    html += `
-      <div class="queue-container card" style="margin-top: 16px;">
-        <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
-          Exercises List (${totalCompletedSets}/${session.queue.length} Sets Done)
-        </h3>
-        <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
-          Tap an exercise to switch to it after completing or skipping the current set.
-        </p>
+    if (isCircuitMode) {
+      // CIRCUIT MODE QUEUE LIST (Ordered by Cycle)
+      html += `
+        <div class="queue-container card" style="margin-top: 16px; border-color: var(--fluo-cyan);">
+          <h3 style="font-size: 14px; color: var(--fluo-cyan); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+            🔄 Circuit Queue (${totalCompletedSets}/${session.queue.length} Tasks Executed)
+          </h3>
+          <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
+            Tap any task step to switch to it in the circuit.
+          </p>
 
-        ${exercisesList.map(group => {
-          const isCurrentActiveEx = currentTask && currentTask.exerciseId === group.exerciseId;
-          const isFullyDone = group.completedSets === group.totalSets;
+          ${session.queue.map((task, idx) => {
+            const isActive = idx === session.activeTaskIndex;
+            const isDone = task.completed;
+            const isSkipped = task.skipped;
 
-          const weightText = group.weight !== null && group.weight !== undefined 
-            ? `@ ${group.weight}kg` 
-            : '(Bodyweight)';
+            const weightText = task.weight !== null && task.weight !== undefined 
+              ? `@ ${task.weight}kg` 
+              : '(BW)';
 
-          return `
-            <div class="queue-item ${isCurrentActiveEx ? 'active' : ''} ${isFullyDone ? 'completed' : ''}" data-exercise-id="${group.exerciseId}" data-target-index="${group.firstTaskIndex}">
-              <div>
-                <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(group.exerciseName)}</strong>
-                <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
-                  ${group.completedSets}/${group.totalSets} Sets Done • ${group.reps} reps ${weightText}
+            let badgeText = isDone ? (isSkipped ? '⏭️ SKIPPED' : '✓ DONE') : (isActive ? '► ACTIVE' : `Cycle ${task.cycleIndex}`);
+            let badgeColor = isDone ? (isSkipped ? 'var(--fluo-orange)' : 'var(--fluo-lime)') : (isActive ? 'var(--fluo-cyan)' : 'var(--text-muted)');
+
+            return `
+              <div class="queue-item ${isActive ? 'active' : ''} ${isDone ? 'completed' : ''}" data-exercise-id="${task.exerciseId}" data-target-index="${idx}" style="${isActive ? 'border-color: var(--fluo-cyan); background: rgba(0, 240, 255, 0.08);' : ''}">
+                <div>
+                  <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(task.exerciseName)}</strong>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                    Cycle ${task.cycleIndex} of ${task.totalCycles} • ${task.reps} reps ${weightText}
+                  </div>
+                </div>
+                <div>
+                  <span style="font-size: 11px; font-weight: 700; color: ${badgeColor}; border: 1px solid ${badgeColor}; padding: 2px 8px; border-radius: 12px;">
+                    ${badgeText}
+                  </span>
                 </div>
               </div>
-              <div>
-                ${isFullyDone 
-                  ? '<span style="color: var(--fluo-lime); font-weight: 700; font-size: 12px;">✓ DONE</span>' 
-                  : (isCurrentActiveEx 
-                    ? '<span style="color: var(--fluo-cyan); font-weight: 700; font-size: 12px;">▶ ACTIVE</span>' 
-                    : '<span style="color: var(--text-muted); font-size: 12px;">Select</span>')}
+            `;
+          }).join('')}
+        </div>
+      `;
+    } else {
+      // STANDARD MODE QUEUE LIST (Grouped by Exercise)
+      const exercisesMap = new Map();
+      session.queue.forEach(task => {
+        if (!exercisesMap.has(task.exerciseId)) {
+          exercisesMap.set(task.exerciseId, {
+            exerciseId: task.exerciseId,
+            exerciseName: task.exerciseName,
+            totalSets: task.totalSets,
+            completedSets: 0,
+            remainingTasks: [],
+            firstTaskIndex: -1,
+            weight: task.weight,
+            reps: task.reps,
+            type: task.type
+          });
+        }
+        const group = exercisesMap.get(task.exerciseId);
+        if (task.completed) {
+          group.completedSets++;
+        } else {
+          group.remainingTasks.push(task);
+          if (group.firstTaskIndex === -1) {
+            group.firstTaskIndex = session.queue.indexOf(task);
+          }
+        }
+      });
+
+      const exercisesList = Array.from(exercisesMap.values());
+
+      html += `
+        <div class="queue-container card" style="margin-top: 16px;">
+          <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Exercises List (${totalCompletedSets}/${session.queue.length} Sets Done)
+          </h3>
+          <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
+            Tap an exercise to switch to it after completing or skipping the current set.
+          </p>
+
+          ${exercisesList.map(group => {
+            const isCurrentActiveEx = currentTask && currentTask.exerciseId === group.exerciseId;
+            const isFullyDone = group.completedSets === group.totalSets;
+
+            const weightText = group.weight !== null && group.weight !== undefined 
+              ? `@ ${group.weight}kg` 
+              : '(Bodyweight)';
+
+            return `
+              <div class="queue-item ${isCurrentActiveEx ? 'active' : ''} ${isFullyDone ? 'completed' : ''}" data-exercise-id="${group.exerciseId}" data-target-index="${group.firstTaskIndex}">
+                <div>
+                  <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(group.exerciseName)}</strong>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                    ${group.completedSets}/${group.totalSets} Sets Done • ${group.reps} reps ${weightText}
+                  </div>
+                </div>
+                <div>
+                  ${isFullyDone 
+                    ? '<span style="color: var(--fluo-lime); font-weight: 700; font-size: 12px;">✓ DONE</span>' 
+                    : (isCurrentActiveEx 
+                      ? '<span style="color: var(--fluo-cyan); font-weight: 700; font-size: 12px;">▶ ACTIVE</span>' 
+                      : '<span style="color: var(--text-muted); font-size: 12px;">Select</span>')}
+                </div>
               </div>
-            </div>
-          `;
-        }).join('')}
-      </div>
-    `;
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
 
     this.mainContent.innerHTML = html;
     this.bindActivePlayerEvents();
@@ -857,6 +987,19 @@ class CyberPumpApp {
     // Queue item picking (Req 2, 4) - Exercise level selector
     document.querySelectorAll('.queue-item').forEach(item => {
       item.addEventListener('click', (e) => {
+        // 1. Strict lock for Circuit Mode
+        if (session.queue[0]?.isCircuitMode) {
+          this.showToast('In Circuit Mode, exercises run strictly in sequence. Use "Skip Set" if needed', 'warning');
+          return;
+        }
+
+        // 2. Strict lock during ANY active timer (Rest, timebased interval, or Rest Pause)
+        const isTimerActive = session.inRest || session.intimebasedTimer || session.intimebasedRestPause || (this.timerInterval !== null);
+        if (isTimerActive) {
+          this.showToast('Cannot switch exercises while a timer is counting down. Wait or skip rest', 'warning');
+          return;
+        }
+
         const targetIndex = parseInt(e.currentTarget.getAttribute('data-target-index'));
         const targetExId = e.currentTarget.getAttribute('data-exercise-id');
         const currentTask = session.queue[session.activeTaskIndex];
@@ -867,15 +1010,14 @@ class CyberPumpApp {
           // Check how many sets of the current exercise have been executed so far in this session
           const currentExCompletedCount = (session.completedLogs || []).filter(log => log.exerciseId === currentTask.exerciseId).length;
 
-          // STRICT LOCK: If current exercise is in progress (1+ sets done) OR if currently in rest, block switching!
-          if (currentExCompletedCount > 0 || session.inRest) {
+          // STRICT LOCK: If current exercise is in progress (1+ sets done), block switching!
+          if (currentExCompletedCount > 0) {
             this.showToast(`Finish all sets of "${currentTask.exerciseName}" or tap "Skip Set" to switch exercise`, 'warning');
             return;
           }
         }
 
         session.activeTaskIndex = targetIndex;
-        if (session.inRest) this.stopRestTimer();
         window.storageManager.saveActiveSession(session);
         this.renderActiveWorkoutView();
       });
@@ -896,7 +1038,7 @@ class CyberPumpApp {
       });
 
       this.stopRestTimer();
-      session.emomStarted = false;
+      session.timebasedStarted = false;
       window.storageManager.saveActiveSession(session);
       this.showToast(`Skipped "${activeTask.exerciseName}" for this workout session`, 'info');
       this.moveToNextUncompletedSet();
@@ -940,7 +1082,7 @@ class CyberPumpApp {
       }
 
       // Start Rest or move to next set
-      const restSec = currentTask.type === 'emom' ? currentTask.emomIntervalSeconds : currentTask.restSeconds;
+      const restSec = currentTask.type === 'timebased' ? currentTask.timebasedIntervalSeconds : currentTask.restSeconds;
       if (restSec > 0) {
         this.startRestTimer(restSec);
       } else {
@@ -995,25 +1137,25 @@ class CyberPumpApp {
       });
     });
 
-    // Manual Start Button for EMOM Round 1
-    document.getElementById('btn-start-emom-manual')?.addEventListener('click', () => {
+    // Manual Start Button for timebased Round 1
+    document.getElementById('btn-start-timebased-manual')?.addEventListener('click', () => {
       const currentTask = session.queue[session.activeTaskIndex];
       const settings = window.storageManager.getSettings();
 
-      session.emomStarted = true;
+      session.timebasedStarted = true;
       window.storageManager.saveActiveSession(session);
 
       window.audioEngine.speakPhrase("Start", settings.silentMode);
-      this.startEmomTimer(currentTask.emomIntervalSeconds);
+      this.starttimebasedTimer(currentTask.timebasedIntervalSeconds);
     });
 
-    // Rest overlay & EMOM pause button controls (Req 7, 15)
+    // Rest overlay & timebased pause button controls (Req 7, 15)
     document.getElementById('btn-pause-timer')?.addEventListener('click', () => {
       this.isTimerPaused = !this.isTimerPaused;
       this.renderActiveWorkoutView();
     });
 
-    document.getElementById('btn-pause-emom')?.addEventListener('click', () => {
+    document.getElementById('btn-pause-timebased')?.addEventListener('click', () => {
       this.isTimerPaused = !this.isTimerPaused;
       this.renderActiveWorkoutView();
     });
@@ -1043,8 +1185,8 @@ class CyberPumpApp {
     if (remainingSec !== this.timerSecondsLeft) {
       this.timerSecondsLeft = remainingSec;
 
-      const timerElem = document.getElementById('emom-timer-num') || 
-                        document.getElementById('emom-rest-timer-num') || 
+      const timerElem = document.getElementById('timebased-timer-num') || 
+                        document.getElementById('timebased-rest-timer-num') || 
                         document.getElementById('rest-timer-num');
       if (timerElem) {
         timerElem.textContent = `${this.timerSecondsLeft}s`;
@@ -1053,16 +1195,16 @@ class CyberPumpApp {
   }
 
   /**
-   * Automatic Hands-Free EMOM Timer Runner (Req 15)
+   * Automatic Hands-Free timebased Timer Runner (Req 15)
    * Auto-advances rounds when timer reaches 0s without manual button taps.
    */
-  startEmomTimer(seconds) {
+  starttimebasedTimer(seconds) {
     this.stopRestTimer();
 
     const session = this.activeSession;
     if (!session) return;
 
-    session.inEmomTimer = true;
+    session.intimebasedTimer = true;
     this.timerSecondsLeft = seconds;
     this.timerTotalSeconds = seconds;
     this.timerTargetEndTime = Date.now() + (seconds * 1000);
@@ -1089,7 +1231,7 @@ class CyberPumpApp {
       if (this.timerSecondsLeft <= 0) {
         this.stopRestTimer();
 
-        // Automatically log current EMOM round task
+        // Automatically log current timebased round task
         const currentTask = session.queue[session.activeTaskIndex];
         if (currentTask && !currentTask.completed) {
           currentTask.completed = true;
@@ -1105,45 +1247,58 @@ class CyberPumpApp {
           });
         }
 
-        session.inEmomTimer = false;
+        session.intimebasedTimer = false;
 
-        // Check if more rounds of same EMOM exercise remain
-        const nextSameExIndex = session.queue.findIndex(t => !t.completed && t.exerciseId === currentTask?.exerciseId);
-        
-        if (nextSameExIndex >= 0) {
-          session.activeTaskIndex = nextSameExIndex;
-          const nextTask = session.queue[nextSameExIndex];
-
-          if (currentTask && currentTask.restSeconds > 0) {
+        if (currentTask && currentTask.isCircuitMode) {
+          // Circuit Mode: 1 pass per cycle! Do NOT search for same exercise in next cycle.
+          if (currentTask.restSeconds > 0) {
             window.audioEngine.playStartBeep(settings.silentMode);
             window.audioEngine.speakPhrase("Rest", settings.silentMode);
-            this.startEmomRestPauseTimer(currentTask.restSeconds);
+            this.starttimebasedRestPauseTimer(currentTask.restSeconds);
           } else {
             window.audioEngine.playStartBeep(settings.silentMode);
             window.audioEngine.speakPhrase("Start", settings.silentMode);
-            this.startEmomTimer(nextTask.emomIntervalSeconds);
+            this.moveToNextUncompletedSet();
           }
         } else {
-          // Last EMOM round finished!
-          session.emomStarted = false;
-          window.audioEngine.playStartBeep(settings.silentMode);
-          window.audioEngine.speakPhrase("End set", settings.silentMode);
-          this.moveToNextUncompletedSet();
+          // Standard Mode: Finish all rounds of same timebased exercise back-to-back
+          const nextSameExIndex = session.queue.findIndex(t => !t.completed && t.exerciseId === currentTask?.exerciseId);
+          
+          if (nextSameExIndex >= 0) {
+            session.activeTaskIndex = nextSameExIndex;
+            const nextTask = session.queue[nextSameExIndex];
+
+            if (currentTask && currentTask.restSeconds > 0) {
+              window.audioEngine.playStartBeep(settings.silentMode);
+              window.audioEngine.speakPhrase("Rest", settings.silentMode);
+              this.starttimebasedRestPauseTimer(currentTask.restSeconds);
+            } else {
+              window.audioEngine.playStartBeep(settings.silentMode);
+              window.audioEngine.speakPhrase("Start", settings.silentMode);
+              this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
+            }
+          } else {
+            // Last timebased round finished!
+            session.timebasedStarted = false;
+            window.audioEngine.playStartBeep(settings.silentMode);
+            window.audioEngine.speakPhrase("End set", settings.silentMode);
+            this.moveToNextUncompletedSet();
+          }
         }
       }
     }, 500);
   }
 
   /**
-   * Automatic EMOM Optional Rest Pause Timer
+   * Automatic timebased Optional Rest Pause Timer
    */
-  startEmomRestPauseTimer(seconds) {
+  starttimebasedRestPauseTimer(seconds) {
     this.stopRestTimer();
 
     const session = this.activeSession;
     if (!session) return;
 
-    session.inEmomRestPause = true;
+    session.intimebasedRestPause = true;
     this.timerSecondsLeft = seconds;
     this.timerTotalSeconds = seconds;
     this.timerTargetEndTime = Date.now() + (seconds * 1000);
@@ -1168,17 +1323,17 @@ class CyberPumpApp {
 
       if (this.timerSecondsLeft <= 0) {
         this.stopRestTimer();
-        session.inEmomRestPause = false;
+        session.intimebasedRestPause = false;
 
         const currentTask = session.queue[session.activeTaskIndex];
 
         if (currentTask && !currentTask.completed) {
-          // Current task is already set to the next uncompleted round of this EMOM exercise!
+          // Current task is already set to the next uncompleted round of this timebased exercise!
           window.audioEngine.playStartBeep(settings.silentMode);
           window.audioEngine.speakPhrase("Start", settings.silentMode);
-          this.startEmomTimer(currentTask.emomIntervalSeconds);
+          this.starttimebasedTimer(currentTask.timebasedIntervalSeconds);
         } else {
-          session.emomStarted = false;
+          session.timebasedStarted = false;
           window.audioEngine.playStartBeep(settings.silentMode);
           window.audioEngine.speakPhrase("End set", settings.silentMode);
           this.moveToNextUncompletedSet();
@@ -1234,8 +1389,8 @@ class CyberPumpApp {
     this.isTimerPaused = false;
     if (this.activeSession) {
       this.activeSession.inRest = false;
-      this.activeSession.inEmomTimer = false;
-      this.activeSession.inEmomRestPause = false;
+      this.activeSession.intimebasedTimer = false;
+      this.activeSession.intimebasedRestPause = false;
       window.storageManager.saveActiveSession(this.activeSession);
     }
   }
@@ -1253,26 +1408,48 @@ class CyberPumpApp {
       return;
     }
 
-    // Identify the exercise that was just performed from the last completed log entry
-    const lastLog = session.completedLogs && session.completedLogs.length > 0
-      ? session.completedLogs[session.completedLogs.length - 1]
-      : null;
+    const isCircuitMode = session.queue[0]?.isCircuitMode;
 
-    const lastExerciseId = lastLog ? lastLog.exerciseId : session.queue[session.activeTaskIndex]?.exerciseId;
-
-    // 1. Check if there are any remaining uncompleted sets for the LAST EXECUTED exercise
-    const nextSameExIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExerciseId);
-
-    if (nextSameExIdx >= 0) {
-      // Continue with the next set of the SAME exercise!
-      session.activeTaskIndex = nextSameExIdx;
-    } else {
-      // 2. All sets of the last exercise are finished! Switch to the next uncompleted exercise in queue
+    if (isCircuitMode) {
+      // In Circuit Mode: strictly advance to the next uncompleted task in queue order!
       const nextUncompletedIdx = session.queue.findIndex(t => !t.completed);
       if (nextUncompletedIdx >= 0) {
         session.activeTaskIndex = nextUncompletedIdx;
-        session.emomStarted = false; // Reset manual start state for new exercise
+        if (nextUncompletedIdx === 0) {
+          session.timebasedStarted = false;
+        }
       }
+    } else {
+      // In Standard Mode: finish all sets of the last executed exercise first!
+      const lastLog = session.completedLogs && session.completedLogs.length > 0
+        ? session.completedLogs[session.completedLogs.length - 1]
+        : null;
+
+      const lastExerciseId = lastLog ? lastLog.exerciseId : session.queue[session.activeTaskIndex]?.exerciseId;
+
+      const nextSameExIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExerciseId);
+
+      if (nextSameExIdx >= 0) {
+        session.activeTaskIndex = nextSameExIdx;
+      } else {
+        const nextUncompletedIdx = session.queue.findIndex(t => !t.completed);
+        if (nextUncompletedIdx >= 0) {
+          session.activeTaskIndex = nextUncompletedIdx;
+          session.timebasedStarted = false;
+        }
+      }
+    }
+
+    const nextTask = session.queue[session.activeTaskIndex];
+
+    // Circuit Mode timebased Auto-Start (timebased in circuit auto-starts unless it's the very first task at index 0)
+    if (nextTask && nextTask.type === 'timebased' && nextTask.isCircuitMode && session.activeTaskIndex > 0) {
+      session.timebasedStarted = true;
+      window.storageManager.saveActiveSession(session);
+      const settings = window.storageManager.getSettings();
+      window.audioEngine.speakPhrase("Start", settings.silentMode);
+      this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
+      return;
     }
 
     window.storageManager.saveActiveSession(session);
@@ -1602,7 +1779,7 @@ class CyberPumpApp {
           ⚡ CYBERPUMP WORKOUT LOG
         </div>
         <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
-          Version <span style="color: var(--fluo-lime); font-weight: 700;">1.0.0 (v17)</span> • Offline PWA
+          Version <span style="color: var(--fluo-lime); font-weight: 700;">1.0.0 (v23)</span> • Offline PWA
         </div>
 
         <div style="border-top: 1px dashed rgba(255, 255, 255, 0.1); width: 60%; margin: 10px auto;"></div>
