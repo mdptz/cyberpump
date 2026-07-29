@@ -24,6 +24,28 @@ class AudioEngine {
   }
 
   /**
+   * Speak a phrase or custom text (e.g. "Start", "Rest", "End set")
+   * @param {string} phrase 
+   * @param {boolean} isSilent 
+   */
+  speakPhrase(phrase, isSilent = false) {
+    if (isSilent) return;
+
+    this.initContext();
+
+    if (this.speechSynth) {
+      this.speechSynth.cancel();
+      
+      const utterance = new SpeechSynthesisUtterance(String(phrase));
+      utterance.rate = 1.1;
+      utterance.pitch = 1.0;
+      utterance.lang = 'en-US';
+
+      this.speechSynth.speak(utterance);
+    }
+  }
+
+  /**
    * Speak a number or short string using Web Speech API
    * @param {string|number} text 
    * @param {boolean} isSilent 
@@ -34,7 +56,6 @@ class AudioEngine {
     this.initContext();
 
     if (this.speechSynth) {
-      // Cancel previous utterances to avoid speech lag
       this.speechSynth.cancel();
       
       const utterance = new SpeechSynthesisUtterance(String(text));

@@ -57,10 +57,16 @@ class CyberPumpApp {
       if (e.target === this.modalOverlay) this.closeModal();
     });
 
-    // Handle window resize / orientation
+    // Handle window resize / orientation / visibility
     window.addEventListener('beforeunload', () => {
       if (this.activeSession) {
         window.storageManager.saveActiveSession(this.activeSession);
+      }
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && this.activeSession && this.timerTargetEndTime && !this.isTimerPaused) {
+        this.updateTimerFromTimestamp();
       }
     });
   }
@@ -313,14 +319,14 @@ class CyberPumpApp {
         <table class="tabular-table">
           <thead>
             <tr>
-              <th style="width: 30px;">#</th>
-              <th style="min-width: 120px;">Exercise</th>
-              <th style="width: 85px;">Type</th>
-              <th style="width: 50px;">Sets</th>
-              <th style="width: 55px;">Reps</th>
-              <th style="width: 70px;">Weight (kg)</th>
-              <th style="width: 65px;">Rest / Interval</th>
-              <th style="width: 90px; text-align: center;">Move / Delete</th>
+              <th style="width: 25px;">#</th>
+              <th style="min-width: 110px;">Exercise</th>
+              <th style="width: 95px;">Type</th>
+              <th style="width: 55px; text-align: center;">Sets</th>
+              <th style="width: 55px; text-align: center;">Reps</th>
+              <th style="width: 60px; text-align: center;">Weight</th>
+              <th style="width: 65px; text-align: center;">Rest / Interval</th>
+              <th style="width: 85px; text-align: center;">Move / Delete</th>
             </tr>
           </thead>
           <tbody id="tabular-tbody">
@@ -541,6 +547,24 @@ class CyberPumpApp {
     this.showToast(`Started "${workout.name}"! Let's go! 🚀`);
   }
 
+  getNextPreviewTask(session) {
+    if (!session || !session.queue) return null;
+    const currentTask = session.queue[session.activeTaskIndex];
+    if (!currentTask) return null;
+
+    // If currentTask is already the uncompleted next set/round, return it
+    if (!currentTask.completed) {
+      return currentTask;
+    }
+
+    // 1. Check for next uncompleted set of the same exercise
+    const nextSameEx = session.queue.find((t, i) => i !== session.activeTaskIndex && !t.completed && t.exerciseId === currentTask.exerciseId);
+    if (nextSameEx) return nextSameEx;
+
+    // 2. Otherwise return first uncompleted set of another exercise
+    return session.queue.find((t, i) => i !== session.activeTaskIndex && !t.completed) || null;
+  }
+
   renderActiveWorkoutView() {
     if (!this.activeSession) {
       this.mainContent.innerHTML = `
@@ -563,10 +587,24 @@ class CyberPumpApp {
       return;
     }
 
-    // Ensure activeTaskIndex points to an uncompleted set
+    // Ensure activeTaskIndex points to an uncompleted set, prioritizing the last executed exercise
     if (session.queue[session.activeTaskIndex]?.completed) {
-      const nextIdx = session.queue.findIndex(t => !t.completed);
-      if (nextIdx >= 0) session.activeTaskIndex = nextIdx;
+      const lastLog = session.completedLogs && session.completedLogs.length > 0
+        ? session.completedLogs[session.completedLogs.length - 1]
+        : null;
+      const lastExId = lastLog ? lastLog.exerciseId : null;
+
+      // 1. Prioritize next uncompleted set of the SAME exercise
+      let nextIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExId);
+      
+      // 2. If all sets of that exercise are finished, pick next uncompleted exercise
+      if (nextIdx === -1) {
+        nextIdx = session.queue.findIndex(t => !t.completed);
+      }
+
+      if (nextIdx >= 0) {
+        session.activeTaskIndex = nextIdx;
+      }
     }
 
     const currentTask = session.queue[session.activeTaskIndex];
@@ -585,6 +623,7 @@ class CyberPumpApp {
     if (session.inEmomRestPause) {
       // EMOM OPTIONAL REST PAUSE SCREEN (Req 15)
       const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
+      const nextTask = this.getNextPreviewTask(session);
 
       html += `
         <div class="rest-overlay" style="border-color: var(--fluo-orange); box-shadow: 0 0 20px rgba(255, 153, 0, 0.3);">
@@ -595,15 +634,17 @@ class CyberPumpApp {
             ${this.timerSecondsLeft}s
           </div>
 
-          <div class="next-up-banner" style="border-left-color: var(--fluo-magenta);">
-            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Next Round:</span>
-            <div style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-top: 2px;">
-              ${this.escapeHtml(currentTask.exerciseName)} - Round ${currentExDoneSetsCount + 1}/${currentTask.totalSets}
+          ${nextTask ? `
+            <div class="next-up-banner" style="border-left-color: var(--fluo-magenta);">
+              <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Next Round:</span>
+              <div style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-top: 2px;">
+                ${this.escapeHtml(nextTask.exerciseName)} - Round ${currentExDoneSetsCount + 1}/${nextTask.totalSets}
+              </div>
+              <div style="font-size: 12px; color: var(--fluo-magenta);">
+                Target: ${nextTask.reps} reps • ${nextTask.emomIntervalSeconds}s interval
+              </div>
             </div>
-            <div style="font-size: 12px; color: var(--fluo-magenta);">
-              Target: ${currentTask.reps} reps • ${currentTask.emomIntervalSeconds}s interval
-            </div>
-          </div>
+          ` : ''}
 
           <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
             <button id="btn-pause-emom" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
@@ -612,7 +653,7 @@ class CyberPumpApp {
         </div>
       `;
     } else if (isEmom) {
-      // DEDICATED HANDS-FREE AUTOMATIC EMOM TIMER CARD (Req 15)
+      // DEDICATED EMOM TIMER CARD WITH MANUAL START BUTTON FOR ROUND 1
       const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
       const currentRoundNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
 
@@ -620,15 +661,12 @@ class CyberPumpApp {
         ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg</span>` 
         : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
 
-      // Auto-start EMOM timer if not already running
-      if (!session.inEmomTimer) {
-        setTimeout(() => this.startEmomTimer(currentTask.emomIntervalSeconds), 50);
-      }
+      const isEmomRunning = session.inEmomTimer || session.emomStarted;
 
       html += `
         <div class="card active-player-card" style="border-color: var(--fluo-magenta); box-shadow: 0 0 25px rgba(255, 0, 127, 0.25);">
           <span class="exercise-badge" style="background: rgba(255, 0, 127, 0.2); color: var(--fluo-magenta);">
-            ⚡ EMOM AUTO-TIMER • ROUND ${currentRoundNumber} OF ${currentTask.totalSets}
+            ⚡ EMOM MODE • ROUND ${currentRoundNumber} OF ${currentTask.totalSets}
           </span>
           <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
 
@@ -651,12 +689,18 @@ class CyberPumpApp {
             </div>
           </div>
 
-          <p style="font-size: 11px; color: var(--text-muted); margin: 8px 0;">
-            🤖 Hands-Free Mode: Timer auto-advances rounds when time reaches 0s.
-          </p>
+          ${!isEmomRunning ? `
+            <button id="btn-start-emom-manual" class="btn btn-success btn-block" style="margin-top: 16px; padding: 18px; font-size: 18px; box-shadow: var(--shadow-neon-lime);">
+              ▶️ START EMOM (ROUND 1/${currentTask.totalSets})
+            </button>
+          ` : `
+            <p style="font-size: 11px; color: var(--text-muted); margin: 8px 0;">
+              🤖 Hands-Free Mode: Timer auto-advances rounds when time reaches 0s.
+            </p>
+          `}
 
           <div style="display: flex; gap: 8px; margin-top: 12px;">
-            <button id="btn-pause-emom" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
+            ${isEmomRunning ? `<button id="btn-pause-emom" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>` : ''}
             <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">⚖️ Adjust Weight</button>
             <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">⏭️ Skip EMOM</button>
           </div>
@@ -664,7 +708,7 @@ class CyberPumpApp {
       `;
     } else if (session.inRest) {
       // REST OVERLAY SCREEN FOR STANDARD EXERCISES (Req 5, 7, 13)
-      const nextTask = session.queue.find((t, i) => i > session.activeTaskIndex && !t.completed) || remainingTasks[0];
+      const nextTask = this.getNextPreviewTask(session);
 
       html += `
         <div class="rest-overlay">
@@ -837,24 +881,26 @@ class CyberPumpApp {
       });
     });
 
-    // Skip Current Set Button (Defer set to end of queue)
+    // Skip Current Exercise/Set Button (Exclude remaining sets of current exercise for this workout session)
     document.getElementById('btn-skip-current-set')?.addEventListener('click', () => {
       const activeTask = session.queue[session.activeTaskIndex];
-      
-      // Remove current task and append to end of queue so it is offered later (Req 6)
-      session.queue.splice(session.activeTaskIndex, 1);
-      session.queue.push(activeTask);
+      if (!activeTask) return;
 
-      // Reset active index to current position (which now points to the next uncompleted task)
-      if (session.activeTaskIndex >= session.queue.length) {
-        session.activeTaskIndex = 0;
-      }
+      // Mark all uncompleted sets of this exercise as completed/skipped for this session
+      session.queue.forEach(t => {
+        if (t.exerciseId === activeTask.exerciseId && !t.completed) {
+          t.completed = true;
+          t.skipped = true;
+          t.completedAt = new Date().toISOString();
+        }
+      });
 
+      this.stopRestTimer();
+      session.emomStarted = false;
       window.storageManager.saveActiveSession(session);
-      this.showToast(`Skipped set ${activeTask.setIndex} of "${activeTask.exerciseName}" — moved to end of queue`, 'info');
-      this.renderActiveWorkoutView();
+      this.showToast(`Skipped "${activeTask.exerciseName}" for this workout session`, 'info');
+      this.moveToNextUncompletedSet();
     });
-
     // Stop workout session
     document.getElementById('btn-cancel-session')?.addEventListener('click', () => {
       if (confirm('Cancel active workout session?')) {
@@ -868,6 +914,11 @@ class CyberPumpApp {
     // Complete Set Button
     document.getElementById('btn-complete-set')?.addEventListener('click', () => {
       const currentTask = session.queue[session.activeTaskIndex];
+      const settings = window.storageManager.getSettings();
+
+      // Check how many uncompleted sets remain for this exercise AFTER this current set
+      const remainingUncompletedSameExSets = session.queue.filter(t => !t.completed && t.exerciseId === currentTask.exerciseId).length;
+
       currentTask.completed = true;
       currentTask.completedAt = new Date().toISOString();
 
@@ -881,7 +932,14 @@ class CyberPumpApp {
         timestamp: new Date().toISOString()
       });
 
-      // Start Rest or EMOM interval timer
+      // Voice prompt: "Rest" if more sets of this exercise remain, or "End set" if final set finished
+      if (remainingUncompletedSameExSets > 1) {
+        window.audioEngine.speakPhrase("Rest", settings.silentMode);
+      } else {
+        window.audioEngine.speakPhrase("End set", settings.silentMode);
+      }
+
+      // Start Rest or move to next set
       const restSec = currentTask.type === 'emom' ? currentTask.emomIntervalSeconds : currentTask.restSeconds;
       if (restSec > 0) {
         this.startRestTimer(restSec);
@@ -937,6 +995,18 @@ class CyberPumpApp {
       });
     });
 
+    // Manual Start Button for EMOM Round 1
+    document.getElementById('btn-start-emom-manual')?.addEventListener('click', () => {
+      const currentTask = session.queue[session.activeTaskIndex];
+      const settings = window.storageManager.getSettings();
+
+      session.emomStarted = true;
+      window.storageManager.saveActiveSession(session);
+
+      window.audioEngine.speakPhrase("Start", settings.silentMode);
+      this.startEmomTimer(currentTask.emomIntervalSeconds);
+    });
+
     // Rest overlay & EMOM pause button controls (Req 7, 15)
     document.getElementById('btn-pause-timer')?.addEventListener('click', () => {
       this.isTimerPaused = !this.isTimerPaused;
@@ -950,6 +1020,7 @@ class CyberPumpApp {
 
     document.getElementById('btn-add-rest')?.addEventListener('click', () => {
       this.timerSecondsLeft += 10;
+      this.timerTargetEndTime += 10000;
       const numElem = document.getElementById('rest-timer-num');
       if (numElem) numElem.textContent = `${this.timerSecondsLeft}s`;
     });
@@ -958,6 +1029,27 @@ class CyberPumpApp {
       this.stopRestTimer();
       this.moveToNextUncompletedSet();
     });
+  }
+
+  updateTimerFromTimestamp() {
+    if (!this.timerTargetEndTime) return;
+
+    if (this.isTimerPaused) return;
+
+    const now = Date.now();
+    const diffMs = this.timerTargetEndTime - now;
+    const remainingSec = Math.max(0, Math.ceil(diffMs / 1000));
+
+    if (remainingSec !== this.timerSecondsLeft) {
+      this.timerSecondsLeft = remainingSec;
+
+      const timerElem = document.getElementById('emom-timer-num') || 
+                        document.getElementById('emom-rest-timer-num') || 
+                        document.getElementById('rest-timer-num');
+      if (timerElem) {
+        timerElem.textContent = `${this.timerSecondsLeft}s`;
+      }
+    }
   }
 
   /**
@@ -973,7 +1065,9 @@ class CyberPumpApp {
     session.inEmomTimer = true;
     this.timerSecondsLeft = seconds;
     this.timerTotalSeconds = seconds;
+    this.timerTargetEndTime = Date.now() + (seconds * 1000);
     this.isTimerPaused = false;
+    this.lastSpokenSecond = null;
 
     window.storageManager.saveActiveSession(session);
     this.renderActiveWorkoutView();
@@ -981,23 +1075,18 @@ class CyberPumpApp {
     this.timerInterval = setInterval(() => {
       if (this.isTimerPaused) return;
 
-      this.timerSecondsLeft--;
-
-      const timerElem = document.getElementById('emom-timer-num');
-      if (timerElem) {
-        timerElem.textContent = `${this.timerSecondsLeft}s`;
-      }
+      this.updateTimerFromTimestamp();
 
       const settings = window.storageManager.getSettings();
 
-      // Voice countdown starting from 5 seconds (5, 4, 3, 2, 1)
-      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0) {
+      // Voice countdown starting from 5 seconds - ONLY ONCE per second!
+      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0 && this.lastSpokenSecond !== this.timerSecondsLeft) {
+        this.lastSpokenSecond = this.timerSecondsLeft;
         window.audioEngine.speakNumber(this.timerSecondsLeft, settings.silentMode);
       }
 
       // Interval finished at 0s -> Auto advance round or start optional rest pause!
       if (this.timerSecondsLeft <= 0) {
-        window.audioEngine.playStartBeep(settings.silentMode);
         this.stopRestTimer();
 
         // Automatically log current EMOM round task
@@ -1018,15 +1107,31 @@ class CyberPumpApp {
 
         session.inEmomTimer = false;
 
-        // Check if optional rest pause is configured between EMOM rounds AND more rounds of same exercise remain
+        // Check if more rounds of same EMOM exercise remain
         const nextSameExIndex = session.queue.findIndex(t => !t.completed && t.exerciseId === currentTask?.exerciseId);
-        if (currentTask && currentTask.restSeconds > 0 && nextSameExIndex >= 0) {
-          this.startEmomRestPauseTimer(currentTask.restSeconds);
+        
+        if (nextSameExIndex >= 0) {
+          session.activeTaskIndex = nextSameExIndex;
+          const nextTask = session.queue[nextSameExIndex];
+
+          if (currentTask && currentTask.restSeconds > 0) {
+            window.audioEngine.playStartBeep(settings.silentMode);
+            window.audioEngine.speakPhrase("Rest", settings.silentMode);
+            this.startEmomRestPauseTimer(currentTask.restSeconds);
+          } else {
+            window.audioEngine.playStartBeep(settings.silentMode);
+            window.audioEngine.speakPhrase("Start", settings.silentMode);
+            this.startEmomTimer(nextTask.emomIntervalSeconds);
+          }
         } else {
+          // Last EMOM round finished!
+          session.emomStarted = false;
+          window.audioEngine.playStartBeep(settings.silentMode);
+          window.audioEngine.speakPhrase("End set", settings.silentMode);
           this.moveToNextUncompletedSet();
         }
       }
-    }, 1000);
+    }, 500);
   }
 
   /**
@@ -1041,7 +1146,9 @@ class CyberPumpApp {
     session.inEmomRestPause = true;
     this.timerSecondsLeft = seconds;
     this.timerTotalSeconds = seconds;
+    this.timerTargetEndTime = Date.now() + (seconds * 1000);
     this.isTimerPaused = false;
+    this.lastSpokenSecond = null;
 
     window.storageManager.saveActiveSession(session);
     this.renderActiveWorkoutView();
@@ -1049,27 +1156,35 @@ class CyberPumpApp {
     this.timerInterval = setInterval(() => {
       if (this.isTimerPaused) return;
 
-      this.timerSecondsLeft--;
-
-      const timerElem = document.getElementById('emom-rest-timer-num');
-      if (timerElem) {
-        timerElem.textContent = `${this.timerSecondsLeft}s`;
-      }
+      this.updateTimerFromTimestamp();
 
       const settings = window.storageManager.getSettings();
 
-      // Voice countdown starting from 5 seconds
-      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0) {
+      // Voice countdown starting from 5 seconds - ONLY ONCE per second!
+      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0 && this.lastSpokenSecond !== this.timerSecondsLeft) {
+        this.lastSpokenSecond = this.timerSecondsLeft;
         window.audioEngine.speakNumber(this.timerSecondsLeft, settings.silentMode);
       }
 
       if (this.timerSecondsLeft <= 0) {
-        window.audioEngine.playStartBeep(settings.silentMode);
         this.stopRestTimer();
         session.inEmomRestPause = false;
-        this.moveToNextUncompletedSet();
+
+        const currentTask = session.queue[session.activeTaskIndex];
+
+        if (currentTask && !currentTask.completed) {
+          // Current task is already set to the next uncompleted round of this EMOM exercise!
+          window.audioEngine.playStartBeep(settings.silentMode);
+          window.audioEngine.speakPhrase("Start", settings.silentMode);
+          this.startEmomTimer(currentTask.emomIntervalSeconds);
+        } else {
+          session.emomStarted = false;
+          window.audioEngine.playStartBeep(settings.silentMode);
+          window.audioEngine.speakPhrase("End set", settings.silentMode);
+          this.moveToNextUncompletedSet();
+        }
       }
-    }, 1000);
+    }, 500);
   }
 
   startRestTimer(seconds) {
@@ -1078,7 +1193,9 @@ class CyberPumpApp {
     this.activeSession.inRest = true;
     this.timerSecondsLeft = seconds;
     this.timerTotalSeconds = seconds;
+    this.timerTargetEndTime = Date.now() + (seconds * 1000);
     this.isTimerPaused = false;
+    this.lastSpokenSecond = null;
 
     window.storageManager.saveActiveSession(this.activeSession);
     this.renderActiveWorkoutView();
@@ -1086,27 +1203,24 @@ class CyberPumpApp {
     this.timerInterval = setInterval(() => {
       if (this.isTimerPaused) return;
 
-      this.timerSecondsLeft--;
-
-      const timerElem = document.getElementById('rest-timer-num');
-      if (timerElem) {
-        timerElem.textContent = `${this.timerSecondsLeft}s`;
-      }
+      this.updateTimerFromTimestamp();
 
       const settings = window.storageManager.getSettings();
 
-      // Voice countdown starting from 5 seconds (5, 4, 3, 2, 1)
-      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0) {
+      // Voice countdown starting from 5 seconds - ONLY ONCE per second!
+      if (this.timerSecondsLeft <= 5 && this.timerSecondsLeft > 0 && this.lastSpokenSecond !== this.timerSecondsLeft) {
+        this.lastSpokenSecond = this.timerSecondsLeft;
         window.audioEngine.speakNumber(this.timerSecondsLeft, settings.silentMode);
       }
 
       // Finish rest at 0s
       if (this.timerSecondsLeft <= 0) {
         window.audioEngine.playStartBeep(settings.silentMode);
+        window.audioEngine.speakPhrase("Start", settings.silentMode);
         this.stopRestTimer();
         this.moveToNextUncompletedSet();
       }
-    }, 1000);
+    }, 500);
   }
 
   stopRestTimer() {
@@ -1114,15 +1228,22 @@ class CyberPumpApp {
       clearInterval(this.timerInterval);
       this.timerInterval = null;
     }
+    this.timerTargetEndTime = null;
+    this.lastSpokenSecond = null;
+    this.timerSecondsLeft = 0;
+    this.isTimerPaused = false;
     if (this.activeSession) {
       this.activeSession.inRest = false;
       this.activeSession.inEmomTimer = false;
+      this.activeSession.inEmomRestPause = false;
       window.storageManager.saveActiveSession(this.activeSession);
     }
   }
 
   moveToNextUncompletedSet() {
     if (!this.activeSession) return;
+
+    this.stopRestTimer();
 
     const session = this.activeSession;
     const remainingTasks = session.queue.filter(t => !t.completed);
@@ -1150,6 +1271,7 @@ class CyberPumpApp {
       const nextUncompletedIdx = session.queue.findIndex(t => !t.completed);
       if (nextUncompletedIdx >= 0) {
         session.activeTaskIndex = nextUncompletedIdx;
+        session.emomStarted = false; // Reset manual start state for new exercise
       }
     }
 

@@ -76,14 +76,17 @@ body {
   padding-bottom: 72px; /* nav space */
 }
 
-/* Top App Header */
+/* Top App Header (Adjusted for iPhone Dynamic Island & Notch) */
 .app-header {
-  height: 60px;
-  padding: 0 20px;
+  min-height: 74px;
+  padding-top: max(18px, env(safe-area-inset-top));
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(13, 17, 23, 0.9);
+  background: rgba(13, 17, 23, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-glow);
   position: sticky;
@@ -386,9 +389,23 @@ body {
   border: 1px solid var(--border-muted);
   border-radius: var(--radius-sm);
   color: var(--text-main);
-  padding: 6px 8px;
+  padding: 6px 6px;
   font-size: 13px;
   width: 100%;
+}
+
+.table-input.row-type {
+  min-width: 95px;
+  font-weight: 600;
+}
+
+.table-input.row-sets,
+.table-input.row-reps,
+.table-input.row-weight,
+.table-input.row-time,
+.table-input.row-rest {
+  width: 55px;
+  text-align: center;
 }
 
 .table-input:focus {
