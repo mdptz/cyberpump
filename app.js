@@ -1586,7 +1586,7 @@ class CyberPumpApp {
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" style="margin-bottom: 16px;">
         <h3 style="font-family: var(--font-header); font-size: 15px; color: #fff; margin-bottom: 8px;">Storage & Reset</h3>
         <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
           All workout data is stored locally on this smartphone device.
@@ -1594,6 +1594,27 @@ class CyberPumpApp {
         <button id="btn-reset-defaults" class="btn btn-secondary btn-sm" style="color: var(--fluo-magenta); border-color: rgba(255,0,127,0.3);">
           ⚠️ Restore Preset Workouts
         </button>
+      </div>
+
+      <!-- APP VERSION & CONTACT FOOTER CARD -->
+      <div class="card" style="text-align: center; padding: 20px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(0, 240, 255, 0.2);">
+        <div style="font-family: var(--font-header); font-size: 14px; font-weight: 700; color: var(--fluo-cyan); letter-spacing: 1px; margin-bottom: 4px;">
+          ⚡ CYBERPUMP WORKOUT LOG
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+          Version <span style="color: var(--fluo-lime); font-weight: 700;">1.0.0 (v17)</span> • Offline PWA
+        </div>
+
+        <div style="border-top: 1px dashed rgba(255, 255, 255, 0.1); width: 60%; margin: 10px auto;"></div>
+
+        <div style="font-size: 12px; color: var(--text-main); margin-bottom: 4px;">
+          Created by <strong style="color: #fff;">mdpt</strong>
+        </div>
+        <div style="font-size: 11px;">
+          <a href="mailto:mttdptrz@gmail.com" style="color: var(--fluo-cyan); text-decoration: none;">
+            ✉️ mttdptrz@gmail.com
+          </a>
+        </div>
       </div>
     `;
 
