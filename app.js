@@ -1,7 +1,13 @@
 /**
  * CYBERPUMP Main Smartphone Web Application Logic
- * Integrates state, views, tabular editor, active workout player, rest voice timer, and sharing.
+ * Integrates state, views, tabular editor, active workout player, rest voice timer, sharing, and Freemium logic.
  */
+
+// FREEMIUM CONFIGURATION LIMITS
+const FREEMIUM_LIMITS = {
+  MAX_WORKOUTS: 3,
+  MAX_EXERCISES_PER_WORKOUT: 6
+};
 
 class CyberPumpApp {
   constructor() {
@@ -156,14 +162,73 @@ class CyberPumpApp {
   }
 
   /* ==========================================================================
+     👑 FREEMIUM PAYWALL SYSTEM
+     ========================================================================== */
+  showPaywallModal(reasonMessage = '') {
+    const modalHtml = `
+      <div style="text-align: center; padding: 12px 4px;">
+        <span style="font-size: 54px; filter: drop-shadow(0 0 10px var(--fluo-cyan));">👑</span>
+        <h2 style="font-family: var(--font-header); color: var(--fluo-cyan); font-size: 22px; margin: 8px 0 4px 0;">CYBERPUMP PREMIUM</h2>
+        
+        <p style="color: var(--fluo-orange); font-size: 13px; font-weight: 600; margin-bottom: 16px;">
+          ${this.escapeHtml(reasonMessage || 'Unlock the full power of your training!')}
+        </p>
+
+        <div class="card" style="text-align: left; background: rgba(0, 240, 255, 0.05); border-color: var(--fluo-cyan); margin-bottom: 20px;">
+          <ul style="font-size: 13px; color: #fff; padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <li>⚡ <strong>Unlimited Workouts</strong> (Free limit: 3)</li>
+            <li>⚡ <strong>Unlimited Exercises per Routine</strong> (Free limit: 6)</li>
+            <li>⚡ <strong>Unlimited Import & Cloning</strong></li>
+            <li>⚡ <strong>Lifetime Access (No Subscriptions)</strong></li>
+          </ul>
+        </div>
+
+        <button id="btn-buy-premium-modal" class="btn btn-primary btn-block" style="padding: 16px; font-size: 15px; margin-bottom: 10px;">
+          🔓 Unlock Unlimited (Mock IAP)
+        </button>
+        <button id="btn-cancel-paywall" class="btn btn-secondary btn-block btn-sm">
+          Continue with Free Version
+        </button>
+      </div>
+    `;
+
+    this.openModal(modalHtml);
+
+    document.getElementById('btn-buy-premium-modal')?.addEventListener('click', () => {
+      this.triggerMockPurchase();
+    });
+
+    document.getElementById('btn-cancel-paywall')?.addEventListener('click', () => {
+      this.closeModal();
+    });
+  }
+
+  triggerMockPurchase() {
+    this.showToast('⏳ Connecting to Store...');
+    
+    setTimeout(() => {
+      window.storageManager.unlockPremium();
+      this.closeModal();
+      this.showToast('🎉 CYBERPUMP Premium Unlocked!');
+      this.switchView(this.currentView);
+    }, 1200);
+  }
+
+  /* ==========================================================================
      1. WORKOUTS LIST VIEW
      ========================================================================== */
   renderWorkoutsView() {
     const workouts = window.storageManager.getWorkouts();
+    const isPremium = window.storageManager.isPremiumUser();
 
     let html = `
       <div class="view-header">
-        <h1 class="view-title">🏋️ My Workouts</h1>
+        <div>
+          <h1 class="view-title">🏋️ My Workouts</h1>
+          <span style="font-size: 11px; color: ${isPremium ? 'var(--fluo-cyan)' : 'var(--text-muted)'}; font-weight: 600;">
+            ${isPremium ? '👑 PREMIUM USER (Unlimited)' : `FREE PLAN (${workouts.length}/${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Used)`}
+          </span>
+        </div>
         <button id="btn-create-workout" class="btn btn-primary btn-sm">+ New Workout</button>
       </div>
     `;
@@ -213,10 +278,21 @@ class CyberPumpApp {
 
     this.mainContent.innerHTML = html;
 
-    // Event Bindings
+    // FREEMIUM CHECK FOR WORKOUT CREATION
+    const handleCreateClick = () => {
+      const isUserPremium = window.storageManager.isPremiumUser();
+      const currentCount = window.storageManager.getWorkouts().length;
+
+      if (!isUserPremium && currentCount >= FREEMIUM_LIMITS.MAX_WORKOUTS) {
+        this.showPaywallModal(`Free plan limit reached (${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Max). Upgrade to Premium to create unlimited workouts!`);
+        return;
+      }
+      this.switchView('tabular-editor', { workoutId: null });
+    };
+
     const newBtn = document.getElementById('btn-create-workout') || document.getElementById('btn-create-workout-empty');
     if (newBtn) {
-      newBtn.addEventListener('click', () => this.switchView('tabular-editor', { workoutId: null }));
+      newBtn.addEventListener('click', handleCreateClick);
     }
 
     document.querySelectorAll('.btn-start-workout').forEach(btn => {
@@ -233,8 +309,17 @@ class CyberPumpApp {
       });
     });
 
+    // FREEMIUM CHECK FOR WORKOUT CLONING
     document.querySelectorAll('.btn-clone-workout').forEach(btn => {
       btn.addEventListener('click', (e) => {
+        const isUserPremium = window.storageManager.isPremiumUser();
+        const currentCount = window.storageManager.getWorkouts().length;
+
+        if (!isUserPremium && currentCount >= FREEMIUM_LIMITS.MAX_WORKOUTS) {
+          this.showPaywallModal(`Cannot clone: Free plan limit reached (${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Max). Unlock Premium for unlimited cloning!`);
+          return;
+        }
+
         const id = e.currentTarget.getAttribute('data-id');
         const cloned = window.storageManager.cloneWorkout(id);
         if (cloned) {
@@ -299,10 +384,16 @@ class CyberPumpApp {
 
     // Deep copy for temporary editing state
     this.editingWorkout = JSON.parse(JSON.stringify(workout));
+    const isPremium = window.storageManager.isPremiumUser();
 
     let html = `
       <div class="view-header">
-        <h1 class="view-title">⚙️ Configure Workout</h1>
+        <div>
+          <h1 class="view-title">⚙️ Configure Workout</h1>
+          <span style="font-size: 11px; color: ${isPremium ? 'var(--fluo-cyan)' : 'var(--text-muted)'}; font-weight: 600;">
+            ${isPremium ? '👑 PREMIUM (Unlimited Exercises)' : `FREE PLAN (${this.editingWorkout.exercises.length}/${FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT} Exercises Max)`}
+          </span>
+        </div>
         <button id="btn-save-tabular" class="btn btn-primary btn-sm">💾 Save Workout</button>
       </div>
 
@@ -504,9 +595,17 @@ class CyberPumpApp {
       }
     });
 
-    // Add row button
+    // FREEMIUM CHECK FOR ADDING EXERCISES
     document.getElementById('btn-add-row').addEventListener('click', () => {
       updateExerciseState();
+      const isUserPremium = window.storageManager.isPremiumUser();
+      const currentExerciseCount = this.editingWorkout.exercises.length;
+
+      if (!isUserPremium && currentExerciseCount >= FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT) {
+        this.showPaywallModal(`Free plan limit reached (${FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT} Exercises Max per Routine). Sblocca Premium per aggiungerne infiniti!`);
+        return;
+      }
+
       this.editingWorkout.exercises.push({
         id: 'ex_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
         name: 'New Exercise',
@@ -1043,6 +1142,7 @@ class CyberPumpApp {
       this.showToast(`Skipped "${activeTask.exerciseName}" for this workout session`, 'info');
       this.moveToNextUncompletedSet();
     });
+
     // Stop workout session
     document.getElementById('btn-cancel-session')?.addEventListener('click', () => {
       if (confirm('Cancel active workout session?')) {
@@ -1663,10 +1763,16 @@ class CyberPumpApp {
   }
 
   showSelectiveImportModal(candidateWorkouts) {
+    const isPremium = window.storageManager.isPremiumUser();
+    const currentWorkoutCount = window.storageManager.getWorkouts().length;
+    const remainingSlots = isPremium ? Infinity : Math.max(0, FREEMIUM_LIMITS.MAX_WORKOUTS - currentWorkoutCount);
+
     const modalHtml = `
       <h3 style="font-family: var(--font-header); color: #fff; margin-bottom: 8px;">Select Workouts to Import</h3>
       <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
-        Choose which workouts from the imported data you want to save into your local storage:
+        ${isPremium 
+          ? '👑 <strong>Premium Plan:</strong> You can import all selected workouts.' 
+          : `🆓 <strong>Free Plan:</strong> You can import up to <strong>${remainingSlots}</strong> more workout(s).`}
       </p>
 
       <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
@@ -1714,6 +1820,13 @@ class CyberPumpApp {
         return;
       }
 
+      // FREEMIUM CHECK FOR IMPORTING WORKOUTS
+      if (!isPremium && (currentWorkoutCount + selectedIndexes.length) > FREEMIUM_LIMITS.MAX_WORKOUTS) {
+        this.closeModal();
+        this.showPaywallModal(`Import failed: Importing ${selectedIndexes.length} workout(s) would exceed your Free plan limit of ${FREEMIUM_LIMITS.MAX_WORKOUTS} workouts. Upgrade to Premium for unlimited imports!`);
+        return;
+      }
+
       const workoutsToImport = selectedIndexes.map(idx => candidateWorkouts[idx]);
       const importedCount = window.exportImportManager.importWorkouts(workoutsToImport, 'keep_both');
 
@@ -1724,14 +1837,30 @@ class CyberPumpApp {
   }
 
   /* ==========================================================================
-     6. SETTINGS VIEW (Req 20, 21)
+     6. SETTINGS VIEW (Req 20, 21) & DEV TOOLS
      ========================================================================== */
   renderSettingsView() {
     const settings = window.storageManager.getSettings();
+    const isPremium = window.storageManager.isPremiumUser();
 
     let html = `
       <div class="view-header">
         <h1 class="view-title">⚙️ App Settings</h1>
+      </div>
+
+      <!-- 👑 DEV TOOLS: FREEMIUM TEST PANEL -->
+      <div class="card" style="margin-bottom: 12px; border-color: var(--fluo-magenta); background: rgba(255, 0, 127, 0.05);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="color: var(--fluo-magenta); font-size: 14px;">🧪 PWA FREEMIUM TEST TOOLS</strong>
+            <p style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+              Current Status: <strong style="color: ${isPremium ? 'var(--fluo-cyan)' : 'var(--fluo-lime)'};">${isPremium ? '👑 PREMIUM USER' : '🆓 FREE USER'}</strong>
+            </p>
+          </div>
+          <button id="btn-toggle-dev-premium" class="btn btn-secondary btn-sm" style="border-color: var(--fluo-magenta); color: #fff;">
+            Switch to ${isPremium ? 'Free User' : 'Premium'}
+          </button>
+        </div>
       </div>
 
       <div class="card" style="margin-bottom: 12px;">
@@ -1788,6 +1917,13 @@ class CyberPumpApp {
     `;
 
     this.mainContent.innerHTML = html;
+
+    // DEV FREEMIUM SWITCH TOGGLE HANDLER
+    document.getElementById('btn-toggle-dev-premium')?.addEventListener('click', () => {
+      const newState = window.storageManager.togglePremiumDev();
+      this.showToast(newState ? '👑 Switched to PREMIUM User' : '🆓 Switched to FREE User');
+      this.renderSettingsView();
+    });
 
     document.getElementById('setting-silent').addEventListener('change', (e) => {
       window.storageManager.updateSetting('silentMode', e.target.checked);

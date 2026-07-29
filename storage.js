@@ -146,7 +146,8 @@ const DEFAULT_SETTINGS = {
   silentMode: false,
   countdownVoice: true,
   startBeep: true,
-  keepScreenAwake: true
+  keepScreenAwake: true,
+  isPremium: false // 👑 Freemium Status Flag
 };
 
 class StorageManager {
@@ -266,7 +267,8 @@ class StorageManager {
   // Settings Management (Req 20)
   getSettings() {
     try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEYS.SETTINGS)) || DEFAULT_SETTINGS;
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.SETTINGS));
+      return { ...DEFAULT_SETTINGS, ...parsed };
     } catch (e) {
       return DEFAULT_SETTINGS;
     }
@@ -280,6 +282,25 @@ class StorageManager {
     const settings = this.getSettings();
     settings[key] = value;
     this.saveSettings(settings);
+  }
+
+  // 👑 Freemium Status Helpers
+  isPremiumUser() {
+    return !!this.getSettings().isPremium;
+  }
+
+  unlockPremium() {
+    this.updateSetting('isPremium', true);
+  }
+
+  lockPremium() {
+    this.updateSetting('isPremium', false);
+  }
+
+  togglePremiumDev() {
+    const currentState = this.isPremiumUser();
+    this.updateSetting('isPremium', !currentState);
+    return !currentState;
   }
 
   // Active Session Persistence (Resiliency against refresh)
