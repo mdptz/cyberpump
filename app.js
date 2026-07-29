@@ -740,7 +740,7 @@ class CyberPumpApp {
       const currentRoundNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
 
       const weightDisplay = currentTask.weight !== null && currentTask.weight !== undefined 
-        ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg</span>` 
+        ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg/lbs</span>` 
         : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
 
       const istimebasedRunning = session.intimebasedTimer || session.timebasedStarted;
@@ -807,7 +807,7 @@ class CyberPumpApp {
                 ${this.escapeHtml(nextTask.exerciseName)} ${nextTask.isCircuitMode ? `(Cycle ${nextTask.cycleIndex})` : `- Set ${nextTask.setIndex}/${nextTask.totalSets}`}
               </div>
               <div style="font-size: 12px; color: ${isCycleRest ? 'var(--fluo-cyan)' : 'var(--fluo-lime)'};">
-                Target: ${nextTask.reps} reps ${nextTask.weight ? `@ ${nextTask.weight} kg` : '(Bodyweight)'}
+                Target: ${nextTask.reps} reps ${nextTask.weight ? `@ ${nextTask.weight} kg/lbs` : '(Bodyweight)'}
               </div>
             </div>
           ` : ''}
@@ -825,7 +825,7 @@ class CyberPumpApp {
       const currentSetNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
 
       const weightDisplay = currentTask.weight !== null && currentTask.weight !== undefined 
-        ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg</span>` 
+        ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg/lbs</span>` 
         : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
 
       html += `
@@ -883,7 +883,7 @@ class CyberPumpApp {
             const isSkipped = task.skipped;
 
             const weightText = task.weight !== null && task.weight !== undefined 
-              ? `@ ${task.weight}kg` 
+              ? `@ ${task.weight}kg/lbs` 
               : '(BW)';
 
             let badgeText = isDone ? (isSkipped ? '⏭️ SKIPPED' : '✓ DONE') : (isActive ? '► ACTIVE' : `Cycle ${task.cycleIndex}`);
@@ -951,7 +951,7 @@ class CyberPumpApp {
             const isFullyDone = group.completedSets === group.totalSets;
 
             const weightText = group.weight !== null && group.weight !== undefined 
-              ? `@ ${group.weight}kg` 
+              ? `@ ${group.weight}kg/lbs` 
               : '(Bodyweight)';
 
             return `
@@ -1549,7 +1549,7 @@ class CyberPumpApp {
               <strong>${log.completedSetsCount} Sets Executed:</strong>
               <ul style="margin-top: 4px; padding-left: 16px; color: var(--text-muted); font-size: 11px;">
                 ${(log.setsDetail || []).map(s => `
-                  <li>${this.escapeHtml(s.exerciseName)} (Set ${s.setIndex}): ${s.reps} reps ${s.weight ? `@ ${s.weight}kg` : '(BW)'}</li>
+                  <li>${this.escapeHtml(s.exerciseName)} (Set ${s.setIndex}): ${s.reps} reps ${s.weight ? `@ ${s.weight}kg/lbs` : '(BW)'}</li>
                 `).join('')}
               </ul>
             </div>
