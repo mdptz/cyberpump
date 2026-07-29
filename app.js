@@ -1737,7 +1737,7 @@ class CyberPumpApp {
       <div class="card" style="margin-bottom: 12px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
           <div>
-            <strong style="color: #fff; font-size: 15px;">Silent Mode (Req 20)</strong>
+            <strong style="color: #fff; font-size: 15px;">Silent Mode</strong>
             <p style="font-size: 11px; color: var(--text-muted);">Mutes all voice countdowns and start audio beeps.</p>
           </div>
           <label style="position: relative; display: inline-block; width: 44px; height: 24px;">
@@ -1746,18 +1746,10 @@ class CyberPumpApp {
           </label>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <div>
-            <strong style="color: #fff; font-size: 15px;">Voice Countdown (3, 2, 1)</strong>
-            <p style="font-size: 11px; color: var(--text-muted);">Web Speech synthesis counts down 3s before rest ends.</p>
-          </div>
-          <span style="color: var(--fluo-lime); font-size: 12px; font-weight: 700;">Active</span>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+       <div style="display: flex; justify-content: space-between; align-items: center;">
           <div>
             <strong style="color: #fff; font-size: 15px;">Start Chime Beep Tone</strong>
-            <p style="font-size: 11px; color: var(--text-muted);">Web Audio API tone signals exercise start.</p>
+            <p style="font-size: 11px; color: var(--text-muted);">Audio tone signals test.</p>
           </div>
           <button id="btn-test-audio" class="btn btn-secondary btn-sm">🔊 Test Audio</button>
         </div>
