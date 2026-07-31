@@ -1,10 +1,202 @@
 <!DOCTYPE html>
-<html>
-<head><title>CYBERPUMP Privacy Policy</title></head>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBERPUMP ⚡ Privacy Policy</title>
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: #0d131f;
+      --fluo-cyan: #00f0ff;
+      --fluo-lime: #00ff88;
+      --fluo-magenta: #ff007f;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --border-glow: rgba(0, 240, 255, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      padding: 24px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      padding: 32px 0 24px 0;
+      border-bottom: 1px solid var(--border-glow);
+      margin-bottom: 24px;
+    }
+
+    .logo-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--fluo-lime);
+      border: 1px solid var(--fluo-lime);
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px var(--fluo-cyan);
+    }
+
+    .last-updated {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      font-size: 16px;
+      color: var(--fluo-cyan);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+    }
+
+    p, ul {
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: var(--fluo-cyan);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px dashed rgba(255, 255, 255, 0.1);
+      margin-top: 32px;
+    }
+  </style>
+</head>
 <body>
-  <h1>Privacy Policy for CYBERPUMP</h1>
-  <p>CYBERPUMP respects your privacy. All workout data, logs, and settings are stored locally on your device.</p>
-  <p>We use RevenueCat and Google Play Billing to process optional in-app purchases securely.</p>
-  <p>If you have any questions, contact us at: mttdptrz@gmail.com</p>
+
+  <div class="container">
+    <header>
+      <span class="logo-badge">⚡ DATA PROTECTION</span>
+      <h1>PRIVACY POLICY</h1>
+      <div class="last-updated">Ultimo aggiornamento: Luglio 2026</div>
+    </header>
+
+    <div class="card">
+      <h2>🔒 1. Filosofia Local-First</h2>
+      <p>
+        <strong>CYBERPUMP</strong> è progettata secondo il principio della privacy "Local-First". 
+        Tutti i tuoi dati di allenamento (schede, serie, carichi, note e cronologia del diario) vengono salvati 
+        <strong>esclusivamente in locale</strong> nella memoria del tuo dispositivo. Non possediamo server esterni 
+        su cui memorizzare le tue routine fisiche.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>💾 2. Dati Raccolti e Utilizzo</h2>
+      <p>L'applicazione richiede unicamente l'accesso alle funzionalità essenziali per l'esecuzione degli allenamenti:</p>
+      <ul>
+        <li><strong>Memoria Locale (LocalStorage / SQLite):</strong> Per salvare i workout e lo storico delle sessioni sul tuo smartphone.</li>
+        <li><strong>Notifiche e Vibrazione:</strong> Utilizzate solo per avvisarti al termine dei timer di riposo e dei round timebased/EMOM.</li>
+        <li><strong>Sintesi Vocale (Text-To-Speech):</strong> Per scandire i countdown audio (3, 2, 1) durante l'allenamento.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>💳 3. Acquisti in-App (In-App Purchases)</h2>
+      <p>
+        I pagamenti per la versione <strong>PREMIUM</strong> vengono gestiti direttamente dai servizi ufficiali di 
+        <strong>Google Play Store</strong> e <strong>Apple App Store</strong> tramite l'infrastruttura sicura di RevenueCat. 
+        CYBERPUMP non raccoglie né memorizza mai i tuoi estremi bancari o i dati della carta di credito.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>📤 4. Condivisione dei Dati</h2>
+      <p>
+        Non vendiamo, non condividiamo e non tracciamo alcun dato personale con terze parti per scopi pubblicitari o di marketing. 
+        I file JSON di esportazione generati tramite la funzione "Share & Export" vengono condivisi solo manualmente ed esplicitamente da te.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>🗑️ 5. Eliminazione dei Dati</h2>
+      <p>
+        Poiché i dati risiedono solo sul tuo telefono, puoi cancellare definitivamente l'intero database in qualsiasi momento:
+      </p>
+      <ul>
+        <li>Utilizzando il pulsante <strong>"Restore Preset Workouts"</strong> nelle Impostazioni dell'app.</li>
+        <li>Cancellando la cache/dati dell'app dalle impostazioni del tuo sistema operativo Android.</li>
+        <li>Disinstallando l'applicazione dal dispositivo.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>✉️ 6. Contatti</h2>
+      <p>
+        Se hai domande o dubbi relativi alla presente informativa sulla privacy, puoi contattare lo sviluppatore a:
+      </p>
+      <p style="margin-top: 8px;">
+        📧 Email: <a href="mailto:mttdptrz@gmail.com">mttdptrz@gmail.com</a><br>
+        👨‍💻 Developer: <strong>mdpt</strong>
+      </p>
+    </div>
+
+    <footer>
+      ⚡ CYBERPUMP WORKOUT LOG • All Rights Reserved © 2026
+    </footer>
+  </div>
+
 </body>
 </html>
