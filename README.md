@@ -1,2 +1,0 @@
-# cyberpump
-Personal Workout management
