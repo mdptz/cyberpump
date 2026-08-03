@@ -1,1 +1,142 @@
-const a2_0x59d43f=a2_0x5a2a;(function(_0x169b83,_0x555d54){const _0x2afd0a=a2_0x5a2a,_0x41f6b9=_0x169b83();while(!![]){try{const _0x4be681=parseInt(_0x2afd0a(0x116))/0x1+-parseInt(_0x2afd0a(0x13d))/0x2+parseInt(_0x2afd0a(0x127))/0x3+-parseInt(_0x2afd0a(0x145))/0x4+-parseInt(_0x2afd0a(0x124))/0x5*(parseInt(_0x2afd0a(0x122))/0x6)+parseInt(_0x2afd0a(0x120))/0x7+-parseInt(_0x2afd0a(0x144))/0x8*(parseInt(_0x2afd0a(0x147))/0x9);if(_0x4be681===_0x555d54)break;else _0x41f6b9['push'](_0x41f6b9['shift']());}catch(_0x151521){_0x41f6b9['push'](_0x41f6b9['shift']());}}}(a2_0x4ee2,0x5b5bb));function a2_0x4ee2(){const _0x3ac1d3=['toISOString','cyberpump_workouts_','.json','stringify','shareWorkouts','includes','body','href','native-share','Native\x20share\x20error,\x20falling\x20back\x20to\x20clipboard:','application/json','594892pVplzT','clipboard','parseImportString','isArray','parse','trim','createObjectURL','16SAkVlZ','1957420ZbgPiy','toLowerCase','2023218ViPGJi','createElement','substr','error','exportImportManager','filter','toString','name','526734PWKqpR','exercises','clipboard-denied','Here\x20are\x20my\x20CYBERPUMP\x20workouts\x20export\x20(','1.0','now','saveWorkout','warn','importWorkouts','length','4333728fAQERu','storageManager','118110xRGaNz','share','35llspLC',').\x20Copy\x20and\x20import\x20into\x20your\x20app:','click','1807695IJLYWa','exportData','toLocaleDateString','cancelled','getWorkouts','writeText','revokeObjectURL','downloadExportFile','appendChild','find','imported_'];a2_0x4ee2=function(){return _0x3ac1d3;};return a2_0x4ee2();}function a2_0x5a2a(_0x4e2a0b,_0x2310bb){_0x4e2a0b=_0x4e2a0b-0x112;const _0x4ee28f=a2_0x4ee2();let _0x5a2a09=_0x4ee28f[_0x4e2a0b];return _0x5a2a09;}class ExportImportManager{[a2_0x59d43f(0x128)](_0x1ee9cd=null){const _0x3fa2c9=a2_0x59d43f,_0x5a0419=window[_0x3fa2c9(0x121)][_0x3fa2c9(0x12b)](),_0x1375b0=_0x1ee9cd?_0x5a0419[_0x3fa2c9(0x113)](_0x2bebff=>_0x1ee9cd[_0x3fa2c9(0x137)](_0x2bebff['id'])):_0x5a0419,_0x32694b={'app':'CYBERPUMP','version':_0x3fa2c9(0x11a),'exportedAt':new Date()[_0x3fa2c9(0x132)](),'workoutsCount':_0x1375b0[_0x3fa2c9(0x11f)],'workouts':_0x1375b0};return JSON[_0x3fa2c9(0x135)](_0x32694b,null,0x2);}async[a2_0x59d43f(0x136)](_0x5ac813=null){const _0x4bf0c0=a2_0x59d43f,_0x1d0546=this[_0x4bf0c0(0x128)](_0x5ac813),_0x2b033f='CYBERPUMP\x20Workouts\x20Export',_0x931a0a=_0x4bf0c0(0x119)+new Date()[_0x4bf0c0(0x129)]()+_0x4bf0c0(0x125);if(navigator['share'])try{return await navigator[_0x4bf0c0(0x123)]({'title':_0x2b033f,'text':_0x931a0a+'\x0a\x0a'+_0x1d0546}),{'success':!![],'method':_0x4bf0c0(0x13a)};}catch(_0x553eef){if(_0x553eef[_0x4bf0c0(0x115)]!=='AbortError')console[_0x4bf0c0(0x11d)](_0x4bf0c0(0x13b),_0x553eef);else return{'success':![],'reason':_0x4bf0c0(0x12a)};}try{return await navigator[_0x4bf0c0(0x13e)][_0x4bf0c0(0x12c)](_0x1d0546),{'success':!![],'method':_0x4bf0c0(0x13e)};}catch(_0x5984f1){return{'success':![],'reason':_0x4bf0c0(0x118)};}}[a2_0x59d43f(0x12e)](_0x186616=null){const _0x187385=a2_0x59d43f,_0x5c2e79=this[_0x187385(0x128)](_0x186616),_0xd84bf4=new Blob([_0x5c2e79],{'type':_0x187385(0x13c)}),_0x502b9f=URL[_0x187385(0x143)](_0xd84bf4),_0x263b01=document[_0x187385(0x148)]('a');_0x263b01[_0x187385(0x139)]=_0x502b9f,_0x263b01['download']=_0x187385(0x133)+Date[_0x187385(0x11b)]()+_0x187385(0x134),document['body'][_0x187385(0x12f)](_0x263b01),_0x263b01[_0x187385(0x126)](),document[_0x187385(0x138)]['removeChild'](_0x263b01),URL[_0x187385(0x12d)](_0x502b9f);}[a2_0x59d43f(0x13f)](_0x20cab6){const _0x3d59df=a2_0x59d43f;try{const _0x45bea5=_0x20cab6[_0x3d59df(0x142)](),_0x187220=JSON[_0x3d59df(0x141)](_0x45bea5);let _0x3f133f=[];if(Array[_0x3d59df(0x140)](_0x187220))_0x3f133f=_0x187220;else{if(_0x187220&&Array['isArray'](_0x187220['workouts']))_0x3f133f=_0x187220['workouts'];else _0x187220&&_0x187220[_0x3d59df(0x115)]&&Array[_0x3d59df(0x140)](_0x187220['exercises'])&&(_0x3f133f=[_0x187220]);}const _0x4e1a8b=_0x3f133f[_0x3d59df(0x113)](_0x4e658b=>_0x4e658b&&_0x4e658b[_0x3d59df(0x115)]&&Array[_0x3d59df(0x140)](_0x4e658b[_0x3d59df(0x117)]));return _0x4e1a8b[_0x3d59df(0x11f)]>0x0?_0x4e1a8b:null;}catch(_0x473bc1){return console[_0x3d59df(0x14a)]('Import\x20parse\x20error:',_0x473bc1),null;}}[a2_0x59d43f(0x11e)](_0x5c6ddd,_0x2910f0='keep_both'){const _0x603702=a2_0x59d43f,_0xc2e462=window[_0x603702(0x121)][_0x603702(0x12b)]();let _0x2050c1=0x0;return _0x5c6ddd['forEach'](_0x40043d=>{const _0x596c04=_0x603702,_0x16e7e9=JSON['parse'](JSON[_0x596c04(0x135)](_0x40043d)),_0x332a8b=_0xc2e462[_0x596c04(0x130)](_0x37812a=>_0x37812a['id']===_0x16e7e9['id']||_0x37812a[_0x596c04(0x115)][_0x596c04(0x146)]()===_0x16e7e9[_0x596c04(0x115)][_0x596c04(0x146)]());if(_0x332a8b){if(_0x2910f0==='overwrite')_0x16e7e9['id']=_0x332a8b['id'],window['storageManager'][_0x596c04(0x11c)](_0x16e7e9),_0x2050c1++;else _0x2910f0==='keep_both'&&(_0x16e7e9['id']=_0x596c04(0x131)+Date['now']()+'_'+Math['random']()[_0x596c04(0x114)](0x24)[_0x596c04(0x149)](0x2,0x4),_0x16e7e9[_0x596c04(0x115)]=_0x16e7e9[_0x596c04(0x115)]+'\x20(Imported)',window[_0x596c04(0x121)][_0x596c04(0x11c)](_0x16e7e9),_0x2050c1++);}else _0x16e7e9['id']=_0x16e7e9['id']||_0x596c04(0x131)+Date[_0x596c04(0x11b)]()+'_'+Math['random']()['toString'](0x24)[_0x596c04(0x149)](0x2,0x4),window[_0x596c04(0x121)][_0x596c04(0x11c)](_0x16e7e9),_0x2050c1++;}),_0x2050c1;}}window[a2_0x59d43f(0x112)]=new ExportImportManager();
+/**
+ * CYBERPUMP Data Export, Import & Web Sharing Engine (Req 9, 10)
+ */
+
+class ExportImportManager {
+  /**
+   * Export all or selected workouts as JSON string formatted payload
+   * @param {Array<string>} workoutIds Optional filter of specific workout IDs
+   */
+  exportData(workoutIds = null) {
+    const allWorkouts = window.storageManager.getWorkouts();
+    const workoutsToExport = workoutIds 
+      ? allWorkouts.filter(w => workoutIds.includes(w.id))
+      : allWorkouts;
+
+    const payload = {
+      app: 'CYBERPUMP',
+      version: '1.0',
+      exportedAt: new Date().toISOString(),
+      workoutsCount: workoutsToExport.length,
+      workouts: workoutsToExport
+    };
+
+    return JSON.stringify(payload, null, 2);
+  }
+
+  /**
+   * Trigger native Web Share API on mobile devices or fallback to clipboard
+   */
+  async shareWorkouts(workoutIds = null) {
+    const jsonString = this.exportData(workoutIds);
+    const title = 'CYBERPUMP Workouts Export';
+    const text = `Here are my CYBERPUMP workouts export (${new Date().toLocaleDateString()}). Copy and import into your app:`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: title,
+          text: `${text}\n\n${jsonString}`
+        });
+        return { success: true, method: 'native-share' };
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.warn('Native share error, falling back to clipboard:', err);
+        } else {
+          return { success: false, reason: 'cancelled' };
+        }
+      }
+    }
+
+    // Fallback to Clipboard
+    try {
+      await navigator.clipboard.writeText(jsonString);
+      return { success: true, method: 'clipboard' };
+    } catch (err) {
+      return { success: false, reason: 'clipboard-denied' };
+    }
+  }
+
+  /**
+   * Download export payload as a text/json file
+   */
+  downloadExportFile(workoutIds = null) {
+    const jsonString = this.exportData(workoutIds);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `cyberpump_workouts_${Date.now()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  /**
+   * Parse text payload from string or file content
+   * @param {string} rawString 
+   * @returns {Array<Object>|null} Array of candidate workouts or null if invalid
+   */
+  parseImportString(rawString) {
+    try {
+      const cleanString = rawString.trim();
+      const data = JSON.parse(cleanString);
+      
+      let workoutsList = [];
+      if (Array.isArray(data)) {
+        workoutsList = data;
+      } else if (data && Array.isArray(data.workouts)) {
+        workoutsList = data.workouts;
+      } else if (data && data.name && Array.isArray(data.exercises)) {
+        // Single workout payload
+        workoutsList = [data];
+      }
+
+      // Basic structure validation
+      const validWorkouts = workoutsList.filter(w => w && w.name && Array.isArray(w.exercises));
+      return validWorkouts.length > 0 ? validWorkouts : null;
+    } catch (e) {
+      console.error('Import parse error:', e);
+      return null;
+    }
+  }
+
+  /**
+   * Import selected workouts into local storage with duplicate protection
+   * @param {Array<Object>} selectedWorkouts 
+   * @param {'overwrite'|'keep_both'|'skip'} duplicateStrategy 
+   */
+  importWorkouts(selectedWorkouts, duplicateStrategy = 'keep_both') {
+    const existingWorkouts = window.storageManager.getWorkouts();
+    let importedCount = 0;
+
+    selectedWorkouts.forEach(item => {
+      const cloned = JSON.parse(JSON.stringify(item));
+      const existing = existingWorkouts.find(w => w.id === cloned.id || w.name.toLowerCase() === cloned.name.toLowerCase());
+
+      if (existing) {
+        if (duplicateStrategy === 'overwrite') {
+          cloned.id = existing.id;
+          window.storageManager.saveWorkout(cloned);
+          importedCount++;
+        } else if (duplicateStrategy === 'keep_both') {
+          cloned.id = 'imported_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4);
+          cloned.name = `${cloned.name} (Imported)`;
+          window.storageManager.saveWorkout(cloned);
+          importedCount++;
+        }
+        // 'skip' does nothing
+      } else {
+        cloned.id = cloned.id || ('imported_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4));
+        window.storageManager.saveWorkout(cloned);
+        importedCount++;
+      }
+    });
+
+    return importedCount;
+  }
+}
+
+window.exportImportManager = new ExportImportManager();

@@ -1,1 +1,204 @@
-const a3_0x214fc0=a3_0x25c2;(function(_0x539a73,_0x113389){const _0x485dd7=a3_0x25c2,_0x5713ab=_0x539a73();while(!![]){try{const _0x548a35=-parseInt(_0x485dd7(0x158))/0x1+parseInt(_0x485dd7(0x13b))/0x2*(-parseInt(_0x485dd7(0x151))/0x3)+parseInt(_0x485dd7(0x13e))/0x4+-parseInt(_0x485dd7(0x13d))/0x5*(-parseInt(_0x485dd7(0x146))/0x6)+parseInt(_0x485dd7(0x135))/0x7*(-parseInt(_0x485dd7(0x12c))/0x8)+parseInt(_0x485dd7(0x149))/0x9+parseInt(_0x485dd7(0x14c))/0xa;if(_0x548a35===_0x113389)break;else _0x5713ab['push'](_0x5713ab['shift']());}catch(_0x3d4093){_0x5713ab['push'](_0x5713ab['shift']());}}}(a3_0x1030,0x60c9c));function a3_0x25c2(_0x1fd400,_0x137ed6){_0x1fd400=_0x1fd400-0x12a;const _0x103021=a3_0x1030();let _0x25c2d4=_0x103021[_0x1fd400];return _0x25c2d4;}function a3_0x1030(){const _0x563cf0=['message','switchView','showToast','apiKeyGoogle','Errore\x20durante\x20il\x20ripristino\x20degli\x20acquisti:\x20','init','getOfferings','closeModal','👑\x20[IAP]\x20Prodotto\x20già\x20posseduto\x20su\x20Google\x20Play.\x20Sblocco\x20Premium\x20automatico!','initialized','code','active','iapManager','❌\x20[IAP]\x20Errore\x20transazione:','getPlatform','restorePurchases','stringify','Errore\x20durante\x20la\x20transazione:\x20','current','handleSuccessfulPurchase','❌\x20[IAP]\x20Errore\x20ripristino:','getCustomerInfo','already\x20own','🔄\x20[IAP]\x20Aggiornamento\x20CustomerInfo\x20ricevuto\x20in\x20tempo\x20reale.','ios','Purchases','cyberPumpApp','🔄\x20[IAP]\x20Avvio\x20ripristino\x20acquisti...','addEventListener','16NMEQDq','appl_PLACEHOLDER_KEY_IOS','toLowerCase','web','includes','addCustomerInfoUpdateListener','🛒\x20[IAP]\x20Avvio\x20acquisto\x20pacchetto:','storageManager','entitlementId','771778ekKqCG','identifier','checkSubscriptionStatus','currentView','unlockPremium','warn','1545462aShmDE','configure','5GdmowS','2599876JrEMXD','location','error','length','ATTIVO','Nessun\x20pacchetto\x20di\x20acquisto\x20trovato\x20su\x20Google\x20Play.\x20Assicurati\x20che\x20il\x20prodotto\x20sia\x20stato\x20associato\x20all\x27Offering\x20\x27Standard\x27\x20su\x20RevenueCat.','log','⚠️\x20[IAP]\x20Plugin\x20Purchases\x20non\x20trovato\x20in\x20window.Capacitor.Plugins.','603876DcMwnU','_processCustomerInfo','Plugins','2937501HNKMZW','Capacitor','function','3366110HfTPTl','Riprova\x20più\x20tardi.','userCancelled','lockPremium','Gli\x20acquisti\x20In-App\x20sono\x20disponibili\x20solo\x20sull\x27App\x20nativa\x20installata\x20su\x20dispositivo\x20Android\x20o\x20emulatore.','3thPSDp','undefined','customerInfo','Nessun\x20acquisto\x20attivo\x20trovato\x20per\x20questo\x20account\x20Google.','👑\x20[IAP]\x20Stato\x20Entitlement\x20\x27','item_already_owned','Impossibile\x20completare\x20l\x27operazione.','23932xnBnNA','apiKeyApple'];a3_0x1030=function(){return _0x563cf0;};return a3_0x1030();}class InAppPurchaseManager{constructor(){const _0x37d955=a3_0x25c2;this[_0x37d955(0x15d)]='goog_ePQranNvotDalvuqQjTmsCWyNoQ',this['apiKeyApple']=_0x37d955(0x12d),this[_0x37d955(0x134)]='cyberpump_premium',this[_0x37d955(0x163)]=![];}get[a3_0x214fc0(0x173)](){const _0x20261b=a3_0x214fc0;return window[_0x20261b(0x14a)]?.[_0x20261b(0x148)]?.[_0x20261b(0x173)]||null;}async['init'](){const _0x4d42c0=a3_0x214fc0;if(this[_0x4d42c0(0x163)])return;const _0x22003f=this[_0x4d42c0(0x173)];if(!_0x22003f){console[_0x4d42c0(0x13a)](_0x4d42c0(0x145));return;}try{const _0x13fd00=window['Capacitor']?window[_0x4d42c0(0x14a)][_0x4d42c0(0x168)]():_0x4d42c0(0x12f),_0x2f0d91=_0x13fd00===_0x4d42c0(0x172)?this[_0x4d42c0(0x159)]:this[_0x4d42c0(0x15d)];await _0x22003f[_0x4d42c0(0x13c)]({'apiKey':_0x2f0d91}),this[_0x4d42c0(0x163)]=!![],console[_0x4d42c0(0x144)]('⚡\x20[IAP]\x20RevenueCat\x20SDK\x20Inizializzato\x20con\x20successo\x20su\x20'+_0x13fd00+'!'),_0x22003f[_0x4d42c0(0x131)](_0x297ccd=>{const _0x2540d2=_0x4d42c0;console[_0x2540d2(0x144)](_0x2540d2(0x171)),this[_0x2540d2(0x147)](_0x297ccd);}),await this[_0x4d42c0(0x137)]();}catch(_0x11da21){console[_0x4d42c0(0x140)]('❌\x20[IAP]\x20Errore\x20durante\x20l\x27inizializzazione:',_0x11da21);}}['_extractCustomerInfo'](_0x5e3fd3){const _0x5d5854=a3_0x214fc0;if(!_0x5e3fd3)return null;return _0x5e3fd3[_0x5d5854(0x153)]||_0x5e3fd3;}['_processCustomerInfo'](_0xb29d8f){const _0x5651d8=a3_0x214fc0,_0xb359cc=this['_extractCustomerInfo'](_0xb29d8f),_0x40247a=_0xb359cc?.['entitlements']?.[_0x5651d8(0x165)]||{},_0x16075a=typeof _0x40247a[this['entitlementId']]!==_0x5651d8(0x152);return console[_0x5651d8(0x144)](_0x5651d8(0x155)+this[_0x5651d8(0x134)]+'\x27:',_0x16075a?_0x5651d8(0x142):'NON\x20ATTIVO'),window[_0x5651d8(0x133)]&&(_0x16075a?window[_0x5651d8(0x133)]['unlockPremium']():window[_0x5651d8(0x133)][_0x5651d8(0x14f)]()),_0x16075a;}async[a3_0x214fc0(0x137)](){const _0x40d1dc=a3_0x214fc0;if(!this['initialized']||!this[_0x40d1dc(0x173)])return![];try{const _0x5e8b82=await this[_0x40d1dc(0x173)][_0x40d1dc(0x16f)]();return this['_processCustomerInfo'](_0x5e8b82);}catch(_0x1c259e){return console[_0x40d1dc(0x140)]('❌\x20[IAP]\x20Errore\x20durante\x20la\x20verifica\x20abbonamento:',_0x1c259e),![];}}async['buyPremium'](){const _0x5d1cf8=a3_0x214fc0;if(!this[_0x5d1cf8(0x163)]||!this[_0x5d1cf8(0x173)]){alert(_0x5d1cf8(0x150));return;}const _0x49a4f7=this[_0x5d1cf8(0x173)];try{const _0x175134=await _0x49a4f7[_0x5d1cf8(0x160)]();if(_0x175134?.[_0x5d1cf8(0x16c)]&&_0x175134[_0x5d1cf8(0x16c)]['availablePackages']?.[_0x5d1cf8(0x141)]>0x0){const _0x1b8c83=_0x175134[_0x5d1cf8(0x16c)]['availablePackages'][0x0];console['log'](_0x5d1cf8(0x132),_0x1b8c83[_0x5d1cf8(0x136)]);const _0x223c2f=await _0x49a4f7['purchasePackage']({'aPackage':_0x1b8c83}),_0x42ff80=this[_0x5d1cf8(0x147)](_0x223c2f);_0x42ff80&&this['handleSuccessfulPurchase']();}else alert(_0x5d1cf8(0x143));}catch(_0x5de4d5){const _0x294815=String(_0x5de4d5?.[_0x5d1cf8(0x15a)]||JSON[_0x5d1cf8(0x16a)](_0x5de4d5)||'')[_0x5d1cf8(0x12e)](),_0x2e7e0d=_0x5de4d5?.[_0x5d1cf8(0x164)];if(_0x294815[_0x5d1cf8(0x130)](_0x5d1cf8(0x170))||_0x294815[_0x5d1cf8(0x130)](_0x5d1cf8(0x156))||_0x2e7e0d===0x7){console[_0x5d1cf8(0x144)](_0x5d1cf8(0x162)),this[_0x5d1cf8(0x16d)]();return;}!_0x5de4d5?.[_0x5d1cf8(0x14e)]&&(console[_0x5d1cf8(0x140)](_0x5d1cf8(0x167),_0x5de4d5),alert(_0x5d1cf8(0x16b)+(_0x5de4d5?.[_0x5d1cf8(0x15a)]||_0x5d1cf8(0x157))));}}async[a3_0x214fc0(0x169)](){const _0x437ae8=a3_0x214fc0;if(!this[_0x437ae8(0x163)]||!this[_0x437ae8(0x173)]){alert('IAP\x20non\x20ancora\x20inizializzato.');return;}try{console[_0x437ae8(0x144)](_0x437ae8(0x12a));const _0x543a8a=await Purchases['restorePurchases'](),_0xa92764=this[_0x437ae8(0x147)](_0x543a8a);_0xa92764?(alert('Acquisti\x20ripristinati\x20con\x20successo!'),this['handleSuccessfulPurchase']()):alert(_0x437ae8(0x154));}catch(_0xceceb3){console[_0x437ae8(0x140)](_0x437ae8(0x16e),_0xceceb3),alert(_0x437ae8(0x15e)+(_0xceceb3?.[_0x437ae8(0x15a)]||_0x437ae8(0x14d)));}}[a3_0x214fc0(0x16d)](){const _0x21a7e5=a3_0x214fc0;window['storageManager']&&window[_0x21a7e5(0x133)][_0x21a7e5(0x139)](),window['cyberPumpApp']?(typeof window[_0x21a7e5(0x174)][_0x21a7e5(0x161)]==='function'&&window['cyberPumpApp']['closeModal'](),typeof window[_0x21a7e5(0x174)][_0x21a7e5(0x15c)]===_0x21a7e5(0x14b)&&window[_0x21a7e5(0x174)]['showToast']('🎉\x20CYBERPUMP\x20Premium\x20Unlocked!'),typeof window['cyberPumpApp'][_0x21a7e5(0x15b)]===_0x21a7e5(0x14b)&&window['cyberPumpApp'][_0x21a7e5(0x15b)](window[_0x21a7e5(0x174)][_0x21a7e5(0x138)])):window[_0x21a7e5(0x13f)]['reload']();}}window[a3_0x214fc0(0x166)]=new InAppPurchaseManager(),document[a3_0x214fc0(0x12b)]('DOMContentLoaded',()=>{const _0x47af42=a3_0x214fc0;window['iapManager'][_0x47af42(0x15f)]();});
+/**
+ * CYBERPUMP In-App Purchase Manager (RevenueCat Integration)
+ * Compatibilità diretta Browser/Capacitor (No bundler / JS nativo)
+ */
+
+class InAppPurchaseManager {
+  constructor() {
+    this.apiKeyGoogle = "goog_ePQranNvotDalvuqQjTmsCWyNoQ";
+    this.apiKeyApple = "appl_PLACEHOLDER_KEY_IOS"; // Riservato per futuro build iOS
+    this.entitlementId = "cyberpump_premium";
+    this.initialized = false;
+  }
+
+  /**
+   * Getter dinamico e sicuro per accedere al plugin Purchases di Capacitor
+   */
+  get Purchases() {
+    return window.Capacitor?.Plugins?.Purchases || null;
+  }
+
+  /**
+   * Inizializza l'SDK RevenueCat e imposta i listener di stato
+   */
+  async init() {
+    if (this.initialized) return;
+
+    const Purchases = this.Purchases;
+    if (!Purchases) {
+      console.warn("⚠️ [IAP] Plugin Purchases non trovato in window.Capacitor.Plugins.");
+      return;
+    }
+
+    try {
+      const platform = window.Capacitor ? window.Capacitor.getPlatform() : 'web';
+      const apiKey = platform === 'ios' ? this.apiKeyApple : this.apiKeyGoogle;
+
+      // Configurazione SDK
+      await Purchases.configure({ apiKey });
+      this.initialized = true;
+      console.log(`⚡ [IAP] RevenueCat SDK Inizializzato con successo su ${platform}!`);
+
+      // 1. Listener automatico per cambi di stato in tempo reale (rinnovi, acquisti, scadenze)
+      Purchases.addCustomerInfoUpdateListener((response) => {
+        console.log("🔄 [IAP] Aggiornamento CustomerInfo ricevuto in tempo reale.");
+        this._processCustomerInfo(response);
+      });
+
+      // 2. Controllo iniziale dello stato abbonamento
+      await this.checkSubscriptionStatus();
+    } catch (error) {
+      console.error("❌ [IAP] Errore durante l'inizializzazione:", error);
+    }
+  }
+
+  /**
+   * Helper privato: estrae in modo sicuro l'oggetto CustomerInfo 
+   * indipendentemente dal wrapper dell'SDK Capacitor
+   */
+  _extractCustomerInfo(response) {
+    if (!response) return null;
+    return response.customerInfo || response;
+  }
+
+  /**
+   * Helper privato: elabora l'Entitlement e sincronizza il database/storage locale
+   */
+  _processCustomerInfo(response) {
+    const customerInfo = this._extractCustomerInfo(response);
+    const activeEntitlements = customerInfo?.entitlements?.active || {};
+    const isPremium = typeof activeEntitlements[this.entitlementId] !== "undefined";
+
+    console.log(`👑 [IAP] Stato Entitlement '${this.entitlementId}':`, isPremium ? "ATTIVO" : "NON ATTIVO");
+
+    if (window.storageManager) {
+      if (isPremium) {
+        window.storageManager.unlockPremium();
+      } else {
+        window.storageManager.lockPremium();
+      }
+    }
+
+    return isPremium;
+  }
+
+  /**
+   * Verifica se l'utente possiede il diritto Premium sul server di Google Play / RevenueCat
+   */
+  async checkSubscriptionStatus() {
+    if (!this.initialized || !this.Purchases) return false;
+
+    try {
+      const response = await this.Purchases.getCustomerInfo();
+      return this._processCustomerInfo(response);
+    } catch (error) {
+      console.error("❌ [IAP] Errore durante la verifica abbonamento:", error);
+      return false;
+    }
+  }
+
+  /**
+   * Avvia il flusso di acquisto nativo aprendo lo sheet di Google Play Store
+   */
+  async buyPremium() {
+    if (!this.initialized || !this.Purchases) {
+      alert("Gli acquisti In-App sono disponibili solo sull'App nativa installata su dispositivo Android o emulatore.");
+      return;
+    }
+
+    const Purchases = this.Purchases;
+
+    try {
+      const offerings = await Purchases.getOfferings();
+
+      if (offerings?.current && offerings.current.availablePackages?.length > 0) {
+        const packageToBuy = offerings.current.availablePackages[0];
+        
+        console.log("🛒 [IAP] Avvio acquisto pacchetto:", packageToBuy.identifier);
+
+        // Apre la scheda di acquisto nativa di Google Play Store
+        const purchaseResult = await Purchases.purchasePackage({ aPackage: packageToBuy });
+        const isPremium = this._processCustomerInfo(purchaseResult);
+
+        if (isPremium) {
+          this.handleSuccessfulPurchase();
+        }
+      } else {
+        alert("Nessun pacchetto di acquisto trovato su Google Play. Assicurati che il prodotto sia stato associato all'Offering 'Standard' su RevenueCat.");
+      }
+    } catch (error) {
+      const errorMsg = String(error?.message || JSON.stringify(error) || '').toLowerCase();
+      const errorCode = error?.code;
+
+      // Intercetta se l'utente possiede già il prodotto su Google Play
+      if (errorMsg.includes("already own") || errorMsg.includes("item_already_owned") || errorCode === 7) {
+        console.log("👑 [IAP] Prodotto già posseduto su Google Play. Sblocco Premium automatico!");
+        this.handleSuccessfulPurchase();
+        return;
+      }
+
+      // Gestisce l'annullamento volontario da parte dell'utente senza mostrare errori fastidiosi
+      if (!error?.userCancelled) {
+        console.error("❌ [IAP] Errore transazione:", error);
+        alert("Errore durante la transazione: " + (error?.message || "Impossibile completare l'operazione."));
+      }
+    }
+  }
+
+  /**
+   * Ripristina gli acquisti precedenti (Richiesto dalle linee guida dello Store)
+   */
+  async restorePurchases() {
+    if (!this.initialized || !this.Purchases) {
+      alert("IAP non ancora inizializzato.");
+      return;
+    }
+
+    try {
+      console.log("🔄 [IAP] Avvio ripristino acquisti...");
+      const restoredResponse = await Purchases.restorePurchases();
+      const isPremium = this._processCustomerInfo(restoredResponse);
+
+      if (isPremium) {
+        alert("Acquisti ripristinati con successo!");
+        this.handleSuccessfulPurchase();
+      } else {
+        alert("Nessun acquisto attivo trovato per questo account Google.");
+      }
+    } catch (error) {
+      console.error("❌ [IAP] Errore ripristino:", error);
+      alert("Errore durante il ripristino degli acquisti: " + (error?.message || "Riprova più tardi."));
+    }
+  }
+
+  /**
+   * Aggiorna lo stato dell'applicazione e l'interfaccia utente a transazione avvenuta
+   */
+  handleSuccessfulPurchase() {
+    if (window.storageManager) {
+      window.storageManager.unlockPremium();
+    }
+
+    if (window.cyberPumpApp) {
+      if (typeof window.cyberPumpApp.closeModal === 'function') {
+        window.cyberPumpApp.closeModal();
+      }
+      if (typeof window.cyberPumpApp.showToast === 'function') {
+        window.cyberPumpApp.showToast("🎉 CYBERPUMP Premium Unlocked!");
+      }
+      if (typeof window.cyberPumpApp.switchView === 'function') {
+        window.cyberPumpApp.switchView(window.cyberPumpApp.currentView);
+      }
+    } else {
+      window.location.reload();
+    }
+  }
+}
+
+// Istanziazione nel contesto globale window
+window.iapManager = new InAppPurchaseManager();
+
+// Inizializzazione sicura al caricamento del DOM
+document.addEventListener('DOMContentLoaded', () => {
+  window.iapManager.init();
+});

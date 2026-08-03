@@ -1,1 +1,271 @@
-const a4_0x5b438f=a4_0x472b;function a4_0x472b(_0x4ae2cc,_0x352e7c){_0x4ae2cc=_0x4ae2cc-0x9b;const _0x33a659=a4_0x33a6();let _0x472b64=_0x33a659[_0x4ae2cc];return _0x472b64;}(function(_0x15fc8a,_0x575330){const _0x41b6cf=a4_0x472b,_0x805ef1=_0x15fc8a();while(!![]){try{const _0x15c0ac=parseInt(_0x41b6cf(0xdb))/0x1*(-parseInt(_0x41b6cf(0xa7))/0x2)+-parseInt(_0x41b6cf(0xce))/0x3*(parseInt(_0x41b6cf(0xa2))/0x4)+parseInt(_0x41b6cf(0xaa))/0x5+parseInt(_0x41b6cf(0xda))/0x6*(-parseInt(_0x41b6cf(0xc4))/0x7)+parseInt(_0x41b6cf(0xac))/0x8+-parseInt(_0x41b6cf(0xbd))/0x9*(parseInt(_0x41b6cf(0x9c))/0xa)+parseInt(_0x41b6cf(0xb1))/0xb;if(_0x15c0ac===_0x575330)break;else _0x805ef1['push'](_0x805ef1['shift']());}catch(_0x50c130){_0x805ef1['push'](_0x805ef1['shift']());}}}(a4_0x33a6,0x803e8));const STORAGE_KEYS={'WORKOUTS':a4_0x5b438f(0xe5),'LOGS':a4_0x5b438f(0xaf),'SETTINGS':a4_0x5b438f(0xc5),'ACTIVE_SESSION':a4_0x5b438f(0xb6)},DEFAULT_WORKOUTS=[{'id':a4_0x5b438f(0xb7),'name':a4_0x5b438f(0xed),'description':a4_0x5b438f(0xad),'createdAt':new Date()['toISOString'](),'updatedAt':new Date()[a4_0x5b438f(0x9f)](),'exercises':[{'id':a4_0x5b438f(0xb8),'name':a4_0x5b438f(0xb0),'type':a4_0x5b438f(0xcc),'sets':0x4,'reps':0x8,'restSeconds':0x5a,'weight':0x50,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x5},{'id':'ex_2','name':'Incline\x20Dumbbell\x20Press','type':a4_0x5b438f(0xcc),'sets':0x3,'reps':0xa,'restSeconds':0x3c,'weight':0x1a,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x5},{'id':a4_0x5b438f(0xc0),'name':a4_0x5b438f(0xbb),'type':'standard','sets':0x3,'reps':0xf,'restSeconds':0x2d,'weight':null,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x5},{'id':a4_0x5b438f(0xae),'name':a4_0x5b438f(0xa8),'type':a4_0x5b438f(0xcc),'sets':0x3,'reps':0xc,'restSeconds':0x2d,'weight':0x23,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x5}]},{'id':a4_0x5b438f(0xd4),'name':a4_0x5b438f(0xc2),'description':a4_0x5b438f(0xc8),'createdAt':new Date()[a4_0x5b438f(0x9f)](),'updatedAt':new Date()[a4_0x5b438f(0x9f)](),'exercises':[{'id':a4_0x5b438f(0xe6),'name':a4_0x5b438f(0xdd),'type':a4_0x5b438f(0xab),'sets':0xa,'reps':0xf,'restSeconds':0x0,'weight':0x14,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0xa},{'id':a4_0x5b438f(0xe3),'name':'Burpees\x20Blitz','type':a4_0x5b438f(0xab),'sets':0x5,'reps':0xa,'restSeconds':0x0,'weight':null,'timebasedIntervalSeconds':0x2d,'timebasedTotalRounds':0x5}]},{'id':a4_0x5b438f(0xba),'name':a4_0x5b438f(0xd6),'description':a4_0x5b438f(0xa6),'mode':a4_0x5b438f(0xa0),'circuitCycles':0x3,'circuitRestSeconds':0x5a,'createdAt':new Date()[a4_0x5b438f(0x9f)](),'updatedAt':new Date()['toISOString'](),'exercises':[{'id':a4_0x5b438f(0xcf),'name':a4_0x5b438f(0xb3),'type':a4_0x5b438f(0xcc),'sets':0x1,'reps':0xc,'restSeconds':0xf,'weight':0x10,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x1},{'id':a4_0x5b438f(0xde),'name':a4_0x5b438f(0xea),'type':a4_0x5b438f(0xab),'sets':0x1,'reps':0x1,'restSeconds':0xf,'weight':null,'timebasedIntervalSeconds':0x2d,'timebasedTotalRounds':0x1},{'id':a4_0x5b438f(0xa5),'name':a4_0x5b438f(0xbb),'type':'standard','sets':0x1,'reps':0xf,'restSeconds':0xf,'weight':null,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x1}]}],DEFAULT_SETTINGS={'silentMode':![],'countdownVoice':!![],'startBeep':!![],'keepScreenAwake':!![],'isPremium':![]};class StorageManager{constructor(){this['initDefaults']();}[a4_0x5b438f(0xa4)](){const _0x2560ae=a4_0x5b438f;!localStorage[_0x2560ae(0x9d)](STORAGE_KEYS[_0x2560ae(0xe0)])&&this[_0x2560ae(0xe2)](DEFAULT_WORKOUTS),!localStorage[_0x2560ae(0x9d)](STORAGE_KEYS[_0x2560ae(0x9e)])&&this[_0x2560ae(0xb4)](DEFAULT_SETTINGS),!localStorage[_0x2560ae(0x9d)](STORAGE_KEYS[_0x2560ae(0xc6)])&&this[_0x2560ae(0xe8)]([]);}[a4_0x5b438f(0xb5)](){const _0x598860=a4_0x5b438f;try{return JSON[_0x598860(0xe4)](localStorage[_0x598860(0x9d)](STORAGE_KEYS['WORKOUTS']))||[];}catch(_0x12226a){return[];}}[a4_0x5b438f(0xd5)](_0x9ccb82){const _0x1e6714=a4_0x5b438f,_0x23c062=this[_0x1e6714(0xb5)]();return _0x23c062['find'](_0x20ae27=>_0x20ae27['id']===_0x9ccb82)||null;}[a4_0x5b438f(0xe2)](_0x4299a9){const _0xcb1004=a4_0x5b438f;localStorage[_0xcb1004(0xe9)](STORAGE_KEYS[_0xcb1004(0xe0)],JSON[_0xcb1004(0xd2)](_0x4299a9));}[a4_0x5b438f(0xbf)](_0x3b157d){const _0x41d170=a4_0x5b438f,_0x524fb2=this[_0x41d170(0xb5)](),_0x4f25a1=_0x524fb2[_0x41d170(0xdc)](_0x1027f1=>_0x1027f1['id']===_0x3b157d['id']);_0x3b157d[_0x41d170(0xca)]=new Date()[_0x41d170(0x9f)](),_0x4f25a1>=0x0?_0x524fb2[_0x4f25a1]=_0x3b157d:_0x524fb2[_0x41d170(0xe7)](_0x3b157d),this[_0x41d170(0xe2)](_0x524fb2);}[a4_0x5b438f(0xbc)](_0x31d5e7){const _0x45aa25=a4_0x5b438f;let _0x354cde=this[_0x45aa25(0xb5)]();_0x354cde=_0x354cde['filter'](_0xb7a889=>_0xb7a889['id']!==_0x31d5e7),this[_0x45aa25(0xe2)](_0x354cde);}[a4_0x5b438f(0xa3)](_0x3269a0){const _0x5f2c0f=a4_0x5b438f,_0x4e897d=this['getWorkoutById'](_0x3269a0);if(!_0x4e897d)return null;const _0x4f301e=JSON[_0x5f2c0f(0xe4)](JSON[_0x5f2c0f(0xd2)](_0x4e897d));return _0x4f301e['id']=_0x5f2c0f(0xcd)+Date['now']()+'_'+Math['random']()['toString'](0x24)[_0x5f2c0f(0xbe)](0x2,0x5),_0x4f301e[_0x5f2c0f(0xe1)]=_0x4e897d['name']+_0x5f2c0f(0xa9),_0x4f301e[_0x5f2c0f(0xa1)]=new Date()[_0x5f2c0f(0x9f)](),_0x4f301e[_0x5f2c0f(0xca)]=new Date()[_0x5f2c0f(0x9f)](),_0x4f301e[_0x5f2c0f(0xc1)]=_0x4f301e[_0x5f2c0f(0xc1)][_0x5f2c0f(0xc3)]((_0x389cf7,_0x5f2e28)=>({..._0x389cf7,'id':_0x5f2c0f(0xc9)+Date['now']()+'_'+_0x5f2e28})),this['saveWorkout'](_0x4f301e),_0x4f301e;}[a4_0x5b438f(0xc7)](_0x2b0969,_0x2afedf,_0x2c317d){const _0x5cddcd=a4_0x5b438f,_0x3b5a0f=this['getWorkoutById'](_0x2b0969);if(!_0x3b5a0f)return;const _0x105c16=_0x3b5a0f[_0x5cddcd(0xc1)]['find'](_0x4c0181=>_0x4c0181['id']===_0x2afedf);_0x105c16&&(_0x105c16['weight']=_0x2c317d===''||_0x2c317d===null||isNaN(_0x2c317d)?null:parseFloat(_0x2c317d),this['saveWorkout'](_0x3b5a0f));}['getLogs'](){const _0x180ffa=a4_0x5b438f;try{return JSON[_0x180ffa(0xe4)](localStorage[_0x180ffa(0x9d)](STORAGE_KEYS['LOGS']))||[];}catch(_0x5c13a1){return[];}}[a4_0x5b438f(0xe8)](_0x3c2f68){const _0x4f189f=a4_0x5b438f;localStorage[_0x4f189f(0xe9)](STORAGE_KEYS[_0x4f189f(0xc6)],JSON[_0x4f189f(0xd2)](_0x3c2f68));}[a4_0x5b438f(0xd7)](_0x4e771d){const _0xea17e1=a4_0x5b438f,_0x223fde=this[_0xea17e1(0xd0)]();_0x223fde[_0xea17e1(0xd1)](_0x4e771d),this[_0xea17e1(0xe8)](_0x223fde);}[a4_0x5b438f(0xec)](_0x3537a9){const _0x180905=a4_0x5b438f;let _0x729d7c=this[_0x180905(0xd0)]();_0x729d7c=_0x729d7c['filter'](_0x1463f3=>_0x1463f3['id']!==_0x3537a9),this[_0x180905(0xe8)](_0x729d7c);}[a4_0x5b438f(0xb2)](){const _0x34c59e=a4_0x5b438f;try{const _0x3502f9=JSON['parse'](localStorage[_0x34c59e(0x9d)](STORAGE_KEYS[_0x34c59e(0x9e)]));return{...DEFAULT_SETTINGS,..._0x3502f9};}catch(_0x2e6c14){return DEFAULT_SETTINGS;}}[a4_0x5b438f(0xb4)](_0x136ed5){const _0x336623=a4_0x5b438f;localStorage[_0x336623(0xe9)](STORAGE_KEYS[_0x336623(0x9e)],JSON[_0x336623(0xd2)](_0x136ed5));}[a4_0x5b438f(0xd8)](_0x3ffcac,_0x289a87){const _0x3f8c22=a4_0x5b438f,_0x1bc83f=this[_0x3f8c22(0xb2)]();_0x1bc83f[_0x3ffcac]=_0x289a87,this[_0x3f8c22(0xb4)](_0x1bc83f);}[a4_0x5b438f(0xd9)](){const _0x1c1e0f=a4_0x5b438f;return!!this['getSettings']()[_0x1c1e0f(0xcb)];}[a4_0x5b438f(0xdf)](){const _0x958298=a4_0x5b438f;this[_0x958298(0xd8)](_0x958298(0xcb),!![]);}['lockPremium'](){const _0x5ab52f=a4_0x5b438f;this[_0x5ab52f(0xd8)](_0x5ab52f(0xcb),![]);}[a4_0x5b438f(0x9b)](){const _0x24d2df=a4_0x5b438f,_0xf1a013=this[_0x24d2df(0xd9)]();return this[_0x24d2df(0xd8)](_0x24d2df(0xcb),!_0xf1a013),!_0xf1a013;}[a4_0x5b438f(0xd3)](){const _0x3d2f11=a4_0x5b438f;try{return JSON[_0x3d2f11(0xe4)](localStorage[_0x3d2f11(0x9d)](STORAGE_KEYS['ACTIVE_SESSION']));}catch(_0x4fb036){return null;}}['saveActiveSession'](_0x324c7e){const _0x5e8d06=a4_0x5b438f;!_0x324c7e?localStorage[_0x5e8d06(0xeb)](STORAGE_KEYS[_0x5e8d06(0xb9)]):localStorage[_0x5e8d06(0xe9)](STORAGE_KEYS['ACTIVE_SESSION'],JSON[_0x5e8d06(0xd2)](_0x324c7e));}}function a4_0x33a6(){const _0xb65f0e=['Chest\x20&\x20Arms\x20Push','togglePremiumDev','10YABQTM','getItem','SETTINGS','toISOString','circuit','createdAt','46732tPZhEH','cloneWorkout','initDefaults','ex_circ_3','Cyclic\x20circuit\x20workout\x20executing\x20exercises\x20sequentially\x20across\x203\x20rounds.','2gFDAPH','Tricep\x20Rope\x20Pushdowns','\x20(Copy)','159225UZteXq','timebased','3286784KJoABk','Heavy\x20hypertrophy\x20push\x20session\x20focusing\x20on\x20chest,\x20shoulders,\x20and\x20triceps.','ex_4','cyberpump_logs_v1','Barbell\x20Bench\x20Press','28724245ifmcPw','getSettings','Goblet\x20Squat','saveSettings','getWorkouts','cyberpump_active_session_v1','workout_push_day','ex_1','ACTIVE_SESSION','workout_circuit_mode','Push-ups','deleteWorkout','6258267WLGIgs','substr','saveWorkout','ex_3','exercises','Time-Based\x20High\x20Intensity','map','7aUvQsM','cyberpump_settings_v1','LOGS','updateWorkoutExerciseWeight','Every\x20Minute\x20On\x20the\x20Minute\x20interval\x20training\x20for\x20maximum\x20conditioning.','ex_clone_','updatedAt','isPremium','standard','workout_','174dqdyIT','ex_circ_1','getLogs','unshift','stringify','getActiveSession','workout_timebased_burn','getWorkoutById','Full\x20Body\x20Circuit','addLog','updateSetting','isPremiumUser','6070668uiYjsG','143945cITZdq','findIndex','Kettlebell\x20Swings','ex_circ_2','unlockPremium','WORKOUTS','name','saveWorkouts','ex_timebased_2','parse','cyberpump_workouts_v1','ex_timebased_1','push','saveLogs','setItem','Plank\x20timebased','removeItem','deleteLog'];a4_0x33a6=function(){return _0xb65f0e;};return a4_0x33a6();}window['storageManager']=new StorageManager();
+/**
+ * CYBERPUMP Storage & Data Management Module
+ * Uses browser localStorage for complete offline capability.
+ */
+
+const STORAGE_KEYS = {
+  WORKOUTS: 'cyberpump_workouts_v1',
+  LOGS: 'cyberpump_logs_v1',
+  SETTINGS: 'cyberpump_settings_v1',
+  ACTIVE_SESSION: 'cyberpump_active_session_v1'
+};
+
+const DEFAULT_WORKOUTS = [
+  {
+    id: 'workout_timebased_burn',
+    name: '(SAMPLE) ⚡ Cyber Burn (HIIT)',
+    description: 'Every Minute On the Minute interval training for maximum conditioning.',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    exercises: [
+      {
+        id: 'ex_timebased_1',
+        name: 'Kettlebell Swings',
+        type: 'timebased',
+        sets: 10,
+        reps: 15,
+        restSeconds: 0,
+        weight: 20,
+        timebasedIntervalSeconds: 60, // 1 minute per round
+        timebasedTotalRounds: 10
+      },
+      {
+        id: 'ex_timebased_2',
+        name: 'Burpees Blitz',
+        type: 'timebased',
+        sets: 5,
+        reps: 10,
+        restSeconds: 0,
+        weight: null,
+        timebasedIntervalSeconds: 45, // 45 sec interval
+        timebasedTotalRounds: 5
+      }
+    ]
+  },
+  {
+    id: 'workout_circuit_mode',
+    name: '(SAMPLE) 🔄 Full Body Circuit',
+    description: 'Cyclic circuit workout executing exercises sequentially across 3 rounds.',
+    mode: 'circuit',
+    circuitCycles: 3,
+    circuitRestSeconds: 90,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+    exercises: [
+      {
+        id: 'ex_circ_1',
+        name: 'Goblet Squat',
+        type: 'standard',
+        sets: 1,
+        reps: 12,
+        restSeconds: 15,
+        weight: 16,
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 1
+      },
+      {
+        id: 'ex_circ_2',
+        name: 'Plank timebased',
+        type: 'timebased',
+        sets: 1,
+        reps: 1,
+        restSeconds: 15,
+        weight: null,
+        timebasedIntervalSeconds: 45,
+        timebasedTotalRounds: 1
+      },
+      {
+        id: 'ex_circ_3',
+        name: 'Push-ups',
+        type: 'standard',
+        sets: 1,
+        reps: 15,
+        restSeconds: 15,
+        weight: null,
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 1
+      }
+    ]
+  }
+];
+
+const DEFAULT_SETTINGS = {
+  silentMode: false,
+  countdownVoice: true,
+  startBeep: true,
+  keepScreenAwake: true,
+  isPremium: false // 👑 Freemium Status Flag
+};
+
+class StorageManager {
+  constructor() {
+    this.initDefaults();
+  }
+
+  initDefaults() {
+    if (!localStorage.getItem(STORAGE_KEYS.WORKOUTS)) {
+      this.saveWorkouts(DEFAULT_WORKOUTS);
+    }
+    if (!localStorage.getItem(STORAGE_KEYS.SETTINGS)) {
+      this.saveSettings(DEFAULT_SETTINGS);
+    }
+    if (!localStorage.getItem(STORAGE_KEYS.LOGS)) {
+      this.saveLogs([]);
+    }
+  }
+
+  // Workouts CRUD
+  getWorkouts() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.WORKOUTS)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  getWorkoutById(id) {
+    const workouts = this.getWorkouts();
+    return workouts.find(w => w.id === id) || null;
+  }
+
+  saveWorkouts(workouts) {
+    localStorage.setItem(STORAGE_KEYS.WORKOUTS, JSON.stringify(workouts));
+  }
+
+  saveWorkout(workout) {
+    const workouts = this.getWorkouts();
+    const index = workouts.findIndex(w => w.id === workout.id);
+    workout.updatedAt = new Date().toISOString();
+    
+    if (index >= 0) {
+      workouts[index] = workout;
+    } else {
+      workouts.push(workout);
+    }
+    this.saveWorkouts(workouts);
+  }
+
+  deleteWorkout(id) {
+    let workouts = this.getWorkouts();
+    workouts = workouts.filter(w => w.id !== id);
+    this.saveWorkouts(workouts);
+  }
+
+  cloneWorkout(id) {
+    const workout = this.getWorkoutById(id);
+    if (!workout) return null;
+
+    const cloned = JSON.parse(JSON.stringify(workout));
+    cloned.id = 'workout_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+    cloned.name = `${workout.name} (Copy)`;
+    cloned.createdAt = new Date().toISOString();
+    cloned.updatedAt = new Date().toISOString();
+    
+    // Refresh exercise IDs
+    cloned.exercises = cloned.exercises.map((ex, idx) => ({
+      ...ex,
+      id: `ex_clone_${Date.now()}_${idx}`
+    }));
+
+    this.saveWorkout(cloned);
+    return cloned;
+  }
+
+  /**
+   * Update weight for a specific exercise inside a workout template
+   * (Req 5 & 12 requirement: modifying weight during execution updates workout configuration as well)
+   */
+  updateWorkoutExerciseWeight(workoutId, exerciseId, newWeight) {
+    const workout = this.getWorkoutById(workoutId);
+    if (!workout) return;
+
+    const exercise = workout.exercises.find(e => e.id === exerciseId);
+    if (exercise) {
+      exercise.weight = (newWeight === '' || newWeight === null || isNaN(newWeight)) ? null : parseFloat(newWeight);
+      this.saveWorkout(workout);
+    }
+  }
+
+  // Workout Logs CRUD (Diary Req 17)
+  getLogs() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.LOGS)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  saveLogs(logs) {
+    localStorage.setItem(STORAGE_KEYS.LOGS, JSON.stringify(logs));
+  }
+
+  addLog(logEntry) {
+    const logs = this.getLogs();
+    logs.unshift(logEntry); // Most recent first
+    this.saveLogs(logs);
+  }
+
+  deleteLog(logId) {
+    let logs = this.getLogs();
+    logs = logs.filter(l => l.id !== logId);
+    this.saveLogs(logs);
+  }
+
+  // Settings Management (Req 20)
+  getSettings() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.SETTINGS));
+      return { ...DEFAULT_SETTINGS, ...parsed };
+    } catch (e) {
+      return DEFAULT_SETTINGS;
+    }
+  }
+
+  saveSettings(settings) {
+    localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(settings));
+  }
+
+  updateSetting(key, value) {
+    const settings = this.getSettings();
+    settings[key] = value;
+    this.saveSettings(settings);
+  }
+
+  // 👑 Freemium Status Helpers
+  isPremiumUser() {
+    return !!this.getSettings().isPremium;
+  }
+
+  unlockPremium() {
+    this.updateSetting('isPremium', true);
+  }
+
+  lockPremium() {
+    this.updateSetting('isPremium', false);
+  }
+
+  togglePremiumDev() {
+    const currentState = this.isPremiumUser();
+    this.updateSetting('isPremium', !currentState);
+    return !currentState;
+  }
+
+  // Active Session Persistence (Resiliency against refresh)
+  getActiveSession() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.ACTIVE_SESSION));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  saveActiveSession(sessionState) {
+    if (!sessionState) {
+      localStorage.removeItem(STORAGE_KEYS.ACTIVE_SESSION);
+    } else {
+      localStorage.setItem(STORAGE_KEYS.ACTIVE_SESSION, JSON.stringify(sessionState));
+    }
+  }
+}
+
+window.storageManager = new StorageManager();

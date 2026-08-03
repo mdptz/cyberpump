@@ -1,1 +1,53 @@
-function a5_0x16ee(){const _0x44842b=['match','./index.html','6885100LKvJWq','activate','cyberpump-v106','2023052XHJUBc','./storage.js','catch','all','addEventListener','3dMlWyO','clients','open','2326302UbRgMi','51782fuqGPW','respondWith','515hegKUJ','7352632CjTZml','./app.js','./manifest.json','./audio.js','keys','1WOMuxS','request','1395OtcAqA','waitUntil','fetch','then','claim','62778CWcnPm','40184OyLBpC','map'];a5_0x16ee=function(){return _0x44842b;};return a5_0x16ee();}const a5_0x2d56d0=a5_0x4917;(function(_0x5b8099,_0x3d49ad){const _0x4753bf=a5_0x4917,_0x593a51=_0x5b8099();while(!![]){try{const _0x5cc2b2=parseInt(_0x4753bf(0xc9))/0x1*(-parseInt(_0x4753bf(0xc1))/0x2)+-parseInt(_0x4753bf(0xbd))/0x3*(-parseInt(_0x4753bf(0xb8))/0x4)+-parseInt(_0x4753bf(0xc3))/0x5*(parseInt(_0x4753bf(0xd0))/0x6)+parseInt(_0x4753bf(0xc4))/0x7+-parseInt(_0x4753bf(0xd1))/0x8*(parseInt(_0x4753bf(0xcb))/0x9)+parseInt(_0x4753bf(0xd5))/0xa+parseInt(_0x4753bf(0xc0))/0xb;if(_0x5cc2b2===_0x3d49ad)break;else _0x593a51['push'](_0x593a51['shift']());}catch(_0x2b6d33){_0x593a51['push'](_0x593a51['shift']());}}}(a5_0x16ee,0x8c222));const CACHE_NAME=a5_0x2d56d0(0xb7),ASSETS_TO_CACHE=['./',a5_0x2d56d0(0xd4),'./styles.css',a5_0x2d56d0(0xc5),a5_0x2d56d0(0xc7),a5_0x2d56d0(0xb9),'./exportImport.js',a5_0x2d56d0(0xc6)];function a5_0x4917(_0x36d7bb,_0x2c8bd4){_0x36d7bb=_0x36d7bb-0xb7;const _0x16eef9=a5_0x16ee();let _0x4917f4=_0x16eef9[_0x36d7bb];return _0x4917f4;}self['addEventListener']('install',_0x20be8c=>{const _0x138248=a5_0x2d56d0;_0x20be8c[_0x138248(0xcc)](caches[_0x138248(0xbf)](CACHE_NAME)['then'](_0x4af922=>{return _0x4af922['addAll'](ASSETS_TO_CACHE);})),self['skipWaiting']();}),self[a5_0x2d56d0(0xbc)](a5_0x2d56d0(0xd6),_0xc799dd=>{const _0xb8e357=a5_0x2d56d0;_0xc799dd[_0xb8e357(0xcc)](caches[_0xb8e357(0xc8)]()[_0xb8e357(0xce)](_0x45b098=>{const _0x1a264b=_0xb8e357;return Promise[_0x1a264b(0xbb)](_0x45b098[_0x1a264b(0xd2)](_0xeb5370=>{if(_0xeb5370!==CACHE_NAME)return caches['delete'](_0xeb5370);}));})),self[_0xb8e357(0xbe)][_0xb8e357(0xcf)]();}),self[a5_0x2d56d0(0xbc)](a5_0x2d56d0(0xcd),_0x151ec0=>{const _0x105376=a5_0x2d56d0;_0x151ec0[_0x105376(0xc2)](caches[_0x105376(0xd3)](_0x151ec0[_0x105376(0xca)])[_0x105376(0xce)](_0x3922bc=>{const _0x1222e3=_0x105376;if(_0x3922bc)return _0x3922bc;return fetch(_0x151ec0[_0x1222e3(0xca)])[_0x1222e3(0xba)](()=>{const _0x1951a3=_0x1222e3;return caches['match'](_0x1951a3(0xd4));});}));});
+/**
+ * CYBERPUMP Service Worker
+ * Caches all static assets for 100% offline usage on iOS & Android.
+ */
+
+const CACHE_NAME = 'cyberpump-v109';
+const ASSETS_TO_CACHE = [
+  './',
+  './index.html',
+  './styles.css',
+  './app.js',
+  './audio.js',
+  './storage.js',
+  './exportImport.js',
+  './manifest.json'
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS_TO_CACHE);
+    })
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(event.request).catch(() => {
+        return caches.match('./index.html');
+      });
+    })
+  );
+});
