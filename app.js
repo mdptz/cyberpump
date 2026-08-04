@@ -564,6 +564,7 @@ class CyberPumpApp {
               ` : ''}
             </div>
           </td>
+		  <td>
             <div class="action-btn-group">
               <button class="btn btn-secondary btn-sm row-move-up" data-index="${index}" ${index === 0 ? 'disabled' : ''}>\u{25B2}</button>
               <button class="btn btn-secondary btn-sm row-move-down" data-index="${index}" ${index === this.editingWorkout.exercises.length - 1 ? 'disabled' : ''}>\u{25BC}</button>
