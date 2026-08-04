@@ -1468,10 +1468,17 @@ class CyberPumpApp {
               this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
             }
           } else {
-            session.timebasedStarted = false;
-            window.audioEngine.playStartBeep(settings.silentMode);
-            window.audioEngine.speakPhrase("End set", settings.silentMode);
-            this.moveToNextUncompletedSet();
+            // ?? FIX PAUSA TIMEBASED: Se è l'ultimo round ma c'è una pausa impostata, la esegue prima di cambiare esercizio!
+            if (currentTask && currentTask.restSeconds > 0) {
+              window.audioEngine.playStartBeep(settings.silentMode);
+              window.audioEngine.speakPhrase("Rest", settings.silentMode);
+              this.starttimebasedRestPauseTimer(currentTask.restSeconds);
+            } else {
+              session.timebasedStarted = false;
+              window.audioEngine.playStartBeep(settings.silentMode);
+              window.audioEngine.speakPhrase("End set", settings.silentMode);
+              this.moveToNextUncompletedSet();
+            }
           }
         }
       }
@@ -1615,7 +1622,6 @@ class CyberPumpApp {
 
     const nextTask = session.queue[session.activeTaskIndex];
 
-    // ?? Se abbiamo terminato l'esercizio precedente e passiamo a un nuovo esercizio, chiediamo la conferma!
     if (lastExerciseId && nextTask && nextTask.exerciseId !== lastExerciseId) {
       session.awaitingExerciseStart = true;
     }
