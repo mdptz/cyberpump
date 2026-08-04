@@ -133,10 +133,10 @@ class CyberPumpApp {
   updateSilentModeIcon() {
     const settings = window.storageManager.getSettings();
     if (settings.silentMode) {
-      this.silentIcon.textContent = '🔇';
+      this.silentIcon.textContent = '\u{1F507}';
       this.quickSilentBtn.classList.add('active');
     } else {
-      this.silentIcon.textContent = '🔊';
+      this.silentIcon.textContent = '\u{1F50A}';
       this.quickSilentBtn.classList.remove('active');
     }
   }
@@ -214,7 +214,7 @@ class CyberPumpApp {
   showPaywallModal(reasonMessage = '') {
     const modalHtml = `
       <div style="text-align: center; padding: 12px 4px;">
-        <span style="font-size: 54px; filter: drop-shadow(0 0 10px var(--fluo-cyan));">👑</span>
+        <span style="font-size: 54px; filter: drop-shadow(0 0 10px var(--fluo-cyan));">\u{1F451}</span>
         <h2 style="font-family: var(--font-header); color: var(--fluo-cyan); font-size: 22px; margin: 8px 0 4px 0;">CYBERPUMP PREMIUM</h2>
         
         <p style="color: var(--fluo-orange); font-size: 13px; font-weight: 600; margin-bottom: 16px;">
@@ -223,18 +223,18 @@ class CyberPumpApp {
 
         <div class="card" style="text-align: left; background: rgba(0, 240, 255, 0.05); border-color: var(--fluo-cyan); margin-bottom: 20px;">
           <ul style="font-size: 13px; color: #fff; padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
-            <li>⚡ <strong>Unlimited Workouts</strong> (Free limit: 3)</li>
-            <li>⚡ <strong>Unlimited Exercises per Routine</strong> (Free limit: 6)</li>
-            <li>⚡ <strong>Unlimited Import & Cloning</strong></li>
-            <li>⚡ <strong>Lifetime Access (No Subscriptions)</strong></li>
+            <li>\u{26A1} <strong>Unlimited Workouts</strong> (Free limit: 3)</li>
+            <li>\u{26A1} <strong>Unlimited Exercises per Routine</strong> (Free limit: 6)</li>
+            <li>\u{26A1} <strong>Unlimited Import & Cloning</strong></li>
+            <li>\u{26A1} <strong>Lifetime Access (No Subscriptions)</strong></li>
           </ul>
         </div>
 
         <button id="btn-buy-premium-modal" class="btn btn-primary btn-block" style="padding: 16px; font-size: 15px; margin-bottom: 10px;">
-          🔓 Unlock Unlimited
+          \u{1F517} Unlock Unlimited
         </button>
         <button id="btn-restore-paywall" class="btn btn-secondary btn-block btn-sm" style="margin-bottom: 8px;">
-          🔄 Restore Purchases
+          \u{1F504} Restore Purchases
         </button>
         <button id="btn-cancel-paywall" class="btn btn-secondary btn-block btn-sm">
           Continue with Free Version
@@ -266,11 +266,11 @@ class CyberPumpApp {
   }
 
   triggerMockPurchase() {
-    this.showToast('⏳ Connecting to Store...');
+    this.showToast('\u{23F3} Connecting to Store...');
     setTimeout(() => {
       window.storageManager.unlockPremium();
       this.closeModal();
-      this.showToast('🎉 CYBERPUMP Premium Unlocked (Web Test)!');
+      this.showToast('\u{1F389} CYBERPUMP Premium Unlocked (Web Test)!');
       this.switchView(this.currentView);
     }, 1200);
   }
@@ -282,9 +282,9 @@ class CyberPumpApp {
     let html = `
       <div class="view-header">
         <div>
-          <h1 class="view-title">🏋️ My Workouts</h1>
+          <h1 class="view-title">\u{1F3CB}\u{FE0F} My Workouts</h1>
           <span style="font-size: 11px; color: ${isPremium ? 'var(--fluo-cyan)' : 'var(--text-muted)'}; font-weight: 600;">
-            ${isPremium ? '👑 PREMIUM USER (Unlimited)' : `FREE PLAN (${workouts.length}/${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Used)`}
+            ${isPremium ? '\u{1F451} PREMIUM USER (Unlimited)' : `FREE PLAN (${workouts.length}/${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Used)`}
           </span>
         </div>
         <button id="btn-create-workout" class="btn btn-primary btn-sm">+ New Workout</button>
@@ -312,22 +312,22 @@ class CyberPumpApp {
                 <p style="font-size: 12px; color: var(--text-muted);">${this.escapeHtml(w.description || 'Custom routine')}</p>
               </div>
               <span class="exercise-badge" style="${isCircuit ? 'background: rgba(0, 240, 255, 0.2); color: var(--fluo-cyan); border: 1px solid var(--fluo-cyan);' : ''}">
-                ${isCircuit ? `🔄 CIRCUIT (${w.circuitCycles || 3} Cycles)` : `${w.exercises.length} Exercises (${totalSets} Sets)`}
+                ${isCircuit ? `\u{1F504} CIRCUIT (${w.circuitCycles || 3} Cycles)` : `${w.exercises.length} Exercises (${totalSets} Sets)`}
               </span>
             </div>
 
             <div style="display: flex; gap: 8px; font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
-              ${isCircuit ? `<span style="color: var(--fluo-cyan);">🔄 ${w.exercises.length} Exercises per Cycle • Rest: ${w.circuitRestSeconds || 90}s</span>` : ''}
-              ${timebasedCount > 0 ? `<span style="color: var(--fluo-magenta);">⚡ ${timebasedCount} Time-Based</span>` : ''}
-              ${!isCircuit ? `<span>🕒 Rest configured per exercise</span>` : ''}
+              ${isCircuit ? `<span style="color: var(--fluo-cyan);">\u{1F504} ${w.exercises.length} Exercises per Cycle \u{2022} Rest: ${w.circuitRestSeconds || 90}s</span>` : ''}
+              ${timebasedCount > 0 ? `<span style="color: var(--fluo-magenta);">\u{26A1} ${timebasedCount} Time-Based</span>` : ''}
+              ${!isCircuit ? `<span>\u{1F552} Rest configured per exercise</span>` : ''}
             </div>
 
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button class="btn btn-success btn-sm btn-start-workout" data-id="${w.id}">▶️ Start</button>
-              <button class="btn btn-secondary btn-sm btn-edit-workout" data-id="${w.id}">✏️ Config</button>
-              <button class="btn btn-secondary btn-sm btn-clone-workout" data-id="${w.id}">📋 Clone</button>
-              <button class="btn btn-secondary btn-sm btn-share-workout" data-id="${w.id}">📤 Share</button>
-              <button class="btn btn-secondary btn-sm btn-delete-workout" data-id="${w.id}" style="color: var(--fluo-magenta); border-color: rgba(255,0,127,0.3);">🗑️</button>
+              <button class="btn btn-success btn-sm btn-start-workout" data-id="${w.id}">\u{25B6}\u{FE0F} Start</button>
+              <button class="btn btn-secondary btn-sm btn-edit-workout" data-id="${w.id}">\u{270F}\u{FE0F} Config</button>
+              <button class="btn btn-secondary btn-sm btn-clone-workout" data-id="${w.id}">\u{1F4CB} Clone</button>
+              <button class="btn btn-secondary btn-sm btn-share-workout" data-id="${w.id}">\u{1F4E4} Share</button>
+              <button class="btn btn-secondary btn-sm btn-delete-workout" data-id="${w.id}" style="color: var(--fluo-magenta); border-color: rgba(255,0,127,0.3);">\u{1F5D1}\u{FE0F}</button>
             </div>
           </div>
         `;
@@ -441,12 +441,12 @@ class CyberPumpApp {
     let html = `
       <div class="view-header">
         <div>
-          <h1 class="view-title">⚙️ Configure Workout</h1>
+          <h1 class="view-title">\u{2699}\u{FE0F} Configure Workout</h1>
           <span style="font-size: 11px; color: ${isPremium ? 'var(--fluo-cyan)' : 'var(--text-muted)'}; font-weight: 600;">
-            ${isPremium ? '👑 PREMIUM (Unlimited Exercises)' : `FREE PLAN (${this.editingWorkout.exercises.length}/${FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT} Exercises Max)`}
+            ${isPremium ? '\u{1F451} PREMIUM (Unlimited Exercises)' : `FREE PLAN (${this.editingWorkout.exercises.length}/${FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT} Exercises Max)`}
           </span>
         </div>
-        <button id="btn-save-tabular" class="btn btn-primary btn-sm">💾 Save Workout</button>
+        <button id="btn-save-tabular" class="btn btn-primary btn-sm">\u{1F4BE} Save Workout</button>
       </div>
 
       <div class="card" style="margin-bottom: 12px;">
@@ -464,8 +464,8 @@ class CyberPumpApp {
         <div class="form-group" style="margin-bottom: 8px;">
           <label class="form-label" style="color: var(--fluo-cyan); font-weight: 700;">Workout Execution Mode</label>
           <select id="edit-workout-mode" class="form-input" style="background: rgba(0, 240, 255, 0.05); color: #fff; border-color: var(--fluo-cyan);">
-            <option value="standard" ${this.editingWorkout.mode !== 'circuit' ? 'selected' : ''}>📋 Standard Mode (All Sets per Exercise sequentially)</option>
-            <option value="circuit" ${this.editingWorkout.mode === 'circuit' ? 'selected' : ''}>🔄 Cyclic / Circuit Mode (1 Set per Exercise sequentially across N Cycles)</option>
+            <option value="standard" ${this.editingWorkout.mode !== 'circuit' ? 'selected' : ''}>\u{1F4CB} Standard Mode (All Sets per Exercise sequentially)</option>
+            <option value="circuit" ${this.editingWorkout.mode === 'circuit' ? 'selected' : ''}>\u{1F504} Cyclic / Circuit Mode (1 Set per Exercise sequentially across N Cycles)</option>
           </select>
         </div>
 
@@ -564,9 +564,9 @@ class CyberPumpApp {
           </td>
           <td>
             <div class="action-btn-group">
-              <button class="btn btn-secondary btn-sm row-move-up" data-index="${index}" ${index === 0 ? 'disabled' : ''}>▲</button>
-              <button class="btn btn-secondary btn-sm row-move-down" data-index="${index}" ${index === this.editingWorkout.exercises.length - 1 ? 'disabled' : ''}>▼</button>
-              <button class="btn btn-secondary btn-sm row-delete" data-index="${index}" style="color: var(--fluo-magenta);">🗑️</button>
+              <button class="btn btn-secondary btn-sm row-move-up" data-index="${index}" ${index === 0 ? 'disabled' : ''}>\u{25B2}</button>
+              <button class="btn btn-secondary btn-sm row-move-down" data-index="${index}" ${index === this.editingWorkout.exercises.length - 1 ? 'disabled' : ''}>\u{25BC}</button>
+              <button class="btn btn-secondary btn-sm row-delete" data-index="${index}" style="color: var(--fluo-magenta);">\u{1F5D1}\u{FE0F}</button>
             </div>
           </td>
         </tr>
@@ -795,7 +795,7 @@ class CyberPumpApp {
 
     window.storageManager.saveActiveSession(this.activeSession);
     this.switchView('active-workout');
-    this.showToast(`Started "${workout.name}"! Let's go! 🚀`);
+    this.showToast(`Started "${workout.name}"! Let's go! \u{1F680}`);
   }
 
   getNextPreviewTask(session) {
@@ -880,7 +880,7 @@ class CyberPumpApp {
       html += `
         <div class="card active-player-card" style="border-color: var(--fluo-cyan); box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);">
           <span class="exercise-badge" style="background: rgba(0, 240, 255, 0.2); color: var(--fluo-cyan);">
-            🎯 EXERCISE COMPLETED
+            \u{1F3AF} EXERCISE COMPLETED
           </span>
           <h2 class="exercise-title" style="margin-bottom: 4px;">Get Ready for Next Exercise</h2>
 
@@ -895,8 +895,8 @@ class CyberPumpApp {
           </div>
 
           <div style="display: flex; gap: 8px; margin-top: 16px;">
-            <button id="btn-quick-weight-transition" class="btn btn-secondary" style="flex: 1;">⚖️ Adjust Weight</button>
-            <button id="btn-confirm-next-exercise" class="btn btn-success" style="flex: 2; padding: 16px; font-size: 16px;">▶️ Start ${this.escapeHtml(nextTask.exerciseName)}</button>
+            <button id="btn-quick-weight-transition" class="btn btn-secondary" style="flex: 1;">\u{2696}\u{FE0F} Adjust Weight</button>
+            <button id="btn-confirm-next-exercise" class="btn btn-success" style="flex: 2; padding: 16px; font-size: 16px;">\u{25B6}\u{FE0F} Start ${this.escapeHtml(nextTask.exerciseName)}</button>
           </div>
         </div>
       `;
@@ -906,7 +906,7 @@ class CyberPumpApp {
       html += `
         <div class="rest-overlay" style="border-color: var(--fluo-orange); box-shadow: 0 0 20px rgba(255, 153, 0, 0.3);">
           <span style="font-size: 13px; font-weight: 800; color: var(--fluo-orange); letter-spacing: 1px;">
-            ⏸️ TIMEBASED REST PAUSE
+            \u{23F8}\u{FE0F} TIMEBASED REST PAUSE
           </span>
           <div id="timebased-rest-timer-num" class="rest-timer-display" style="color: var(--fluo-orange); text-shadow: 0 0 20px var(--fluo-orange); font-size: 72px;">
             ${this.timerSecondsLeft}s
@@ -925,9 +925,9 @@ class CyberPumpApp {
           ` : ''}
 
           <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
-            <button id="btn-pause-timebased" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
-            <button id="btn-quick-weight-rest" class="btn btn-secondary btn-sm">⚖️ Weight</button>
-            <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest ⏩</button>
+            <button id="btn-pause-timebased" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '\u{25B6}\u{FE0F} Resume' : '\u{23F8}\u{FE0F} Pause'}</button>
+            <button id="btn-quick-weight-rest" class="btn btn-secondary btn-sm">\u{2696}\u{FE0F} Weight</button>
+            <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest \u{23E9}</button>
           </div>
         </div>
       `;
@@ -938,7 +938,7 @@ class CyberPumpApp {
       html += `
         <div class="rest-overlay" style="${isCycleRest ? 'border-color: var(--fluo-cyan); box-shadow: 0 0 25px rgba(0,240,255,0.3);' : ''}">
           <span style="font-size: 13px; font-weight: 800; color: ${isCycleRest ? 'var(--fluo-cyan)' : 'var(--fluo-lime)'}; letter-spacing: 1px;">
-            ${isCycleRest ? `🔄 CIRCUIT CYCLE ${currentTask.cycleIndex} COMPLETED!` : '⏸️ REST & RECOVER'}
+            ${isCycleRest ? `\u{1F504} CIRCUIT CYCLE ${currentTask.cycleIndex} COMPLETED!` : '\u{23F8}\u{FE0F} REST & RECOVER'}
           </span>
           <div id="rest-timer-num" class="rest-timer-display" style="${isCycleRest ? 'color: var(--fluo-cyan); text-shadow: 0 0 20px var(--fluo-cyan);' : ''}">${this.timerSecondsLeft}s</div>
 
@@ -955,10 +955,10 @@ class CyberPumpApp {
           ` : ''}
 
           <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
-            <button id="btn-pause-timer" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>
+            <button id="btn-pause-timer" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '\u{25B6}\u{FE0F} Resume' : '\u{23F8}\u{FE0F} Pause'}</button>
             <button id="btn-add-rest" class="btn btn-secondary btn-sm">+10s</button>
-            <button id="btn-quick-weight-rest" class="btn btn-secondary btn-sm">⚖️ Weight</button>
-            <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest ⏩</button>
+            <button id="btn-quick-weight-rest" class="btn btn-secondary btn-sm">\u{2696}\u{FE0F} Weight</button>
+            <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest \u{23E9}</button>
           </div>
         </div>
       `;
@@ -975,7 +975,7 @@ class CyberPumpApp {
       html += `
         <div class="card active-player-card" style="border-color: var(--fluo-magenta); box-shadow: 0 0 25px rgba(255, 0, 127, 0.25);">
           <span class="exercise-badge" style="background: rgba(255, 0, 127, 0.2); color: var(--fluo-magenta);">
-            ${currentTask.isCircuitMode ? `⚡ CIRCUIT • CYCLE ${currentTask.cycleIndex}/${currentTask.totalCycles} • TIMEBASED ROUND ${currentRoundNumber}/${currentTask.totalSets}` : `⚡ TIMEBASED MODE • ROUND ${currentRoundNumber} OF ${currentTask.totalSets}`}
+            ${currentTask.isCircuitMode ? `\u{26A1} CIRCUIT \u{2022} CYCLE ${currentTask.cycleIndex}/${currentTask.totalCycles} \u{2022} TIMEBASED ROUND ${currentRoundNumber}/${currentTask.totalSets}` : `\u{26A1} TIMEBASED MODE \u{2022} ROUND ${currentRoundNumber} OF ${currentTask.totalSets}`}
           </span>
           <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
 
@@ -1000,18 +1000,18 @@ class CyberPumpApp {
 
           ${!istimebasedRunning ? `
             <button id="btn-start-timebased-manual" class="btn btn-success btn-block" style="margin-top: 16px; padding: 18px; font-size: 18px; box-shadow: var(--shadow-neon-lime);">
-              ▶️ START TIMEBASED (ROUND 1/${currentTask.totalSets})
+              \u{25B6}\u{FE0F} START TIMEBASED (ROUND 1/${currentTask.totalSets})
             </button>
           ` : `
             <p style="font-size: 11px; color: var(--text-muted); margin: 8px 0;">
-              🤖 Hands-Free Mode: Timer auto-advances rounds when time reaches 0s.
+              \u{1F916} Hands-Free Mode: Timer auto-advances rounds when time reaches 0s.
             </p>
           `}
 
           <div style="display: flex; gap: 8px; margin-top: 12px;">
-            ${istimebasedRunning ? `<button id="btn-pause-timebased" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '▶️ Resume' : '⏸️ Pause'}</button>` : ''}
-            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">⚖️ Adjust Weight</button>
-            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">⏭️ Skip Exercise</button>
+            ${istimebasedRunning ? `<button id="btn-pause-timebased" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '\u{25B6}\u{FE0F} Resume' : '\u{23F8}\u{FE0F} Pause'}</button>` : ''}
+            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">\u{2696}\u{FE0F} Adjust Weight</button>
+            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">\u{23ED}\u{FE0F} Skip Exercise</button>
           </div>
         </div>
       `;
@@ -1026,7 +1026,7 @@ class CyberPumpApp {
       html += `
         <div class="card active-player-card">
           <span class="exercise-badge" style="${currentTask.isCircuitMode ? 'background: rgba(0, 240, 255, 0.15); color: var(--fluo-cyan); border: 1px solid var(--fluo-cyan);' : ''}">
-            ${currentTask.isCircuitMode ? `🔄 CIRCUIT • CYCLE ${currentTask.cycleIndex} OF ${currentTask.totalCycles}` : `STANDARD SET • SET ${currentSetNumber} OF ${currentTask.totalSets}`}
+            ${currentTask.isCircuitMode ? `\u{1F504} CIRCUIT \u{2022} CYCLE ${currentTask.cycleIndex} OF ${currentTask.totalCycles}` : `STANDARD SET \u{2022} SET ${currentSetNumber} OF ${currentTask.totalSets}`}
           </span>
           <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
 
@@ -1046,12 +1046,12 @@ class CyberPumpApp {
           </div>
 
           <div style="display: flex; gap: 8px; margin-top: 16px;">
-            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">⚖️ Adjust Weight</button>
-            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">⏭️ Skip Set</button>
+            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">\u{2696}\u{FE0F} Adjust Weight</button>
+            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">\u{23ED}\u{FE0F} Skip Set</button>
           </div>
 
           <button id="btn-complete-set" class="btn btn-success btn-block" style="margin-top: 12px; padding: 18px; font-size: 16px;">
-            ✅ Complete Set (${currentSetNumber}/${currentTask.totalSets})
+            \u{2705} Complete Set (${currentSetNumber}/${currentTask.totalSets})
           </button>
         </div>
       `;
@@ -1064,7 +1064,7 @@ class CyberPumpApp {
       html += `
         <div class="queue-container card" style="margin-top: 16px; border-color: var(--fluo-cyan);">
           <h3 style="font-size: 14px; color: var(--fluo-cyan); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
-            🔄 Circuit Queue (${totalCompletedSets}/${session.queue.length} Tasks Executed)
+            \u{1F504} Circuit Queue (${totalCompletedSets}/${session.queue.length} Tasks Executed)
           </h3>
           <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
             Tap any task step to switch to it in the circuit.
@@ -1079,7 +1079,7 @@ class CyberPumpApp {
               ? `@ ${task.weight}kg/lbs` 
               : '(BW)';
 
-            let badgeText = isDone ? (isSkipped ? '⏭️ SKIPPED' : '✓ DONE') : (isActive ? '► ACTIVE' : `Cycle ${task.cycleIndex}`);
+            let badgeText = isDone ? (isSkipped ? '\u{23ED}\u{FE0F} SKIPPED' : '\u{2713} DONE') : (isActive ? '\u{25B6} ACTIVE' : `Cycle ${task.cycleIndex}`);
             let badgeColor = isDone ? (isSkipped ? 'var(--fluo-orange)' : 'var(--fluo-lime)') : (isActive ? 'var(--fluo-cyan)' : 'var(--text-muted)');
 
             return `
@@ -1087,7 +1087,7 @@ class CyberPumpApp {
                 <div>
                   <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(task.exerciseName)}</strong>
                   <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
-                    Cycle ${task.cycleIndex} of ${task.totalCycles} • ${task.reps} reps ${weightText}
+                    Cycle ${task.cycleIndex} of ${task.totalCycles} \u{2022} ${task.reps} reps ${weightText}
                   </div>
                 </div>
                 <div>
@@ -1151,14 +1151,14 @@ class CyberPumpApp {
                 <div>
                   <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(group.exerciseName)}</strong>
                   <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
-                    ${group.completedSets}/${group.totalSets} Sets Done • ${group.reps} reps ${weightText}
+                    ${group.completedSets}/${group.totalSets} Sets Done \u{2022} ${group.reps} reps ${weightText}
                   </div>
                 </div>
                 <div>
                   ${isFullyDone 
-                    ? '<span style="color: var(--fluo-lime); font-weight: 700; font-size: 12px;">✓ DONE</span>' 
+                    ? '<span style="color: var(--fluo-lime); font-weight: 700; font-size: 12px;">\u{2713} DONE</span>' 
                     : (isCurrentActiveEx 
-                      ? '<span style="color: var(--fluo-cyan); font-weight: 700; font-size: 12px;">▶ ACTIVE</span>' 
+                      ? '<span style="color: var(--fluo-cyan); font-weight: 700; font-size: 12px;">\u{25B6} ACTIVE</span>' 
                       : '<span style="color: var(--text-muted); font-size: 12px;">Select</span>')}
                 </div>
               </div>
@@ -1303,7 +1303,7 @@ class CyberPumpApp {
         const currentWeight = currentTask.weight !== null && currentTask.weight !== undefined ? currentTask.weight : '';
 
         const modalHtml = `
-          <h3 style="font-family: var(--font-header); color: #fff; margin-bottom: 12px;">⚖️ Adjust Weight</h3>
+          <h3 style="font-family: var(--font-header); color: #fff; margin-bottom: 12px;">\u{2696}\u{FE0F} Adjust Weight</h3>
           <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
             Update weight for <strong>${this.escapeHtml(currentTask.exerciseName)}</strong>. This will also update the default weight in your workout configuration.
           </p>
@@ -1429,7 +1429,7 @@ class CyberPumpApp {
         this.stopRestTimer();
 
         window.audioEngine.vibrateFinish();
-        window.audioEngine.sendRestNotification("CYBERPUMP ⚡", "Round Completed! Next Round Starting!");
+        window.audioEngine.sendRestNotification("CYBERPUMP \u{26A1}", "Round Completed! Next Round Starting!");
 
         const currentTask = session.queue[session.activeTaskIndex];
         if (currentTask && !currentTask.completed) {
@@ -1528,7 +1528,7 @@ class CyberPumpApp {
         session.intimebasedRestPause = false;
 
         window.audioEngine.vibrateFinish();
-        window.audioEngine.sendRestNotification("CYBERPUMP 🏋️‍♂️", "Rest Over! Time for the next interval!");
+        window.audioEngine.sendRestNotification("CYBERPUMP \u{1F3CB}\u{FE0F}", "Rest Over! Time for the next interval!");
 
         const currentTask = session.queue[session.activeTaskIndex];
         const settings = window.storageManager.getSettings();
@@ -1577,7 +1577,7 @@ class CyberPumpApp {
         window.audioEngine.speakPhrase("Get ready", settings.silentMode);
         
         window.audioEngine.vibrateFinish();
-        window.audioEngine.sendRestNotification("CYBERPUMP 🏋️‍♂️", "Rest Over! Get ready for your next set!");
+        window.audioEngine.sendRestNotification("CYBERPUMP \u{1F3CB}\u{FE0F}", "Rest Over! Get ready for your next set!");
 
         this.stopRestTimer();
         this.moveToNextUncompletedSet();
@@ -1696,13 +1696,13 @@ class CyberPumpApp {
     window.storageManager.saveActiveSession(null);
 
     window.audioEngine.vibrateFinish();
-    window.audioEngine.sendRestNotification("CYBERPUMP 🏆", "WORKOUT COMPLETED! Great session!");
+    window.audioEngine.sendRestNotification("CYBERPUMP \u{1F3C6}", "WORKOUT COMPLETED! Great session!");
 
     this.switchView('workouts');
 
     const modalHtml = `
       <div style="text-align: center; padding: 12px 0;">
-        <span style="font-size: 48px;">🏆</span>
+        <span style="font-size: 48px;">\u{1F3C6}</span>
         <h2 style="font-family: var(--font-header); color: var(--fluo-lime); font-size: 24px; margin: 8px 0;">WORKOUT COMPLETED!</h2>
         <p style="color: var(--text-muted); font-size: 13px;">Great job! Your session has been saved to your Workout Diary.</p>
 
@@ -1733,7 +1733,7 @@ class CyberPumpApp {
 
     let html = `
       <div class="view-header">
-        <h1 class="view-title">📅 Workout Diary</h1>
+        <h1 class="view-title">\u{1F4C5} Workout Diary</h1>
         <span style="font-size: 12px; color: var(--text-muted);">${logs.length} Logged Sessions</span>
       </div>
     `;
@@ -1756,7 +1756,7 @@ class CyberPumpApp {
                 <span style="font-size: 11px; color: var(--text-muted);">${dateStr}</span>
               </div>
               <span class="exercise-badge" style="background: rgba(0, 255, 136, 0.15); color: var(--fluo-lime);">
-                ⏱️ ${log.durationMinutes} min
+                \u{23F1}\u{FE0F} ${log.durationMinutes} min
               </span>
             </div>
 
@@ -1794,7 +1794,7 @@ class CyberPumpApp {
   renderShareImportView() {
     let html = `
       <div class="view-header">
-        <h1 class="view-title">📤 Export & Import</h1>
+        <h1 class="view-title">\u{1F4E4} Export & Import</h1>
       </div>
 
       <div class="card" style="margin-bottom: 16px;">
@@ -1804,9 +1804,9 @@ class CyberPumpApp {
         </p>
 
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <button id="btn-export-share" class="btn btn-primary btn-sm">📱 Share via App</button>
-          <button id="btn-export-copy" class="btn btn-secondary btn-sm">📋 Copy Text String</button>
-          <button id="btn-export-file" class="btn btn-secondary btn-sm">💾 Download JSON File</button>
+          <button id="btn-export-share" class="btn btn-primary btn-sm">\u{1F4F1} Share via App</button>
+          <button id="btn-export-copy" class="btn btn-secondary btn-sm">\u{1F4CB} Copy Text String</button>
+          <button id="btn-export-file" class="btn btn-secondary btn-sm">\u{1F4BE} Download JSON File</button>
         </div>
       </div>
 
@@ -1823,7 +1823,7 @@ class CyberPumpApp {
         <div style="display: flex; gap: 8px; align-items: center;">
           <button id="btn-parse-import" class="btn btn-success btn-sm">Preview & Select Workouts</button>
           <label class="btn btn-secondary btn-sm" style="cursor: pointer; margin: 0;">
-            📂 Pick File
+            \u{1F4C2} Pick File
             <input type="file" id="import-file-input" accept=".json,.txt" style="display: none;">
           </label>
         </div>
@@ -1881,8 +1881,8 @@ class CyberPumpApp {
       <h3 style="font-family: var(--font-header); color: #fff; margin-bottom: 8px;">Select Workouts to Import</h3>
       <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
         ${isPremium 
-          ? '👑 <strong>Premium Plan:</strong> You can import all selected workouts.' 
-          : `🆓 <strong>Free Plan:</strong> You can import up to <strong>${remainingSlots}</strong> more workout(s).`}
+          ? '\u{1F451} <strong>Premium Plan:</strong> You can import all selected workouts.' 
+          : `\u{1F193} <strong>Free Plan:</strong> You can import up to <strong>${remainingSlots}</strong> more workout(s).`}
       </p>
 
       <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
@@ -1949,7 +1949,7 @@ class CyberPumpApp {
 
     let html = `
       <div class="view-header">
-        <h1 class="view-title">⚙️ App Settings</h1>
+        <h1 class="view-title">\u{2699}\u{FE0F} App Settings</h1>
       </div>
 
       <div class="card" style="margin-bottom: 12px;">
@@ -1958,7 +1958,7 @@ class CyberPumpApp {
           Already bought Premium on another device? Restore your active purchase.
         </p>
         <button id="btn-restore-purchases" class="btn btn-secondary btn-sm" style="color: var(--fluo-cyan); border-color: var(--fluo-cyan);">
-          🔄 Restore Purchases
+          \u{1F504} Restore Purchases
         </button>
       </div>
 
@@ -1979,7 +1979,7 @@ class CyberPumpApp {
             <strong style="color: #fff; font-size: 15px;">Start Chime Beep Tone</strong>
             <p style="font-size: 11px; color: var(--text-muted);">Audio tone signals test.</p>
           </div>
-          <button id="btn-test-audio" class="btn btn-secondary btn-sm">🔊 Test Audio</button>
+          <button id="btn-test-audio" class="btn btn-secondary btn-sm">\u{1F50A} Test Audio</button>
         </div>
       </div>
 
@@ -1989,16 +1989,16 @@ class CyberPumpApp {
           All workout data is stored locally on this smartphone device.
         </p>
         <button id="btn-reset-defaults" class="btn btn-secondary btn-sm" style="color: var(--fluo-magenta); border-color: rgba(255,0,127,0.3);">
-          ⚠️ Restore Preset Workouts
+          \u{26A0}\u{FE0F} Restore Preset Workouts
         </button>
       </div>
 
       <div class="card" style="text-align: center; padding: 20px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(0, 240, 255, 0.2);">
         <div style="font-family: var(--font-header); font-size: 14px; font-weight: 700; color: var(--fluo-cyan); letter-spacing: 1px; margin-bottom: 4px;">
-          ⚡ CYBERPUMP WORKOUT LOG
+          \u{26A1} CYBERPUMP WORKOUT LOG
         </div>
         <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
-          Version <span style="color: var(--fluo-lime); font-weight: 700;">1.0.9</span> • Native App
+          Version <span style="color: var(--fluo-lime); font-weight: 700;">1.0.9</span> \u{2022} Native App
         </div>
 
         <div style="border-top: 1px dashed rgba(255, 255, 255, 0.1); width: 60%; margin: 10px auto;"></div>
@@ -2008,7 +2008,7 @@ class CyberPumpApp {
         </div>
         <div style="font-size: 11px;">
           <a href="mailto:mttdptrz@gmail.com" style="color: var(--fluo-cyan); text-decoration: none;">
-            ✉️ mttdptrz@gmail.com
+            \u{2709}\u{FE0F} mttdptrz@gmail.com
           </a>
         </div>
       </div>
