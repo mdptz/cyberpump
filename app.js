@@ -1468,7 +1468,6 @@ class CyberPumpApp {
               this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
             }
           } else {
-            // ?? FIX PAUSA TIMEBASED: Se è l'ultimo round ma c'è una pausa impostata, la esegue prima di cambiare esercizio!
             if (currentTask && currentTask.restSeconds > 0) {
               window.audioEngine.playStartBeep(settings.silentMode);
               window.audioEngine.speakPhrase("Rest", settings.silentMode);
