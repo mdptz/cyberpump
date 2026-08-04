@@ -554,7 +554,7 @@ class CyberPumpApp {
           <td>
             <input type="number" step="0.5" class="table-input row-weight" value="${weightVal}" placeholder="BW">
           </td>
-         <td>
+          <td>
             <div style="display: flex; flex-direction: column; gap: 2px;">
               ${istimebased ? '<span style="font-size: 8px; color: var(--fluo-magenta); font-weight: 700; text-transform: uppercase; line-height: 1;">\u{26A1} Work</span>' : ''}
               <input type="number" class="table-input row-time" min="1" max="999" value="${istimebased ? (ex.timebasedIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${istimebased ? 'Interval in sec' : 'Rest in sec'}">
@@ -564,7 +564,7 @@ class CyberPumpApp {
               ` : ''}
             </div>
           </td>
-		  <td>
+          <td>
             <div class="action-btn-group">
               <button class="btn btn-secondary btn-sm row-move-up" data-index="${index}" ${index === 0 ? 'disabled' : ''}>\u{25B2}</button>
               <button class="btn btn-secondary btn-sm row-move-down" data-index="${index}" ${index === this.editingWorkout.exercises.length - 1 ? 'disabled' : ''}>\u{25BC}</button>
@@ -1651,6 +1651,7 @@ class CyberPumpApp {
 
     if (lastExerciseId && nextTask && nextTask.exerciseId !== lastExerciseId) {
       session.awaitingExerciseStart = true;
+      session.timebasedStarted = false;
     }
 
     if (session.awaitingExerciseStart) {
@@ -1659,10 +1660,11 @@ class CyberPumpApp {
       return;
     }
 
-    if (nextTask && nextTask.type === 'timebased' && nextTask.isCircuitMode && session.activeTaskIndex > 0) {
-      session.timebasedStarted = true;
+    // 🎯 FIX BUG: Se il prossimo task è Time-Based e la sessione Time-Based era già avviata
+    if (nextTask && nextTask.type === 'timebased' && session.timebasedStarted) {
       window.storageManager.saveActiveSession(session);
       const settings = window.storageManager.getSettings();
+      window.audioEngine.playStartBeep(settings.silentMode);
       window.audioEngine.speakPhrase("Go", settings.silentMode);
       this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
       return;
