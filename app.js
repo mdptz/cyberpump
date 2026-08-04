@@ -522,7 +522,7 @@ class CyberPumpApp {
     return this.editingWorkout.exercises.map((ex, index) => {
       const istimebased = ex.type === 'timebased';
       const weightVal = (ex.weight === null || ex.weight === undefined) ? '' : ex.weight;
-      const restVal = istimebased ? (ex.restSeconds || 0) : (ex.restSeconds || 60);
+      const restVal = istimebased ? (ex.restSeconds !== undefined && ex.restSeconds !== null ? ex.restSeconds : 15) : (ex.restSeconds || 60);
 
       const setsDisabled = isCircuitMode;
       const setsVal = setsDisabled ? 1 : (ex.sets || (istimebased ? (ex.timebasedTotalRounds || 5) : 3));
@@ -558,7 +558,7 @@ class CyberPumpApp {
             <div style="display: flex; flex-direction: column; gap: 2px;">
               <input type="number" class="table-input row-time" min="1" max="999" value="${istimebased ? (ex.timebasedIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${istimebased ? 'Interval in sec' : 'Rest in sec'}">
               ${istimebased ? `
-                <input type="number" class="table-input row-rest" min="0" max="999" value="${restVal}" placeholder="Rest (opt)" title="Optional Rest between rounds (sec)">
+                <input type="number" class="table-input row-rest" min="0" max="999" value="${restVal}" placeholder="Rest (sec)" title="Optional Rest between rounds (sec)">
               ` : ''}
             </div>
           </td>
@@ -620,7 +620,8 @@ class CyberPumpApp {
           ex.timebasedIntervalSeconds = timeVal;
           ex.timebasedTotalRounds = ex.sets;
           const restInput = tr.querySelector('.row-rest');
-          ex.restSeconds = restInput ? (parseInt(restInput.value) || 0) : 0;
+          const parsedRest = restInput ? parseInt(restInput.value) : NaN;
+          ex.restSeconds = !isNaN(parsedRest) ? parsedRest : 15;
         } else {
           ex.restSeconds = timeVal;
         }
@@ -721,7 +722,10 @@ class CyberPumpApp {
       for (let c = 1; c <= totalCycles; c++) {
         workout.exercises.forEach((ex, exIdx) => {
           const isLastExInCycle = exIdx === workout.exercises.length - 1;
-          const restTime = isLastExInCycle ? circuitRest : (ex.type === 'timebased' ? (ex.restSeconds || 0) : (ex.restSeconds || 60));
+          const parsedExRest = parseInt(ex.restSeconds);
+          const restTime = isLastExInCycle 
+            ? circuitRest 
+            : (ex.type === 'timebased' ? (!isNaN(parsedExRest) ? parsedExRest : 15) : (parsedExRest || 60));
 
           queue.push({
             taskId: `task_cycle_${c}_ex_${ex.id}`,
@@ -738,7 +742,7 @@ class CyberPumpApp {
             restSeconds: restTime,
             weight: ex.weight,
             type: ex.type || 'standard',
-            timebasedIntervalSeconds: ex.timebasedIntervalSeconds || 60,
+            timebasedIntervalSeconds: parseInt(ex.timebasedIntervalSeconds) || 60,
             timebasedTotalRounds: 1,
             completed: false
           });
@@ -747,6 +751,11 @@ class CyberPumpApp {
     } else {
       workout.exercises.forEach(ex => {
         const setsCount = parseInt(ex.sets) || 1;
+        const parsedExRest = parseInt(ex.restSeconds);
+        const restTime = ex.type === 'timebased' 
+          ? (!isNaN(parsedExRest) ? parsedExRest : 15) 
+          : (parsedExRest || 60);
+
         for (let s = 1; s <= setsCount; s++) {
           queue.push({
             taskId: `task_${ex.id}_set_${s}`,
@@ -758,11 +767,11 @@ class CyberPumpApp {
             totalCycles: 1,
             isCircuitMode: false,
             reps: ex.reps,
-            restSeconds: ex.type === 'timebased' ? (ex.restSeconds || 0) : (ex.restSeconds || 60),
+            restSeconds: restTime,
             weight: ex.weight,
             type: ex.type || 'standard',
-            timebasedIntervalSeconds: ex.timebasedIntervalSeconds || 60,
-            timebasedTotalRounds: ex.timebasedTotalRounds || setsCount,
+            timebasedIntervalSeconds: parseInt(ex.timebasedIntervalSeconds) || 60,
+            timebasedTotalRounds: parseInt(ex.timebasedTotalRounds) || setsCount,
             completed: false
           });
         }
@@ -1440,12 +1449,13 @@ class CyberPumpApp {
         session.intimebasedTimer = false;
 
         const settings = window.storageManager.getSettings();
+        const restSec = parseInt(currentTask?.restSeconds) || 0;
 
         if (currentTask && currentTask.isCircuitMode) {
-          if (currentTask.restSeconds > 0) {
+          if (restSec > 0) {
             window.audioEngine.playStartBeep(settings.silentMode);
             window.audioEngine.speakPhrase("Rest", settings.silentMode);
-            this.starttimebasedRestPauseTimer(currentTask.restSeconds);
+            this.starttimebasedRestPauseTimer(restSec);
           } else {
             window.audioEngine.playStartBeep(settings.silentMode);
             window.audioEngine.speakPhrase("Go", settings.silentMode);
@@ -1458,20 +1468,20 @@ class CyberPumpApp {
             session.activeTaskIndex = nextSameExIndex;
             const nextTask = session.queue[nextSameExIndex];
 
-            if (currentTask && currentTask.restSeconds > 0) {
+            if (restSec > 0) {
               window.audioEngine.playStartBeep(settings.silentMode);
               window.audioEngine.speakPhrase("Rest", settings.silentMode);
-              this.starttimebasedRestPauseTimer(currentTask.restSeconds);
+              this.starttimebasedRestPauseTimer(restSec);
             } else {
               window.audioEngine.playStartBeep(settings.silentMode);
               window.audioEngine.speakPhrase("Go", settings.silentMode);
               this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
             }
           } else {
-            if (currentTask && currentTask.restSeconds > 0) {
+            if (restSec > 0) {
               window.audioEngine.playStartBeep(settings.silentMode);
               window.audioEngine.speakPhrase("Rest", settings.silentMode);
-              this.starttimebasedRestPauseTimer(currentTask.restSeconds);
+              this.starttimebasedRestPauseTimer(restSec);
             } else {
               session.timebasedStarted = false;
               window.audioEngine.playStartBeep(settings.silentMode);
@@ -1490,10 +1500,19 @@ class CyberPumpApp {
     const session = this.activeSession;
     if (!session) return;
 
+    const validSeconds = parseInt(seconds) || 0;
+
+    if (validSeconds <= 0) {
+      session.intimebasedRestPause = false;
+      session.timebasedStarted = false;
+      this.moveToNextUncompletedSet();
+      return;
+    }
+
     session.intimebasedRestPause = true;
-    this.timerSecondsLeft = seconds;
-    this.timerTotalSeconds = seconds;
-    this.timerTargetEndTime = Date.now() + (seconds * 1000);
+    this.timerSecondsLeft = validSeconds;
+    this.timerTotalSeconds = validSeconds;
+    this.timerTargetEndTime = Date.now() + (validSeconds * 1000);
     this.isTimerPaused = false;
 
     window.storageManager.saveActiveSession(session);
@@ -1531,10 +1550,17 @@ class CyberPumpApp {
   startRestTimer(seconds) {
     this.stopRestTimer();
 
+    const validSeconds = parseInt(seconds) || 0;
+
+    if (validSeconds <= 0) {
+      this.moveToNextUncompletedSet();
+      return;
+    }
+
     this.activeSession.inRest = true;
-    this.timerSecondsLeft = seconds;
-    this.timerTotalSeconds = seconds;
-    this.timerTargetEndTime = Date.now() + (seconds * 1000);
+    this.timerSecondsLeft = validSeconds;
+    this.timerTotalSeconds = validSeconds;
+    this.timerTargetEndTime = Date.now() + (validSeconds * 1000);
     this.isTimerPaused = false;
 
     window.storageManager.saveActiveSession(this.activeSession);
