@@ -1,1 +1,2036 @@
-const a0_0x2ffe0c=a0_0x54e5;function a0_0x14a3(){const _0xaf0434=['\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22\x20style=\x22flex:\x201;\x20margin-bottom:\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22>Rest\x20Between\x20Cycles\x20(Sec)</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20id=\x22edit-circuit-rest\x22\x20class=\x22form-input\x22\x20min=\x220\x22\x20max=\x22999\x22\x20value=\x22','.import-workout-check:checked','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-start-timebased-manual\x22\x20class=\x22btn\x20btn-success\x20btn-block\x22\x20style=\x22margin-top:\x2016px;\x20padding:\x2018px;\x20font-size:\x2018px;\x20box-shadow:\x20var(--shadow-neon-lime);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20▶️\x20START\x20TIMEBASED\x20(ROUND\x201/','completedLogs','toggle-all-import','border-color:\x20var(--fluo-cyan);\x20box-shadow:\x200\x200\x2025px\x20rgba(0,240,255,0.3);','Are\x20you\x20sure\x20you\x20want\x20to\x20delete\x20this\x20workout?','\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20title=\x22','granted','\x20•\x20TIMEBASED\x20ROUND\x20','startWorkoutSession','deleteWorkout','bindEvents','\x20<span\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x22>kg/lbs</span>','circuit','getWorkoutById','value','4466728ullUPt','🆓\x20<strong>Free\x20Plan:</strong>\x20You\x20can\x20import\x20up\x20to\x20<strong>','.btn-delete-workout','btn-cancel-modal-import','bindActivePlayerEvents','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td\x20style=\x22font-weight:\x20700;\x20color:\x20var(--fluo-cyan);\x22>','workouts','workoutId','completedAt','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','active-badge','trim','var(--fluo-cyan)','m</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>Time</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22>','addEventListener','has','div','isCircuitMode','toString','\x22\x20data-exercise-id=\x22','\x20OF\x20','classList','border-color:\x20var(--fluo-cyan);\x20background:\x20rgba(0,\x20240,\x20255,\x200.08);','saveActiveSession',';\x20letter-spacing:\x201px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','isTimerPaused','(BW)','\x22\x20style=\x22','\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x22\x20style=\x22color:\x20var(--fluo-magenta);\x20border-color:\x20rgba(255,0,127,0.3);\x22>🗑️</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','beforeunload','&gt;','requestAppPermissions','Export\x20file\x20downloaded!','</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x20margin-top:\x202px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','Free\x20plan\x20limit\x20reached\x20(','✓\x20DONE','.btn-clone-workout','MAX_WORKOUTS','exerciseName','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22queue-item\x20','<button\x20id=\x22btn-pause-timebased\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x22>','intimebasedRestPause','🔄\x20CIRCUIT\x20•\x20CYCLE\x20','playStartBeep','data-index','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2013px;\x20color:\x20var(--fluo-lime);\x20margin-top:\x204px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Target:\x20','Total\x20Rounds\x20/\x20EMOM\x20Minutes','row-delete','cycleIndex','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2\x20class=\x22exercise-title\x22>','row-type','btn-test-audio','Cycle\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20space-between;\x20align-items:\x20flex-start;\x20margin-bottom:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2016px;\x20color:\x20#fff;\x22>','496291vRLfzj','vibrateFinish','edit-workout-desc','kg/lbs','description','\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-cancel-modal-import\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x22>Cancel</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-confirm-import\x22\x20class=\x22btn\x20btn-success\x22\x20style=\x22flex:\x202;\x22>Import\x20Selected</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','</strong>\x20more\x20workout(s).','getElementById','\x22>📤\x20Share</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20btn-delete-workout\x22\x20data-id=\x22','restoreOrRenderView','reduce','Work','</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x22>','timerSecondsLeft','currentView','silentMode','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>Weight</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22\x20style=\x22color:\x20var(--fluo-magenta);\x22>','saveWorkout','btn-go-workouts','background:\x20rgba(0,\x20240,\x20255,\x200.2);\x20color:\x20var(--fluo-cyan);\x20border:\x201px\x20solid\x20var(--fluo-cyan);','updateSilentModeIcon',';\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Target:\x20','permission','56262VpPETF','Permission\x20request\x20error:','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20align-items:\x20center;\x20justify-content:\x20space-between;\x20padding:\x206px\x200;\x20border-bottom:\x201px\x20solid\x20rgba(255,255,255,0.05);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20style=\x22display:\x20flex;\x20align-items:\x20center;\x20gap:\x208px;\x20font-size:\x2013px;\x20color:\x20#fff;\x20cursor:\x20pointer;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20class=\x22import-workout-check\x22\x20data-index=\x22','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2013px;\x20font-weight:\x20800;\x20color:\x20','Workout\x20deleted','Saved\x20workout\x20\x22','querySelector','updateWorkoutExerciseWeight','btn-pause-timebased','\x22>▶️\x20Start</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20btn-edit-workout\x22\x20data-id=\x22','activeTaskIndex',')\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','IAP\x20Manager\x20not\x20initialized\x20or\x20running\x20in\x20browser\x20mode','triggerMockPurchase','renderTabularRows','btn-save-tabular-bottom','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20class=\x22table-input\x20row-reps\x22\x20min=\x221\x22\x20max=\x22999\x22\x20value=\x22','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2012px;\x20color:\x20var(--fluo-magenta);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Target:\x20','btn-reset-defaults','#334155','awaitingExerciseStart','\x22\x20placeholder=\x22Workout\x20Name\x20(e.g.\x20Legs\x20&\x20Core)\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22\x20style=\x22margin-bottom:\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22>Description\x20(Optional)</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22edit-workout-desc\x22\x20class=\x22form-input\x22\x20value=\x22','\x22\x20data-target-index=\x22','\x20•\x20','timebasedTotalRounds','renderWorkoutsView','deleteLog','\x22!\x20Let\x27s\x20go!\x20🚀','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22action-btn-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20row-move-up\x22\x20data-index=\x22','selected','\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20justify-content:\x20center;\x20margin-top:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-pause-timer\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20space-between;\x20align-items:\x20flex-start;\x20margin-bottom:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2018px;\x20color:\x20#fff;\x22>','btn-save-quick-weight','activeSession','🔄\x20CIRCUIT\x20(','log_','requestPermission','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>','.row-time','btn-skip-current-set','clipboard','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20active-player-card\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22exercise-badge\x22\x20style=\x22','isPremiumUser','mainContent','\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','remove','-\x20Round\x20','2-digit','\x20of\x20','finishWorkoutSession','Wake\x20Lock\x20error:','filter','timebased','LocalNotifications','modal-overlay','isNativePlatform','method',')\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','workout_','<span\x20style=\x22color:\x20var(--fluo-cyan);\x22>🔄\x20','color:\x20var(--fluo-cyan);\x20text-shadow:\x200\x200\x2020px\x20var(--fluo-cyan);','\x22\x20style=\x22color:\x20var(--fluo-magenta);\x22>Delete\x20Log</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','btn-cancel-session','quickSilentBtn','set','\x20Cycles)','border-left-color:\x20var(--fluo-cyan);','release','shareWorkouts','visibilitychange','startedAt','</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','Capacitor','showPaywallModal','diary','►\x20ACTIVE','>📋\x20Standard\x20Mode\x20(All\x20Sets\x20per\x20Exercise\x20sequentially)</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22circuit\x22\x20','circuit-config-box','<span\x20style=\x22color:\x20var(--text-muted);\x20font-size:\x2012px;\x22>Select</span>','none','.row-type','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','var(--fluo-orange)','btn-buy-premium-modal','s</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>','Invalid\x20or\x20empty\x20export\x20text\x20string','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','edit-workout-mode','<span\x20style=\x22font-size:\x2018px;\x20color:\x20var(--fluo-cyan);\x22>Bodyweight</span>','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20active-player-card\x22\x20style=\x22border-color:\x20var(--fluo-magenta);\x20box-shadow:\x200\x200\x2025px\x20rgba(255,\x200,\x20127,\x200.25);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22exercise-badge\x22\x20style=\x22background:\x20rgba(255,\x200,\x20127,\x200.2);\x20color:\x20var(--fluo-magenta);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<tr\x20data-index=\x22','circuitCycles','Plugins','queue','\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22view-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22view-title\x22>📅\x20Workout\x20Diary</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x22>','totalCycles','Reset\x20to\x20default\x20workout\x20presets?\x20This\x20will\x20reload\x20initial\x20workouts.','btn-restore-purchases','totalSets','timebased-rest-timer-num','_ex_','</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x22>','\x20Reps\x20','completedSets','checked','cyberpump_banner_channel','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22exercise-badge\x22\x20style=\x22background:\x20rgba(0,\x20255,\x20136,\x200.15);\x20color:\x20var(--fluo-lime);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20⏱️\x20','completedSetsCount','standard','inRest','\x20Tasks\x20Executed)\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-dim);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Tap\x20any\x20task\x20step\x20to\x20switch\x20to\x20it\x20in\x20the\x20circuit.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20space-between;\x20align-items:\x20center;\x20margin-bottom:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22form-label\x22\x20style=\x22font-size:\x2013px;\x22>Exercises\x20&\x20Sets\x20List</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-add-row\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22\x20style=\x22color:\x20var(--fluo-cyan);\x20border-color:\x20var(--fluo-cyan);\x22>+\x20Add\x20Exercise</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22tabular-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<table\x20class=\x22tabular-table\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22width:\x2025px;\x22>#</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22min-width:\x20110px;\x22>Exercise</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22width:\x2095px;\x22>Type</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22width:\x2055px;\x20text-align:\x20center;\x22>Sets</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22width:\x2055px;\x20text-align:\x20center;\x22>Reps</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22width:\x2060px;\x20text-align:\x20center;\x22>Weight</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22width:\x2065px;\x20text-align:\x20center;\x22>Rest\x20/\x20Interval</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<th\x20style=\x22width:\x2085px;\x20text-align:\x20center;\x22>Move\x20/\x20Delete</th>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</thead>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<tbody\x20id=\x22tabular-tbody\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x20Logged\x20Sessions</span>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','sendRestNotification','Three','btn-parse-import','toISOString','(Bodyweight)','btn-pause-timer','rest-timer-num','btn-export-share','var(--text-muted)','timebased-timer-num','modalOverlay','Bench\x20Press','openModal','tabular-editor','s</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>Rest</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20margin-top:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-quick-weight\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x22>⚖️\x20Adjust\x20Weight</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-skip-current-set\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x20color:\x20var(--fluo-orange);\x20border-color:\x20rgba(255,\x20153,\x200,\x200.4);\x22>⏭️\x20Skip\x20Set</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-complete-set\x22\x20class=\x22btn\x20btn-success\x20btn-block\x22\x20style=\x22margin-top:\x2012px;\x20padding:\x2018px;\x20font-size:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20✅\x20Complete\x20Set\x20(','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:\x20right;\x20margin-top:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20btn-delete-log\x22\x20data-id=\x22','keep_both','&lt;','Rest\x20in\x20sec','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22rest-overlay\x22\x20style=\x22','date','forEach','>▼</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20row-delete\x22\x20data-index=\x22','\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22view-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22view-title\x22>⚙️\x20Configure\x20Workout</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20','name','warn','Workouts\x20shared\x20successfully!','.row-rest','skipped','&quot;','info','getNextPreviewTask','Rest\x20Over!\x20Time\x20for\x20the\x20next\x20interval!','createChannel','sets','updateTimerFromTimestamp','renderDiaryView','\x22\x20checked>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>','silentIcon','btn-quick-weight-rest','timerTargetEndTime','Interval\x20(+','change',')\x0a\x20\x20\x20\x20\x20\x20\x20\x20</label>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22max-height:\x20240px;\x20overflow-y:\x20auto;\x20border:\x201px\x20solid\x20var(--border-muted);\x20border-radius:\x20var(--radius-md);\x20padding:\x208px;\x20margin-bottom:\x2016px;\x20background:\x20rgba(0,0,0,0.3);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','Next\x20Exercise\x20Preview:','replace','addLog','bindTabularEvents','👑\x20PREMIUM\x20USER\x20(Unlimited)','modalClose','iapManager','toast\x20toast-','getActiveSession','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x20text-transform:\x20uppercase;\x22>','</h2>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metrics-grid\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22>','round','renderSettingsView','>🔄\x20Cyclic\x20/\x20Circuit\x20Mode\x20(1\x20Set\x20per\x20Exercise\x20sequentially\x20across\x20N\x20Cycles)</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</select>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22circuit-config-box\x22\x20style=\x22display:\x20','Custom\x20routine','substr','CYBERPUMP\x20🏋️‍♂️','\x20Sets\x20Done\x20•\x20','\x20Workouts\x20Max).\x20Unlock\x20Premium\x20for\x20unlimited\x20cloning!','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-save-tabular\x22\x20class=\x22btn\x20btn-primary\x20btn-sm\x22>💾\x20Save\x20Workout</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22>Workout\x20Title</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22edit-workout-name\x22\x20class=\x22form-input\x22\x20value=\x22','main-content',';\x20gap:\x2012px;\x20margin-top:\x2012px;\x20padding-top:\x2012px;\x20border-top:\x201px\x20dashed\x20rgba(0,\x20240,\x20255,\x200.2);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22\x20style=\x22flex:\x201;\x20margin-bottom:\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22>Circuit\x20Cycles\x20(N\x20Repetitions)</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20id=\x22edit-circuit-cycles\x22\x20class=\x22form-input\x22\x20min=\x221\x22\x20max=\x2299\x22\x20value=\x22','\x20Exercises</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','.import-workout-check','editingWorkout','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','29165587ZWsQPD','speakPhrase','initUI','modalBody','onload','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20font-weight:\x20700;\x20color:\x20','btn-cancel-paywall','activeBadge','\x20Exercises\x20Max\x20per\x20Routine).\x20Unlock\x20Premium\x20to\x20add\x20unlimited\x20exercises!','.row-sets','\x22\x20placeholder=\x22Short\x20notes\x20or\x20focus\x20area\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2012px;\x20border-color:\x20var(--fluo-cyan);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22\x20style=\x22margin-bottom:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22\x20style=\x22color:\x20var(--fluo-cyan);\x20font-weight:\x20700;\x22>Workout\x20Execution\x20Mode</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<select\x20id=\x22edit-workout-mode\x22\x20class=\x22form-input\x22\x20style=\x22background:\x20rgba(0,\x20240,\x20255,\x200.05);\x20color:\x20#fff;\x20border-color:\x20var(--fluo-cyan);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22standard\x22\x20','\x22\x20placeholder=\x22Leave\x20empty\x20for\x20Bodyweight\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20margin-top:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-save-quick-weight\x22\x20class=\x22btn\x20btn-primary\x20btn-block\x22>Save\x20Weight</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20color:\x20#fff;\x20margin-bottom:\x208px;\x22>Select\x20Workouts\x20to\x20Import</h3>\x0a\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','silent-icon','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>Sets\x20Done</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-finish-dialog-close\x22\x20class=\x22btn\x20btn-primary\x20btn-block\x22>View\x20Workout\x20Diary</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','btn-add-row','intimebasedTimer','Round\x20Completed!\x20Next\x20Round\x20Starting!','releaseWakeLock','Delete\x20this\x20workout\x20log\x20entry?','from','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20class=\x22table-input\x20row-name\x22\x20value=\x22','\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20margin-top:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','toLocaleDateString','map','starttimebasedRestPauseTimer','getAttribute','btn-restore-paywall','max','timerTotalSeconds','find','.btn-delete-log','audioEngine','showSelectiveImportModal','unlockPremium','<span\x20style=\x22color:\x20var(--fluo-magenta);\x22>⚡\x20','switchView','showToast','row-move-down','942669GsiWzF','share','CYBERPUMP\x20Rest\x20Timer\x20Banner','\x20style=\x22opacity:\x200;\x20width:\x200;\x20height:\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22position:\x20absolute;\x20cursor:\x20pointer;\x20top:0;\x20left:0;\x20right:0;\x20bottom:0;\x20background:\x20','\x20Exercises\x20(','MAX_EXERCISES_PER_WORKOUT','.queue-item','\x22\x20title=\x22','Cannot\x20clone:\x20Free\x20plan\x20limit\x20reached\x20(','cloneWorkout','Workout\x20must\x20have\x20at\x20least\x20one\x20exercise','Successfully\x20imported\x20','flex','exportImportManager','Cannot\x20start\x20an\x20empty\x20workout','\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22view-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22view-title\x22>⚙️\x20App\x20Settings</h1>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2015px;\x20color:\x20#fff;\x20margin-bottom:\x208px;\x22>Purchases\x20&\x20Account</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Already\x20bought\x20Premium\x20on\x20another\x20device?\x20Restore\x20your\x20active\x20purchase.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-restore-purchases\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22\x20style=\x22color:\x20var(--fluo-cyan);\x20border-color:\x20var(--fluo-cyan);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20🔄\x20Restore\x20Purchases\x0a\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20space-between;\x20align-items:\x20center;\x20margin-bottom:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong\x20style=\x22color:\x20#fff;\x20font-size:\x2015px;\x22>Silent\x20Mode</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x22>Mutes\x20all\x20voice\x20countdowns\x20and\x20start\x20audio\x20beeps.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20style=\x22position:\x20relative;\x20display:\x20inline-block;\x20width:\x2044px;\x20height:\x2024px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20id=\x22setting-silent\x22\x20','requestWakeLock','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','weight','\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:\x20center;\x20padding:\x2012px\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2048px;\x22>🏆</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h2\x20style=\x22font-family:\x20var(--font-header);\x20color:\x20var(--fluo-lime);\x20font-size:\x2024px;\x20margin:\x208px\x200;\x22>WORKOUT\x20COMPLETED!</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22color:\x20var(--text-muted);\x20font-size:\x2013px;\x22>Great\x20job!\x20Your\x20session\x20has\x20been\x20saved\x20to\x20your\x20Workout\x20Diary.</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metrics-grid\x22\x20style=\x22margin:\x2020px\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22>','timebasedIntervalSeconds','data-view','-\x20Set\x20','btn-confirm-next-exercise','speakNumber','exportData','btn-create-workout-empty','Rest','join','btn-save-tabular','starttimebasedTimer','12jzVFbO','querySelectorAll','durationMinutes','setsDetail','stopRestTimer','CYBERPUMP\x20⚡','data-id','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20class=\x22table-input\x20row-rest\x22\x20min=\x220\x22\x20max=\x22999\x22\x20value=\x22','<span\x20style=\x22color:\x20var(--fluo-lime);\x20font-weight:\x20700;\x20font-size:\x2012px;\x22>✓\x20DONE</span>','</strong>.\x20This\x20will\x20also\x20update\x20the\x20default\x20weight\x20in\x20your\x20workout\x20configuration.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22form-label\x22>Weight\x20(kg\x20/\x20lbs)</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20step=\x220.5\x22\x20id=\x22quick-weight-input\x22\x20class=\x22form-input\x22\x20value=\x22','.nav-item','task_cycle_','s</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','timerInterval','Skipped\x20all\x20remaining\x20sets\x20for\x20\x22','add','2Gjuqzx','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x20margin:\x208px\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20🤖\x20Hands-Free\x20Mode:\x20Timer\x20auto-advances\x20rounds\x20when\x20time\x20reaches\x200s.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22text-align:\x20center;\x20padding:\x2040px\x2020px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22color:\x20var(--text-muted);\x20margin-bottom:\x2016px;\x22>No\x20saved\x20workouts\x20found.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-create-workout-empty\x22\x20class=\x22btn\x20btn-primary\x22>Create\x20Your\x20First\x20Workout</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','getLogs','innerHTML','16YZvnXi','target','btn-quick-weight-transition','downloadExportFile','btn-complete-set','bottomNavItems','appendChild','wakeLock','isLastExerciseInCycle','initialized','🎉\x20CYBERPUMP\x20Premium\x20Unlocked\x20(Web\x20Test)!','517710hhTshV','data-target-index','</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-quick-weight-rest\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>⚖️\x20Weight</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-skip-rest\x22\x20class=\x22btn\x20btn-primary\x20btn-sm\x22>Skip\x20Rest\x20⏩</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','btn-finish-dialog-close','<span>🕒\x20Rest\x20configured\x20per\x20exercise</span>','</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x22>','\x20workout(s)!','Notification','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x20Sets)','renderActiveWorkoutView','\x20workout(s)\x20would\x20exceed\x20your\x20Free\x20plan\x20limit\x20of\x20','closeModal','writeText','⏸️\x20Pause','\x20reps\x20','initDefaults','warning','Workout\x20shared!','edit-circuit-rest','createElement','&amp;','numeric','DOMContentLoaded','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2012px;\x20color:\x20','error','tabular-tbody','.row-weight','short','contains','btn-skip-rest','\x20Workouts\x20Max).\x20Upgrade\x20to\x20Premium\x20to\x20create\x20unlimited\x20workouts!','modal-close','</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','escapeHtml','currentTarget','length','import-file-input','renderTabularEditorView','active','setIndex','renderShareImportView','active-workout','min','btn-export-copy','</button>','s\x20interval','👑\x20<strong>Premium\x20Plan:</strong>\x20You\x20can\x20import\x20all\x20selected\x20workouts.','mode','(Cycle\x20','toast-container','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>Reps</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22>','storageManager','End\x20set','In\x20Circuit\x20Mode,\x20exercises\x20run\x20strictly\x20in\x20sequence.\x20Use\x20\x22Skip\x20Set\x22\x20if\x20needed','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20margin-top:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-quick-weight-transition\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x22>⚖️\x20Adjust\x20Weight</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-confirm-next-exercise\x22\x20class=\x22btn\x20btn-success\x22\x20style=\x22flex:\x202;\x20padding:\x2016px;\x20font-size:\x2016px;\x22>▶️\x20Start\x20','import-text-input','New\x20Exercise','firstTaskIndex','exerciseId','row-move-up','.btn-start-workout','type','parse','workoutName','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2016px;\x20color:\x20#fff;\x20margin-top:\x202px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','Import\x20failed:\x20Importing\x20','splice','var(--fluo-lime)','exercises','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22text-align:\x20center;\x20padding:\x2040px\x2020px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2\x20style=\x22font-family:\x20var(--font-header);\x20color:\x20#fff;\x20margin-bottom:\x2012px;\x22>No\x20Active\x20Workout</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22color:\x20var(--text-muted);\x20margin-bottom:\x2020px;\x22>Select\x20a\x20workout\x20from\x20your\x20library\x20to\x20start\x20training.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-go-workouts\x22\x20class=\x22btn\x20btn-primary\x22>Go\x20to\x20Workouts</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','textContent','\x20Sets\x20x\x20','reps','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>Weight</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22>','\x20Sets\x20Executed:</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<ul\x20style=\x22margin-top:\x204px;\x20padding-left:\x2016px;\x20color:\x20var(--text-muted);\x20font-size:\x2011px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','▶️\x20Resume','now','completed','1440yEeDaF','Interval\x20in\x20sec','background:\x20rgba(0,\x20240,\x20255,\x200.15);\x20color:\x20var(--fluo-cyan);\x20border:\x201px\x20solid\x20var(--fluo-cyan);','Export\x20string\x20copied\x20to\x20clipboard!','push','\x22\x20placeholder=\x22Rest\x20(opt)\x22\x20title=\x22Optional\x20Rest\x20between\x20rounds\x20(sec)\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22exercise-badge\x22\x20style=\x22','18840yAekrF','<span\x20style=\x22color:\x20var(--fluo-cyan);\x20font-weight:\x20700;\x20font-size:\x2012px;\x22>▶\x20ACTIVE</span>','\x0a\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20space-between;\x20margin-bottom:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<label\x20style=\x22font-size:\x2012px;\x20color:\x20var(--fluo-cyan);\x20cursor:\x20pointer;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20id=\x22toggle-all-import\x22\x20checked>\x20Select\x20All\x20(','btn-confirm-import','Custom\x20Workout','restSeconds','\x20kg/lbs',';\x20font-weight:\x20600;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','disabled','hidden','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','findIndex','CapacitorCustomPlugins','getWorkouts','updateSetting','Cloned\x20workout\x20as\x20\x22','ex_','importWorkouts','FREE\x20PLAN\x20(','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-quick-weight\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x22>⚖️\x20Adjust\x20Weight</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-skip-current-set\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x20color:\x20var(--fluo-orange);\x20border-color:\x20rgba(255,\x20153,\x200,\x200.4);\x22>⏭️\x20Skip\x20Exercise</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','189wWaYFE','\x20Exercises\x20Max)','circuitRestSeconds','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</tbody>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</table>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22margin-top:\x2016px;\x20display:\x20flex;\x20gap:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-cancel-tabular\x22\x20class=\x22btn\x20btn-secondary\x22\x20style=\x22flex:\x201;\x22>Cancel</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-save-tabular-bottom\x22\x20class=\x22btn\x20btn-primary\x22\x20style=\x22flex:\x202;\x22>Save\x20&\x20Finish\x20Config</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20',';\x20border:\x201px\x20solid\x20','Interval','⏸️\x20REST\x20&\x20RECOVER','display','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22queue-container\x20card\x22\x20style=\x22margin-top:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-size:\x2014px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x208px;\x20text-transform:\x20uppercase;\x20letter-spacing:\x200.5px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Exercises\x20List\x20(','\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22view-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20var(--fluo-cyan);\x20font-weight:\x20700;\x22>ACTIVE\x20SESSION</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22view-title\x22>','Cannot\x20switch\x20exercises\x20while\x20a\x20timer\x20is\x20counting\x20down.\x20Wait\x20or\x20skip\x20rest','clear','style','getSettings','ceil','.btn-share-workout','moveToNextUncompletedSet','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22queue-container\x20card\x22\x20style=\x22margin-top:\x2016px;\x20border-color:\x20var(--fluo-cyan);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-size:\x2014px;\x20color:\x20var(--fluo-cyan);\x20margin-bottom:\x208px;\x20text-transform:\x20uppercase;\x20letter-spacing:\x200.5px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20🔄\x20Circuit\x20Queue\x20(','click','startRestTimer','timebasedStarted',';\x20border-radius:\x2024px;\x20transition:\x200.2s;\x22></span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20space-between;\x20align-items:\x20center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong\x20style=\x22color:\x20#fff;\x20font-size:\x2015px;\x22>Start\x20Chime\x20Beep\x20Tone</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x22>Audio\x20tone\x20signals\x20test.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-test-audio\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>🔊\x20Test\x20Audio</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2015px;\x20color:\x20#fff;\x20margin-bottom:\x208px;\x22>Storage\x20&\x20Reset</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20All\x20workout\x20data\x20is\x20stored\x20locally\x20on\x20this\x20smartphone\x20device.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-reset-defaults\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22\x20style=\x22color:\x20var(--fluo-magenta);\x20border-color:\x20rgba(255,0,127,0.3);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20⚠️\x20Restore\x20Preset\x20Workouts\x0a\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22text-align:\x20center;\x20padding:\x2020px\x2016px;\x20background:\x20rgba(15,\x2023,\x2042,\x200.6);\x20border:\x201px\x20solid\x20rgba(0,\x20240,\x20255,\x200.2);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2014px;\x20font-weight:\x20700;\x20color:\x20var(--fluo-cyan);\x20letter-spacing:\x201px;\x20margin-bottom:\x204px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20⚡\x20CYBERPUMP\x20WORKOUT\x20LOG\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Version\x20<span\x20style=\x22color:\x20var(--fluo-lime);\x20font-weight:\x20700;\x22>1.0.9</span>\x20•\x20Native\x20App\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22border-top:\x201px\x20dashed\x20rgba(255,\x20255,\x20255,\x200.1);\x20width:\x2060%;\x20margin:\x2010px\x20auto;\x22></div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-main);\x20margin-bottom:\x204px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Created\x20by\x20<strong\x20style=\x22color:\x20#fff;\x22>mdpt</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2011px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22mailto:mttdptrz@gmail.com\x22\x20style=\x22color:\x20var(--fluo-cyan);\x20text-decoration:\x20none;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20✉️\x20mttdptrz@gmail.com\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','restorePurchases'];a0_0x14a3=function(){return _0xaf0434;};return a0_0x14a3();}(function(_0x96a24,_0x2fe8d1){const _0x366ce3=a0_0x54e5,_0x11ad05=_0x96a24();while(!![]){try{const _0x150857=-parseInt(_0x366ce3(0x216))/0x1*(parseInt(_0x366ce3(0x13d))/0x2)+-parseInt(_0x366ce3(0x30b))/0x3+-parseInt(_0x366ce3(0x142))/0x4*(parseInt(_0x366ce3(0x14d))/0x5)+-parseInt(_0x366ce3(0x22d))/0x6*(parseInt(_0x366ce3(0x1b7))/0x7)+-parseInt(_0x366ce3(0x1df))/0x8+parseInt(_0x366ce3(0x19c))/0x9*(-parseInt(_0x366ce3(0x1a3))/0xa)+parseInt(_0x366ce3(0x2e4))/0xb*(parseInt(_0x366ce3(0x32a))/0xc);if(_0x150857===_0x2fe8d1)break;else _0x11ad05['push'](_0x11ad05['shift']());}catch(_0x2605b7){_0x11ad05['push'](_0x11ad05['shift']());}}}(a0_0x14a3,0x4c9af));const FREEMIUM_LIMITS={'MAX_WORKOUTS':0x3,'MAX_EXERCISES_PER_WORKOUT':0x6};function a0_0x54e5(_0x4574be,_0x51b506){_0x4574be=_0x4574be-0x13b;const _0x14a308=a0_0x14a3();let _0x54e54e=_0x14a308[_0x4574be];return _0x54e54e;}class CyberPumpApp{constructor(){const _0x2ceb61=a0_0x54e5;this[_0x2ceb61(0x224)]=_0x2ceb61(0x1e5),this[_0x2ceb61(0x2e2)]=null,this[_0x2ceb61(0x24e)]=null,this[_0x2ceb61(0x337)]=null,this[_0x2ceb61(0x223)]=0x0,this[_0x2ceb61(0x301)]=0x0,this[_0x2ceb61(0x1f8)]=![],this[_0x2ceb61(0x149)]=null,this[_0x2ceb61(0x2e6)](),this[_0x2ceb61(0x1da)](),this[_0x2ceb61(0x21f)]();}[a0_0x2ffe0c(0x2e6)](){const _0x4de0a2=a0_0x2ffe0c;this[_0x4de0a2(0x1ff)](),this[_0x4de0a2(0x258)]=document[_0x4de0a2(0x21d)](_0x4de0a2(0x2de)),this[_0x4de0a2(0x147)]=document[_0x4de0a2(0x32b)](_0x4de0a2(0x334)),this['activeBadge']=document[_0x4de0a2(0x21d)](_0x4de0a2(0x1e9)),this[_0x4de0a2(0x2c4)]=document['getElementById'](_0x4de0a2(0x2f1)),this[_0x4de0a2(0x26c)]=document['getElementById']('quick-silent-toggle'),this['modalOverlay']=document['getElementById'](_0x4de0a2(0x263)),this[_0x4de0a2(0x2e7)]=document[_0x4de0a2(0x21d)]('modal-body'),this['modalClose']=document[_0x4de0a2(0x21d)](_0x4de0a2(0x16d)),this[_0x4de0a2(0x22a)]();}async[a0_0x2ffe0c(0x31b)](){const _0x554562=a0_0x2ffe0c;try{'wakeLock'in navigator&&(this[_0x554562(0x149)]=await navigator[_0x554562(0x149)]['request']('screen'));}catch(_0x48f9c5){console[_0x554562(0x2b7)](_0x554562(0x25f),_0x48f9c5);}}['releaseWakeLock'](){const _0x229ba2=a0_0x2ffe0c;this[_0x229ba2(0x149)]&&(this[_0x229ba2(0x149)][_0x229ba2(0x270)](),this[_0x229ba2(0x149)]=null);}async[a0_0x2ffe0c(0x1ff)](){const _0x8e9677=a0_0x2ffe0c;try{const _0x50b931=async()=>{const _0x4872e9=a0_0x54e5,_0x14598c=window[_0x4872e9(0x275)]?.['Plugins']?.['LocalNotifications']||window[_0x4872e9(0x1af)]?.[_0x4872e9(0x262)];if(_0x14598c){await _0x14598c[_0x4872e9(0x2bf)]({'id':_0x4872e9(0x296),'name':'Timer\x20Banner\x20Alerts','description':_0x4872e9(0x30d),'importance':0x4,'visibility':0x1,'sound':null,'vibration':![]});let _0x1eb6b4=await _0x14598c['checkPermissions']();_0x1eb6b4[_0x4872e9(0x1be)]!==_0x4872e9(0x1d6)&&await _0x14598c['requestPermissions']();}};if(window['Capacitor']&&window['Capacitor'][_0x8e9677(0x264)]&&window['Capacitor'][_0x8e9677(0x264)]())setTimeout(_0x50b931,0x12c);else{if(window[_0x8e9677(0x275)]?.[_0x8e9677(0x289)]?.[_0x8e9677(0x262)])await _0x50b931();else _0x8e9677(0x154)in window&&Notification[_0x8e9677(0x22c)]==='default'&&await Notification[_0x8e9677(0x251)]();}}catch(_0x5ada9b){console[_0x8e9677(0x2b7)](_0x8e9677(0x22e),_0x5ada9b);}}[a0_0x2ffe0c(0x1da)](){const _0x273f0f=a0_0x2ffe0c;this[_0x273f0f(0x147)][_0x273f0f(0x2b3)](_0x2bd103=>{const _0x413a75=_0x273f0f;_0x2bd103[_0x413a75(0x1ed)](_0x413a75(0x1c9),_0x1f9f1a=>{const _0x5d3fef=_0x413a75,_0x9d6e0e=_0x1f9f1a['currentTarget'][_0x5d3fef(0x2fe)](_0x5d3fef(0x320));this[_0x5d3fef(0x308)](_0x9d6e0e);});}),this[_0x273f0f(0x26c)][_0x273f0f(0x1ed)]('click',()=>{const _0x287634=_0x273f0f,_0x2e3f60=window[_0x287634(0x181)]['getSettings'](),_0x2d203a=!_0x2e3f60[_0x287634(0x225)];window[_0x287634(0x181)][_0x287634(0x1b1)](_0x287634(0x225),_0x2d203a),this['updateSilentModeIcon'](),this[_0x287634(0x309)](_0x2d203a?'Muted:\x20Silent\x20Mode\x20ON':'Audio\x20ON:\x20Voice\x20&\x20Beep\x20Active');}),this[_0x273f0f(0x2cf)]['addEventListener'](_0x273f0f(0x1c9),()=>this['closeModal']()),this[_0x273f0f(0x2a8)][_0x273f0f(0x1ed)](_0x273f0f(0x1c9),_0x309a81=>{const _0x276467=_0x273f0f;if(_0x309a81[_0x276467(0x143)]===this['modalOverlay'])this[_0x276467(0x159)]();}),window['addEventListener'](_0x273f0f(0x1fd),()=>{const _0x21e8a1=_0x273f0f;this[_0x21e8a1(0x24e)]&&window['storageManager'][_0x21e8a1(0x1f6)](this[_0x21e8a1(0x24e)]);}),document[_0x273f0f(0x1ed)](_0x273f0f(0x272),()=>{const _0x2396d8=_0x273f0f;!document[_0x2396d8(0x1ac)]&&this[_0x2396d8(0x24e)]&&this[_0x2396d8(0x2c6)]&&!this[_0x2396d8(0x1f8)]&&(this[_0x2396d8(0x2c1)](),this[_0x2396d8(0x31b)]());});}[a0_0x2ffe0c(0x22a)](){const _0x423e5a=a0_0x2ffe0c,_0x590454=window[_0x423e5a(0x181)]['getSettings']();_0x590454[_0x423e5a(0x225)]?(this['silentIcon'][_0x423e5a(0x194)]='🔇',this[_0x423e5a(0x26c)][_0x423e5a(0x1f4)]['add'](_0x423e5a(0x174))):(this[_0x423e5a(0x2c4)][_0x423e5a(0x194)]='🔊',this[_0x423e5a(0x26c)][_0x423e5a(0x1f4)][_0x423e5a(0x25a)]('active'));}[a0_0x2ffe0c(0x308)](_0x10e3e0,_0x1d0bba={}){const _0x54c8d2=a0_0x2ffe0c;this[_0x54c8d2(0x224)]=_0x10e3e0,this[_0x54c8d2(0x147)][_0x54c8d2(0x2b3)](_0x58c907=>{const _0x580233=_0x54c8d2;_0x58c907[_0x580233(0x2fe)](_0x580233(0x320))===_0x10e3e0?_0x58c907[_0x580233(0x1f4)][_0x580233(0x13c)](_0x580233(0x174)):_0x58c907[_0x580233(0x1f4)][_0x580233(0x25a)](_0x580233(0x174));});this['activeSession']?this[_0x54c8d2(0x2eb)][_0x54c8d2(0x1f4)][_0x54c8d2(0x25a)](_0x54c8d2(0x1ac)):this[_0x54c8d2(0x2eb)]['classList'][_0x54c8d2(0x13c)](_0x54c8d2(0x1ac));switch(_0x10e3e0){case'workouts':this[_0x54c8d2(0x246)]();break;case _0x54c8d2(0x2ab):this[_0x54c8d2(0x173)](_0x1d0bba[_0x54c8d2(0x1e6)]);break;case _0x54c8d2(0x177):this[_0x54c8d2(0x157)]();break;case _0x54c8d2(0x277):this[_0x54c8d2(0x2c2)]();break;case _0x54c8d2(0x30c):this[_0x54c8d2(0x176)]();break;case'settings':this[_0x54c8d2(0x2d6)]();break;default:this[_0x54c8d2(0x246)]();}}[a0_0x2ffe0c(0x21f)](){const _0x2ba086=a0_0x2ffe0c,_0x1c7265=window['storageManager'][_0x2ba086(0x2d2)]();_0x1c7265&&(this[_0x2ba086(0x24e)]=_0x1c7265),this['switchView'](_0x2ba086(0x1e5));}[a0_0x2ffe0c(0x309)](_0x9fad3f,_0x58054e=a0_0x2ffe0c(0x2bc)){const _0x4ccb06=a0_0x2ffe0c,_0x45531d=document[_0x4ccb06(0x21d)](_0x4ccb06(0x17f)),_0x2df715=document[_0x4ccb06(0x161)](_0x4ccb06(0x1ef));_0x2df715['className']=_0x4ccb06(0x2d1)+_0x58054e,_0x2df715[_0x4ccb06(0x194)]=_0x9fad3f,_0x45531d[_0x4ccb06(0x148)](_0x2df715),setTimeout(()=>{const _0x315e07=_0x4ccb06;_0x2df715[_0x315e07(0x25a)]();},0xbb8);}[a0_0x2ffe0c(0x2aa)](_0x42b198){const _0x190974=a0_0x2ffe0c;this[_0x190974(0x2e7)][_0x190974(0x141)]=_0x42b198,this[_0x190974(0x2a8)][_0x190974(0x1f4)][_0x190974(0x25a)](_0x190974(0x1ac));}[a0_0x2ffe0c(0x159)](){const _0x32120e=a0_0x2ffe0c;this[_0x32120e(0x2a8)][_0x32120e(0x1f4)][_0x32120e(0x13c)](_0x32120e(0x1ac)),this[_0x32120e(0x2e7)][_0x32120e(0x141)]='';}[a0_0x2ffe0c(0x276)](_0x3279bc=''){const _0xe87b48=a0_0x2ffe0c,_0x381528='\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:\x20center;\x20padding:\x2012px\x204px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2054px;\x20filter:\x20drop-shadow(0\x200\x2010px\x20var(--fluo-cyan));\x22>👑</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h2\x20style=\x22font-family:\x20var(--font-header);\x20color:\x20var(--fluo-cyan);\x20font-size:\x2022px;\x20margin:\x208px\x200\x204px\x200;\x22>CYBERPUMP\x20PREMIUM</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22color:\x20var(--fluo-orange);\x20font-size:\x2013px;\x20font-weight:\x20600;\x20margin-bottom:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+this[_0xe87b48(0x16f)](_0x3279bc||'Unlock\x20the\x20full\x20power\x20of\x20your\x20training!')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22text-align:\x20left;\x20background:\x20rgba(0,\x20240,\x20255,\x200.05);\x20border-color:\x20var(--fluo-cyan);\x20margin-bottom:\x2020px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<ul\x20style=\x22font-size:\x2013px;\x20color:\x20#fff;\x20padding-left:\x2020px;\x20display:\x20flex;\x20flex-direction:\x20column;\x20gap:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>⚡\x20<strong>Unlimited\x20Workouts</strong>\x20(Free\x20limit:\x203)</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>⚡\x20<strong>Unlimited\x20Exercises\x20per\x20Routine</strong>\x20(Free\x20limit:\x206)</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>⚡\x20<strong>Unlimited\x20Import\x20&\x20Cloning</strong></li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li>⚡\x20<strong>Lifetime\x20Access\x20(No\x20Subscriptions)</strong></li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-buy-premium-modal\x22\x20class=\x22btn\x20btn-primary\x20btn-block\x22\x20style=\x22padding:\x2016px;\x20font-size:\x2015px;\x20margin-bottom:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20🔓\x20Unlock\x20Unlimited\x0a\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-restore-paywall\x22\x20class=\x22btn\x20btn-secondary\x20btn-block\x20btn-sm\x22\x20style=\x22margin-bottom:\x208px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20🔄\x20Restore\x20Purchases\x0a\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-cancel-paywall\x22\x20class=\x22btn\x20btn-secondary\x20btn-block\x20btn-sm\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Continue\x20with\x20Free\x20Version\x0a\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20';this['openModal'](_0x381528),document['getElementById'](_0xe87b48(0x280))?.[_0xe87b48(0x1ed)](_0xe87b48(0x1c9),()=>{const _0x1b13f7=_0xe87b48;window['iapManager']&&window[_0x1b13f7(0x2d0)][_0x1b13f7(0x14b)]?window[_0x1b13f7(0x2d0)]['buyPremium']():this[_0x1b13f7(0x23a)]();}),document[_0xe87b48(0x21d)](_0xe87b48(0x2ff))?.[_0xe87b48(0x1ed)](_0xe87b48(0x1c9),()=>{const _0x5f37a4=_0xe87b48;window[_0x5f37a4(0x2d0)]&&window[_0x5f37a4(0x2d0)]['initialized']?window[_0x5f37a4(0x2d0)][_0x5f37a4(0x1cd)]():this[_0x5f37a4(0x309)](_0x5f37a4(0x239),_0x5f37a4(0x15e));}),document[_0xe87b48(0x21d)](_0xe87b48(0x2ea))?.[_0xe87b48(0x1ed)](_0xe87b48(0x1c9),()=>{const _0x594ea0=_0xe87b48;this[_0x594ea0(0x159)]();});}[a0_0x2ffe0c(0x23a)](){const _0x3e991c=a0_0x2ffe0c;this[_0x3e991c(0x309)]('⏳\x20Connecting\x20to\x20Store...'),setTimeout(()=>{const _0x51ad25=_0x3e991c;window['storageManager'][_0x51ad25(0x306)](),this['closeModal'](),this[_0x51ad25(0x309)](_0x51ad25(0x14c)),this[_0x51ad25(0x308)](this[_0x51ad25(0x224)]);},0x4b0);}[a0_0x2ffe0c(0x246)](){const _0x277763=a0_0x2ffe0c,_0x1bfddb=window[_0x277763(0x181)][_0x277763(0x1b0)](),_0x1c737f=window[_0x277763(0x181)][_0x277763(0x257)]();let _0x112e06='\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22view-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22view-title\x22>🏋️\x20My\x20Workouts</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20'+(_0x1c737f?'var(--fluo-cyan)':_0x277763(0x2a6))+_0x277763(0x1aa)+(_0x1c737f?_0x277763(0x2ce):_0x277763(0x1b5)+_0x1bfddb[_0x277763(0x171)]+'/'+FREEMIUM_LIMITS['MAX_WORKOUTS']+'\x20Workouts\x20Used)')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-create-workout\x22\x20class=\x22btn\x20btn-primary\x20btn-sm\x22>+\x20New\x20Workout</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20';_0x1bfddb['length']===0x0?_0x112e06+=_0x277763(0x13f):_0x1bfddb[_0x277763(0x2b3)](_0x37de90=>{const _0x4ee751=_0x277763,_0x5bc6d5=_0x37de90[_0x4ee751(0x192)][_0x4ee751(0x220)]((_0x27134c,_0x224922)=>_0x27134c+(parseInt(_0x224922['sets'])||0x1),0x0),_0xa911ff=_0x37de90['exercises']['filter'](_0x2d3a87=>_0x2d3a87['type']===_0x4ee751(0x261))['length'],_0x2eb255=_0x37de90[_0x4ee751(0x17d)]==='circuit';_0x112e06+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2012px;\x20'+(_0x2eb255?'border-color:\x20var(--fluo-cyan);\x20box-shadow:\x200\x200\x2015px\x20rgba(0,\x20240,\x20255,\x200.15);':'')+_0x4ee751(0x24c)+this['escapeHtml'](_0x37de90['name'])+_0x4ee751(0x292)+this[_0x4ee751(0x16f)](_0x37de90[_0x4ee751(0x21a)]||_0x4ee751(0x2d8))+_0x4ee751(0x1a2)+(_0x2eb255?_0x4ee751(0x229):'')+_0x4ee751(0x1e8)+(_0x2eb255?_0x4ee751(0x24f)+(_0x37de90['circuitCycles']||0x3)+_0x4ee751(0x26e):_0x37de90[_0x4ee751(0x192)][_0x4ee751(0x171)]+_0x4ee751(0x30f)+_0x5bc6d5+_0x4ee751(0x156))+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20font-size:\x2011px;\x20color:\x20var(--text-dim);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x2eb255?_0x4ee751(0x268)+_0x37de90[_0x4ee751(0x192)]['length']+'\x20Exercises\x20per\x20Cycle\x20•\x20Rest:\x20'+(_0x37de90[_0x4ee751(0x1b9)]||0x5a)+'s</span>':'')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0xa911ff>0x0?_0x4ee751(0x307)+_0xa911ff+'\x20Time-Based</span>':'')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(!_0x2eb255?_0x4ee751(0x151):'')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20flex-wrap:\x20wrap;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-success\x20btn-sm\x20btn-start-workout\x22\x20data-id=\x22'+_0x37de90['id']+_0x4ee751(0x236)+_0x37de90['id']+'\x22>✏️\x20Config</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20btn-clone-workout\x22\x20data-id=\x22'+_0x37de90['id']+'\x22>📋\x20Clone</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20btn-share-workout\x22\x20data-id=\x22'+_0x37de90['id']+_0x4ee751(0x21e)+_0x37de90['id']+_0x4ee751(0x1fc);});this[_0x277763(0x258)][_0x277763(0x141)]=_0x112e06;const _0x5c0b31=()=>{const _0x4e5464=_0x277763,_0x184d24=window[_0x4e5464(0x181)][_0x4e5464(0x257)](),_0x48fac5=window[_0x4e5464(0x181)][_0x4e5464(0x1b0)]()[_0x4e5464(0x171)];if(!_0x184d24&&_0x48fac5>=FREEMIUM_LIMITS[_0x4e5464(0x205)]){this['showPaywallModal'](_0x4e5464(0x202)+FREEMIUM_LIMITS[_0x4e5464(0x205)]+_0x4e5464(0x16c));return;}this[_0x4e5464(0x308)]('tabular-editor',{'workoutId':null});},_0x17b953=document[_0x277763(0x21d)]('btn-create-workout')||document[_0x277763(0x21d)](_0x277763(0x325));_0x17b953&&_0x17b953[_0x277763(0x1ed)](_0x277763(0x1c9),_0x5c0b31),document[_0x277763(0x32b)](_0x277763(0x18a))['forEach'](_0x492d8b=>{const _0x464352=_0x277763;_0x492d8b['addEventListener'](_0x464352(0x1c9),_0x4ae1ca=>{const _0x4de5c8=_0x464352,_0xd10b0b=_0x4ae1ca[_0x4de5c8(0x170)][_0x4de5c8(0x2fe)](_0x4de5c8(0x330));this[_0x4de5c8(0x1d8)](_0xd10b0b);});}),document[_0x277763(0x32b)]('.btn-edit-workout')[_0x277763(0x2b3)](_0x2fbceb=>{const _0x4f643=_0x277763;_0x2fbceb['addEventListener'](_0x4f643(0x1c9),_0x383db6=>{const _0x1e600a=_0x4f643,_0x37c1c2=_0x383db6['currentTarget'][_0x1e600a(0x2fe)](_0x1e600a(0x330));this['switchView'](_0x1e600a(0x2ab),{'workoutId':_0x37c1c2});});}),document['querySelectorAll'](_0x277763(0x204))[_0x277763(0x2b3)](_0x57c914=>{const _0x6b3387=_0x277763;_0x57c914[_0x6b3387(0x1ed)](_0x6b3387(0x1c9),_0x2b4e05=>{const _0x48afb8=_0x6b3387,_0x5cab2d=window['storageManager']['isPremiumUser'](),_0x11b71e=window['storageManager'][_0x48afb8(0x1b0)]()[_0x48afb8(0x171)];if(!_0x5cab2d&&_0x11b71e>=FREEMIUM_LIMITS[_0x48afb8(0x205)]){this[_0x48afb8(0x276)](_0x48afb8(0x313)+FREEMIUM_LIMITS[_0x48afb8(0x205)]+_0x48afb8(0x2dc));return;}const _0x1a4bb0=_0x2b4e05['currentTarget']['getAttribute'](_0x48afb8(0x330)),_0x264f6e=window[_0x48afb8(0x181)][_0x48afb8(0x314)](_0x1a4bb0);_0x264f6e&&(this[_0x48afb8(0x309)](_0x48afb8(0x1b2)+_0x264f6e[_0x48afb8(0x2b6)]+'\x22'),this[_0x48afb8(0x246)]());});}),document[_0x277763(0x32b)](_0x277763(0x1c6))[_0x277763(0x2b3)](_0x4e4cf0=>{const _0x26389f=_0x277763;_0x4e4cf0[_0x26389f(0x1ed)]('click',async _0x449e8b=>{const _0x5b6b62=_0x26389f,_0x13a3b2=_0x449e8b[_0x5b6b62(0x170)][_0x5b6b62(0x2fe)]('data-id'),_0x5d0bd2=await window[_0x5b6b62(0x318)]['shareWorkouts']([_0x13a3b2]);_0x5d0bd2['success']&&this[_0x5b6b62(0x309)](_0x5d0bd2[_0x5b6b62(0x265)]===_0x5b6b62(0x255)?_0x5b6b62(0x19f):_0x5b6b62(0x15f));});}),document['querySelectorAll'](_0x277763(0x1e1))[_0x277763(0x2b3)](_0xa3051a=>{const _0x2fc60a=_0x277763;_0xa3051a[_0x2fc60a(0x1ed)]('click',_0x1cafb0=>{const _0x5cef0c=_0x2fc60a,_0x4cde2a=_0x1cafb0[_0x5cef0c(0x170)][_0x5cef0c(0x2fe)](_0x5cef0c(0x330));confirm(_0x5cef0c(0x1d4))&&(window['storageManager'][_0x5cef0c(0x1d9)](_0x4cde2a),this[_0x5cef0c(0x309)](_0x5cef0c(0x231)),this[_0x5cef0c(0x246)]());});});}[a0_0x2ffe0c(0x173)](_0x4ff936){const _0x226c8e=a0_0x2ffe0c;let _0x34d8f9=_0x4ff936?window[_0x226c8e(0x181)][_0x226c8e(0x1dd)](_0x4ff936):null;!_0x34d8f9&&(_0x34d8f9={'id':_0x226c8e(0x267)+Date['now'](),'name':'New\x20Custom\x20Workout','description':'','mode':_0x226c8e(0x299),'circuitCycles':0x3,'circuitRestSeconds':0x5a,'createdAt':new Date()[_0x226c8e(0x2a1)](),'exercises':[{'id':'ex_'+Date['now'](),'name':_0x226c8e(0x2a9),'type':_0x226c8e(0x299),'sets':0x3,'reps':0xa,'restSeconds':0x3c,'weight':0x32,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x5}]});this['editingWorkout']=JSON[_0x226c8e(0x18c)](JSON['stringify'](_0x34d8f9));const _0x27eb6e=window['storageManager'][_0x226c8e(0x257)]();let _0x1af276=_0x226c8e(0x2b5)+(_0x27eb6e?_0x226c8e(0x1eb):_0x226c8e(0x2a6))+';\x20font-weight:\x20600;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x27eb6e?'👑\x20PREMIUM\x20(Unlimited\x20Exercises)':_0x226c8e(0x1b5)+this[_0x226c8e(0x2e2)][_0x226c8e(0x192)]['length']+'/'+FREEMIUM_LIMITS['MAX_EXERCISES_PER_WORKOUT']+_0x226c8e(0x1b8))+_0x226c8e(0x2dd)+this[_0x226c8e(0x16f)](this[_0x226c8e(0x2e2)][_0x226c8e(0x2b6)])+_0x226c8e(0x242)+this[_0x226c8e(0x16f)](this[_0x226c8e(0x2e2)]['description']||'')+_0x226c8e(0x2ee)+(this['editingWorkout'][_0x226c8e(0x17d)]!==_0x226c8e(0x1dc)?_0x226c8e(0x24a):'')+_0x226c8e(0x279)+(this['editingWorkout'][_0x226c8e(0x17d)]===_0x226c8e(0x1dc)?'selected':'')+_0x226c8e(0x2d7)+(this[_0x226c8e(0x2e2)]['mode']==='circuit'?_0x226c8e(0x317):_0x226c8e(0x27c))+_0x226c8e(0x2df)+(this[_0x226c8e(0x2e2)]['circuitCycles']||0x3)+_0x226c8e(0x1ce)+(this[_0x226c8e(0x2e2)][_0x226c8e(0x1b9)]||0x5a)+_0x226c8e(0x29c)+this[_0x226c8e(0x23b)]()+_0x226c8e(0x1ba);this['mainContent'][_0x226c8e(0x141)]=_0x1af276,this['bindTabularEvents']();}[a0_0x2ffe0c(0x23b)](){const _0xf70c29=a0_0x2ffe0c,_0x4eacf0=this[_0xf70c29(0x2e2)]['mode']===_0xf70c29(0x1dc);return this[_0xf70c29(0x2e2)][_0xf70c29(0x192)][_0xf70c29(0x2fc)]((_0x10b55,_0x398e00)=>{const _0x437ccf=_0xf70c29,_0x47e65c=_0x10b55[_0x437ccf(0x18b)]===_0x437ccf(0x261),_0x390450=_0x10b55[_0x437ccf(0x31d)]===null||_0x10b55[_0x437ccf(0x31d)]===undefined?'':_0x10b55[_0x437ccf(0x31d)],_0x3d67ec=_0x47e65c?_0x10b55[_0x437ccf(0x1a8)]||0x0:_0x10b55[_0x437ccf(0x1a8)]||0x3c,_0x14ba3f=_0x4eacf0,_0xc77753=_0x14ba3f?0x1:_0x10b55[_0x437ccf(0x2c0)]||(_0x47e65c?_0x10b55[_0x437ccf(0x245)]||0x5:0x3);return _0x437ccf(0x287)+_0x398e00+_0x437ccf(0x1e4)+(_0x398e00+0x1)+_0x437ccf(0x2f9)+this['escapeHtml'](_0x10b55[_0x437ccf(0x2b6)])+'\x22\x20placeholder=\x22Exercise\x20Name\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<select\x20class=\x22table-input\x20row-type\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22standard\x22\x20'+(!_0x47e65c?_0x437ccf(0x24a):'')+'>Standard</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<option\x20value=\x22timebased\x22\x20'+(_0x47e65c?_0x437ccf(0x24a):'')+'>Time-Based</option>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</select>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20class=\x22table-input\x20row-sets\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20min=\x221\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max=\x2299\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20value=\x22'+_0xc77753+_0x437ccf(0x1fb)+(_0x14ba3f?'disabled\x20style=\x22opacity:\x200.4;\x20cursor:\x20not-allowed;\x22':'')+_0x437ccf(0x1d5)+(_0x14ba3f?'In\x20Circuit\x20Mode,\x20rounds\x20are\x20controlled\x20by\x20Circuit\x20Cycles\x20above':_0x47e65c?_0x437ccf(0x20e):'Sets')+_0x437ccf(0x23d)+(_0x10b55[_0x437ccf(0x196)]||0xa)+'\x22\x20title=\x22Reps\x20per\x20round\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20step=\x220.5\x22\x20class=\x22table-input\x20row-weight\x22\x20value=\x22'+_0x390450+'\x22\x20placeholder=\x22BW\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20flex-direction:\x20column;\x20gap:\x202px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22number\x22\x20class=\x22table-input\x20row-time\x22\x20min=\x221\x22\x20max=\x22999\x22\x20value=\x22'+(_0x47e65c?_0x10b55[_0x437ccf(0x31f)]||0x3c:_0x10b55['restSeconds']||0x3c)+_0x437ccf(0x312)+(_0x47e65c?_0x437ccf(0x19d):_0x437ccf(0x2b0))+_0x437ccf(0x27e)+(_0x47e65c?_0x437ccf(0x331)+_0x3d67ec+_0x437ccf(0x1a1):'')+_0x437ccf(0x249)+_0x398e00+'\x22\x20'+(_0x398e00===0x0?_0x437ccf(0x1ab):'')+'>▲</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20class=\x22btn\x20btn-secondary\x20btn-sm\x20row-move-down\x22\x20data-index=\x22'+_0x398e00+'\x22\x20'+(_0x398e00===this['editingWorkout'][_0x437ccf(0x192)][_0x437ccf(0x171)]-0x1?'disabled':'')+_0x437ccf(0x2b4)+_0x398e00+'\x22\x20style=\x22color:\x20var(--fluo-magenta);\x22>🗑️</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</tr>\x0a\x20\x20\x20\x20\x20\x20';})[_0xf70c29(0x327)]('');}[a0_0x2ffe0c(0x2cd)](){const _0x13f26a=a0_0x2ffe0c,_0x1e6813=document[_0x13f26a(0x21d)](_0x13f26a(0x167));document[_0x13f26a(0x21d)](_0x13f26a(0x284))?.[_0x13f26a(0x1ed)]('change',_0x41d79d=>{const _0x2b4092=_0x13f26a,_0x3eb0c1=_0x41d79d['target'][_0x2b4092(0x1de)]===_0x2b4092(0x1dc);this[_0x2b4092(0x2e2)]['mode']=_0x41d79d[_0x2b4092(0x143)]['value'];const _0x1e1220=document[_0x2b4092(0x21d)](_0x2b4092(0x27a));if(_0x1e1220)_0x1e1220[_0x2b4092(0x1c3)]['display']=_0x3eb0c1?_0x2b4092(0x317):_0x2b4092(0x27c);_0xcb1b7c(),_0x1e6813[_0x2b4092(0x141)]=this[_0x2b4092(0x23b)]();});const _0xcb1b7c=()=>{const _0x2c81c4=_0x13f26a;this[_0x2c81c4(0x2e2)][_0x2c81c4(0x2b6)]=document[_0x2c81c4(0x21d)]('edit-workout-name')['value']['trim']()||_0x2c81c4(0x1a7),this[_0x2c81c4(0x2e2)][_0x2c81c4(0x21a)]=document['getElementById'](_0x2c81c4(0x218))[_0x2c81c4(0x1de)][_0x2c81c4(0x1ea)](),this[_0x2c81c4(0x2e2)][_0x2c81c4(0x17d)]=document['getElementById'](_0x2c81c4(0x284))[_0x2c81c4(0x1de)],this[_0x2c81c4(0x2e2)][_0x2c81c4(0x288)]=parseInt(document['getElementById']('edit-circuit-cycles')[_0x2c81c4(0x1de)])||0x3,this[_0x2c81c4(0x2e2)]['circuitRestSeconds']=parseInt(document[_0x2c81c4(0x21d)](_0x2c81c4(0x160))['value'])||0x5a;const _0x3bc67f=this[_0x2c81c4(0x2e2)][_0x2c81c4(0x17d)]==='circuit',_0x1033ca=_0x1e6813[_0x2c81c4(0x32b)]('tr');_0x1033ca[_0x2c81c4(0x2b3)]((_0x38a06b,_0x5a9979)=>{const _0x471181=_0x2c81c4,_0xe5f0e6=this[_0x471181(0x2e2)][_0x471181(0x192)][_0x5a9979];if(!_0xe5f0e6)return;_0xe5f0e6['name']=_0x38a06b[_0x471181(0x233)]('.row-name')[_0x471181(0x1de)][_0x471181(0x1ea)]()||'Exercise\x20'+(_0x5a9979+0x1),_0xe5f0e6['type']=_0x38a06b['querySelector'](_0x471181(0x27d))['value'];_0x3bc67f?_0xe5f0e6['sets']=0x1:_0xe5f0e6['sets']=parseInt(_0x38a06b[_0x471181(0x233)](_0x471181(0x2ed))[_0x471181(0x1de)])||0x1;_0xe5f0e6[_0x471181(0x196)]=parseInt(_0x38a06b[_0x471181(0x233)]('.row-reps')['value'])||0x1;const _0x105080=_0x38a06b[_0x471181(0x233)](_0x471181(0x168))['value'][_0x471181(0x1ea)]();_0xe5f0e6[_0x471181(0x31d)]=_0x105080===''?null:parseFloat(_0x105080);const _0x5cef3e=parseInt(_0x38a06b[_0x471181(0x233)](_0x471181(0x253))[_0x471181(0x1de)])||0x3c;if(_0xe5f0e6['type']===_0x471181(0x261)){_0xe5f0e6['timebasedIntervalSeconds']=_0x5cef3e,_0xe5f0e6[_0x471181(0x245)]=_0xe5f0e6[_0x471181(0x2c0)];const _0x184117=_0x38a06b[_0x471181(0x233)](_0x471181(0x2b9));_0xe5f0e6['restSeconds']=_0x184117?parseInt(_0x184117[_0x471181(0x1de)])||0x0:0x0;}else _0xe5f0e6[_0x471181(0x1a8)]=_0x5cef3e;});};_0x1e6813['addEventListener'](_0x13f26a(0x1c9),_0x40d780=>{const _0x38bd51=_0x13f26a,_0x2a10fe=_0x40d780[_0x38bd51(0x143)];_0xcb1b7c();if(_0x2a10fe['classList']['contains'](_0x38bd51(0x189))){const _0x2c0824=parseInt(_0x2a10fe[_0x38bd51(0x2fe)](_0x38bd51(0x20c)));if(_0x2c0824>0x0){const _0x204c3d=this[_0x38bd51(0x2e2)]['exercises'][_0x2c0824];this[_0x38bd51(0x2e2)]['exercises'][_0x2c0824]=this['editingWorkout'][_0x38bd51(0x192)][_0x2c0824-0x1],this[_0x38bd51(0x2e2)][_0x38bd51(0x192)][_0x2c0824-0x1]=_0x204c3d,_0x1e6813['innerHTML']=this['renderTabularRows']();}}else{if(_0x2a10fe[_0x38bd51(0x1f4)][_0x38bd51(0x16a)](_0x38bd51(0x30a))){const _0x501fad=parseInt(_0x2a10fe[_0x38bd51(0x2fe)](_0x38bd51(0x20c)));if(_0x501fad<this['editingWorkout'][_0x38bd51(0x192)]['length']-0x1){const _0x391a86=this['editingWorkout']['exercises'][_0x501fad];this[_0x38bd51(0x2e2)]['exercises'][_0x501fad]=this[_0x38bd51(0x2e2)][_0x38bd51(0x192)][_0x501fad+0x1],this[_0x38bd51(0x2e2)]['exercises'][_0x501fad+0x1]=_0x391a86,_0x1e6813[_0x38bd51(0x141)]=this[_0x38bd51(0x23b)]();}}else{if(_0x2a10fe[_0x38bd51(0x1f4)][_0x38bd51(0x16a)](_0x38bd51(0x20f))){const _0x4282e0=parseInt(_0x2a10fe[_0x38bd51(0x2fe)](_0x38bd51(0x20c)));this[_0x38bd51(0x2e2)][_0x38bd51(0x192)][_0x38bd51(0x171)]>0x1?(this['editingWorkout'][_0x38bd51(0x192)][_0x38bd51(0x190)](_0x4282e0,0x1),_0x1e6813[_0x38bd51(0x141)]=this['renderTabularRows']()):this['showToast'](_0x38bd51(0x315),'warning');}}}}),_0x1e6813[_0x13f26a(0x1ed)](_0x13f26a(0x2c8),_0x1c8708=>{const _0x5e6e38=_0x13f26a;_0x1c8708['target'][_0x5e6e38(0x1f4)][_0x5e6e38(0x16a)](_0x5e6e38(0x212))&&(_0xcb1b7c(),_0x1e6813[_0x5e6e38(0x141)]=this['renderTabularRows']());}),document[_0x13f26a(0x21d)](_0x13f26a(0x2f3))['addEventListener'](_0x13f26a(0x1c9),()=>{const _0x5c667c=_0x13f26a;_0xcb1b7c();const _0x29e6dd=window[_0x5c667c(0x181)][_0x5c667c(0x257)](),_0xadb5dd=this['editingWorkout'][_0x5c667c(0x192)][_0x5c667c(0x171)];if(!_0x29e6dd&&_0xadb5dd>=FREEMIUM_LIMITS['MAX_EXERCISES_PER_WORKOUT']){this[_0x5c667c(0x276)](_0x5c667c(0x202)+FREEMIUM_LIMITS[_0x5c667c(0x310)]+_0x5c667c(0x2ec));return;}this['editingWorkout'][_0x5c667c(0x192)][_0x5c667c(0x1a0)]({'id':_0x5c667c(0x1b3)+Date[_0x5c667c(0x19a)]()+'_'+Math['random']()[_0x5c667c(0x1f1)](0x24)[_0x5c667c(0x2d9)](0x2,0x4),'name':_0x5c667c(0x186),'type':_0x5c667c(0x299),'sets':0x3,'reps':0xa,'restSeconds':0x3c,'weight':null,'timebasedIntervalSeconds':0x3c,'timebasedTotalRounds':0x5}),_0x1e6813[_0x5c667c(0x141)]=this[_0x5c667c(0x23b)]();});const _0x8b5c3e=()=>{const _0x24e032=_0x13f26a;_0xcb1b7c(),window[_0x24e032(0x181)][_0x24e032(0x227)](this['editingWorkout']),this[_0x24e032(0x309)](_0x24e032(0x232)+this['editingWorkout'][_0x24e032(0x2b6)]+'\x22!'),this[_0x24e032(0x308)](_0x24e032(0x1e5));};document[_0x13f26a(0x21d)](_0x13f26a(0x328))[_0x13f26a(0x1ed)]('click',_0x8b5c3e),document[_0x13f26a(0x21d)](_0x13f26a(0x23c))[_0x13f26a(0x1ed)](_0x13f26a(0x1c9),_0x8b5c3e),document[_0x13f26a(0x21d)]('btn-cancel-tabular')['addEventListener'](_0x13f26a(0x1c9),()=>{const _0x53f2c1=_0x13f26a;this[_0x53f2c1(0x308)](_0x53f2c1(0x1e5));});}['startWorkoutSession'](_0x3ba32f){const _0x5835cd=a0_0x2ffe0c,_0x7879b2=window[_0x5835cd(0x181)][_0x5835cd(0x1dd)](_0x3ba32f);if(!_0x7879b2||_0x7879b2['exercises'][_0x5835cd(0x171)]===0x0){this[_0x5835cd(0x309)](_0x5835cd(0x319),_0x5835cd(0x166));return;}const _0x2b9521=_0x7879b2['mode']===_0x5835cd(0x1dc),_0x542372=[];if(_0x2b9521){const _0x49ccf9=parseInt(_0x7879b2[_0x5835cd(0x288)])||0x3,_0x432256=parseInt(_0x7879b2['circuitRestSeconds'])||0x5a;for(let _0x3e97b6=0x1;_0x3e97b6<=_0x49ccf9;_0x3e97b6++){_0x7879b2[_0x5835cd(0x192)][_0x5835cd(0x2b3)]((_0x56e9b4,_0x3ff56a)=>{const _0x3389f6=_0x5835cd,_0x34b66d=_0x3ff56a===_0x7879b2[_0x3389f6(0x192)][_0x3389f6(0x171)]-0x1,_0x1733ab=_0x34b66d?_0x432256:_0x56e9b4[_0x3389f6(0x18b)]===_0x3389f6(0x261)?_0x56e9b4['restSeconds']||0x0:_0x56e9b4[_0x3389f6(0x1a8)]||0x3c;_0x542372['push']({'taskId':_0x3389f6(0x335)+_0x3e97b6+_0x3389f6(0x291)+_0x56e9b4['id'],'exerciseId':_0x56e9b4['id'],'exerciseName':_0x56e9b4[_0x3389f6(0x2b6)],'setIndex':0x1,'totalSets':0x1,'cycleIndex':_0x3e97b6,'totalCycles':_0x49ccf9,'isCircuitMode':!![],'isLastExerciseInCycle':_0x34b66d,'circuitRestSeconds':_0x432256,'reps':_0x56e9b4[_0x3389f6(0x196)],'restSeconds':_0x1733ab,'weight':_0x56e9b4['weight'],'type':_0x56e9b4[_0x3389f6(0x18b)]||'standard','timebasedIntervalSeconds':_0x56e9b4['timebasedIntervalSeconds']||0x3c,'timebasedTotalRounds':0x1,'completed':![]});});}}else _0x7879b2['exercises'][_0x5835cd(0x2b3)](_0x556adf=>{const _0x22c706=_0x5835cd,_0x80421f=parseInt(_0x556adf[_0x22c706(0x2c0)])||0x1;for(let _0x36e7fb=0x1;_0x36e7fb<=_0x80421f;_0x36e7fb++){_0x542372[_0x22c706(0x1a0)]({'taskId':'task_'+_0x556adf['id']+'_set_'+_0x36e7fb,'exerciseId':_0x556adf['id'],'exerciseName':_0x556adf['name'],'setIndex':_0x36e7fb,'totalSets':_0x80421f,'cycleIndex':0x1,'totalCycles':0x1,'isCircuitMode':![],'reps':_0x556adf[_0x22c706(0x196)],'restSeconds':_0x556adf[_0x22c706(0x18b)]==='timebased'?_0x556adf['restSeconds']||0x0:_0x556adf['restSeconds']||0x3c,'weight':_0x556adf[_0x22c706(0x31d)],'type':_0x556adf[_0x22c706(0x18b)]||_0x22c706(0x299),'timebasedIntervalSeconds':_0x556adf[_0x22c706(0x31f)]||0x3c,'timebasedTotalRounds':_0x556adf[_0x22c706(0x245)]||_0x80421f,'completed':![]});}});this['activeSession']={'workoutId':_0x7879b2['id'],'workoutName':_0x7879b2[_0x5835cd(0x2b6)],'startedAt':new Date()[_0x5835cd(0x2a1)](),'queue':_0x542372,'activeTaskIndex':0x0,'completedLogs':[],'inRest':![],'intimebasedTimer':![],'intimebasedRestPause':![],'awaitingExerciseStart':![]},this[_0x5835cd(0x31b)](),window[_0x5835cd(0x181)][_0x5835cd(0x1f6)](this[_0x5835cd(0x24e)]),this[_0x5835cd(0x308)](_0x5835cd(0x177)),this['showToast']('Started\x20\x22'+_0x7879b2[_0x5835cd(0x2b6)]+_0x5835cd(0x248));}['getNextPreviewTask'](_0x5bcb5f){const _0x4cfe26=a0_0x2ffe0c;if(!_0x5bcb5f||!_0x5bcb5f['queue']||_0x5bcb5f[_0x4cfe26(0x28a)][_0x4cfe26(0x171)]===0x0)return null;const _0x1dbcde=_0x5bcb5f[_0x4cfe26(0x28a)][_0x5bcb5f[_0x4cfe26(0x237)]],_0x41ac0d=_0x5bcb5f[_0x4cfe26(0x28a)][0x0]?.['isCircuitMode'];if(_0x41ac0d)return _0x5bcb5f[_0x4cfe26(0x28a)][_0x4cfe26(0x302)](_0x207842=>!_0x207842[_0x4cfe26(0x19b)])||null;else{if(_0x1dbcde){const _0x374e77=_0x5bcb5f[_0x4cfe26(0x28a)][_0x4cfe26(0x302)](_0x415edc=>!_0x415edc[_0x4cfe26(0x19b)]&&_0x415edc['exerciseId']===_0x1dbcde[_0x4cfe26(0x188)]);if(_0x374e77)return _0x374e77;}return _0x5bcb5f['queue'][_0x4cfe26(0x302)](_0x2e81bd=>!_0x2e81bd[_0x4cfe26(0x19b)])||null;}}[a0_0x2ffe0c(0x157)](){const _0x6e05=a0_0x2ffe0c;if(!this[_0x6e05(0x24e)]){this[_0x6e05(0x258)][_0x6e05(0x141)]=_0x6e05(0x193),document[_0x6e05(0x21d)](_0x6e05(0x228))?.[_0x6e05(0x1ed)](_0x6e05(0x1c9),()=>this[_0x6e05(0x308)]('workouts'));return;}const _0x104b90=this['activeSession'],_0x39d70f=_0x104b90[_0x6e05(0x28a)][_0x6e05(0x260)](_0x26d8b2=>!_0x26d8b2[_0x6e05(0x19b)]);if(_0x39d70f[_0x6e05(0x171)]===0x0){this['finishWorkoutSession']();return;}const _0x3b65b3=_0x104b90[_0x6e05(0x29a)]||_0x104b90[_0x6e05(0x2f4)]||_0x104b90['intimebasedRestPause'];if(!_0x3b65b3&&_0x104b90['queue'][_0x104b90['activeTaskIndex']]?.[_0x6e05(0x19b)]){const _0x1e316f=_0x104b90[_0x6e05(0x28a)][0x0]?.[_0x6e05(0x1f0)];if(_0x1e316f){const _0x584645=_0x104b90[_0x6e05(0x28a)][_0x6e05(0x1ae)](_0x37a604=>!_0x37a604['completed']);if(_0x584645>=0x0)_0x104b90['activeTaskIndex']=_0x584645;}else{const _0x574f3d=_0x104b90[_0x6e05(0x1d1)]&&_0x104b90[_0x6e05(0x1d1)]['length']>0x0?_0x104b90[_0x6e05(0x1d1)][_0x104b90[_0x6e05(0x1d1)][_0x6e05(0x171)]-0x1]:null,_0x1b1d15=_0x574f3d?_0x574f3d[_0x6e05(0x188)]:null;let _0x18cb99=_0x104b90[_0x6e05(0x28a)][_0x6e05(0x1ae)](_0x43a767=>!_0x43a767[_0x6e05(0x19b)]&&_0x43a767['exerciseId']===_0x1b1d15);_0x18cb99===-0x1&&(_0x18cb99=_0x104b90[_0x6e05(0x28a)]['findIndex'](_0x55650c=>!_0x55650c[_0x6e05(0x19b)])),_0x18cb99>=0x0&&(_0x104b90[_0x6e05(0x237)]=_0x18cb99);}}const _0x4cf140=_0x104b90['queue'][_0x104b90['activeTaskIndex']],_0x4ea781=_0x4cf140[_0x6e05(0x18b)]===_0x6e05(0x261);let _0x515e39=_0x6e05(0x1c0)+this[_0x6e05(0x16f)](_0x104b90[_0x6e05(0x18d)])+'</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-cancel-session\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22\x20style=\x22color:\x20var(--fluo-magenta);\x22>Stop</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20';if(_0x104b90[_0x6e05(0x241)]){const _0x3fdeed=_0x4cf140;_0x515e39+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x20active-player-card\x22\x20style=\x22border-color:\x20var(--fluo-cyan);\x20box-shadow:\x200\x200\x2025px\x20rgba(0,\x20240,\x20255,\x200.25);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22exercise-badge\x22\x20style=\x22background:\x20rgba(0,\x20240,\x20255,\x200.2);\x20color:\x20var(--fluo-cyan);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20🎯\x20EXERCISE\x20COMPLETED\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2\x20class=\x22exercise-title\x22\x20style=\x22margin-bottom:\x204px;\x22>Get\x20Ready\x20for\x20Next\x20Exercise</h2>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22next-up-banner\x22\x20style=\x22margin:\x2016px\x200;\x20border-left-color:\x20var(--fluo-lime);\x20text-align:\x20left;\x20background:\x20rgba(0,\x20255,\x20136,\x200.05);\x20padding:\x2014px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x20text-transform:\x20uppercase;\x22>NEXT\x20EXERCISE:</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2020px;\x20color:\x20#fff;\x20margin-top:\x202px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+this[_0x6e05(0x16f)](_0x3fdeed['exerciseName'])+_0x6e05(0x20d)+_0x3fdeed[_0x6e05(0x28f)]+_0x6e05(0x195)+_0x3fdeed[_0x6e05(0x196)]+_0x6e05(0x293)+(_0x3fdeed[_0x6e05(0x31d)]!==null&&_0x3fdeed[_0x6e05(0x31d)]!==undefined?'@\x20'+_0x3fdeed[_0x6e05(0x31d)]+_0x6e05(0x1a9):_0x6e05(0x2a2))+_0x6e05(0x184)+this[_0x6e05(0x16f)](_0x3fdeed[_0x6e05(0x206)])+_0x6e05(0x274);}else{if(_0x104b90[_0x6e05(0x209)]){const _0x514ad9=this['getNextPreviewTask'](_0x104b90);_0x515e39+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22rest-overlay\x22\x20style=\x22border-color:\x20var(--fluo-orange);\x20box-shadow:\x200\x200\x2020px\x20rgba(255,\x20153,\x200,\x200.3);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2013px;\x20font-weight:\x20800;\x20color:\x20var(--fluo-orange);\x20letter-spacing:\x201px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20⏸️\x20TIMEBASED\x20REST\x20PAUSE\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22timebased-rest-timer-num\x22\x20class=\x22rest-timer-display\x22\x20style=\x22color:\x20var(--fluo-orange);\x20text-shadow:\x200\x200\x2020px\x20var(--fluo-orange);\x20font-size:\x2072px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+this[_0x6e05(0x223)]+'s\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x514ad9?'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22next-up-banner\x22\x20style=\x22border-left-color:\x20var(--fluo-magenta);\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x20text-transform:\x20uppercase;\x22>Next\x20Up:</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2016px;\x20color:\x20#fff;\x20margin-top:\x202px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+this[_0x6e05(0x16f)](_0x514ad9['exerciseName'])+'\x20'+(_0x514ad9[_0x6e05(0x1f0)]?_0x6e05(0x17e)+_0x514ad9['cycleIndex']+'/'+_0x514ad9['totalCycles']+')':_0x6e05(0x25b)+_0x514ad9['setIndex']+'/'+_0x514ad9[_0x6e05(0x28f)])+_0x6e05(0x23e)+_0x514ad9['reps']+_0x6e05(0x15c)+(_0x514ad9[_0x6e05(0x18b)]==='timebased'?'•\x20'+_0x514ad9['timebasedIntervalSeconds']+_0x6e05(0x17b):_0x514ad9[_0x6e05(0x31d)]?'@\x20'+_0x514ad9[_0x6e05(0x31d)]+'\x20kg/lbs':_0x6e05(0x2a2))+_0x6e05(0x31c):'')+'\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20justify-content:\x20center;\x20margin-top:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-pause-timebased\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>'+(this[_0x6e05(0x1f8)]?_0x6e05(0x199):'⏸️\x20Pause')+_0x6e05(0x14f);}else{if(_0x104b90[_0x6e05(0x29a)]){const _0x7329aa=this[_0x6e05(0x2bd)](_0x104b90),_0x1e6dd5=_0x4cf140[_0x6e05(0x1f0)]&&_0x4cf140[_0x6e05(0x14a)];_0x515e39+=_0x6e05(0x2b1)+(_0x1e6dd5?_0x6e05(0x1d3):'')+_0x6e05(0x230)+(_0x1e6dd5?_0x6e05(0x1eb):_0x6e05(0x191))+_0x6e05(0x1f7)+(_0x1e6dd5?'🔄\x20CIRCUIT\x20CYCLE\x20'+_0x4cf140[_0x6e05(0x210)]+'\x20COMPLETED!':_0x6e05(0x1bd))+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22rest-timer-num\x22\x20class=\x22rest-timer-display\x22\x20style=\x22'+(_0x1e6dd5?_0x6e05(0x269):'')+'\x22>'+this[_0x6e05(0x223)]+_0x6e05(0x336)+(_0x7329aa?'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22next-up-banner\x22\x20style=\x22'+(_0x1e6dd5?_0x6e05(0x26f):'')+_0x6e05(0x2d3)+(_0x1e6dd5?'Next\x20Up\x20(Cycle\x20'+_0x7329aa[_0x6e05(0x210)]+'/'+_0x7329aa[_0x6e05(0x28c)]+'):':_0x6e05(0x2ca))+_0x6e05(0x18e)+this[_0x6e05(0x16f)](_0x7329aa[_0x6e05(0x206)])+'\x20'+(_0x7329aa['isCircuitMode']?_0x6e05(0x17e)+_0x7329aa['cycleIndex']+')':_0x6e05(0x321)+_0x7329aa[_0x6e05(0x175)]+'/'+_0x7329aa[_0x6e05(0x28f)])+_0x6e05(0x165)+(_0x1e6dd5?_0x6e05(0x1eb):_0x6e05(0x191))+_0x6e05(0x22b)+_0x7329aa[_0x6e05(0x196)]+'\x20reps\x20'+(_0x7329aa[_0x6e05(0x31d)]?'@\x20'+_0x7329aa['weight']+_0x6e05(0x1a9):_0x6e05(0x2a2))+_0x6e05(0x31c):'')+_0x6e05(0x24b)+(this['isTimerPaused']?_0x6e05(0x199):'⏸️\x20Pause')+'</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-add-rest\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>+10s</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-quick-weight-rest\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>⚖️\x20Weight</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-skip-rest\x22\x20class=\x22btn\x20btn-primary\x20btn-sm\x22>Skip\x20Rest\x20⏩</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20';}else{if(_0x4ea781){const _0x58ae67=_0x104b90['completedLogs'][_0x6e05(0x260)](_0x4f23f0=>_0x4f23f0[_0x6e05(0x188)]===_0x4cf140[_0x6e05(0x188)])[_0x6e05(0x171)],_0x11d04a=Math['min'](_0x58ae67+0x1,_0x4cf140['totalSets']),_0xe9d997=_0x4cf140[_0x6e05(0x31d)]!==null&&_0x4cf140[_0x6e05(0x31d)]!==undefined?_0x4cf140[_0x6e05(0x31d)]+_0x6e05(0x1db):'<span\x20style=\x22font-size:\x2018px;\x20color:\x20var(--fluo-cyan);\x22>Bodyweight</span>',_0x3203be=_0x104b90[_0x6e05(0x2f4)]||_0x104b90[_0x6e05(0x1cb)];_0x515e39+=_0x6e05(0x286)+(_0x4cf140[_0x6e05(0x1f0)]?'⚡\x20CIRCUIT\x20•\x20CYCLE\x20'+_0x4cf140['cycleIndex']+'/'+_0x4cf140[_0x6e05(0x28c)]+_0x6e05(0x1d7)+_0x11d04a+'/'+_0x4cf140[_0x6e05(0x28f)]:'⚡\x20TIMEBASED\x20MODE\x20•\x20ROUND\x20'+_0x11d04a+_0x6e05(0x1f3)+_0x4cf140[_0x6e05(0x28f)])+_0x6e05(0x211)+this[_0x6e05(0x16f)](_0x4cf140[_0x6e05(0x206)])+'</h2>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20id=\x22timebased-timer-num\x22\x20class=\x22rest-timer-display\x22\x20style=\x22color:\x20var(--fluo-magenta);\x20text-shadow:\x200\x200\x2020px\x20var(--fluo-magenta);\x20font-size:\x2072px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(this[_0x6e05(0x223)]>0x0?this[_0x6e05(0x223)]:_0x4cf140[_0x6e05(0x31f)])+'s\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metrics-grid\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22\x20style=\x22color:\x20#fff;\x22>'+_0x4cf140[_0x6e05(0x196)]+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-label\x22>Reps\x20per\x20Round</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22metric-value\x22>'+_0xe9d997+_0x6e05(0x226)+_0x4cf140[_0x6e05(0x31f)]+_0x6e05(0x281)+(_0x4cf140[_0x6e05(0x1a8)]>0x0?_0x6e05(0x2c7)+_0x4cf140[_0x6e05(0x1a8)]+'s\x20Rest)':_0x6e05(0x1bc))+_0x6e05(0x2e3)+(!_0x3203be?_0x6e05(0x1d0)+_0x4cf140['totalSets']+_0x6e05(0x266):_0x6e05(0x13e))+_0x6e05(0x2fa)+(_0x3203be?_0x6e05(0x208)+(this[_0x6e05(0x1f8)]?'▶️\x20Resume':_0x6e05(0x15b))+_0x6e05(0x17a):'')+_0x6e05(0x1b6);}else{const _0x343582=_0x104b90['completedLogs']['filter'](_0x293024=>_0x293024[_0x6e05(0x188)]===_0x4cf140['exerciseId'])['length'],_0x37993e=Math[_0x6e05(0x178)](_0x343582+0x1,_0x4cf140[_0x6e05(0x28f)]),_0x579763=_0x4cf140['weight']!==null&&_0x4cf140[_0x6e05(0x31d)]!==undefined?_0x4cf140[_0x6e05(0x31d)]+_0x6e05(0x1db):_0x6e05(0x285);_0x515e39+=_0x6e05(0x256)+(_0x4cf140[_0x6e05(0x1f0)]?_0x6e05(0x19e):'')+_0x6e05(0x283)+(_0x4cf140[_0x6e05(0x1f0)]?_0x6e05(0x20a)+_0x4cf140[_0x6e05(0x210)]+_0x6e05(0x1f3)+_0x4cf140[_0x6e05(0x28c)]:'STANDARD\x20SET\x20•\x20SET\x20'+_0x37993e+_0x6e05(0x1f3)+_0x4cf140[_0x6e05(0x28f)])+_0x6e05(0x211)+this[_0x6e05(0x16f)](_0x4cf140[_0x6e05(0x206)])+_0x6e05(0x2d4)+_0x4cf140['reps']+_0x6e05(0x180)+_0x579763+_0x6e05(0x197)+_0x4cf140[_0x6e05(0x1a8)]+_0x6e05(0x2ac)+_0x37993e+'/'+_0x4cf140[_0x6e05(0x28f)]+_0x6e05(0x238);}}}}const _0x14f88f=_0x104b90['queue'][0x0]?.[_0x6e05(0x1f0)],_0x57b4f4=_0x104b90['queue']['filter'](_0x123f60=>_0x123f60['completed'])['length'];if(_0x14f88f)_0x515e39+=_0x6e05(0x1c8)+_0x57b4f4+'/'+_0x104b90[_0x6e05(0x28a)][_0x6e05(0x171)]+_0x6e05(0x29b)+_0x104b90[_0x6e05(0x28a)][_0x6e05(0x2fc)]((_0x472213,_0x2e25df)=>{const _0x1c9fb7=_0x6e05,_0x13de6f=_0x2e25df===_0x104b90[_0x1c9fb7(0x237)],_0x326c43=_0x472213[_0x1c9fb7(0x19b)],_0x124653=_0x472213[_0x1c9fb7(0x2ba)],_0x4047e5=_0x472213[_0x1c9fb7(0x31d)]!==null&&_0x472213[_0x1c9fb7(0x31d)]!==undefined?'@\x20'+_0x472213['weight']+_0x1c9fb7(0x219):'(BW)';let _0x4be786=_0x326c43?_0x124653?'⏭️\x20SKIPPED':_0x1c9fb7(0x203):_0x13de6f?_0x1c9fb7(0x278):_0x1c9fb7(0x214)+_0x472213[_0x1c9fb7(0x210)],_0x508fe0=_0x326c43?_0x124653?_0x1c9fb7(0x27f):'var(--fluo-lime)':_0x13de6f?'var(--fluo-cyan)':_0x1c9fb7(0x2a6);return _0x1c9fb7(0x207)+(_0x13de6f?_0x1c9fb7(0x174):'')+'\x20'+(_0x326c43?'completed':'')+_0x1c9fb7(0x1f2)+_0x472213['exerciseId']+_0x1c9fb7(0x243)+_0x2e25df+_0x1c9fb7(0x1fa)+(_0x13de6f?_0x1c9fb7(0x1f5):'')+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong\x20style=\x22color:\x20#fff;\x20font-size:\x2014px;\x22>'+this[_0x1c9fb7(0x16f)](_0x472213[_0x1c9fb7(0x206)])+'</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-muted);\x20margin-top:\x202px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Cycle\x20'+_0x472213[_0x1c9fb7(0x210)]+_0x1c9fb7(0x25d)+_0x472213[_0x1c9fb7(0x28c)]+_0x1c9fb7(0x244)+_0x472213[_0x1c9fb7(0x196)]+_0x1c9fb7(0x15c)+_0x4047e5+_0x1c9fb7(0x2e9)+_0x508fe0+_0x1c9fb7(0x1bb)+_0x508fe0+';\x20padding:\x202px\x208px;\x20border-radius:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x4be786+_0x1c9fb7(0x155);})[_0x6e05(0x327)]('')+_0x6e05(0x259);else{const _0x4c9033=new Map();_0x104b90[_0x6e05(0x28a)][_0x6e05(0x2b3)](_0x4ec504=>{const _0x30d443=_0x6e05;!_0x4c9033[_0x30d443(0x1ee)](_0x4ec504[_0x30d443(0x188)])&&_0x4c9033[_0x30d443(0x26d)](_0x4ec504[_0x30d443(0x188)],{'exerciseId':_0x4ec504[_0x30d443(0x188)],'exerciseName':_0x4ec504['exerciseName'],'totalSets':_0x4ec504[_0x30d443(0x28f)],'completedSets':0x0,'remainingTasks':[],'firstTaskIndex':-0x1,'weight':_0x4ec504[_0x30d443(0x31d)],'reps':_0x4ec504[_0x30d443(0x196)],'type':_0x4ec504[_0x30d443(0x18b)]});const _0xd8d65a=_0x4c9033['get'](_0x4ec504[_0x30d443(0x188)]);_0x4ec504[_0x30d443(0x19b)]?_0xd8d65a[_0x30d443(0x294)]++:(_0xd8d65a['remainingTasks'][_0x30d443(0x1a0)](_0x4ec504),_0xd8d65a[_0x30d443(0x187)]===-0x1&&(_0xd8d65a[_0x30d443(0x187)]=_0x104b90['queue']['indexOf'](_0x4ec504)));});const _0x31e7a9=Array[_0x6e05(0x2f8)](_0x4c9033['values']());_0x515e39+=_0x6e05(0x1bf)+_0x57b4f4+'/'+_0x104b90['queue']['length']+'\x20Sets\x20Done)\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2011px;\x20color:\x20var(--text-dim);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Tap\x20an\x20exercise\x20to\x20switch\x20to\x20it\x20after\x20completing\x20or\x20skipping\x20the\x20current\x20set.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x31e7a9[_0x6e05(0x2fc)](_0x44e800=>{const _0x151ceb=_0x6e05,_0x485763=_0x4cf140&&_0x4cf140['exerciseId']===_0x44e800[_0x151ceb(0x188)],_0x4e7f51=_0x44e800[_0x151ceb(0x294)]===_0x44e800[_0x151ceb(0x28f)],_0x398796=_0x44e800['weight']!==null&&_0x44e800[_0x151ceb(0x31d)]!==undefined?'@\x20'+_0x44e800['weight']+_0x151ceb(0x219):_0x151ceb(0x2a2);return _0x151ceb(0x207)+(_0x485763?_0x151ceb(0x174):'')+'\x20'+(_0x4e7f51?_0x151ceb(0x19b):'')+_0x151ceb(0x1f2)+_0x44e800[_0x151ceb(0x188)]+_0x151ceb(0x243)+_0x44e800[_0x151ceb(0x187)]+'\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong\x20style=\x22color:\x20#fff;\x20font-size:\x2014px;\x22>'+this['escapeHtml'](_0x44e800[_0x151ceb(0x206)])+_0x151ceb(0x201)+_0x44e800[_0x151ceb(0x294)]+'/'+_0x44e800['totalSets']+_0x151ceb(0x2db)+_0x44e800[_0x151ceb(0x196)]+_0x151ceb(0x15c)+_0x398796+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x4e7f51?_0x151ceb(0x332):_0x485763?_0x151ceb(0x1a4):_0x151ceb(0x27b))+_0x151ceb(0x1ad);})[_0x6e05(0x327)]('')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20';}this[_0x6e05(0x258)][_0x6e05(0x141)]=_0x515e39,this[_0x6e05(0x1e3)]();}['bindActivePlayerEvents'](){const _0x50f659=a0_0x2ffe0c,_0x2ced2f=this['activeSession'];if(!_0x2ced2f)return;document[_0x50f659(0x32b)](_0x50f659(0x311))[_0x50f659(0x2b3)](_0x388161=>{const _0x52fb43=_0x50f659;_0x388161[_0x52fb43(0x1ed)](_0x52fb43(0x1c9),_0x52fe2a=>{const _0x2e2250=_0x52fb43;if(_0x2ced2f[_0x2e2250(0x28a)][0x0]?.[_0x2e2250(0x1f0)]){this[_0x2e2250(0x309)](_0x2e2250(0x183),'warning');return;}const _0xb327c3=_0x2ced2f[_0x2e2250(0x29a)]||_0x2ced2f[_0x2e2250(0x2f4)]||_0x2ced2f[_0x2e2250(0x209)]||this[_0x2e2250(0x337)]!==null;if(_0xb327c3){this[_0x2e2250(0x309)](_0x2e2250(0x1c1),_0x2e2250(0x15e));return;}const _0x4ffbf4=parseInt(_0x52fe2a[_0x2e2250(0x170)][_0x2e2250(0x2fe)](_0x2e2250(0x14e))),_0x32c0f1=_0x52fe2a['currentTarget'][_0x2e2250(0x2fe)]('data-exercise-id'),_0x408914=_0x2ced2f[_0x2e2250(0x28a)][_0x2ced2f['activeTaskIndex']];if(_0x4ffbf4===-0x1||isNaN(_0x4ffbf4))return;if(_0x408914&&_0x408914['exerciseId']!==_0x32c0f1){const _0x19e1fa=(_0x2ced2f['completedLogs']||[])[_0x2e2250(0x260)](_0xe37f49=>_0xe37f49[_0x2e2250(0x188)]===_0x408914[_0x2e2250(0x188)])['length'];if(_0x19e1fa>0x0){this[_0x2e2250(0x309)]('Finish\x20all\x20sets\x20of\x20\x22'+_0x408914['exerciseName']+'\x22\x20or\x20tap\x20\x22Skip\x20Set\x22\x20to\x20switch\x20exercise',_0x2e2250(0x15e));return;}}_0x2ced2f[_0x2e2250(0x237)]=_0x4ffbf4,window['storageManager'][_0x2e2250(0x1f6)](_0x2ced2f),this[_0x2e2250(0x157)]();});}),document[_0x50f659(0x21d)](_0x50f659(0x322))?.['addEventListener'](_0x50f659(0x1c9),()=>{const _0x2325cf=_0x50f659;_0x2ced2f['awaitingExerciseStart']=![];const _0x4a36ff=_0x2ced2f[_0x2325cf(0x28a)][_0x2ced2f[_0x2325cf(0x237)]],_0x333f37=window[_0x2325cf(0x181)][_0x2325cf(0x1c4)]();_0x4a36ff&&_0x4a36ff['type']===_0x2325cf(0x261)?(_0x2ced2f[_0x2325cf(0x1cb)]=!![],window[_0x2325cf(0x181)][_0x2325cf(0x1f6)](_0x2ced2f),window[_0x2325cf(0x304)][_0x2325cf(0x2e5)]('Go',_0x333f37[_0x2325cf(0x225)]),this[_0x2325cf(0x329)](_0x4a36ff[_0x2325cf(0x31f)])):(window[_0x2325cf(0x181)]['saveActiveSession'](_0x2ced2f),this[_0x2325cf(0x157)]());}),document['getElementById'](_0x50f659(0x254))?.[_0x50f659(0x1ed)](_0x50f659(0x1c9),()=>{const _0x2ddeb2=_0x50f659,_0x35c356=_0x2ced2f[_0x2ddeb2(0x28a)][_0x2ced2f[_0x2ddeb2(0x237)]];if(!_0x35c356)return;const _0x556f59=_0x2ced2f[_0x2ddeb2(0x28a)][0x0]?.[_0x2ddeb2(0x1f0)];_0x556f59?(_0x35c356[_0x2ddeb2(0x19b)]=!![],_0x35c356['skipped']=!![],_0x35c356[_0x2ddeb2(0x1e7)]=new Date()[_0x2ddeb2(0x2a1)](),this['showToast']('Skipped\x20\x22'+_0x35c356['exerciseName']+'\x22\x20(Cycle\x20'+_0x35c356[_0x2ddeb2(0x210)]+')',_0x2ddeb2(0x2bc))):(_0x2ced2f[_0x2ddeb2(0x28a)]['forEach'](_0x217264=>{const _0x2375ee=_0x2ddeb2;_0x217264['exerciseId']===_0x35c356[_0x2375ee(0x188)]&&!_0x217264[_0x2375ee(0x19b)]&&(_0x217264[_0x2375ee(0x19b)]=!![],_0x217264[_0x2375ee(0x2ba)]=!![],_0x217264[_0x2375ee(0x1e7)]=new Date()[_0x2375ee(0x2a1)]());}),this['showToast'](_0x2ddeb2(0x13b)+_0x35c356[_0x2ddeb2(0x206)]+'\x22','info')),this['stopRestTimer'](),_0x2ced2f['timebasedStarted']=![],window[_0x2ddeb2(0x181)][_0x2ddeb2(0x1f6)](_0x2ced2f),this[_0x2ddeb2(0x1c7)]();}),document[_0x50f659(0x21d)](_0x50f659(0x26b))?.[_0x50f659(0x1ed)](_0x50f659(0x1c9),()=>{const _0x55bb21=_0x50f659;confirm('Cancel\x20active\x20workout\x20session?')&&(this[_0x55bb21(0x32e)](),this[_0x55bb21(0x2f6)](),this[_0x55bb21(0x24e)]=null,window[_0x55bb21(0x181)][_0x55bb21(0x1f6)](null),this[_0x55bb21(0x308)](_0x55bb21(0x1e5)));}),document[_0x50f659(0x21d)](_0x50f659(0x146))?.['addEventListener']('click',()=>{const _0x434988=_0x50f659,_0x1d0c17=_0x2ced2f[_0x434988(0x28a)][_0x2ced2f[_0x434988(0x237)]],_0x4ef0d1=window[_0x434988(0x181)][_0x434988(0x1c4)](),_0x20567a=_0x2ced2f['queue'][_0x434988(0x260)](_0x169e50=>!_0x169e50[_0x434988(0x19b)]&&_0x169e50[_0x434988(0x188)]===_0x1d0c17[_0x434988(0x188)])[_0x434988(0x171)];_0x1d0c17[_0x434988(0x19b)]=!![],_0x1d0c17[_0x434988(0x1e7)]=new Date()[_0x434988(0x2a1)](),_0x2ced2f[_0x434988(0x1d1)][_0x434988(0x1a0)]({'exerciseId':_0x1d0c17[_0x434988(0x188)],'exerciseName':_0x1d0c17[_0x434988(0x206)],'setIndex':_0x1d0c17[_0x434988(0x175)],'reps':_0x1d0c17['reps'],'weight':_0x1d0c17[_0x434988(0x31d)],'timestamp':new Date()[_0x434988(0x2a1)]()});_0x20567a>0x1?window[_0x434988(0x304)]['speakPhrase'](_0x434988(0x326),_0x4ef0d1[_0x434988(0x225)]):window['audioEngine'][_0x434988(0x2e5)](_0x434988(0x182),_0x4ef0d1[_0x434988(0x225)]);const _0x408f7d=_0x1d0c17[_0x434988(0x18b)]===_0x434988(0x261)?_0x1d0c17['timebasedIntervalSeconds']:_0x1d0c17[_0x434988(0x1a8)];_0x408f7d>0x0?this[_0x434988(0x1ca)](_0x408f7d):this[_0x434988(0x1c7)]();});const _0x2368a9=_0x3236ef=>{const _0x35c19f=_0x50f659;document['getElementById'](_0x3236ef)?.['addEventListener'](_0x35c19f(0x1c9),()=>{const _0x3bebf0=_0x35c19f,_0x27ceec=_0x2ced2f[_0x3bebf0(0x28a)][_0x2ced2f[_0x3bebf0(0x237)]];if(!_0x27ceec)return;const _0x3fc55c=_0x27ceec[_0x3bebf0(0x31d)]!==null&&_0x27ceec[_0x3bebf0(0x31d)]!==undefined?_0x27ceec['weight']:'',_0xf8cd7e='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20color:\x20#fff;\x20margin-bottom:\x2012px;\x22>⚖️\x20Adjust\x20Weight</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Update\x20weight\x20for\x20<strong>'+this[_0x3bebf0(0x16f)](_0x27ceec[_0x3bebf0(0x206)])+_0x3bebf0(0x333)+_0x3fc55c+_0x3bebf0(0x2ef);this[_0x3bebf0(0x2aa)](_0xf8cd7e),document['getElementById'](_0x3bebf0(0x24d))[_0x3bebf0(0x1ed)](_0x3bebf0(0x1c9),()=>{const _0x7e9bf4=_0x3bebf0,_0x382e0f=document[_0x7e9bf4(0x21d)]('quick-weight-input')[_0x7e9bf4(0x1de)]['trim'](),_0x3bdb21=_0x382e0f===''?null:parseFloat(_0x382e0f);_0x27ceec[_0x7e9bf4(0x31d)]=_0x3bdb21,_0x2ced2f[_0x7e9bf4(0x28a)]['forEach'](_0x7ca97a=>{const _0x11a299=_0x7e9bf4;_0x7ca97a['exerciseId']===_0x27ceec[_0x11a299(0x188)]&&!_0x7ca97a[_0x11a299(0x19b)]&&(_0x7ca97a[_0x11a299(0x31d)]=_0x3bdb21);}),window[_0x7e9bf4(0x181)][_0x7e9bf4(0x234)](_0x2ced2f['workoutId'],_0x27ceec[_0x7e9bf4(0x188)],_0x3bdb21),window[_0x7e9bf4(0x181)][_0x7e9bf4(0x1f6)](_0x2ced2f),this[_0x7e9bf4(0x159)](),this['showToast']('Weight\x20updated\x20and\x20saved\x20to\x20workout\x20template!'),this['renderActiveWorkoutView']();});});};_0x2368a9('btn-quick-weight'),_0x2368a9(_0x50f659(0x2c5)),_0x2368a9(_0x50f659(0x144)),document[_0x50f659(0x21d)]('btn-start-timebased-manual')?.[_0x50f659(0x1ed)]('click',()=>{const _0x1617df=_0x50f659,_0x5c5f28=_0x2ced2f[_0x1617df(0x28a)][_0x2ced2f['activeTaskIndex']],_0x11a79c=window[_0x1617df(0x181)]['getSettings']();_0x2ced2f['timebasedStarted']=!![],window['storageManager'][_0x1617df(0x1f6)](_0x2ced2f),window[_0x1617df(0x304)][_0x1617df(0x2e5)]('Go',_0x11a79c['silentMode']),this[_0x1617df(0x329)](_0x5c5f28[_0x1617df(0x31f)]);}),document[_0x50f659(0x21d)](_0x50f659(0x2a3))?.[_0x50f659(0x1ed)]('click',()=>{const _0x2550ad=_0x50f659;this['isTimerPaused']=!this[_0x2550ad(0x1f8)],this['renderActiveWorkoutView']();}),document[_0x50f659(0x21d)](_0x50f659(0x235))?.['addEventListener'](_0x50f659(0x1c9),()=>{const _0x4ce282=_0x50f659;this[_0x4ce282(0x1f8)]=!this[_0x4ce282(0x1f8)],this['renderActiveWorkoutView']();}),document[_0x50f659(0x21d)]('btn-add-rest')?.[_0x50f659(0x1ed)]('click',()=>{const _0x531612=_0x50f659;this['timerSecondsLeft']+=0xa,this[_0x531612(0x2c6)]+=0x2710;const _0x2d999a=document[_0x531612(0x21d)]('rest-timer-num');if(_0x2d999a)_0x2d999a['textContent']=this[_0x531612(0x223)]+'s';}),document[_0x50f659(0x21d)](_0x50f659(0x16b))?.['addEventListener'](_0x50f659(0x1c9),()=>{const _0x5ce656=_0x50f659;this[_0x5ce656(0x32e)](),this['moveToNextUncompletedSet']();});}[a0_0x2ffe0c(0x2c1)](){const _0x2e44a3=a0_0x2ffe0c;if(!this[_0x2e44a3(0x2c6)])return;if(this[_0x2e44a3(0x1f8)])return;const _0xa24eed=Date['now'](),_0x1982ae=this['timerTargetEndTime']-_0xa24eed,_0x5ddf56=Math[_0x2e44a3(0x300)](0x0,Math[_0x2e44a3(0x1c5)](_0x1982ae/0x3e8));if(_0x5ddf56!==this[_0x2e44a3(0x223)]){this[_0x2e44a3(0x223)]=_0x5ddf56;const _0x45aeba=document['getElementById'](_0x2e44a3(0x2a7))||document[_0x2e44a3(0x21d)](_0x2e44a3(0x290))||document[_0x2e44a3(0x21d)](_0x2e44a3(0x2a4));_0x45aeba&&(_0x45aeba[_0x2e44a3(0x194)]=this[_0x2e44a3(0x223)]+'s');const _0x4c1fc2=window[_0x2e44a3(0x181)][_0x2e44a3(0x1c4)]();_0x5ddf56<=0x5&&_0x5ddf56>0x0&&window[_0x2e44a3(0x304)]['speakNumber'](_0x5ddf56,_0x4c1fc2[_0x2e44a3(0x225)]);}}['starttimebasedTimer'](_0x1e77d0){const _0x50a5bf=a0_0x2ffe0c;this[_0x50a5bf(0x32e)]();const _0x24e789=this['activeSession'];if(!_0x24e789)return;_0x24e789[_0x50a5bf(0x2f4)]=!![],this[_0x50a5bf(0x223)]=_0x1e77d0,this[_0x50a5bf(0x301)]=_0x1e77d0,this[_0x50a5bf(0x2c6)]=Date['now']()+_0x1e77d0*0x3e8,this[_0x50a5bf(0x1f8)]=![],window[_0x50a5bf(0x181)][_0x50a5bf(0x1f6)](_0x24e789),this[_0x50a5bf(0x157)](),this['timerInterval']=setInterval(()=>{const _0x1dbe30=_0x50a5bf;if(this[_0x1dbe30(0x1f8)])return;this['updateTimerFromTimestamp']();if(this[_0x1dbe30(0x223)]<=0x0){this[_0x1dbe30(0x32e)](),window[_0x1dbe30(0x304)]['vibrateFinish'](),window['audioEngine']['sendRestNotification'](_0x1dbe30(0x32f),_0x1dbe30(0x2f5));const _0x49bd70=_0x24e789[_0x1dbe30(0x28a)][_0x24e789[_0x1dbe30(0x237)]];_0x49bd70&&!_0x49bd70[_0x1dbe30(0x19b)]&&(_0x49bd70['completed']=!![],_0x49bd70[_0x1dbe30(0x1e7)]=new Date()[_0x1dbe30(0x2a1)](),_0x24e789[_0x1dbe30(0x1d1)]['push']({'exerciseId':_0x49bd70[_0x1dbe30(0x188)],'exerciseName':_0x49bd70[_0x1dbe30(0x206)],'setIndex':_0x49bd70[_0x1dbe30(0x175)],'reps':_0x49bd70['reps'],'weight':_0x49bd70[_0x1dbe30(0x31d)],'timestamp':new Date()[_0x1dbe30(0x2a1)]()}));_0x24e789[_0x1dbe30(0x2f4)]=![];const _0x347d1a=window[_0x1dbe30(0x181)][_0x1dbe30(0x1c4)]();if(_0x49bd70&&_0x49bd70[_0x1dbe30(0x1f0)])_0x49bd70[_0x1dbe30(0x1a8)]>0x0?(window['audioEngine']['playStartBeep'](_0x347d1a[_0x1dbe30(0x225)]),window['audioEngine']['speakPhrase'](_0x1dbe30(0x326),_0x347d1a[_0x1dbe30(0x225)]),this[_0x1dbe30(0x2fd)](_0x49bd70['restSeconds'])):(window[_0x1dbe30(0x304)][_0x1dbe30(0x20b)](_0x347d1a[_0x1dbe30(0x225)]),window[_0x1dbe30(0x304)][_0x1dbe30(0x2e5)]('Go',_0x347d1a['silentMode']),this[_0x1dbe30(0x1c7)]());else{const _0x2cbf30=_0x24e789['queue'][_0x1dbe30(0x1ae)](_0x4cd9b4=>!_0x4cd9b4[_0x1dbe30(0x19b)]&&_0x4cd9b4[_0x1dbe30(0x188)]===_0x49bd70?.[_0x1dbe30(0x188)]);if(_0x2cbf30>=0x0){_0x24e789[_0x1dbe30(0x237)]=_0x2cbf30;const _0x5aedf3=_0x24e789[_0x1dbe30(0x28a)][_0x2cbf30];_0x49bd70&&_0x49bd70[_0x1dbe30(0x1a8)]>0x0?(window[_0x1dbe30(0x304)][_0x1dbe30(0x20b)](_0x347d1a[_0x1dbe30(0x225)]),window[_0x1dbe30(0x304)][_0x1dbe30(0x2e5)](_0x1dbe30(0x326),_0x347d1a[_0x1dbe30(0x225)]),this['starttimebasedRestPauseTimer'](_0x49bd70[_0x1dbe30(0x1a8)])):(window[_0x1dbe30(0x304)][_0x1dbe30(0x20b)](_0x347d1a[_0x1dbe30(0x225)]),window[_0x1dbe30(0x304)]['speakPhrase']('Go',_0x347d1a[_0x1dbe30(0x225)]),this['starttimebasedTimer'](_0x5aedf3[_0x1dbe30(0x31f)]));}else _0x24e789[_0x1dbe30(0x1cb)]=![],window[_0x1dbe30(0x304)]['playStartBeep'](_0x347d1a[_0x1dbe30(0x225)]),window[_0x1dbe30(0x304)]['speakPhrase'](_0x1dbe30(0x182),_0x347d1a[_0x1dbe30(0x225)]),this['moveToNextUncompletedSet']();}}},0x32);}[a0_0x2ffe0c(0x2fd)](_0x1ec751){const _0x201627=a0_0x2ffe0c;this[_0x201627(0x32e)]();const _0x5574ce=this[_0x201627(0x24e)];if(!_0x5574ce)return;_0x5574ce[_0x201627(0x209)]=!![],this['timerSecondsLeft']=_0x1ec751,this[_0x201627(0x301)]=_0x1ec751,this['timerTargetEndTime']=Date[_0x201627(0x19a)]()+_0x1ec751*0x3e8,this[_0x201627(0x1f8)]=![],window[_0x201627(0x181)][_0x201627(0x1f6)](_0x5574ce),this[_0x201627(0x157)](),this[_0x201627(0x337)]=setInterval(()=>{const _0x397dfc=_0x201627;if(this[_0x397dfc(0x1f8)])return;this[_0x397dfc(0x2c1)]();if(this[_0x397dfc(0x223)]<=0x0){this[_0x397dfc(0x32e)](),_0x5574ce[_0x397dfc(0x209)]=![],window[_0x397dfc(0x304)]['vibrateFinish'](),window[_0x397dfc(0x304)][_0x397dfc(0x29e)](_0x397dfc(0x2da),_0x397dfc(0x2be));const _0x58c4b2=_0x5574ce[_0x397dfc(0x28a)][_0x5574ce[_0x397dfc(0x237)]],_0x32f1ad=window[_0x397dfc(0x181)][_0x397dfc(0x1c4)]();_0x58c4b2&&!_0x58c4b2[_0x397dfc(0x19b)]?(window[_0x397dfc(0x304)][_0x397dfc(0x20b)](_0x32f1ad['silentMode']),window['audioEngine'][_0x397dfc(0x2e5)](_0x397dfc(0x221),_0x32f1ad[_0x397dfc(0x225)]),this[_0x397dfc(0x329)](_0x58c4b2[_0x397dfc(0x31f)])):(_0x5574ce[_0x397dfc(0x1cb)]=![],window['audioEngine']['playStartBeep'](_0x32f1ad['silentMode']),window[_0x397dfc(0x304)][_0x397dfc(0x2e5)](_0x397dfc(0x182),_0x32f1ad['silentMode']),this[_0x397dfc(0x1c7)]());}},0x32);}['startRestTimer'](_0x3904c8){const _0x29c5d7=a0_0x2ffe0c;this[_0x29c5d7(0x32e)](),this[_0x29c5d7(0x24e)][_0x29c5d7(0x29a)]=!![],this[_0x29c5d7(0x223)]=_0x3904c8,this[_0x29c5d7(0x301)]=_0x3904c8,this[_0x29c5d7(0x2c6)]=Date['now']()+_0x3904c8*0x3e8,this[_0x29c5d7(0x1f8)]=![],window[_0x29c5d7(0x181)][_0x29c5d7(0x1f6)](this[_0x29c5d7(0x24e)]),this[_0x29c5d7(0x157)](),this['timerInterval']=setInterval(()=>{const _0xa00214=_0x29c5d7;if(this['isTimerPaused'])return;this['updateTimerFromTimestamp']();if(this['timerSecondsLeft']<=0x0){const _0x1080a9=window[_0xa00214(0x181)]['getSettings']();window[_0xa00214(0x304)]['playStartBeep'](_0x1080a9[_0xa00214(0x225)]),window[_0xa00214(0x304)][_0xa00214(0x2e5)]('Get\x20ready',_0x1080a9[_0xa00214(0x225)]),window[_0xa00214(0x304)][_0xa00214(0x217)](),window[_0xa00214(0x304)][_0xa00214(0x29e)](_0xa00214(0x2da),'Rest\x20Over!\x20Get\x20ready\x20for\x20your\x20next\x20set!'),this[_0xa00214(0x32e)](),this[_0xa00214(0x1c7)]();}},0x32);}[a0_0x2ffe0c(0x32e)](){const _0x18840f=a0_0x2ffe0c;this[_0x18840f(0x337)]&&(clearInterval(this[_0x18840f(0x337)]),this[_0x18840f(0x337)]=null),this['timerTargetEndTime']=null,this[_0x18840f(0x223)]=0x0,this[_0x18840f(0x1f8)]=![],this[_0x18840f(0x24e)]&&(this[_0x18840f(0x24e)]['inRest']=![],this[_0x18840f(0x24e)]['intimebasedTimer']=![],this[_0x18840f(0x24e)]['intimebasedRestPause']=![],window['storageManager']['saveActiveSession'](this[_0x18840f(0x24e)]));}[a0_0x2ffe0c(0x1c7)](){const _0x33b214=a0_0x2ffe0c;if(!this[_0x33b214(0x24e)])return;this[_0x33b214(0x32e)]();const _0x1a7286=this[_0x33b214(0x24e)],_0x583368=_0x1a7286[_0x33b214(0x28a)][_0x33b214(0x260)](_0x6cf688=>!_0x6cf688[_0x33b214(0x19b)]);if(_0x583368[_0x33b214(0x171)]===0x0){this['finishWorkoutSession']();return;}const _0x10a645=_0x1a7286[_0x33b214(0x28a)][0x0]?.[_0x33b214(0x1f0)],_0x47a7c3=_0x1a7286[_0x33b214(0x1d1)]&&_0x1a7286['completedLogs'][_0x33b214(0x171)]>0x0?_0x1a7286[_0x33b214(0x1d1)][_0x1a7286['completedLogs'][_0x33b214(0x171)]-0x1]:null,_0x22c24e=_0x47a7c3?_0x47a7c3['exerciseId']:null;if(_0x10a645){const _0x5b5928=_0x1a7286[_0x33b214(0x28a)][_0x33b214(0x1ae)](_0x37a1ff=>!_0x37a1ff[_0x33b214(0x19b)]);_0x5b5928>=0x0&&(_0x1a7286['activeTaskIndex']=_0x5b5928,_0x5b5928===0x0&&(_0x1a7286[_0x33b214(0x1cb)]=![]));}else{const _0x4413d1=_0x47a7c3?_0x47a7c3[_0x33b214(0x188)]:_0x1a7286[_0x33b214(0x28a)][_0x1a7286['activeTaskIndex']]?.['exerciseId'],_0x55b4bf=_0x1a7286[_0x33b214(0x28a)][_0x33b214(0x1ae)](_0x1111b4=>!_0x1111b4[_0x33b214(0x19b)]&&_0x1111b4[_0x33b214(0x188)]===_0x4413d1);if(_0x55b4bf>=0x0)_0x1a7286[_0x33b214(0x237)]=_0x55b4bf;else{const _0x59754a=_0x1a7286[_0x33b214(0x28a)][_0x33b214(0x1ae)](_0x59eabf=>!_0x59eabf[_0x33b214(0x19b)]);_0x59754a>=0x0&&(_0x1a7286[_0x33b214(0x237)]=_0x59754a,_0x1a7286['timebasedStarted']=![]);}}const _0x132433=_0x1a7286[_0x33b214(0x28a)][_0x1a7286[_0x33b214(0x237)]];_0x22c24e&&_0x132433&&_0x132433[_0x33b214(0x188)]!==_0x22c24e&&(_0x1a7286[_0x33b214(0x241)]=!![]);if(_0x1a7286[_0x33b214(0x241)]){window['storageManager'][_0x33b214(0x1f6)](_0x1a7286),this[_0x33b214(0x157)]();return;}if(_0x132433&&_0x132433[_0x33b214(0x18b)]==='timebased'&&_0x132433[_0x33b214(0x1f0)]&&_0x1a7286['activeTaskIndex']>0x0){_0x1a7286[_0x33b214(0x1cb)]=!![],window[_0x33b214(0x181)][_0x33b214(0x1f6)](_0x1a7286);const _0xab446=window[_0x33b214(0x181)][_0x33b214(0x1c4)]();window[_0x33b214(0x304)]['speakPhrase']('Go',_0xab446['silentMode']),this[_0x33b214(0x329)](_0x132433['timebasedIntervalSeconds']);return;}window[_0x33b214(0x181)]['saveActiveSession'](_0x1a7286),this[_0x33b214(0x157)]();}[a0_0x2ffe0c(0x25e)](){const _0x587da4=a0_0x2ffe0c;this[_0x587da4(0x32e)](),this[_0x587da4(0x2f6)]();const _0x38d588=this[_0x587da4(0x24e)];if(!_0x38d588)return;const _0x5e4f7f=Math[_0x587da4(0x2d5)]((new Date()['getTime']()-new Date(_0x38d588[_0x587da4(0x273)])['getTime']())/0x3e8),_0x4e93b2=Math['max'](0x1,Math[_0x587da4(0x2d5)](_0x5e4f7f/0x3c)),_0x483a07={'id':_0x587da4(0x250)+Date[_0x587da4(0x19a)](),'workoutId':_0x38d588['workoutId'],'workoutName':_0x38d588[_0x587da4(0x18d)],'date':new Date()['toISOString'](),'durationSeconds':_0x5e4f7f,'durationMinutes':_0x4e93b2,'completedSetsCount':_0x38d588[_0x587da4(0x1d1)][_0x587da4(0x171)],'setsDetail':_0x38d588[_0x587da4(0x1d1)]};window[_0x587da4(0x181)][_0x587da4(0x2cc)](_0x483a07),this['activeSession']=null,window['storageManager']['saveActiveSession'](null),window[_0x587da4(0x304)][_0x587da4(0x217)](),window[_0x587da4(0x304)]['sendRestNotification']('CYBERPUMP\x20🏆','WORKOUT\x20COMPLETED!\x20Great\x20session!'),this[_0x587da4(0x308)]('workouts');const _0x33f18a=_0x587da4(0x31e)+_0x4e93b2+_0x587da4(0x1ec)+_0x483a07[_0x587da4(0x298)]+_0x587da4(0x2f2);this[_0x587da4(0x2aa)](_0x33f18a),document[_0x587da4(0x21d)](_0x587da4(0x150))[_0x587da4(0x1ed)](_0x587da4(0x1c9),()=>{const _0x1c71a8=_0x587da4;this[_0x1c71a8(0x159)](),this[_0x1c71a8(0x308)](_0x1c71a8(0x277));});}[a0_0x2ffe0c(0x2c2)](){const _0x48a6bf=a0_0x2ffe0c,_0x9ec8fc=window[_0x48a6bf(0x181)][_0x48a6bf(0x140)]();let _0x5838fd=_0x48a6bf(0x28b)+_0x9ec8fc[_0x48a6bf(0x171)]+_0x48a6bf(0x29d);_0x9ec8fc['length']===0x0?_0x5838fd+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22text-align:\x20center;\x20padding:\x2040px\x2020px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22color:\x20var(--text-muted);\x22>No\x20completed\x20workouts\x20logged\x20yet.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20':_0x9ec8fc[_0x48a6bf(0x2b3)](_0x4e37a4=>{const _0x4e7e0a=_0x48a6bf,_0x1abf4f=new Date(_0x4e37a4[_0x4e7e0a(0x2b2)])[_0x4e7e0a(0x2fb)](undefined,{'weekday':_0x4e7e0a(0x169),'year':_0x4e7e0a(0x163),'month':_0x4e7e0a(0x169),'day':_0x4e7e0a(0x163),'hour':_0x4e7e0a(0x25c),'minute':'2-digit'});_0x5838fd+=_0x4e7e0a(0x215)+this[_0x4e7e0a(0x16f)](_0x4e37a4[_0x4e7e0a(0x18d)])+_0x4e7e0a(0x222)+_0x1abf4f+_0x4e7e0a(0x297)+_0x4e37a4[_0x4e7e0a(0x32c)]+'\x20min\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-main);\x20margin:\x208px\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>'+_0x4e37a4[_0x4e7e0a(0x298)]+_0x4e7e0a(0x198)+(_0x4e37a4[_0x4e7e0a(0x32d)]||[])[_0x4e7e0a(0x2fc)](_0x15b207=>_0x4e7e0a(0x252)+this[_0x4e7e0a(0x16f)](_0x15b207['exerciseName'])+'\x20(Set\x20'+_0x15b207[_0x4e7e0a(0x175)]+'):\x20'+_0x15b207['reps']+_0x4e7e0a(0x15c)+(_0x15b207['weight']?'@\x20'+_0x15b207[_0x4e7e0a(0x31d)]+_0x4e7e0a(0x219):_0x4e7e0a(0x1f9))+_0x4e7e0a(0x16e))[_0x4e7e0a(0x327)]('')+_0x4e7e0a(0x2ad)+_0x4e37a4['id']+_0x4e7e0a(0x26a);}),this['mainContent'][_0x48a6bf(0x141)]=_0x5838fd,document[_0x48a6bf(0x32b)](_0x48a6bf(0x303))[_0x48a6bf(0x2b3)](_0x1341fb=>{const _0x34a41a=_0x48a6bf;_0x1341fb[_0x34a41a(0x1ed)]('click',_0x174357=>{const _0x52ef89=_0x34a41a,_0x285d1f=_0x174357[_0x52ef89(0x170)][_0x52ef89(0x2fe)](_0x52ef89(0x330));confirm(_0x52ef89(0x2f7))&&(window['storageManager'][_0x52ef89(0x247)](_0x285d1f),this[_0x52ef89(0x309)]('Log\x20entry\x20removed'),this[_0x52ef89(0x2c2)]());});});}[a0_0x2ffe0c(0x176)](){const _0x15cbd6=a0_0x2ffe0c;let _0x35bbf8='\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22view-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20class=\x22view-title\x22>📤\x20Export\x20&\x20Import</h1>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22\x20style=\x22margin-bottom:\x2016px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2016px;\x20color:\x20#fff;\x20margin-bottom:\x208px;\x22>Export\x20&\x20Share\x20Database</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Export\x20your\x20local\x20workouts\x20into\x20a\x20portable\x20text\x20string\x20file\x20to\x20share\x20with\x20friends\x20or\x20transfer\x20to\x20another\x20device.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20flex-wrap:\x20wrap;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-export-share\x22\x20class=\x22btn\x20btn-primary\x20btn-sm\x22>📱\x20Share\x20via\x20App</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-export-copy\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>📋\x20Copy\x20Text\x20String</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-export-file\x22\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22>💾\x20Download\x20JSON\x20File</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22card\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22font-family:\x20var(--font-header);\x20font-size:\x2016px;\x20color:\x20#fff;\x20margin-bottom:\x208px;\x22>Import\x20Workouts</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20var(--text-muted);\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Paste\x20a\x20CYBERPUMP\x20export\x20text\x20string\x20or\x20upload\x20a\x20JSON\x20export\x20file\x20to\x20selectively\x20import\x20workouts.\x0a\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22form-group\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<textarea\x20id=\x22import-text-input\x22\x20class=\x22form-textarea\x22\x20rows=\x224\x22\x20placeholder=\x22Paste\x20export\x20string\x20JSON\x20here...\x22></textarea>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20gap:\x208px;\x20align-items:\x20center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22btn-parse-import\x22\x20class=\x22btn\x20btn-success\x20btn-sm\x22>Preview\x20&\x20Select\x20Workouts</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20class=\x22btn\x20btn-secondary\x20btn-sm\x22\x20style=\x22cursor:\x20pointer;\x20margin:\x200;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20📂\x20Pick\x20File\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22file\x22\x20id=\x22import-file-input\x22\x20accept=\x22.json,.txt\x22\x20style=\x22display:\x20none;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20';this[_0x15cbd6(0x258)][_0x15cbd6(0x141)]=_0x35bbf8,document[_0x15cbd6(0x21d)](_0x15cbd6(0x2a5))[_0x15cbd6(0x1ed)](_0x15cbd6(0x1c9),async()=>{const _0x19d629=_0x15cbd6,_0x42281d=await window['exportImportManager'][_0x19d629(0x271)]();if(_0x42281d['success'])this[_0x19d629(0x309)](_0x19d629(0x2b8));}),document[_0x15cbd6(0x21d)](_0x15cbd6(0x179))[_0x15cbd6(0x1ed)]('click',async()=>{const _0x563506=_0x15cbd6,_0x1e770a=window['exportImportManager'][_0x563506(0x324)]();await navigator[_0x563506(0x255)][_0x563506(0x15a)](_0x1e770a),this[_0x563506(0x309)](_0x563506(0x19f));}),document[_0x15cbd6(0x21d)]('btn-export-file')[_0x15cbd6(0x1ed)]('click',()=>{const _0x4dea4b=_0x15cbd6;window[_0x4dea4b(0x318)][_0x4dea4b(0x145)](),this[_0x4dea4b(0x309)](_0x4dea4b(0x200));});const _0x1556cc=_0xb716be=>{const _0xe35853=_0x15cbd6,_0x1b6a8a=window[_0xe35853(0x318)]['parseImportString'](_0xb716be);if(!_0x1b6a8a||_0x1b6a8a[_0xe35853(0x171)]===0x0){this[_0xe35853(0x309)](_0xe35853(0x282),_0xe35853(0x166));return;}this['showSelectiveImportModal'](_0x1b6a8a);};document['getElementById'](_0x15cbd6(0x2a0))[_0x15cbd6(0x1ed)](_0x15cbd6(0x1c9),()=>{const _0xe0ea39=_0x15cbd6,_0x260538=document['getElementById'](_0xe0ea39(0x185))['value'];_0x1556cc(_0x260538);}),document['getElementById'](_0x15cbd6(0x172))[_0x15cbd6(0x1ed)](_0x15cbd6(0x2c8),_0x566823=>{const _0x26e15f=_0x15cbd6,_0x576751=_0x566823[_0x26e15f(0x143)]['files'][0x0];if(_0x576751){const _0x1a016b=new FileReader();_0x1a016b[_0x26e15f(0x2e8)]=_0x2d1445=>_0x1556cc(_0x2d1445[_0x26e15f(0x143)]['result']),_0x1a016b['readAsText'](_0x576751);}});}[a0_0x2ffe0c(0x305)](_0x301080){const _0xd0d321=a0_0x2ffe0c,_0x5c1ee8=window['storageManager'][_0xd0d321(0x257)](),_0x50b0ef=window[_0xd0d321(0x181)][_0xd0d321(0x1b0)]()['length'],_0x3f7e1b=_0x5c1ee8?Infinity:Math['max'](0x0,FREEMIUM_LIMITS[_0xd0d321(0x205)]-_0x50b0ef),_0x173b6e=_0xd0d321(0x2f0)+(_0x5c1ee8?_0xd0d321(0x17c):_0xd0d321(0x1e0)+_0x3f7e1b+_0xd0d321(0x21c))+_0xd0d321(0x1a5)+_0x301080[_0xd0d321(0x171)]+_0xd0d321(0x2c9)+_0x301080[_0xd0d321(0x2fc)]((_0x50eecc,_0x1cd85e)=>_0xd0d321(0x22f)+_0x1cd85e+_0xd0d321(0x2c3)+this[_0xd0d321(0x16f)](_0x50eecc[_0xd0d321(0x2b6)])+_0xd0d321(0x152)+_0x50eecc[_0xd0d321(0x192)][_0xd0d321(0x171)]+_0xd0d321(0x2e0))['join']('')+_0xd0d321(0x21b);this[_0xd0d321(0x2aa)](_0x173b6e),document[_0xd0d321(0x21d)](_0xd0d321(0x1d2))[_0xd0d321(0x1ed)](_0xd0d321(0x2c8),_0x5e1980=>{const _0x5c1472=_0xd0d321,_0x35e40c=_0x5e1980[_0x5c1472(0x143)][_0x5c1472(0x295)];document[_0x5c1472(0x32b)](_0x5c1472(0x2e1))['forEach'](_0x5679e8=>_0x5679e8['checked']=_0x35e40c);}),document[_0xd0d321(0x21d)](_0xd0d321(0x1e2))['addEventListener'](_0xd0d321(0x1c9),()=>this['closeModal']()),document[_0xd0d321(0x21d)](_0xd0d321(0x1a6))[_0xd0d321(0x1ed)]('click',()=>{const _0x3ec4d0=_0xd0d321,_0x18dc7f=[];document[_0x3ec4d0(0x32b)](_0x3ec4d0(0x1cf))['forEach'](_0x43653e=>{const _0x37c9e9=_0x3ec4d0;_0x18dc7f[_0x37c9e9(0x1a0)](parseInt(_0x43653e[_0x37c9e9(0x2fe)](_0x37c9e9(0x20c))));});if(_0x18dc7f[_0x3ec4d0(0x171)]===0x0){this[_0x3ec4d0(0x309)]('Please\x20select\x20at\x20least\x20one\x20workout\x20to\x20import',_0x3ec4d0(0x15e));return;}if(!_0x5c1ee8&&_0x50b0ef+_0x18dc7f[_0x3ec4d0(0x171)]>FREEMIUM_LIMITS[_0x3ec4d0(0x205)]){this['closeModal'](),this['showPaywallModal'](_0x3ec4d0(0x18f)+_0x18dc7f[_0x3ec4d0(0x171)]+_0x3ec4d0(0x158)+FREEMIUM_LIMITS[_0x3ec4d0(0x205)]+'\x20workouts.\x20Upgrade\x20to\x20Premium\x20for\x20unlimited\x20imports!');return;}const _0x394b17=_0x18dc7f['map'](_0x2d1317=>_0x301080[_0x2d1317]),_0x2480b2=window[_0x3ec4d0(0x318)][_0x3ec4d0(0x1b4)](_0x394b17,_0x3ec4d0(0x2ae));this[_0x3ec4d0(0x159)](),this[_0x3ec4d0(0x309)](_0x3ec4d0(0x316)+_0x2480b2+_0x3ec4d0(0x153)),this[_0x3ec4d0(0x308)](_0x3ec4d0(0x1e5));});}[a0_0x2ffe0c(0x2d6)](){const _0x1d5f2c=a0_0x2ffe0c,_0x3a0145=window[_0x1d5f2c(0x181)][_0x1d5f2c(0x1c4)]();let _0x1e4fc5=_0x1d5f2c(0x31a)+(_0x3a0145[_0x1d5f2c(0x225)]?'checked':'')+_0x1d5f2c(0x30e)+(_0x3a0145['silentMode']?'var(--fluo-cyan)':_0x1d5f2c(0x240))+_0x1d5f2c(0x1cc);this[_0x1d5f2c(0x258)]['innerHTML']=_0x1e4fc5,document[_0x1d5f2c(0x21d)](_0x1d5f2c(0x28e))?.['addEventListener'](_0x1d5f2c(0x1c9),()=>{const _0x3bc326=_0x1d5f2c;window['iapManager']&&window['iapManager'][_0x3bc326(0x14b)]?window[_0x3bc326(0x2d0)][_0x3bc326(0x1cd)]():this[_0x3bc326(0x309)](_0x3bc326(0x239),_0x3bc326(0x15e));}),document[_0x1d5f2c(0x21d)]('setting-silent')[_0x1d5f2c(0x1ed)](_0x1d5f2c(0x2c8),_0x4ef120=>{const _0x27a359=_0x1d5f2c;window[_0x27a359(0x181)][_0x27a359(0x1b1)](_0x27a359(0x225),_0x4ef120['target'][_0x27a359(0x295)]),this[_0x27a359(0x22a)](),this[_0x27a359(0x309)](_0x4ef120['target'][_0x27a359(0x295)]?'Silent\x20Mode\x20Enabled':'Silent\x20Mode\x20Disabled'),this[_0x27a359(0x2d6)]();}),document[_0x1d5f2c(0x21d)](_0x1d5f2c(0x213))['addEventListener'](_0x1d5f2c(0x1c9),()=>{const _0x1209e9=_0x1d5f2c,_0x3fea6f=window['storageManager'][_0x1209e9(0x1c4)]()[_0x1209e9(0x225)];_0x3fea6f?this[_0x1209e9(0x309)]('Silent\x20Mode\x20is\x20ON\x20-\x20unmute\x20to\x20test\x20sound',_0x1209e9(0x15e)):(window[_0x1209e9(0x304)][_0x1209e9(0x323)](_0x1209e9(0x29f),![]),setTimeout(()=>window[_0x1209e9(0x304)][_0x1209e9(0x20b)](![]),0x320));}),document[_0x1d5f2c(0x21d)](_0x1d5f2c(0x23f))[_0x1d5f2c(0x1ed)]('click',()=>{const _0x58b866=_0x1d5f2c;confirm(_0x58b866(0x28d))&&(localStorage[_0x58b866(0x1c2)](),window['storageManager'][_0x58b866(0x15d)](),this['showToast']('Presets\x20restored!'),this['switchView'](_0x58b866(0x1e5)));});}[a0_0x2ffe0c(0x16f)](_0x457964){const _0x29de55=a0_0x2ffe0c;if(!_0x457964)return'';return String(_0x457964)[_0x29de55(0x2cb)](/&/g,_0x29de55(0x162))[_0x29de55(0x2cb)](/</g,_0x29de55(0x2af))[_0x29de55(0x2cb)](/>/g,_0x29de55(0x1fe))[_0x29de55(0x2cb)](/"/g,_0x29de55(0x2bb))[_0x29de55(0x2cb)](/'/g,'&#039;');}}document[a0_0x2ffe0c(0x1ed)](a0_0x2ffe0c(0x164),()=>{window['cyberPumpApp']=new CyberPumpApp();});
+/**
+ * CYBERPUMP Main Smartphone Application Logic
+ * Integrates state, views, tabular editor, active workout player, rest voice timer, sharing, and Freemium/IAP logic.
+ * Designed for Capacitor (Android & iOS) and Web PWA.
+ */
+
+// FREEMIUM CONFIGURATION LIMITS
+const FREEMIUM_LIMITS = {
+  MAX_WORKOUTS: 3,
+  MAX_EXERCISES_PER_WORKOUT: 6
+};
+
+class CyberPumpApp {
+  constructor() {
+    this.currentView = 'workouts';
+    this.editingWorkout = null; // Workout object being edited in tabular config
+    
+    // Active Workout State
+    this.activeSession = null;
+    this.timerInterval = null;
+    this.timerSecondsLeft = 0;
+    this.timerTotalSeconds = 0;
+    this.isTimerPaused = false;
+    this.wakeLock = null;
+
+    this.initUI();
+    this.bindEvents();
+    this.restoreOrRenderView();
+  }
+
+  initUI() {
+    this.requestAppPermissions();
+
+    this.mainContent = document.getElementById('main-content');
+    this.bottomNavItems = document.querySelectorAll('.nav-item');
+    this.activeBadge = document.getElementById('active-badge');
+    this.silentIcon = document.getElementById('silent-icon');
+    this.quickSilentBtn = document.getElementById('quick-silent-toggle');
+    this.modalOverlay = document.getElementById('modal-overlay');
+    this.modalBody = document.getElementById('modal-body');
+    this.modalClose = document.getElementById('modal-close');
+
+    this.updateSilentModeIcon();
+  }
+
+  async requestWakeLock() {
+    try {
+      if ('wakeLock' in navigator) {
+        this.wakeLock = await navigator.wakeLock.request('screen');
+      }
+    } catch (err) {
+      console.warn('Wake Lock error:', err);
+    }
+  }
+
+  releaseWakeLock() {
+    if (this.wakeLock) {
+      this.wakeLock.release();
+      this.wakeLock = null;
+    }
+  }
+
+  async requestAppPermissions() {
+    try {
+      const triggerCapacitorPermission = async () => {
+        const LocalNotifications = window.Capacitor?.Plugins?.LocalNotifications || window.CapacitorCustomPlugins?.LocalNotifications;
+
+        if (LocalNotifications) {
+          await LocalNotifications.createChannel({
+            id: 'cyberpump_banner_channel',
+            name: 'Timer Banner Alerts',
+            description: 'CYBERPUMP Rest Timer Banner',
+            importance: 4,
+            visibility: 1,
+            sound: null,
+            vibration: false
+          });
+
+          let perm = await LocalNotifications.checkPermissions();
+          if (perm.display !== 'granted') {
+            await LocalNotifications.requestPermissions();
+          }
+        }
+      };
+
+      if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) {
+        setTimeout(triggerCapacitorPermission, 300);
+      } else if (window.Capacitor?.Plugins?.LocalNotifications) {
+        await triggerCapacitorPermission();
+      } else if ("Notification" in window && Notification.permission === "default") {
+        await Notification.requestPermission();
+      }
+    } catch (err) {
+      console.warn("Permission request error:", err);
+    }
+  }
+
+  bindEvents() {
+    this.bottomNavItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        const view = e.currentTarget.getAttribute('data-view');
+        this.switchView(view);
+      });
+    });
+
+    this.quickSilentBtn.addEventListener('click', () => {
+      const settings = window.storageManager.getSettings();
+      const newSilentState = !settings.silentMode;
+      window.storageManager.updateSetting('silentMode', newSilentState);
+      this.updateSilentModeIcon();
+      this.showToast(newSilentState ? 'Muted: Silent Mode ON' : 'Audio ON: Voice & Beep Active');
+    });
+
+    this.modalClose.addEventListener('click', () => this.closeModal());
+    this.modalOverlay.addEventListener('click', (e) => {
+      if (e.target === this.modalOverlay) this.closeModal();
+    });
+
+    window.addEventListener('beforeunload', () => {
+      if (this.activeSession) {
+        window.storageManager.saveActiveSession(this.activeSession);
+      }
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && this.activeSession && this.timerTargetEndTime && !this.isTimerPaused) {
+        this.updateTimerFromTimestamp();
+        this.requestWakeLock();
+      }
+    });
+  }
+
+  updateSilentModeIcon() {
+    const settings = window.storageManager.getSettings();
+    if (settings.silentMode) {
+      this.silentIcon.textContent = '??';
+      this.quickSilentBtn.classList.add('active');
+    } else {
+      this.silentIcon.textContent = '??';
+      this.quickSilentBtn.classList.remove('active');
+    }
+  }
+
+  switchView(viewName, params = {}) {
+    this.currentView = viewName;
+
+    this.bottomNavItems.forEach(item => {
+      if (item.getAttribute('data-view') === viewName) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+
+    if (this.activeSession) {
+      this.activeBadge.classList.remove('hidden');
+    } else {
+      this.activeBadge.classList.add('hidden');
+    }
+
+    switch (viewName) {
+      case 'workouts':
+        this.renderWorkoutsView();
+        break;
+      case 'tabular-editor':
+        this.renderTabularEditorView(params.workoutId);
+        break;
+      case 'active-workout':
+        this.renderActiveWorkoutView();
+        break;
+      case 'diary':
+        this.renderDiaryView();
+        break;
+      case 'share':
+        this.renderShareImportView();
+        break;
+      case 'settings':
+        this.renderSettingsView();
+        break;
+      default:
+        this.renderWorkoutsView();
+    }
+  }
+
+  restoreOrRenderView() {
+    const restored = window.storageManager.getActiveSession();
+    if (restored) {
+      this.activeSession = restored;
+    }
+    this.switchView('workouts');
+  }
+
+  showToast(message, type = 'info') {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
+  }
+
+  openModal(htmlContent) {
+    this.modalBody.innerHTML = htmlContent;
+    this.modalOverlay.classList.remove('hidden');
+  }
+
+  closeModal() {
+    this.modalOverlay.classList.add('hidden');
+    this.modalBody.innerHTML = '';
+  }
+
+  showPaywallModal(reasonMessage = '') {
+    const modalHtml = `
+      <div style="text-align: center; padding: 12px 4px;">
+        <span style="font-size: 54px; filter: drop-shadow(0 0 10px var(--fluo-cyan));">??</span>
+        <h2 style="font-family: var(--font-header); color: var(--fluo-cyan); font-size: 22px; margin: 8px 0 4px 0;">CYBERPUMP PREMIUM</h2>
+        
+        <p style="color: var(--fluo-orange); font-size: 13px; font-weight: 600; margin-bottom: 16px;">
+          ${this.escapeHtml(reasonMessage || 'Unlock the full power of your training!')}
+        </p>
+
+        <div class="card" style="text-align: left; background: rgba(0, 240, 255, 0.05); border-color: var(--fluo-cyan); margin-bottom: 20px;">
+          <ul style="font-size: 13px; color: #fff; padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <li>? <strong>Unlimited Workouts</strong> (Free limit: 3)</li>
+            <li>? <strong>Unlimited Exercises per Routine</strong> (Free limit: 6)</li>
+            <li>? <strong>Unlimited Import & Cloning</strong></li>
+            <li>? <strong>Lifetime Access (No Subscriptions)</strong></li>
+          </ul>
+        </div>
+
+        <button id="btn-buy-premium-modal" class="btn btn-primary btn-block" style="padding: 16px; font-size: 15px; margin-bottom: 10px;">
+          ?? Unlock Unlimited
+        </button>
+        <button id="btn-restore-paywall" class="btn btn-secondary btn-block btn-sm" style="margin-bottom: 8px;">
+          ?? Restore Purchases
+        </button>
+        <button id="btn-cancel-paywall" class="btn btn-secondary btn-block btn-sm">
+          Continue with Free Version
+        </button>
+      </div>
+    `;
+
+    this.openModal(modalHtml);
+
+    document.getElementById('btn-buy-premium-modal')?.addEventListener('click', () => {
+      if (window.iapManager && window.iapManager.initialized) {
+        window.iapManager.buyPremium();
+      } else {
+        this.triggerMockPurchase();
+      }
+    });
+
+    document.getElementById('btn-restore-paywall')?.addEventListener('click', () => {
+      if (window.iapManager && window.iapManager.initialized) {
+        window.iapManager.restorePurchases();
+      } else {
+        this.showToast('IAP Manager not initialized or running in browser mode', 'warning');
+      }
+    });
+
+    document.getElementById('btn-cancel-paywall')?.addEventListener('click', () => {
+      this.closeModal();
+    });
+  }
+
+  triggerMockPurchase() {
+    this.showToast('? Connecting to Store...');
+    setTimeout(() => {
+      window.storageManager.unlockPremium();
+      this.closeModal();
+      this.showToast('?? CYBERPUMP Premium Unlocked (Web Test)!');
+      this.switchView(this.currentView);
+    }, 1200);
+  }
+
+  renderWorkoutsView() {
+    const workouts = window.storageManager.getWorkouts();
+    const isPremium = window.storageManager.isPremiumUser();
+
+    let html = `
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">??? My Workouts</h1>
+          <span style="font-size: 11px; color: ${isPremium ? 'var(--fluo-cyan)' : 'var(--text-muted)'}; font-weight: 600;">
+            ${isPremium ? '?? PREMIUM USER (Unlimited)' : `FREE PLAN (${workouts.length}/${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Used)`}
+          </span>
+        </div>
+        <button id="btn-create-workout" class="btn btn-primary btn-sm">+ New Workout</button>
+      </div>
+    `;
+
+    if (workouts.length === 0) {
+      html += `
+        <div class="card" style="text-align: center; padding: 40px 20px;">
+          <p style="color: var(--text-muted); margin-bottom: 16px;">No saved workouts found.</p>
+          <button id="btn-create-workout-empty" class="btn btn-primary">Create Your First Workout</button>
+        </div>
+      `;
+    } else {
+      workouts.forEach(w => {
+        const totalSets = w.exercises.reduce((sum, ex) => sum + (parseInt(ex.sets) || 1), 0);
+        const timebasedCount = w.exercises.filter(ex => ex.type === 'timebased').length;
+        const isCircuit = w.mode === 'circuit';
+
+        html += `
+          <div class="card" style="margin-bottom: 12px; ${isCircuit ? 'border-color: var(--fluo-cyan); box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);' : ''}">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <div>
+                <h3 style="font-family: var(--font-header); font-size: 18px; color: #fff;">${this.escapeHtml(w.name)}</h3>
+                <p style="font-size: 12px; color: var(--text-muted);">${this.escapeHtml(w.description || 'Custom routine')}</p>
+              </div>
+              <span class="exercise-badge" style="${isCircuit ? 'background: rgba(0, 240, 255, 0.2); color: var(--fluo-cyan); border: 1px solid var(--fluo-cyan);' : ''}">
+                ${isCircuit ? `?? CIRCUIT (${w.circuitCycles || 3} Cycles)` : `${w.exercises.length} Exercises (${totalSets} Sets)`}
+              </span>
+            </div>
+
+            <div style="display: flex; gap: 8px; font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
+              ${isCircuit ? `<span style="color: var(--fluo-cyan);">?? ${w.exercises.length} Exercises per Cycle � Rest: ${w.circuitRestSeconds || 90}s</span>` : ''}
+              ${timebasedCount > 0 ? `<span style="color: var(--fluo-magenta);">? ${timebasedCount} Time-Based</span>` : ''}
+              ${!isCircuit ? `<span>?? Rest configured per exercise</span>` : ''}
+            </div>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button class="btn btn-success btn-sm btn-start-workout" data-id="${w.id}">?? Start</button>
+              <button class="btn btn-secondary btn-sm btn-edit-workout" data-id="${w.id}">?? Config</button>
+              <button class="btn btn-secondary btn-sm btn-clone-workout" data-id="${w.id}">?? Clone</button>
+              <button class="btn btn-secondary btn-sm btn-share-workout" data-id="${w.id}">?? Share</button>
+              <button class="btn btn-secondary btn-sm btn-delete-workout" data-id="${w.id}" style="color: var(--fluo-magenta); border-color: rgba(255,0,127,0.3);">???</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    this.mainContent.innerHTML = html;
+
+    const handleCreateClick = () => {
+      const isUserPremium = window.storageManager.isPremiumUser();
+      const currentCount = window.storageManager.getWorkouts().length;
+
+      if (!isUserPremium && currentCount >= FREEMIUM_LIMITS.MAX_WORKOUTS) {
+        this.showPaywallModal(`Free plan limit reached (${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Max). Upgrade to Premium to create unlimited workouts!`);
+        return;
+      }
+      this.switchView('tabular-editor', { workoutId: null });
+    };
+
+    const newBtn = document.getElementById('btn-create-workout') || document.getElementById('btn-create-workout-empty');
+    if (newBtn) {
+      newBtn.addEventListener('click', handleCreateClick);
+    }
+
+    document.querySelectorAll('.btn-start-workout').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.currentTarget.getAttribute('data-id');
+        this.startWorkoutSession(id);
+      });
+    });
+
+    document.querySelectorAll('.btn-edit-workout').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.currentTarget.getAttribute('data-id');
+        this.switchView('tabular-editor', { workoutId: id });
+      });
+    });
+
+    document.querySelectorAll('.btn-clone-workout').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const isUserPremium = window.storageManager.isPremiumUser();
+        const currentCount = window.storageManager.getWorkouts().length;
+
+        if (!isUserPremium && currentCount >= FREEMIUM_LIMITS.MAX_WORKOUTS) {
+          this.showPaywallModal(`Cannot clone: Free plan limit reached (${FREEMIUM_LIMITS.MAX_WORKOUTS} Workouts Max). Unlock Premium for unlimited cloning!`);
+          return;
+        }
+
+        const id = e.currentTarget.getAttribute('data-id');
+        const cloned = window.storageManager.cloneWorkout(id);
+        if (cloned) {
+          this.showToast(`Cloned workout as "${cloned.name}"`);
+          this.renderWorkoutsView();
+        }
+      });
+    });
+
+    document.querySelectorAll('.btn-share-workout').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const id = e.currentTarget.getAttribute('data-id');
+        const res = await window.exportImportManager.shareWorkouts([id]);
+        if (res.success) {
+          this.showToast(res.method === 'clipboard' ? 'Export string copied to clipboard!' : 'Workout shared!');
+        }
+      });
+    });
+
+    document.querySelectorAll('.btn-delete-workout').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.currentTarget.getAttribute('data-id');
+        if (confirm('Are you sure you want to delete this workout?')) {
+          window.storageManager.deleteWorkout(id);
+          this.showToast('Workout deleted');
+          this.renderWorkoutsView();
+        }
+      });
+    });
+  }
+
+  renderTabularEditorView(workoutId) {
+    let workout = workoutId ? window.storageManager.getWorkoutById(workoutId) : null;
+    
+    if (!workout) {
+      workout = {
+        id: 'workout_' + Date.now(),
+        name: 'New Custom Workout',
+        description: '',
+        mode: 'standard',
+        circuitCycles: 3,
+        circuitRestSeconds: 90,
+        createdAt: new Date().toISOString(),
+        exercises: [
+          {
+            id: 'ex_' + Date.now(),
+            name: 'Bench Press',
+            type: 'standard',
+            sets: 3,
+            reps: 10,
+            restSeconds: 60,
+            weight: 50,
+            timebasedIntervalSeconds: 60,
+            timebasedTotalRounds: 5
+          }
+        ]
+      };
+    }
+
+    this.editingWorkout = JSON.parse(JSON.stringify(workout));
+    const isPremium = window.storageManager.isPremiumUser();
+
+    let html = `
+      <div class="view-header">
+        <div>
+          <h1 class="view-title">?? Configure Workout</h1>
+          <span style="font-size: 11px; color: ${isPremium ? 'var(--fluo-cyan)' : 'var(--text-muted)'}; font-weight: 600;">
+            ${isPremium ? '?? PREMIUM (Unlimited Exercises)' : `FREE PLAN (${this.editingWorkout.exercises.length}/${FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT} Exercises Max)`}
+          </span>
+        </div>
+        <button id="btn-save-tabular" class="btn btn-primary btn-sm">?? Save Workout</button>
+      </div>
+
+      <div class="card" style="margin-bottom: 12px;">
+        <div class="form-group">
+          <label class="form-label">Workout Title</label>
+          <input type="text" id="edit-workout-name" class="form-input" value="${this.escapeHtml(this.editingWorkout.name)}" placeholder="Workout Name (e.g. Legs & Core)">
+        </div>
+        <div class="form-group" style="margin-bottom: 0;">
+          <label class="form-label">Description (Optional)</label>
+          <input type="text" id="edit-workout-desc" class="form-input" value="${this.escapeHtml(this.editingWorkout.description || '')}" placeholder="Short notes or focus area">
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 12px; border-color: var(--fluo-cyan);">
+        <div class="form-group" style="margin-bottom: 8px;">
+          <label class="form-label" style="color: var(--fluo-cyan); font-weight: 700;">Workout Execution Mode</label>
+          <select id="edit-workout-mode" class="form-input" style="background: rgba(0, 240, 255, 0.05); color: #fff; border-color: var(--fluo-cyan);">
+            <option value="standard" ${this.editingWorkout.mode !== 'circuit' ? 'selected' : ''}>?? Standard Mode (All Sets per Exercise sequentially)</option>
+            <option value="circuit" ${this.editingWorkout.mode === 'circuit' ? 'selected' : ''}>?? Cyclic / Circuit Mode (1 Set per Exercise sequentially across N Cycles)</option>
+          </select>
+        </div>
+
+        <div id="circuit-config-box" style="display: ${this.editingWorkout.mode === 'circuit' ? 'flex' : 'none'}; gap: 12px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed rgba(0, 240, 255, 0.2);">
+          <div class="form-group" style="flex: 1; margin-bottom: 0;">
+            <label class="form-label">Circuit Cycles (N Repetitions)</label>
+            <input type="number" id="edit-circuit-cycles" class="form-input" min="1" max="99" value="${this.editingWorkout.circuitCycles || 3}">
+          </div>
+          <div class="form-group" style="flex: 1; margin-bottom: 0;">
+            <label class="form-label">Rest Between Cycles (Sec)</label>
+            <input type="number" id="edit-circuit-rest" class="form-input" min="0" max="999" value="${this.editingWorkout.circuitRestSeconds || 90}">
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span class="form-label" style="font-size: 13px;">Exercises & Sets List</span>
+        <button id="btn-add-row" class="btn btn-secondary btn-sm" style="color: var(--fluo-cyan); border-color: var(--fluo-cyan);">+ Add Exercise</button>
+      </div>
+
+      <div class="tabular-container">
+        <table class="tabular-table">
+          <thead>
+            <tr>
+              <th style="width: 25px;">#</th>
+              <th style="min-width: 110px;">Exercise</th>
+              <th style="width: 95px;">Type</th>
+              <th style="width: 55px; text-align: center;">Sets</th>
+              <th style="width: 55px; text-align: center;">Reps</th>
+              <th style="width: 60px; text-align: center;">Weight</th>
+              <th style="width: 65px; text-align: center;">Rest / Interval</th>
+              <th style="width: 85px; text-align: center;">Move / Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tabular-tbody">
+            ${this.renderTabularRows()}
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 16px; display: flex; gap: 8px;">
+        <button id="btn-cancel-tabular" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+        <button id="btn-save-tabular-bottom" class="btn btn-primary" style="flex: 2;">Save & Finish Config</button>
+      </div>
+    `;
+
+    this.mainContent.innerHTML = html;
+    this.bindTabularEvents();
+  }
+
+  renderTabularRows() {
+    const isCircuitMode = this.editingWorkout.mode === 'circuit';
+
+    return this.editingWorkout.exercises.map((ex, index) => {
+      const istimebased = ex.type === 'timebased';
+      const weightVal = (ex.weight === null || ex.weight === undefined) ? '' : ex.weight;
+      const restVal = istimebased ? (ex.restSeconds || 0) : (ex.restSeconds || 60);
+
+      const setsDisabled = isCircuitMode;
+      const setsVal = setsDisabled ? 1 : (ex.sets || (istimebased ? (ex.timebasedTotalRounds || 5) : 3));
+
+      return `
+        <tr data-index="${index}">
+          <td style="font-weight: 700; color: var(--fluo-cyan);">${index + 1}</td>
+          <td>
+            <input type="text" class="table-input row-name" value="${this.escapeHtml(ex.name)}" placeholder="Exercise Name">
+          </td>
+          <td>
+            <select class="table-input row-type">
+              <option value="standard" ${!istimebased ? 'selected' : ''}>Standard</option>
+              <option value="timebased" ${istimebased ? 'selected' : ''}>Time-Based</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" 
+                   class="table-input row-sets" 
+                   min="1" 
+                   max="99" 
+                   value="${setsVal}" 
+                   ${setsDisabled ? 'disabled style="opacity: 0.4; cursor: not-allowed;"' : ''} 
+                   title="${setsDisabled ? 'In Circuit Mode, rounds are controlled by Circuit Cycles above' : (istimebased ? 'Total Rounds / EMOM Minutes' : 'Sets')}">
+          </td>
+          <td>
+            <input type="number" class="table-input row-reps" min="1" max="999" value="${ex.reps || 10}" title="Reps per round">
+          </td>
+          <td>
+            <input type="number" step="0.5" class="table-input row-weight" value="${weightVal}" placeholder="BW">
+          </td>
+          <td>
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <input type="number" class="table-input row-time" min="1" max="999" value="${istimebased ? (ex.timebasedIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${istimebased ? 'Interval in sec' : 'Rest in sec'}">
+              ${istimebased ? `
+                <input type="number" class="table-input row-rest" min="0" max="999" value="${restVal}" placeholder="Rest (opt)" title="Optional Rest between rounds (sec)">
+              ` : ''}
+            </div>
+          </td>
+          <td>
+            <div class="action-btn-group">
+              <button class="btn btn-secondary btn-sm row-move-up" data-index="${index}" ${index === 0 ? 'disabled' : ''}>?</button>
+              <button class="btn btn-secondary btn-sm row-move-down" data-index="${index}" ${index === this.editingWorkout.exercises.length - 1 ? 'disabled' : ''}>?</button>
+              <button class="btn btn-secondary btn-sm row-delete" data-index="${index}" style="color: var(--fluo-magenta);">???</button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  bindTabularEvents() {
+    const tbody = document.getElementById('tabular-tbody');
+
+    document.getElementById('edit-workout-mode')?.addEventListener('change', (e) => {
+      const isCircuit = e.target.value === 'circuit';
+      this.editingWorkout.mode = e.target.value;
+      const box = document.getElementById('circuit-config-box');
+      if (box) box.style.display = isCircuit ? 'flex' : 'none';
+
+      updateExerciseState();
+      tbody.innerHTML = this.renderTabularRows();
+    });
+
+    const updateExerciseState = () => {
+      this.editingWorkout.name = document.getElementById('edit-workout-name').value.trim() || 'Custom Workout';
+      this.editingWorkout.description = document.getElementById('edit-workout-desc').value.trim();
+      this.editingWorkout.mode = document.getElementById('edit-workout-mode').value;
+      this.editingWorkout.circuitCycles = parseInt(document.getElementById('edit-circuit-cycles').value) || 3;
+      this.editingWorkout.circuitRestSeconds = parseInt(document.getElementById('edit-circuit-rest').value) || 90;
+
+      const isCircuitMode = this.editingWorkout.mode === 'circuit';
+      const rows = tbody.querySelectorAll('tr');
+
+      rows.forEach((tr, idx) => {
+        const ex = this.editingWorkout.exercises[idx];
+        if (!ex) return;
+
+        ex.name = tr.querySelector('.row-name').value.trim() || `Exercise ${idx + 1}`;
+        ex.type = tr.querySelector('.row-type').value;
+
+        if (isCircuitMode) {
+          ex.sets = 1;
+        } else {
+          ex.sets = parseInt(tr.querySelector('.row-sets').value) || 1;
+        }
+
+        ex.reps = parseInt(tr.querySelector('.row-reps').value) || 1;
+        
+        const rawWeight = tr.querySelector('.row-weight').value.trim();
+        ex.weight = rawWeight === '' ? null : parseFloat(rawWeight);
+
+        const timeVal = parseInt(tr.querySelector('.row-time').value) || 60;
+        if (ex.type === 'timebased') {
+          ex.timebasedIntervalSeconds = timeVal;
+          ex.timebasedTotalRounds = ex.sets;
+          const restInput = tr.querySelector('.row-rest');
+          ex.restSeconds = restInput ? (parseInt(restInput.value) || 0) : 0;
+        } else {
+          ex.restSeconds = timeVal;
+        }
+      });
+    };
+	
+    tbody.addEventListener('click', (e) => {
+      const target = e.target;
+      updateExerciseState();
+
+      if (target.classList.contains('row-move-up')) {
+        const idx = parseInt(target.getAttribute('data-index'));
+        if (idx > 0) {
+          const temp = this.editingWorkout.exercises[idx];
+          this.editingWorkout.exercises[idx] = this.editingWorkout.exercises[idx - 1];
+          this.editingWorkout.exercises[idx - 1] = temp;
+          tbody.innerHTML = this.renderTabularRows();
+        }
+      } else if (target.classList.contains('row-move-down')) {
+        const idx = parseInt(target.getAttribute('data-index'));
+        if (idx < this.editingWorkout.exercises.length - 1) {
+          const temp = this.editingWorkout.exercises[idx];
+          this.editingWorkout.exercises[idx] = this.editingWorkout.exercises[idx + 1];
+          this.editingWorkout.exercises[idx + 1] = temp;
+          tbody.innerHTML = this.renderTabularRows();
+        }
+      } else if (target.classList.contains('row-delete')) {
+        const idx = parseInt(target.getAttribute('data-index'));
+        if (this.editingWorkout.exercises.length > 1) {
+          this.editingWorkout.exercises.splice(idx, 1);
+          tbody.innerHTML = this.renderTabularRows();
+        } else {
+          this.showToast('Workout must have at least one exercise', 'warning');
+        }
+      }
+    });
+
+    tbody.addEventListener('change', (e) => {
+      if (e.target.classList.contains('row-type')) {
+        updateExerciseState();
+        tbody.innerHTML = this.renderTabularRows();
+      }
+    });
+
+    document.getElementById('btn-add-row').addEventListener('click', () => {
+      updateExerciseState();
+      const isUserPremium = window.storageManager.isPremiumUser();
+      const currentExerciseCount = this.editingWorkout.exercises.length;
+
+      if (!isUserPremium && currentExerciseCount >= FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT) {
+        this.showPaywallModal(`Free plan limit reached (${FREEMIUM_LIMITS.MAX_EXERCISES_PER_WORKOUT} Exercises Max per Routine). Unlock Premium to add unlimited exercises!`);
+        return;
+      }
+
+      this.editingWorkout.exercises.push({
+        id: 'ex_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+        name: 'New Exercise',
+        type: 'standard',
+        sets: 3,
+        reps: 10,
+        restSeconds: 60,
+        weight: null,
+        timebasedIntervalSeconds: 60,
+        timebasedTotalRounds: 5
+      });
+      tbody.innerHTML = this.renderTabularRows();
+    });
+
+    const saveHandler = () => {
+      updateExerciseState();
+      window.storageManager.saveWorkout(this.editingWorkout);
+      this.showToast(`Saved workout "${this.editingWorkout.name}"!`);
+      this.switchView('workouts');
+    };
+
+    document.getElementById('btn-save-tabular').addEventListener('click', saveHandler);
+    document.getElementById('btn-save-tabular-bottom').addEventListener('click', saveHandler);
+
+    document.getElementById('btn-cancel-tabular').addEventListener('click', () => {
+      this.switchView('workouts');
+    });
+  }
+
+  startWorkoutSession(workoutId) {
+    const workout = window.storageManager.getWorkoutById(workoutId);
+    if (!workout || workout.exercises.length === 0) {
+      this.showToast('Cannot start an empty workout', 'error');
+      return;
+    }
+
+    const isCircuit = workout.mode === 'circuit';
+    const queue = [];
+
+    if (isCircuit) {
+      const totalCycles = parseInt(workout.circuitCycles) || 3;
+      const circuitRest = parseInt(workout.circuitRestSeconds) || 90;
+
+      for (let c = 1; c <= totalCycles; c++) {
+        workout.exercises.forEach((ex, exIdx) => {
+          const isLastExInCycle = exIdx === workout.exercises.length - 1;
+          const restTime = isLastExInCycle ? circuitRest : (ex.type === 'timebased' ? (ex.restSeconds || 0) : (ex.restSeconds || 60));
+
+          queue.push({
+            taskId: `task_cycle_${c}_ex_${ex.id}`,
+            exerciseId: ex.id,
+            exerciseName: ex.name,
+            setIndex: 1,
+            totalSets: 1,
+            cycleIndex: c,
+            totalCycles: totalCycles,
+            isCircuitMode: true,
+            isLastExerciseInCycle: isLastExInCycle,
+            circuitRestSeconds: circuitRest,
+            reps: ex.reps,
+            restSeconds: restTime,
+            weight: ex.weight,
+            type: ex.type || 'standard',
+            timebasedIntervalSeconds: ex.timebasedIntervalSeconds || 60,
+            timebasedTotalRounds: 1,
+            completed: false
+          });
+        });
+      }
+    } else {
+      workout.exercises.forEach(ex => {
+        const setsCount = parseInt(ex.sets) || 1;
+        for (let s = 1; s <= setsCount; s++) {
+          queue.push({
+            taskId: `task_${ex.id}_set_${s}`,
+            exerciseId: ex.id,
+            exerciseName: ex.name,
+            setIndex: s,
+            totalSets: setsCount,
+            cycleIndex: 1,
+            totalCycles: 1,
+            isCircuitMode: false,
+            reps: ex.reps,
+            restSeconds: ex.type === 'timebased' ? (ex.restSeconds || 0) : (ex.restSeconds || 60),
+            weight: ex.weight,
+            type: ex.type || 'standard',
+            timebasedIntervalSeconds: ex.timebasedIntervalSeconds || 60,
+            timebasedTotalRounds: ex.timebasedTotalRounds || setsCount,
+            completed: false
+          });
+        }
+      });
+    }
+
+    this.activeSession = {
+      workoutId: workout.id,
+      workoutName: workout.name,
+      startedAt: new Date().toISOString(),
+      queue: queue,
+      activeTaskIndex: 0,
+      completedLogs: [],
+      inRest: false,
+      intimebasedTimer: false,
+      intimebasedRestPause: false,
+      awaitingExerciseStart: false
+    };
+
+    this.requestWakeLock();
+
+    window.storageManager.saveActiveSession(this.activeSession);
+    this.switchView('active-workout');
+    this.showToast(`Started "${workout.name}"! Let's go! ??`);
+  }
+
+  getNextPreviewTask(session) {
+    if (!session || !session.queue || session.queue.length === 0) return null;
+
+    const currentTask = session.queue[session.activeTaskIndex];
+    const isCircuitMode = session.queue[0]?.isCircuitMode;
+
+    if (isCircuitMode) {
+      return session.queue.find(t => !t.completed) || null;
+    } else {
+      if (currentTask) {
+        const nextSameEx = session.queue.find(t => !t.completed && t.exerciseId === currentTask.exerciseId);
+        if (nextSameEx) return nextSameEx;
+      }
+      return session.queue.find(t => !t.completed) || null;
+    }
+  }
+  
+  renderActiveWorkoutView() {
+    if (!this.activeSession) {
+      this.mainContent.innerHTML = `
+        <div class="card" style="text-align: center; padding: 40px 20px;">
+          <h2 style="font-family: var(--font-header); color: #fff; margin-bottom: 12px;">No Active Workout</h2>
+          <p style="color: var(--text-muted); margin-bottom: 20px;">Select a workout from your library to start training.</p>
+          <button id="btn-go-workouts" class="btn btn-primary">Go to Workouts</button>
+        </div>
+      `;
+      document.getElementById('btn-go-workouts')?.addEventListener('click', () => this.switchView('workouts'));
+      return;
+    }
+
+    const session = this.activeSession;
+    const remainingTasks = session.queue.filter(t => !t.completed);
+
+    if (remainingTasks.length === 0) {
+      this.finishWorkoutSession();
+      return;
+    }
+
+    const isTimerRunning = session.inRest || session.intimebasedTimer || session.intimebasedRestPause;
+
+    if (!isTimerRunning && session.queue[session.activeTaskIndex]?.completed) {
+      const isCircuitMode = session.queue[0]?.isCircuitMode;
+
+      if (isCircuitMode) {
+        const nextIdx = session.queue.findIndex(t => !t.completed);
+        if (nextIdx >= 0) session.activeTaskIndex = nextIdx;
+      } else {
+        const lastLog = session.completedLogs && session.completedLogs.length > 0
+          ? session.completedLogs[session.completedLogs.length - 1]
+          : null;
+        const lastExId = lastLog ? lastLog.exerciseId : null;
+
+        let nextIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExId);
+        if (nextIdx === -1) {
+          nextIdx = session.queue.findIndex(t => !t.completed);
+        }
+
+        if (nextIdx >= 0) {
+          session.activeTaskIndex = nextIdx;
+        }
+      }
+    }
+
+    const currentTask = session.queue[session.activeTaskIndex];
+    const istimebased = currentTask.type === 'timebased';
+
+    let html = `
+      <div class="view-header">
+        <div>
+          <span style="font-size: 11px; color: var(--fluo-cyan); font-weight: 700;">ACTIVE SESSION</span>
+          <h1 class="view-title">${this.escapeHtml(session.workoutName)}</h1>
+        </div>
+        <button id="btn-cancel-session" class="btn btn-secondary btn-sm" style="color: var(--fluo-magenta);">Stop</button>
+      </div>
+    `;
+
+    if (session.awaitingExerciseStart) {
+      const nextTask = currentTask;
+
+      html += `
+        <div class="card active-player-card" style="border-color: var(--fluo-cyan); box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);">
+          <span class="exercise-badge" style="background: rgba(0, 240, 255, 0.2); color: var(--fluo-cyan);">
+            ?? EXERCISE COMPLETED
+          </span>
+          <h2 class="exercise-title" style="margin-bottom: 4px;">Get Ready for Next Exercise</h2>
+
+          <div class="next-up-banner" style="margin: 16px 0; border-left-color: var(--fluo-lime); text-align: left; background: rgba(0, 255, 136, 0.05); padding: 14px;">
+            <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">NEXT EXERCISE:</span>
+            <div style="font-family: var(--font-header); font-size: 20px; color: #fff; margin-top: 2px;">
+              ${this.escapeHtml(nextTask.exerciseName)}
+            </div>
+            <div style="font-size: 13px; color: var(--fluo-lime); margin-top: 4px;">
+              Target: ${nextTask.totalSets} Sets x ${nextTask.reps} Reps ${nextTask.weight !== null && nextTask.weight !== undefined ? `@ ${nextTask.weight} kg/lbs` : '(Bodyweight)'}
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 16px;">
+            <button id="btn-quick-weight-transition" class="btn btn-secondary" style="flex: 1;">?? Adjust Weight</button>
+            <button id="btn-confirm-next-exercise" class="btn btn-success" style="flex: 2; padding: 16px; font-size: 16px;">?? Start ${this.escapeHtml(nextTask.exerciseName)}</button>
+          </div>
+        </div>
+      `;
+    } else if (session.intimebasedRestPause) {
+      const nextTask = this.getNextPreviewTask(session);
+
+      html += `
+        <div class="rest-overlay" style="border-color: var(--fluo-orange); box-shadow: 0 0 20px rgba(255, 153, 0, 0.3);">
+          <span style="font-size: 13px; font-weight: 800; color: var(--fluo-orange); letter-spacing: 1px;">
+            ?? TIMEBASED REST PAUSE
+          </span>
+          <div id="timebased-rest-timer-num" class="rest-timer-display" style="color: var(--fluo-orange); text-shadow: 0 0 20px var(--fluo-orange); font-size: 72px;">
+            ${this.timerSecondsLeft}s
+          </div>
+
+          ${nextTask ? `
+            <div class="next-up-banner" style="border-left-color: var(--fluo-magenta);">
+              <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Next Up:</span>
+              <div style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-top: 2px;">
+                ${this.escapeHtml(nextTask.exerciseName)} ${nextTask.isCircuitMode ? `(Cycle ${nextTask.cycleIndex}/${nextTask.totalCycles})` : `- Round ${nextTask.setIndex}/${nextTask.totalSets}`}
+              </div>
+              <div style="font-size: 12px; color: var(--fluo-magenta);">
+                Target: ${nextTask.reps} reps ${nextTask.type === 'timebased' ? `� ${nextTask.timebasedIntervalSeconds}s interval` : (nextTask.weight ? `@ ${nextTask.weight} kg/lbs` : '(Bodyweight)')}
+              </div>
+            </div>
+          ` : ''}
+
+          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
+            <button id="btn-pause-timebased" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '?? Resume' : '?? Pause'}</button>
+            <button id="btn-quick-weight-rest" class="btn btn-secondary btn-sm">?? Weight</button>
+            <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest ?</button>
+          </div>
+        </div>
+      `;
+    } else if (session.inRest) {
+      const nextTask = this.getNextPreviewTask(session);
+      const isCycleRest = currentTask.isCircuitMode && currentTask.isLastExerciseInCycle;
+
+      html += `
+        <div class="rest-overlay" style="${isCycleRest ? 'border-color: var(--fluo-cyan); box-shadow: 0 0 25px rgba(0,240,255,0.3);' : ''}">
+          <span style="font-size: 13px; font-weight: 800; color: ${isCycleRest ? 'var(--fluo-cyan)' : 'var(--fluo-lime)'}; letter-spacing: 1px;">
+            ${isCycleRest ? `?? CIRCUIT CYCLE ${currentTask.cycleIndex} COMPLETED!` : '?? REST & RECOVER'}
+          </span>
+          <div id="rest-timer-num" class="rest-timer-display" style="${isCycleRest ? 'color: var(--fluo-cyan); text-shadow: 0 0 20px var(--fluo-cyan);' : ''}">${this.timerSecondsLeft}s</div>
+
+          ${nextTask ? `
+            <div class="next-up-banner" style="${isCycleRest ? 'border-left-color: var(--fluo-cyan);' : ''}">
+              <span style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">${isCycleRest ? `Next Up (Cycle ${nextTask.cycleIndex}/${nextTask.totalCycles}):` : 'Next Exercise Preview:'}</span>
+              <div style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-top: 2px;">
+                ${this.escapeHtml(nextTask.exerciseName)} ${nextTask.isCircuitMode ? `(Cycle ${nextTask.cycleIndex})` : `- Set ${nextTask.setIndex}/${nextTask.totalSets}`}
+              </div>
+              <div style="font-size: 12px; color: ${isCycleRest ? 'var(--fluo-cyan)' : 'var(--fluo-lime)'};">
+                Target: ${nextTask.reps} reps ${nextTask.weight ? `@ ${nextTask.weight} kg/lbs` : '(Bodyweight)'}
+              </div>
+            </div>
+          ` : ''}
+
+          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
+            <button id="btn-pause-timer" class="btn btn-secondary btn-sm">${this.isTimerPaused ? '?? Resume' : '?? Pause'}</button>
+            <button id="btn-add-rest" class="btn btn-secondary btn-sm">+10s</button>
+            <button id="btn-quick-weight-rest" class="btn btn-secondary btn-sm">?? Weight</button>
+            <button id="btn-skip-rest" class="btn btn-primary btn-sm">Skip Rest ?</button>
+          </div>
+        </div>
+      `;
+    } else if (istimebased) {
+      const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
+      const currentRoundNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
+
+      const weightDisplay = currentTask.weight !== null && currentTask.weight !== undefined 
+        ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg/lbs</span>` 
+        : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
+
+      const istimebasedRunning = session.intimebasedTimer || session.timebasedStarted;
+
+      html += `
+        <div class="card active-player-card" style="border-color: var(--fluo-magenta); box-shadow: 0 0 25px rgba(255, 0, 127, 0.25);">
+          <span class="exercise-badge" style="background: rgba(255, 0, 127, 0.2); color: var(--fluo-magenta);">
+            ${currentTask.isCircuitMode ? `? CIRCUIT � CYCLE ${currentTask.cycleIndex}/${currentTask.totalCycles} � TIMEBASED ROUND ${currentRoundNumber}/${currentTask.totalSets}` : `? TIMEBASED MODE � ROUND ${currentRoundNumber} OF ${currentTask.totalSets}`}
+          </span>
+          <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
+
+          <div id="timebased-timer-num" class="rest-timer-display" style="color: var(--fluo-magenta); text-shadow: 0 0 20px var(--fluo-magenta); font-size: 72px;">
+            ${this.timerSecondsLeft > 0 ? this.timerSecondsLeft : currentTask.timebasedIntervalSeconds}s
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-value" style="color: #fff;">${currentTask.reps}</div>
+              <div class="metric-label">Reps per Round</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">${weightDisplay}</div>
+              <div class="metric-label">Weight</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value" style="color: var(--fluo-magenta);">${currentTask.timebasedIntervalSeconds}s</div>
+              <div class="metric-label">${currentTask.restSeconds > 0 ? `Interval (+${currentTask.restSeconds}s Rest)` : 'Interval'}</div>
+            </div>
+          </div>
+
+          ${!istimebasedRunning ? `
+            <button id="btn-start-timebased-manual" class="btn btn-success btn-block" style="margin-top: 16px; padding: 18px; font-size: 18px; box-shadow: var(--shadow-neon-lime);">
+              ?? START TIMEBASED (ROUND 1/${currentTask.totalSets})
+            </button>
+          ` : `
+            <p style="font-size: 11px; color: var(--text-muted); margin: 8px 0;">
+              ?? Hands-Free Mode: Timer auto-advances rounds when time reaches 0s.
+            </p>
+          `}
+
+          <div style="display: flex; gap: 8px; margin-top: 12px;">
+            ${istimebasedRunning ? `<button id="btn-pause-timebased" class="btn btn-secondary" style="flex: 1;">${this.isTimerPaused ? '?? Resume' : '?? Pause'}</button>` : ''}
+            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">?? Adjust Weight</button>
+            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">?? Skip Exercise</button>
+          </div>
+        </div>
+      `;
+    } else {
+      const currentExDoneSetsCount = session.completedLogs.filter(log => log.exerciseId === currentTask.exerciseId).length;
+      const currentSetNumber = Math.min(currentExDoneSetsCount + 1, currentTask.totalSets);
+
+      const weightDisplay = currentTask.weight !== null && currentTask.weight !== undefined 
+        ? `${currentTask.weight} <span style="font-size: 12px; color: var(--text-muted);">kg/lbs</span>` 
+        : `<span style="font-size: 18px; color: var(--fluo-cyan);">Bodyweight</span>`;
+
+      html += `
+        <div class="card active-player-card">
+          <span class="exercise-badge" style="${currentTask.isCircuitMode ? 'background: rgba(0, 240, 255, 0.15); color: var(--fluo-cyan); border: 1px solid var(--fluo-cyan);' : ''}">
+            ${currentTask.isCircuitMode ? `?? CIRCUIT � CYCLE ${currentTask.cycleIndex} OF ${currentTask.totalCycles}` : `STANDARD SET � SET ${currentSetNumber} OF ${currentTask.totalSets}`}
+          </span>
+          <h2 class="exercise-title">${this.escapeHtml(currentTask.exerciseName)}</h2>
+
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-value">${currentTask.reps}</div>
+              <div class="metric-label">Reps</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">${weightDisplay}</div>
+              <div class="metric-label">Weight</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-value">${currentTask.restSeconds}s</div>
+              <div class="metric-label">Rest</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 16px;">
+            <button id="btn-quick-weight" class="btn btn-secondary" style="flex: 1;">?? Adjust Weight</button>
+            <button id="btn-skip-current-set" class="btn btn-secondary" style="flex: 1; color: var(--fluo-orange); border-color: rgba(255, 153, 0, 0.4);">?? Skip Set</button>
+          </div>
+
+          <button id="btn-complete-set" class="btn btn-success btn-block" style="margin-top: 12px; padding: 18px; font-size: 16px;">
+            ? Complete Set (${currentSetNumber}/${currentTask.totalSets})
+          </button>
+        </div>
+      `;
+    }
+
+    const isCircuitMode = session.queue[0]?.isCircuitMode;
+    const totalCompletedSets = session.queue.filter(t => t.completed).length;
+
+    if (isCircuitMode) {
+      html += `
+        <div class="queue-container card" style="margin-top: 16px; border-color: var(--fluo-cyan);">
+          <h3 style="font-size: 14px; color: var(--fluo-cyan); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+            ?? Circuit Queue (${totalCompletedSets}/${session.queue.length} Tasks Executed)
+          </h3>
+          <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
+            Tap any task step to switch to it in the circuit.
+          </p>
+
+          ${session.queue.map((task, idx) => {
+            const isActive = idx === session.activeTaskIndex;
+            const isDone = task.completed;
+            const isSkipped = task.skipped;
+
+            const weightText = task.weight !== null && task.weight !== undefined 
+              ? `@ ${task.weight}kg/lbs` 
+              : '(BW)';
+
+            let badgeText = isDone ? (isSkipped ? '?? SKIPPED' : '? DONE') : (isActive ? '? ACTIVE' : `Cycle ${task.cycleIndex}`);
+            let badgeColor = isDone ? (isSkipped ? 'var(--fluo-orange)' : 'var(--fluo-lime)') : (isActive ? 'var(--fluo-cyan)' : 'var(--text-muted)');
+
+            return `
+              <div class="queue-item ${isActive ? 'active' : ''} ${isDone ? 'completed' : ''}" data-exercise-id="${task.exerciseId}" data-target-index="${idx}" style="${isActive ? 'border-color: var(--fluo-cyan); background: rgba(0, 240, 255, 0.08);' : ''}">
+                <div>
+                  <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(task.exerciseName)}</strong>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                    Cycle ${task.cycleIndex} of ${task.totalCycles} � ${task.reps} reps ${weightText}
+                  </div>
+                </div>
+                <div>
+                  <span style="font-size: 11px; font-weight: 700; color: ${badgeColor}; border: 1px solid ${badgeColor}; padding: 2px 8px; border-radius: 12px;">
+                    ${badgeText}
+                  </span>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    } else {
+      const exercisesMap = new Map();
+      session.queue.forEach(task => {
+        if (!exercisesMap.has(task.exerciseId)) {
+          exercisesMap.set(task.exerciseId, {
+            exerciseId: task.exerciseId,
+            exerciseName: task.exerciseName,
+            totalSets: task.totalSets,
+            completedSets: 0,
+            remainingTasks: [],
+            firstTaskIndex: -1,
+            weight: task.weight,
+            reps: task.reps,
+            type: task.type
+          });
+        }
+        const group = exercisesMap.get(task.exerciseId);
+        if (task.completed) {
+          group.completedSets++;
+        } else {
+          group.remainingTasks.push(task);
+          if (group.firstTaskIndex === -1) {
+            group.firstTaskIndex = session.queue.indexOf(task);
+          }
+        }
+      });
+
+      const exercisesList = Array.from(exercisesMap.values());
+
+      html += `
+        <div class="queue-container card" style="margin-top: 16px;">
+          <h3 style="font-size: 14px; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+            Exercises List (${totalCompletedSets}/${session.queue.length} Sets Done)
+          </h3>
+          <p style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px;">
+            Tap an exercise to switch to it after completing or skipping the current set.
+          </p>
+
+          ${exercisesList.map(group => {
+            const isCurrentActiveEx = currentTask && currentTask.exerciseId === group.exerciseId;
+            const isFullyDone = group.completedSets === group.totalSets;
+
+            const weightText = group.weight !== null && group.weight !== undefined 
+              ? `@ ${group.weight}kg/lbs` 
+              : '(Bodyweight)';
+
+            return `
+              <div class="queue-item ${isCurrentActiveEx ? 'active' : ''} ${isFullyDone ? 'completed' : ''}" data-exercise-id="${group.exerciseId}" data-target-index="${group.firstTaskIndex}">
+                <div>
+                  <strong style="color: #fff; font-size: 14px;">${this.escapeHtml(group.exerciseName)}</strong>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                    ${group.completedSets}/${group.totalSets} Sets Done � ${group.reps} reps ${weightText}
+                  </div>
+                </div>
+                <div>
+                  ${isFullyDone 
+                    ? '<span style="color: var(--fluo-lime); font-weight: 700; font-size: 12px;">? DONE</span>' 
+                    : (isCurrentActiveEx 
+                      ? '<span style="color: var(--fluo-cyan); font-weight: 700; font-size: 12px;">? ACTIVE</span>' 
+                      : '<span style="color: var(--text-muted); font-size: 12px;">Select</span>')}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    this.mainContent.innerHTML = html;
+    this.bindActivePlayerEvents();
+  }
+
+  bindActivePlayerEvents() {
+    const session = this.activeSession;
+    if (!session) return;
+
+    document.querySelectorAll('.queue-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (session.queue[0]?.isCircuitMode) {
+          this.showToast('In Circuit Mode, exercises run strictly in sequence. Use "Skip Set" if needed', 'warning');
+          return;
+        }
+
+        const isTimerActive = session.inRest || session.intimebasedTimer || session.intimebasedRestPause || (this.timerInterval !== null);
+        if (isTimerActive) {
+          this.showToast('Cannot switch exercises while a timer is counting down. Wait or skip rest', 'warning');
+          return;
+        }
+
+        const targetIndex = parseInt(e.currentTarget.getAttribute('data-target-index'));
+        const targetExId = e.currentTarget.getAttribute('data-exercise-id');
+        const currentTask = session.queue[session.activeTaskIndex];
+
+        if (targetIndex === -1 || isNaN(targetIndex)) return;
+
+        if (currentTask && currentTask.exerciseId !== targetExId) {
+          const currentExCompletedCount = (session.completedLogs || []).filter(log => log.exerciseId === currentTask.exerciseId).length;
+
+          if (currentExCompletedCount > 0) {
+            this.showToast(`Finish all sets of "${currentTask.exerciseName}" or tap "Skip Set" to switch exercise`, 'warning');
+            return;
+          }
+        }
+
+        session.activeTaskIndex = targetIndex;
+        window.storageManager.saveActiveSession(session);
+        this.renderActiveWorkoutView();
+      });
+    });
+
+    document.getElementById('btn-confirm-next-exercise')?.addEventListener('click', () => {
+      session.awaitingExerciseStart = false;
+      const currentTask = session.queue[session.activeTaskIndex];
+      const settings = window.storageManager.getSettings();
+
+      if (currentTask && currentTask.type === 'timebased') {
+        session.timebasedStarted = true;
+        window.storageManager.saveActiveSession(session);
+        window.audioEngine.speakPhrase("Go", settings.silentMode);
+        this.starttimebasedTimer(currentTask.timebasedIntervalSeconds);
+      } else {
+        window.storageManager.saveActiveSession(session);
+        this.renderActiveWorkoutView();
+      }
+    });
+
+    document.getElementById('btn-skip-current-set')?.addEventListener('click', () => {
+      const activeTask = session.queue[session.activeTaskIndex];
+      if (!activeTask) return;
+
+      const isCircuitMode = session.queue[0]?.isCircuitMode;
+
+      if (isCircuitMode) {
+        activeTask.completed = true;
+        activeTask.skipped = true;
+        activeTask.completedAt = new Date().toISOString();
+        this.showToast(`Skipped "${activeTask.exerciseName}" (Cycle ${activeTask.cycleIndex})`, 'info');
+      } else {
+        session.queue.forEach(t => {
+          if (t.exerciseId === activeTask.exerciseId && !t.completed) {
+            t.completed = true;
+            t.skipped = true;
+            t.completedAt = new Date().toISOString();
+          }
+        });
+        this.showToast(`Skipped all remaining sets for "${activeTask.exerciseName}"`, 'info');
+      }
+
+      this.stopRestTimer();
+      session.timebasedStarted = false;
+      window.storageManager.saveActiveSession(session);
+      this.moveToNextUncompletedSet();
+    });
+
+    document.getElementById('btn-cancel-session')?.addEventListener('click', () => {
+      if (confirm('Cancel active workout session?')) {
+        this.stopRestTimer();
+        this.releaseWakeLock();
+        this.activeSession = null;
+        window.storageManager.saveActiveSession(null);
+        this.switchView('workouts');
+      }
+    });
+
+    document.getElementById('btn-complete-set')?.addEventListener('click', () => {
+      const currentTask = session.queue[session.activeTaskIndex];
+      const settings = window.storageManager.getSettings();
+
+      const remainingUncompletedSameExSets = session.queue.filter(t => !t.completed && t.exerciseId === currentTask.exerciseId).length;
+
+      currentTask.completed = true;
+      currentTask.completedAt = new Date().toISOString();
+
+      session.completedLogs.push({
+        exerciseId: currentTask.exerciseId,
+        exerciseName: currentTask.exerciseName,
+        setIndex: currentTask.setIndex,
+        reps: currentTask.reps,
+        weight: currentTask.weight,
+        timestamp: new Date().toISOString()
+      });
+
+      if (remainingUncompletedSameExSets > 1) {
+        window.audioEngine.speakPhrase("Rest", settings.silentMode);
+      } else {
+        window.audioEngine.speakPhrase("End set", settings.silentMode);
+      }
+
+      const restSec = currentTask.type === 'timebased' ? currentTask.timebasedIntervalSeconds : currentTask.restSeconds;
+      if (restSec > 0) {
+        this.startRestTimer(restSec);
+      } else {
+        this.moveToNextUncompletedSet();
+      }
+    });
+
+    const attachWeightModal = (btnId) => {
+      document.getElementById(btnId)?.addEventListener('click', () => {
+        const currentTask = session.queue[session.activeTaskIndex];
+        if (!currentTask) return;
+        const currentWeight = currentTask.weight !== null && currentTask.weight !== undefined ? currentTask.weight : '';
+
+        const modalHtml = `
+          <h3 style="font-family: var(--font-header); color: #fff; margin-bottom: 12px;">?? Adjust Weight</h3>
+          <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px;">
+            Update weight for <strong>${this.escapeHtml(currentTask.exerciseName)}</strong>. This will also update the default weight in your workout configuration.
+          </p>
+
+          <div class="form-group">
+            <label class="form-label">Weight (kg / lbs)</label>
+            <input type="number" step="0.5" id="quick-weight-input" class="form-input" value="${currentWeight}" placeholder="Leave empty for Bodyweight">
+          </div>
+
+          <div style="display: flex; gap: 8px; margin-top: 16px;">
+            <button id="btn-save-quick-weight" class="btn btn-primary btn-block">Save Weight</button>
+          </div>
+        `;
+
+        this.openModal(modalHtml);
+
+        document.getElementById('btn-save-quick-weight').addEventListener('click', () => {
+          const val = document.getElementById('quick-weight-input').value.trim();
+          const newWeight = val === '' ? null : parseFloat(val);
+
+          currentTask.weight = newWeight;
+
+          session.queue.forEach(t => {
+            if (t.exerciseId === currentTask.exerciseId && !t.completed) {
+              t.weight = newWeight;
+            }
+          });
+
+          window.storageManager.updateWorkoutExerciseWeight(session.workoutId, currentTask.exerciseId, newWeight);
+
+          window.storageManager.saveActiveSession(session);
+          this.closeModal();
+          this.showToast('Weight updated and saved to workout template!');
+          this.renderActiveWorkoutView();
+        });
+      });
+    };
+
+    attachWeightModal('btn-quick-weight');
+    attachWeightModal('btn-quick-weight-rest');
+    attachWeightModal('btn-quick-weight-transition');
+
+    document.getElementById('btn-start-timebased-manual')?.addEventListener('click', () => {
+      const currentTask = session.queue[session.activeTaskIndex];
+      const settings = window.storageManager.getSettings();
+
+      session.timebasedStarted = true;
+      window.storageManager.saveActiveSession(session);
+
+      window.audioEngine.speakPhrase("Go", settings.silentMode);
+      this.starttimebasedTimer(currentTask.timebasedIntervalSeconds);
+    });
+
+    document.getElementById('btn-pause-timer')?.addEventListener('click', () => {
+      this.isTimerPaused = !this.isTimerPaused;
+      this.renderActiveWorkoutView();
+    });
+
+    document.getElementById('btn-pause-timebased')?.addEventListener('click', () => {
+      this.isTimerPaused = !this.isTimerPaused;
+      this.renderActiveWorkoutView();
+    });
+
+    document.getElementById('btn-add-rest')?.addEventListener('click', () => {
+      this.timerSecondsLeft += 10;
+      this.timerTargetEndTime += 10000;
+      const numElem = document.getElementById('rest-timer-num');
+      if (numElem) numElem.textContent = `${this.timerSecondsLeft}s`;
+    });
+
+    document.getElementById('btn-skip-rest')?.addEventListener('click', () => {
+      this.stopRestTimer();
+      this.moveToNextUncompletedSet();
+    });
+  }
+
+  updateTimerFromTimestamp() {
+    if (!this.timerTargetEndTime) return;
+    if (this.isTimerPaused) return;
+
+    const now = Date.now();
+    const diffMs = this.timerTargetEndTime - now;
+    const remainingSec = Math.max(0, Math.ceil(diffMs / 1000));
+
+    if (remainingSec !== this.timerSecondsLeft) {
+      this.timerSecondsLeft = remainingSec;
+
+      const timerElem = document.getElementById('timebased-timer-num') || 
+                        document.getElementById('timebased-rest-timer-num') || 
+                        document.getElementById('rest-timer-num');
+      if (timerElem) {
+        timerElem.textContent = `${this.timerSecondsLeft}s`;
+      }
+
+      const settings = window.storageManager.getSettings();
+      if (remainingSec <= 5 && remainingSec > 0) {
+        window.audioEngine.speakNumber(remainingSec, settings.silentMode);
+      }
+    }
+  }
+
+  starttimebasedTimer(seconds) {
+    this.stopRestTimer();
+
+    const session = this.activeSession;
+    if (!session) return;
+
+    session.intimebasedTimer = true;
+    this.timerSecondsLeft = seconds;
+    this.timerTotalSeconds = seconds;
+    this.timerTargetEndTime = Date.now() + (seconds * 1000);
+    this.isTimerPaused = false;
+
+    window.storageManager.saveActiveSession(session);
+    this.renderActiveWorkoutView();
+
+    this.timerInterval = setInterval(() => {
+      if (this.isTimerPaused) return;
+
+      this.updateTimerFromTimestamp();
+
+      if (this.timerSecondsLeft <= 0) {
+        this.stopRestTimer();
+
+        window.audioEngine.vibrateFinish();
+        window.audioEngine.sendRestNotification("CYBERPUMP ?", "Round Completed! Next Round Starting!");
+
+        const currentTask = session.queue[session.activeTaskIndex];
+        if (currentTask && !currentTask.completed) {
+          currentTask.completed = true;
+          currentTask.completedAt = new Date().toISOString();
+
+          session.completedLogs.push({
+            exerciseId: currentTask.exerciseId,
+            exerciseName: currentTask.exerciseName,
+            setIndex: currentTask.setIndex,
+            reps: currentTask.reps,
+            weight: currentTask.weight,
+            timestamp: new Date().toISOString()
+          });
+        }
+
+        session.intimebasedTimer = false;
+
+        const settings = window.storageManager.getSettings();
+
+        if (currentTask && currentTask.isCircuitMode) {
+          if (currentTask.restSeconds > 0) {
+            window.audioEngine.playStartBeep(settings.silentMode);
+            window.audioEngine.speakPhrase("Rest", settings.silentMode);
+            this.starttimebasedRestPauseTimer(currentTask.restSeconds);
+          } else {
+            window.audioEngine.playStartBeep(settings.silentMode);
+            window.audioEngine.speakPhrase("Go", settings.silentMode);
+            this.moveToNextUncompletedSet();
+          }
+        } else {
+          const nextSameExIndex = session.queue.findIndex(t => !t.completed && t.exerciseId === currentTask?.exerciseId);
+          
+          if (nextSameExIndex >= 0) {
+            session.activeTaskIndex = nextSameExIndex;
+            const nextTask = session.queue[nextSameExIndex];
+
+            if (currentTask && currentTask.restSeconds > 0) {
+              window.audioEngine.playStartBeep(settings.silentMode);
+              window.audioEngine.speakPhrase("Rest", settings.silentMode);
+              this.starttimebasedRestPauseTimer(currentTask.restSeconds);
+            } else {
+              window.audioEngine.playStartBeep(settings.silentMode);
+              window.audioEngine.speakPhrase("Go", settings.silentMode);
+              this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
+            }
+          } else {
+            session.timebasedStarted = false;
+            window.audioEngine.playStartBeep(settings.silentMode);
+            window.audioEngine.speakPhrase("End set", settings.silentMode);
+            this.moveToNextUncompletedSet();
+          }
+        }
+      }
+    }, 50);
+  }
+
+  starttimebasedRestPauseTimer(seconds) {
+    this.stopRestTimer();
+
+    const session = this.activeSession;
+    if (!session) return;
+
+    session.intimebasedRestPause = true;
+    this.timerSecondsLeft = seconds;
+    this.timerTotalSeconds = seconds;
+    this.timerTargetEndTime = Date.now() + (seconds * 1000);
+    this.isTimerPaused = false;
+
+    window.storageManager.saveActiveSession(session);
+    this.renderActiveWorkoutView();
+
+    this.timerInterval = setInterval(() => {
+      if (this.isTimerPaused) return;
+
+      this.updateTimerFromTimestamp();
+
+      if (this.timerSecondsLeft <= 0) {
+        this.stopRestTimer();
+        session.intimebasedRestPause = false;
+
+        window.audioEngine.vibrateFinish();
+        window.audioEngine.sendRestNotification("CYBERPUMP ??????", "Rest Over! Time for the next interval!");
+
+        const currentTask = session.queue[session.activeTaskIndex];
+        const settings = window.storageManager.getSettings();
+
+        if (currentTask && !currentTask.completed) {
+          window.audioEngine.playStartBeep(settings.silentMode);
+          window.audioEngine.speakPhrase("Work", settings.silentMode);
+          this.starttimebasedTimer(currentTask.timebasedIntervalSeconds);
+        } else {
+          session.timebasedStarted = false;
+          window.audioEngine.playStartBeep(settings.silentMode);
+          window.audioEngine.speakPhrase("End set", settings.silentMode);
+          this.moveToNextUncompletedSet();
+        }
+      }
+    }, 50);
+  }
+
+  startRestTimer(seconds) {
+    this.stopRestTimer();
+
+    this.activeSession.inRest = true;
+    this.timerSecondsLeft = seconds;
+    this.timerTotalSeconds = seconds;
+    this.timerTargetEndTime = Date.now() + (seconds * 1000);
+    this.isTimerPaused = false;
+
+    window.storageManager.saveActiveSession(this.activeSession);
+    this.renderActiveWorkoutView();
+
+    this.timerInterval = setInterval(() => {
+      if (this.isTimerPaused) return;
+
+      this.updateTimerFromTimestamp();
+
+      if (this.timerSecondsLeft <= 0) {
+        const settings = window.storageManager.getSettings();
+        window.audioEngine.playStartBeep(settings.silentMode);
+        window.audioEngine.speakPhrase("Get ready", settings.silentMode);
+        
+        window.audioEngine.vibrateFinish();
+        window.audioEngine.sendRestNotification("CYBERPUMP ??????", "Rest Over! Get ready for your next set!");
+
+        this.stopRestTimer();
+        this.moveToNextUncompletedSet();
+      }
+    }, 50);
+  }
+
+  stopRestTimer() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+      this.timerInterval = null;
+    }
+    this.timerTargetEndTime = null;
+    this.timerSecondsLeft = 0;
+    this.isTimerPaused = false;
+    if (this.activeSession) {
+      this.activeSession.inRest = false;
+      this.activeSession.intimebasedTimer = false;
+      this.activeSession.intimebasedRestPause = false;
+      window.storageManager.saveActiveSession(this.activeSession);
+    }
+  }
+
+  moveToNextUncompletedSet() {
+    if (!this.activeSession) return;
+
+    this.stopRestTimer();
+
+    const session = this.activeSession;
+    const remainingTasks = session.queue.filter(t => !t.completed);
+    
+    if (remainingTasks.length === 0) {
+      this.finishWorkoutSession();
+      return;
+    }
+
+    const isCircuitMode = session.queue[0]?.isCircuitMode;
+    const lastLog = session.completedLogs && session.completedLogs.length > 0
+      ? session.completedLogs[session.completedLogs.length - 1]
+      : null;
+
+    const lastExerciseId = lastLog ? lastLog.exerciseId : null;
+
+    if (isCircuitMode) {
+      const nextUncompletedIdx = session.queue.findIndex(t => !t.completed);
+      if (nextUncompletedIdx >= 0) {
+        session.activeTaskIndex = nextUncompletedIdx;
+        if (nextUncompletedIdx === 0) {
+          session.timebasedStarted = false;
+        }
+      }
+    } else {
+      const lastExId = lastLog ? lastLog.exerciseId : session.queue[session.activeTaskIndex]?.exerciseId;
+
+      const nextSameExIdx = session.queue.findIndex(t => !t.completed && t.exerciseId === lastExId);
+
+      if (nextSameExIdx >= 0) {
+        session.activeTaskIndex = nextSameExIdx;
+      } else {
+        const nextUncompletedIdx = session.queue.findIndex(t => !t.completed);
+        if (nextUncompletedIdx >= 0) {
+          session.activeTaskIndex = nextUncompletedIdx;
+          session.timebasedStarted = false;
+        }
+      }
+    }
+
+    const nextTask = session.queue[session.activeTaskIndex];
+
+    // ?? Se abbiamo terminato l'esercizio precedente e passiamo a un nuovo esercizio, chiediamo la conferma!
+    if (lastExerciseId && nextTask && nextTask.exerciseId !== lastExerciseId) {
+      session.awaitingExerciseStart = true;
+    }
+
+    if (session.awaitingExerciseStart) {
+      window.storageManager.saveActiveSession(session);
+      this.renderActiveWorkoutView();
+      return;
+    }
+
+    if (nextTask && nextTask.type === 'timebased' && nextTask.isCircuitMode && session.activeTaskIndex > 0) {
+      session.timebasedStarted = true;
+      window.storageManager.saveActiveSession(session);
+      const settings = window.storageManager.getSettings();
+      window.audioEngine.speakPhrase("Go", settings.silentMode);
+      this.starttimebasedTimer(nextTask.timebasedIntervalSeconds);
+      return;
+    }
+
+    window.storageManager.saveActiveSession(session);
+    this.renderActiveWorkoutView();
+  }
+
+  finishWorkoutSession() {
+    this.stopRestTimer();
+    this.releaseWakeLock();
+
+    const session = this.activeSession;
+    if (!session) return;
+
+    const durationSeconds = Math.round((new Date().getTime() - new Date(session.startedAt).getTime()) / 1000);
+    const durationMinutes = Math.max(1, Math.round(durationSeconds / 60));
+
+    const logEntry = {
+      id: 'log_' + Date.now(),
+      workoutId: session.workoutId,
+      workoutName: session.workoutName,
+      date: new Date().toISOString(),
+      durationSeconds: durationSeconds,
+      durationMinutes: durationMinutes,
+      completedSetsCount: session.completedLogs.length,
+      setsDetail: session.completedLogs
+    };
+
+    window.storageManager.addLog(logEntry);
+    this.activeSession = null;
+    window.storageManager.saveActiveSession(null);
+
+    window.audioEngine.vibrateFinish();
+    window.audioEngine.sendRestNotification("CYBERPUMP ??", "WORKOUT COMPLETED! Great session!");
+
+    this.switchView('workouts');
+
+    const modalHtml = `
+      <div style="text-align: center; padding: 12px 0;">
+        <span style="font-size: 48px;">??</span>
+        <h2 style="font-family: var(--font-header); color: var(--fluo-lime); font-size: 24px; margin: 8px 0;">WORKOUT COMPLETED!</h2>
+        <p style="color: var(--text-muted); font-size: 13px;">Great job! Your session has been saved to your Workout Diary.</p>
+
+        <div class="metrics-grid" style="margin: 20px 0;">
+          <div class="metric-box">
+            <div class="metric-value">${durationMinutes}m</div>
+            <div class="metric-label">Time</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-value">${logEntry.completedSetsCount}</div>
+            <div class="metric-label">Sets Done</div>
+          </div>
+        </div>
+
+        <button id="btn-finish-dialog-close" class="btn btn-primary btn-block">View Workout Diary</button>
+      </div>
+    `;
+
+    this.openModal(modalHtml);
+    document.getElementById('btn-finish-dialog-close').addEventListener('click', () => {
+      this.closeModal();
+      this.switchView('diary');
+    });
+  }
+
+  renderDiaryView() {
+    const logs = window.storageManager.getLogs();
+
+    let html = `
+      <div class="view-header">
+        <h1 class="view-title">?? Workout Diary</h1>
+        <span style="font-size: 12px; color: var(--text-muted);">${logs.length} Logged Sessions</span>
+      </div>
+    `;
+
+    if (logs.length === 0) {
+      html += `
+        <div class="card" style="text-align: center; padding: 40px 20px;">
+          <p style="color: var(--text-muted);">No completed workouts logged yet.</p>
+        </div>
+      `;
+    } else {
+      logs.forEach(log => {
+        const dateStr = new Date(log.date).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+        html += `
+          <div class="card" style="margin-bottom: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+              <div>
+                <h3 style="font-family: var(--font-header); font-size: 16px; color: #fff;">${this.escapeHtml(log.workoutName)}</h3>
+                <span style="font-size: 11px; color: var(--text-muted);">${dateStr}</span>
+              </div>
+              <span class="exercise-badge" style="background: rgba(0, 255, 136, 0.15); color: var(--fluo-lime);">
+                ?? ${log.durationMinutes} min
+              </span>
+            </div>
+
+            <div style="font-size: 12px; color: var(--text-main); margin: 8px 0;">
+              <strong>${log.completedSetsCount} Sets Executed:</strong>
+              <ul style="margin-top: 4px; padding-left: 16px; color: var(--text-muted); font-size: 11px;">
+                ${(log.setsDetail || []).map(s => `
+                  <li>${this.escapeHtml(s.exerciseName)} (Set ${s.setIndex}): ${s.reps} reps ${s.weight ? `@ ${s.weight}kg/lbs` : '(BW)'}</li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <div style="text-align: right; margin-top: 8px;">
+              <button class="btn btn-secondary btn-sm btn-delete-log" data-id="${log.id}" style="color: var(--fluo-magenta);">Delete Log</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    this.mainContent.innerHTML = html;
+
+    document.querySelectorAll('.btn-delete-log').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = e.currentTarget.getAttribute('data-id');
+        if (confirm('Delete this workout log entry?')) {
+          window.storageManager.deleteLog(id);
+          this.showToast('Log entry removed');
+          this.renderDiaryView();
+        }
+      });
+    });
+  }
+
+  renderShareImportView() {
+    let html = `
+      <div class="view-header">
+        <h1 class="view-title">?? Export & Import</h1>
+      </div>
+
+      <div class="card" style="margin-bottom: 16px;">
+        <h3 style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-bottom: 8px;">Export & Share Database</h3>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+          Export your local workouts into a portable text string file to share with friends or transfer to another device.
+        </p>
+
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button id="btn-export-share" class="btn btn-primary btn-sm">?? Share via App</button>
+          <button id="btn-export-copy" class="btn btn-secondary btn-sm">?? Copy Text String</button>
+          <button id="btn-export-file" class="btn btn-secondary btn-sm">?? Download JSON File</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family: var(--font-header); font-size: 16px; color: #fff; margin-bottom: 8px;">Import Workouts</h3>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+          Paste a CYBERPUMP export text string or upload a JSON export file to selectively import workouts.
+        </p>
+
+        <div class="form-group">
+          <textarea id="import-text-input" class="form-textarea" rows="4" placeholder="Paste export string JSON here..."></textarea>
+        </div>
+
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button id="btn-parse-import" class="btn btn-success btn-sm">Preview & Select Workouts</button>
+          <label class="btn btn-secondary btn-sm" style="cursor: pointer; margin: 0;">
+            ?? Pick File
+            <input type="file" id="import-file-input" accept=".json,.txt" style="display: none;">
+          </label>
+        </div>
+      </div>
+    `;
+
+    this.mainContent.innerHTML = html;
+
+    document.getElementById('btn-export-share').addEventListener('click', async () => {
+      const res = await window.exportImportManager.shareWorkouts();
+      if (res.success) this.showToast('Workouts shared successfully!');
+    });
+
+    document.getElementById('btn-export-copy').addEventListener('click', async () => {
+      const text = window.exportImportManager.exportData();
+      await navigator.clipboard.writeText(text);
+      this.showToast('Export string copied to clipboard!');
+    });
+
+    document.getElementById('btn-export-file').addEventListener('click', () => {
+      window.exportImportManager.downloadExportFile();
+      this.showToast('Export file downloaded!');
+    });
+
+    const handleImportParsing = (rawText) => {
+      const parsedWorkouts = window.exportImportManager.parseImportString(rawText);
+      if (!parsedWorkouts || parsedWorkouts.length === 0) {
+        this.showToast('Invalid or empty export text string', 'error');
+        return;
+      }
+      this.showSelectiveImportModal(parsedWorkouts);
+    };
+
+    document.getElementById('btn-parse-import').addEventListener('click', () => {
+      const raw = document.getElementById('import-text-input').value;
+      handleImportParsing(raw);
+    });
+
+    document.getElementById('import-file-input').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => handleImportParsing(event.target.result);
+        reader.readAsText(file);
+      }
+    });
+  }
+
+  showSelectiveImportModal(candidateWorkouts) {
+    const isPremium = window.storageManager.isPremiumUser();
+    const currentWorkoutCount = window.storageManager.getWorkouts().length;
+    const remainingSlots = isPremium ? Infinity : Math.max(0, FREEMIUM_LIMITS.MAX_WORKOUTS - currentWorkoutCount);
+
+    const modalHtml = `
+      <h3 style="font-family: var(--font-header); color: #fff; margin-bottom: 8px;">Select Workouts to Import</h3>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+        ${isPremium 
+          ? '?? <strong>Premium Plan:</strong> You can import all selected workouts.' 
+          : `?? <strong>Free Plan:</strong> You can import up to <strong>${remainingSlots}</strong> more workout(s).`}
+      </p>
+
+      <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+        <label style="font-size: 12px; color: var(--fluo-cyan); cursor: pointer;">
+          <input type="checkbox" id="toggle-all-import" checked> Select All (${candidateWorkouts.length})
+        </label>
+      </div>
+
+      <div style="max-height: 240px; overflow-y: auto; border: 1px solid var(--border-muted); border-radius: var(--radius-md); padding: 8px; margin-bottom: 16px; background: rgba(0,0,0,0.3);">
+        ${candidateWorkouts.map((w, idx) => `
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #fff; cursor: pointer;">
+              <input type="checkbox" class="import-workout-check" data-index="${idx}" checked>
+              <strong>${this.escapeHtml(w.name)}</strong>
+            </label>
+            <span style="font-size: 11px; color: var(--text-muted);">${w.exercises.length} Exercises</span>
+          </div>
+        `).join('')}
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <button id="btn-cancel-modal-import" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+        <button id="btn-confirm-import" class="btn btn-success" style="flex: 2;">Import Selected</button>
+      </div>
+    `;
+
+    this.openModal(modalHtml);
+
+    document.getElementById('toggle-all-import').addEventListener('change', (e) => {
+      const isChecked = e.target.checked;
+      document.querySelectorAll('.import-workout-check').forEach(chk => chk.checked = isChecked);
+    });
+
+    document.getElementById('btn-cancel-modal-import').addEventListener('click', () => this.closeModal());
+
+    document.getElementById('btn-confirm-import').addEventListener('click', () => {
+      const selectedIndexes = [];
+      document.querySelectorAll('.import-workout-check:checked').forEach(chk => {
+        selectedIndexes.push(parseInt(chk.getAttribute('data-index')));
+      });
+
+      if (selectedIndexes.length === 0) {
+        this.showToast('Please select at least one workout to import', 'warning');
+        return;
+      }
+
+      if (!isPremium && (currentWorkoutCount + selectedIndexes.length) > FREEMIUM_LIMITS.MAX_WORKOUTS) {
+        this.closeModal();
+        this.showPaywallModal(`Import failed: Importing ${selectedIndexes.length} workout(s) would exceed your Free plan limit of ${FREEMIUM_LIMITS.MAX_WORKOUTS} workouts. Upgrade to Premium for unlimited imports!`);
+        return;
+      }
+
+      const workoutsToImport = selectedIndexes.map(idx => candidateWorkouts[idx]);
+      const importedCount = window.exportImportManager.importWorkouts(workoutsToImport, 'keep_both');
+
+      this.closeModal();
+      this.showToast(`Successfully imported ${importedCount} workout(s)!`);
+      this.switchView('workouts');
+    });
+  }
+
+  renderSettingsView() {
+    const settings = window.storageManager.getSettings();
+
+    let html = `
+      <div class="view-header">
+        <h1 class="view-title">?? App Settings</h1>
+      </div>
+
+      <div class="card" style="margin-bottom: 12px;">
+        <h3 style="font-family: var(--font-header); font-size: 15px; color: #fff; margin-bottom: 8px;">Purchases & Account</h3>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+          Already bought Premium on another device? Restore your active purchase.
+        </p>
+        <button id="btn-restore-purchases" class="btn btn-secondary btn-sm" style="color: var(--fluo-cyan); border-color: var(--fluo-cyan);">
+          ?? Restore Purchases
+        </button>
+      </div>
+
+      <div class="card" style="margin-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div>
+            <strong style="color: #fff; font-size: 15px;">Silent Mode</strong>
+            <p style="font-size: 11px; color: var(--text-muted);">Mutes all voice countdowns and start audio beeps.</p>
+          </div>
+          <label style="position: relative; display: inline-block; width: 44px; height: 24px;">
+            <input type="checkbox" id="setting-silent" ${settings.silentMode ? 'checked' : ''} style="opacity: 0; width: 0; height: 0;">
+            <span style="position: absolute; cursor: pointer; top:0; left:0; right:0; bottom:0; background: ${settings.silentMode ? 'var(--fluo-cyan)' : '#334155'}; border-radius: 24px; transition: 0.2s;"></span>
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong style="color: #fff; font-size: 15px;">Start Chime Beep Tone</strong>
+            <p style="font-size: 11px; color: var(--text-muted);">Audio tone signals test.</p>
+          </div>
+          <button id="btn-test-audio" class="btn btn-secondary btn-sm">?? Test Audio</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom: 16px;">
+        <h3 style="font-family: var(--font-header); font-size: 15px; color: #fff; margin-bottom: 8px;">Storage & Reset</h3>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+          All workout data is stored locally on this smartphone device.
+        </p>
+        <button id="btn-reset-defaults" class="btn btn-secondary btn-sm" style="color: var(--fluo-magenta); border-color: rgba(255,0,127,0.3);">
+          ?? Restore Preset Workouts
+        </button>
+      </div>
+
+      <div class="card" style="text-align: center; padding: 20px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(0, 240, 255, 0.2);">
+        <div style="font-family: var(--font-header); font-size: 14px; font-weight: 700; color: var(--fluo-cyan); letter-spacing: 1px; margin-bottom: 4px;">
+          ? CYBERPUMP WORKOUT LOG
+        </div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">
+          Version <span style="color: var(--fluo-lime); font-weight: 700;">1.0.9</span> � Native App
+        </div>
+
+        <div style="border-top: 1px dashed rgba(255, 255, 255, 0.1); width: 60%; margin: 10px auto;"></div>
+
+        <div style="font-size: 12px; color: var(--text-main); margin-bottom: 4px;">
+          Created by <strong style="color: #fff;">mdpt</strong>
+        </div>
+        <div style="font-size: 11px;">
+          <a href="mailto:mttdptrz@gmail.com" style="color: var(--fluo-cyan); text-decoration: none;">
+            ?? mttdptrz@gmail.com
+          </a>
+        </div>
+      </div>
+    `;
+
+    this.mainContent.innerHTML = html;
+
+    document.getElementById('btn-restore-purchases')?.addEventListener('click', () => {
+      if (window.iapManager && window.iapManager.initialized) {
+        window.iapManager.restorePurchases();
+      } else {
+        this.showToast('IAP Manager not initialized or running in browser mode', 'warning');
+      }
+    });
+
+    document.getElementById('setting-silent').addEventListener('change', (e) => {
+      window.storageManager.updateSetting('silentMode', e.target.checked);
+      this.updateSilentModeIcon();
+      this.showToast(e.target.checked ? 'Silent Mode Enabled' : 'Silent Mode Disabled');
+      this.renderSettingsView();
+    });
+
+    document.getElementById('btn-test-audio').addEventListener('click', () => {
+      const isSilent = window.storageManager.getSettings().silentMode;
+      if (isSilent) {
+        this.showToast('Silent Mode is ON - unmute to test sound', 'warning');
+      } else {
+        window.audioEngine.speakNumber('Three', false);
+        setTimeout(() => window.audioEngine.playStartBeep(false), 800);
+      }
+    });
+
+    document.getElementById('btn-reset-defaults').addEventListener('click', () => {
+      if (confirm('Reset to default workout presets? This will reload initial workouts.')) {
+        localStorage.clear();
+        window.storageManager.initDefaults();
+        this.showToast('Presets restored!');
+        this.switchView('workouts');
+      }
+    });
+  }
+
+  escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.cyberPumpApp = new CyberPumpApp();
+});
