@@ -554,15 +554,16 @@ class CyberPumpApp {
           <td>
             <input type="number" step="0.5" class="table-input row-weight" value="${weightVal}" placeholder="BW">
           </td>
-          <td>
+         <td>
             <div style="display: flex; flex-direction: column; gap: 2px;">
+              ${istimebased ? '<span style="font-size: 8px; color: var(--fluo-magenta); font-weight: 700; text-transform: uppercase; line-height: 1;">\u{26A1} Work</span>' : ''}
               <input type="number" class="table-input row-time" min="1" max="999" value="${istimebased ? (ex.timebasedIntervalSeconds || 60) : (ex.restSeconds || 60)}" title="${istimebased ? 'Interval in sec' : 'Rest in sec'}">
               ${istimebased ? `
+                <span style="font-size: 8px; color: var(--fluo-orange); font-weight: 700; text-transform: uppercase; line-height: 1; margin-top: 2px;">\u{23F8}\u{FE0F} Rest</span>
                 <input type="number" class="table-input row-rest" min="0" max="999" value="${restVal}" placeholder="Rest (sec)" title="Optional Rest between rounds (sec)">
               ` : ''}
             </div>
           </td>
-          <td>
             <div class="action-btn-group">
               <button class="btn btn-secondary btn-sm row-move-up" data-index="${index}" ${index === 0 ? 'disabled' : ''}>\u{25B2}</button>
               <button class="btn btn-secondary btn-sm row-move-down" data-index="${index}" ${index === this.editingWorkout.exercises.length - 1 ? 'disabled' : ''}>\u{25BC}</button>
