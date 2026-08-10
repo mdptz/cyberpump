@@ -73,11 +73,10 @@ body {
   position: relative;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
   background-color: var(--bg-dark);
-  /* Gestione dinamica dello spazio in fondo per evitare sovrapposizioni con i gesti/tasti di sistema */
   padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
 }
 
-/* Top App Header (Adjusted for iPhone Dynamic Island & Notch) */
+/* Top App Header */
 .app-header {
   min-height: 74px;
   padding-top: max(18px, env(safe-area-inset-top));
@@ -163,7 +162,6 @@ body {
   transform: translateX(-50%);
   width: 100%;
   max-width: 480px;
-  /* Altezza dinamica che include la Safe Area del sistema (Android / iOS) */
   height: calc(68px + env(safe-area-inset-bottom, 0px));
   background: rgba(11, 15, 25, 0.95);
   backdrop-filter: blur(16px);
@@ -172,7 +170,6 @@ body {
   justify-content: space-around;
   align-items: center;
   z-index: 100;
-  /* Padding inferiore dinamico per sollevare le icone dai tasti di navigazione del telefono */
   padding: 0 8px env(safe-area-inset-bottom, 0px) 8px;
 }
 
@@ -317,6 +314,39 @@ body {
   width: 100%;
 }
 
+/* ⚡ ANIMAZIONE NEON PULSE PER I PULSANTI START */
+@keyframes neonStartPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4), 0 0 20px rgba(0, 255, 136, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.95), 0 0 40px rgba(0, 255, 136, 0.6);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4), 0 0 20px rgba(0, 255, 136, 0.2);
+    transform: scale(1);
+  }
+}
+
+.btn-neon-start {
+  animation: neonStartPulse 1.8s infinite ease-in-out !important;
+  background: linear-gradient(135deg, var(--fluo-lime), #00c853) !important;
+  color: #050a14 !important;
+  font-weight: 800 !important;
+  border: none !important;
+}
+
+/* ⏸️ STILE DEDICATO PER I PULSANTI DI PAUSA (Arancione Fluo) */
+.btn-pause-orange {
+  background: rgba(255, 153, 0, 0.15) !important;
+  color: var(--fluo-orange) !important;
+  border: 1px solid var(--fluo-orange) !important;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.25) !important;
+  font-weight: 700 !important;
+}
+
 /* Form Controls */
 .form-group {
   display: flex;
@@ -350,12 +380,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 
-
-/* ==========================================================================
-   Cyberpunk Select & Table Input Overrides
-   ========================================================================== */
-
-/* Styling globale per tutti i menu a tendina (Select) */
+/* Select & Table Input Overrides */
 select, .form-select, .table-input.row-type {
   background-color: var(--bg-input) !important;
   color: var(--fluo-cyan) !important;
@@ -367,7 +392,6 @@ select, .form-select, .table-input.row-type {
   font-weight: 600;
   outline: none;
   cursor: pointer;
-  /* Personalizzazione freccia custom scura */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -384,15 +408,13 @@ select:focus, .table-input.row-type:focus {
   box-shadow: 0 0 8px rgba(0, 240, 255, 0.4) !important;
 }
 
-/* Styling per le opzioni interne al menu a tendina */
 select option {
   background-color: #0d131f !important;
   color: #ffffff !important;
   padding: 10px;
 }
 
-
-/* Tabular Editor Styles (Req 11) */
+/* Tabular Editor Styles */
 .tabular-container {
   overflow-x: auto;
   border-radius: var(--radius-md);
@@ -517,7 +539,7 @@ select option {
   text-transform: uppercase;
 }
 
-/* Rest Overlay & Countdown (Req 5, 7, 13) */
+/* Rest Overlay & Countdown */
 .rest-overlay {
   background: radial-gradient(circle at center, rgba(16, 25, 42, 0.98), rgba(8, 12, 20, 0.99));
   border: 2px solid var(--fluo-lime);
@@ -545,7 +567,7 @@ select option {
   border-left: 4px solid var(--fluo-cyan);
 }
 
-/* Quick Queue Exercise Picker (Req 2, 4, 6) */
+/* Quick Queue Exercise Picker */
 .queue-container {
   margin-top: 16px;
 }
