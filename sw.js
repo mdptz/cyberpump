@@ -3,7 +3,7 @@
  * Caches all static assets for 100% offline usage on iOS & Android.
  */
 
-const CACHE_NAME = 'cyberpump-v1111';
+const CACHE_NAME = 'cyberpump-v1011';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
