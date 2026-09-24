@@ -21,10 +21,15 @@
       font-family: 'Inter', sans-serif;
       background-color: #0b0f19;
       color: #f1f5f9;
-      margin: 0;
+      margin: 0 auto; /* Centra il contenuto su schermi molto larghi */
       padding: 24px;
+      /* Gestione dei margini di sicurezza (Notch / Dynamic Island) in Landscape */
+      padding-left: max(24px, env(safe-area-inset-left));
+      padding-right: max(24px, env(safe-area-inset-right));
       font-size: 13px;
       line-height: 1.5;
+      max-width: 800px; /* Evita che il testo diventi troppo largo su PC/Tablet */
+      width: 100%;
     }
 
     .header {
